@@ -1,0 +1,1568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tb.mbg.mapper.PoArrivalInspectionMapper">
+  <resultMap id="BaseResultMap" type="com.tb.mbg.model.PoArrivalInspection">
+    <id column="PO_ARRIVAL_INSPECTION_ID" jdbcType="CHAR" property="poArrivalInspectionId" />
+    <result column="DOC_NO" jdbcType="NVARCHAR" property="docNo" />
+    <result column="DOC_DATE" jdbcType="TIMESTAMP" property="docDate" />
+    <result column="DOC_ID" jdbcType="CHAR" property="docId" />
+    <result column="Owner_Dept" jdbcType="CHAR" property="ownerDept" />
+    <result column="Owner_Emp" jdbcType="CHAR" property="ownerEmp" />
+    <result column="CATEGORY" jdbcType="NVARCHAR" property="category" />
+    <result column="INSPECTION_DATE" jdbcType="TIMESTAMP" property="inspectionDate" />
+    <result column="QC_TIMES" jdbcType="INTEGER" property="qcTimes" />
+    <result column="INSPECTION_TIMES" jdbcType="NVARCHAR" property="inspectionTimes" />
+    <result column="ITEM_ID" jdbcType="CHAR" property="itemId" />
+    <result column="ITEM_DESCRIPTION" jdbcType="NVARCHAR" property="itemDescription" />
+    <result column="ITEM_FEATURE_ID" jdbcType="CHAR" property="itemFeatureId" />
+    <result column="ITEM_SPECIFICATION" jdbcType="NVARCHAR" property="itemSpecification" />
+    <result column="ITEM_LOT_ID" jdbcType="CHAR" property="itemLotId" />
+    <result column="SUPPLIER_ID" jdbcType="CHAR" property="supplierId" />
+    <result column="INSPECTION_QTY" jdbcType="DECIMAL" property="inspectionQty" />
+    <result column="INSPECTION_UNIT_ID" jdbcType="CHAR" property="inspectionUnitId" />
+    <result column="STRICTNESS_DEGREE" jdbcType="NVARCHAR" property="strictnessDegree" />
+    <result column="INSPECTION_DUE_DATE" jdbcType="TIMESTAMP" property="inspectionDueDate" />
+    <result column="SUBMIT_DEPT_ID" jdbcType="CHAR" property="submitDeptId" />
+    <result column="SUBMIT_EMP_ID" jdbcType="CHAR" property="submitEmpId" />
+    <result column="INVENTORY_QTY" jdbcType="DECIMAL" property="inventoryQty" />
+    <result column="SECOND_QTY" jdbcType="DECIMAL" property="secondQty" />
+    <result column="ACCEPTABLE_QTY" jdbcType="DECIMAL" property="acceptableQty" />
+    <result column="UNQUALIFIED_QTY" jdbcType="DECIMAL" property="unqualifiedQty" />
+    <result column="DESTROYED_QTY" jdbcType="DECIMAL" property="destroyedQty" />
+    <result column="DECISION" jdbcType="NVARCHAR" property="decision" />
+    <result column="DECISION_DESCRIPTION" jdbcType="NVARCHAR" property="decisionDescription" />
+    <result column="RESULT_STATUS" jdbcType="NVARCHAR" property="resultStatus" />
+    <result column="REINSPECTION" jdbcType="BIT" property="reinspection" />
+    <result column="REMARK" jdbcType="NVARCHAR" property="remark" />
+    <result column="INSPECTION_PLAN_ID" jdbcType="CHAR" property="inspectionPlanId" />
+    <result column="COMPANY_ID" jdbcType="CHAR" property="companyId" />
+    <result column="SOURCE_ID" jdbcType="CHAR" property="sourceId" />
+    <result column="MO_ROUTING_D_ID" jdbcType="CHAR" property="moRoutingDId" />
+    <result column="OPERATION_ID" jdbcType="CHAR" property="operationId" />
+    <result column="TO_MO_ROUTING_D_ID" jdbcType="CHAR" property="toMoRoutingDId" />
+    <result column="TO_OPERATION_ID" jdbcType="CHAR" property="toOperationId" />
+    <result column="PROJECT_ID" jdbcType="CHAR" property="projectId" />
+    <result column="DEDUCT_ARRIVED_QTY" jdbcType="BIT" property="deductArrivedQty" />
+    <result column="GENERATE_SOURCE" jdbcType="NVARCHAR" property="generateSource" />
+    <result column="ProcessInstanceId" jdbcType="CHAR" property="processinstanceid" />
+    <result column="PrintCount" jdbcType="INTEGER" property="printcount" />
+    <result column="EFNETStatus" jdbcType="NVARCHAR" property="efnetstatus" />
+    <result column="EFNETAction" jdbcType="NVARCHAR" property="efnetaction" />
+    <result column="EFNETDOCCategory" jdbcType="NVARCHAR" property="efnetdoccategory" />
+    <result column="EFNETDOCNumber" jdbcType="NVARCHAR" property="efnetdocnumber" />
+    <result column="ApproveStatus" jdbcType="NVARCHAR" property="approvestatus" />
+    <result column="ApproveDate" jdbcType="TIMESTAMP" property="approvedate" />
+    <result column="ApproveBy" jdbcType="CHAR" property="approveby" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="LastModifiedDate" jdbcType="TIMESTAMP" property="lastmodifieddate" />
+    <result column="ModifiedDate" jdbcType="TIMESTAMP" property="modifieddate" />
+    <result column="CreateBy" jdbcType="CHAR" property="createby" />
+    <result column="LastModifiedBy" jdbcType="CHAR" property="lastmodifiedby" />
+    <result column="ModifiedBy" jdbcType="CHAR" property="modifiedby" />
+    <result column="UDF001" jdbcType="DECIMAL" property="udf001" />
+    <result column="UDF002" jdbcType="DECIMAL" property="udf002" />
+    <result column="UDF003" jdbcType="DECIMAL" property="udf003" />
+    <result column="UDF011" jdbcType="DECIMAL" property="udf011" />
+    <result column="UDF012" jdbcType="DECIMAL" property="udf012" />
+    <result column="UDF013" jdbcType="DECIMAL" property="udf013" />
+    <result column="UDF021" jdbcType="NVARCHAR" property="udf021" />
+    <result column="UDF022" jdbcType="NVARCHAR" property="udf022" />
+    <result column="UDF023" jdbcType="NVARCHAR" property="udf023" />
+    <result column="UDF024" jdbcType="NVARCHAR" property="udf024" />
+    <result column="UDF025" jdbcType="NVARCHAR" property="udf025" />
+    <result column="UDF026" jdbcType="NVARCHAR" property="udf026" />
+    <result column="UDF041" jdbcType="TIMESTAMP" property="udf041" />
+    <result column="UDF042" jdbcType="TIMESTAMP" property="udf042" />
+    <result column="UDF051" jdbcType="CHAR" property="udf051" />
+    <result column="UDF052" jdbcType="CHAR" property="udf052" />
+    <result column="UDF053" jdbcType="CHAR" property="udf053" />
+    <result column="UDF054" jdbcType="CHAR" property="udf054" />
+    <result column="Owner_Org_RTK" jdbcType="NVARCHAR" property="ownerOrgRtk" />
+    <result column="Owner_Org_ROid" jdbcType="CHAR" property="ownerOrgRoid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tb.mbg.model.PoArrivalInspection">
+    <result column="Version" jdbcType="BINARY" property="version" />
+    <result column="Attachments" jdbcType="LONGNVARCHAR" property="attachments" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    PO_ARRIVAL_INSPECTION_ID, DOC_NO, DOC_DATE, DOC_ID, Owner_Dept, Owner_Emp, CATEGORY, 
+    INSPECTION_DATE, QC_TIMES, INSPECTION_TIMES, ITEM_ID, ITEM_DESCRIPTION, ITEM_FEATURE_ID, 
+    ITEM_SPECIFICATION, ITEM_LOT_ID, SUPPLIER_ID, INSPECTION_QTY, INSPECTION_UNIT_ID, 
+    STRICTNESS_DEGREE, INSPECTION_DUE_DATE, SUBMIT_DEPT_ID, SUBMIT_EMP_ID, INVENTORY_QTY, 
+    SECOND_QTY, ACCEPTABLE_QTY, UNQUALIFIED_QTY, DESTROYED_QTY, DECISION, DECISION_DESCRIPTION, 
+    RESULT_STATUS, REINSPECTION, REMARK, INSPECTION_PLAN_ID, COMPANY_ID, SOURCE_ID, MO_ROUTING_D_ID, 
+    OPERATION_ID, TO_MO_ROUTING_D_ID, TO_OPERATION_ID, PROJECT_ID, DEDUCT_ARRIVED_QTY, 
+    GENERATE_SOURCE, ProcessInstanceId, PrintCount, EFNETStatus, EFNETAction, EFNETDOCCategory, 
+    EFNETDOCNumber, ApproveStatus, ApproveDate, ApproveBy, CreateDate, LastModifiedDate, 
+    ModifiedDate, CreateBy, LastModifiedBy, ModifiedBy, UDF001, UDF002, UDF003, UDF011, 
+    UDF012, UDF013, UDF021, UDF022, UDF023, UDF024, UDF025, UDF026, UDF041, UDF042, UDF051, 
+    UDF052, UDF053, UDF054, Owner_Org_RTK, Owner_Org_ROid
+  </sql>
+  <sql id="Blob_Column_List">
+    Version, Attachments
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.tb.mbg.model.PoArrivalInspectionExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from PO_ARRIVAL_INSPECTION
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.tb.mbg.model.PoArrivalInspectionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from PO_ARRIVAL_INSPECTION
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from PO_ARRIVAL_INSPECTION
+    where PO_ARRIVAL_INSPECTION_ID = #{poArrivalInspectionId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PO_ARRIVAL_INSPECTION
+    where PO_ARRIVAL_INSPECTION_ID = #{poArrivalInspectionId,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tb.mbg.model.PoArrivalInspectionExample">
+    delete from PO_ARRIVAL_INSPECTION
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tb.mbg.model.PoArrivalInspection">
+    insert into PO_ARRIVAL_INSPECTION (PO_ARRIVAL_INSPECTION_ID, DOC_NO, DOC_DATE, 
+      DOC_ID, Owner_Dept, Owner_Emp, 
+      CATEGORY, INSPECTION_DATE, QC_TIMES, 
+      INSPECTION_TIMES, ITEM_ID, ITEM_DESCRIPTION, 
+      ITEM_FEATURE_ID, ITEM_SPECIFICATION, ITEM_LOT_ID, 
+      SUPPLIER_ID, INSPECTION_QTY, INSPECTION_UNIT_ID, 
+      STRICTNESS_DEGREE, INSPECTION_DUE_DATE, 
+      SUBMIT_DEPT_ID, SUBMIT_EMP_ID, INVENTORY_QTY, 
+      SECOND_QTY, ACCEPTABLE_QTY, UNQUALIFIED_QTY, 
+      DESTROYED_QTY, DECISION, DECISION_DESCRIPTION, 
+      RESULT_STATUS, REINSPECTION, REMARK, 
+      INSPECTION_PLAN_ID, COMPANY_ID, SOURCE_ID, 
+      MO_ROUTING_D_ID, OPERATION_ID, TO_MO_ROUTING_D_ID, 
+      TO_OPERATION_ID, PROJECT_ID, DEDUCT_ARRIVED_QTY, 
+      GENERATE_SOURCE, ProcessInstanceId, PrintCount, 
+      EFNETStatus, EFNETAction, EFNETDOCCategory, 
+      EFNETDOCNumber, ApproveStatus, ApproveDate, 
+      ApproveBy, CreateDate, LastModifiedDate, 
+      ModifiedDate, CreateBy, LastModifiedBy, 
+      ModifiedBy, UDF001, UDF002, 
+      UDF003, UDF011, UDF012, 
+      UDF013, UDF021, UDF022, 
+      UDF023, UDF024, UDF025, 
+      UDF026, UDF041, UDF042, 
+      UDF051, UDF052, UDF053, UDF054, 
+      Owner_Org_RTK, Owner_Org_ROid, Version, 
+      Attachments)
+    values (#{poArrivalInspectionId,jdbcType=CHAR}, #{docNo,jdbcType=NVARCHAR}, #{docDate,jdbcType=TIMESTAMP}, 
+      #{docId,jdbcType=CHAR}, #{ownerDept,jdbcType=CHAR}, #{ownerEmp,jdbcType=CHAR}, 
+      #{category,jdbcType=NVARCHAR}, #{inspectionDate,jdbcType=TIMESTAMP}, #{qcTimes,jdbcType=INTEGER}, 
+      #{inspectionTimes,jdbcType=NVARCHAR}, #{itemId,jdbcType=CHAR}, #{itemDescription,jdbcType=NVARCHAR}, 
+      #{itemFeatureId,jdbcType=CHAR}, #{itemSpecification,jdbcType=NVARCHAR}, #{itemLotId,jdbcType=CHAR}, 
+      #{supplierId,jdbcType=CHAR}, #{inspectionQty,jdbcType=DECIMAL}, #{inspectionUnitId,jdbcType=CHAR}, 
+      #{strictnessDegree,jdbcType=NVARCHAR}, #{inspectionDueDate,jdbcType=TIMESTAMP}, 
+      #{submitDeptId,jdbcType=CHAR}, #{submitEmpId,jdbcType=CHAR}, #{inventoryQty,jdbcType=DECIMAL}, 
+      #{secondQty,jdbcType=DECIMAL}, #{acceptableQty,jdbcType=DECIMAL}, #{unqualifiedQty,jdbcType=DECIMAL}, 
+      #{destroyedQty,jdbcType=DECIMAL}, #{decision,jdbcType=NVARCHAR}, #{decisionDescription,jdbcType=NVARCHAR}, 
+      #{resultStatus,jdbcType=NVARCHAR}, #{reinspection,jdbcType=BIT}, #{remark,jdbcType=NVARCHAR}, 
+      #{inspectionPlanId,jdbcType=CHAR}, #{companyId,jdbcType=CHAR}, #{sourceId,jdbcType=CHAR}, 
+      #{moRoutingDId,jdbcType=CHAR}, #{operationId,jdbcType=CHAR}, #{toMoRoutingDId,jdbcType=CHAR}, 
+      #{toOperationId,jdbcType=CHAR}, #{projectId,jdbcType=CHAR}, #{deductArrivedQty,jdbcType=BIT}, 
+      #{generateSource,jdbcType=NVARCHAR}, #{processinstanceid,jdbcType=CHAR}, #{printcount,jdbcType=INTEGER}, 
+      #{efnetstatus,jdbcType=NVARCHAR}, #{efnetaction,jdbcType=NVARCHAR}, #{efnetdoccategory,jdbcType=NVARCHAR}, 
+      #{efnetdocnumber,jdbcType=NVARCHAR}, #{approvestatus,jdbcType=NVARCHAR}, #{approvedate,jdbcType=TIMESTAMP}, 
+      #{approveby,jdbcType=CHAR}, #{createdate,jdbcType=TIMESTAMP}, #{lastmodifieddate,jdbcType=TIMESTAMP}, 
+      #{modifieddate,jdbcType=TIMESTAMP}, #{createby,jdbcType=CHAR}, #{lastmodifiedby,jdbcType=CHAR}, 
+      #{modifiedby,jdbcType=CHAR}, #{udf001,jdbcType=DECIMAL}, #{udf002,jdbcType=DECIMAL}, 
+      #{udf003,jdbcType=DECIMAL}, #{udf011,jdbcType=DECIMAL}, #{udf012,jdbcType=DECIMAL}, 
+      #{udf013,jdbcType=DECIMAL}, #{udf021,jdbcType=NVARCHAR}, #{udf022,jdbcType=NVARCHAR}, 
+      #{udf023,jdbcType=NVARCHAR}, #{udf024,jdbcType=NVARCHAR}, #{udf025,jdbcType=NVARCHAR}, 
+      #{udf026,jdbcType=NVARCHAR}, #{udf041,jdbcType=TIMESTAMP}, #{udf042,jdbcType=TIMESTAMP}, 
+      #{udf051,jdbcType=CHAR}, #{udf052,jdbcType=CHAR}, #{udf053,jdbcType=CHAR}, #{udf054,jdbcType=CHAR}, 
+      #{ownerOrgRtk,jdbcType=NVARCHAR}, #{ownerOrgRoid,jdbcType=CHAR}, #{version,jdbcType=BINARY}, 
+      #{attachments,jdbcType=LONGNVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tb.mbg.model.PoArrivalInspection">
+    insert into PO_ARRIVAL_INSPECTION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="poArrivalInspectionId != null">
+        PO_ARRIVAL_INSPECTION_ID,
+      </if>
+      <if test="docNo != null">
+        DOC_NO,
+      </if>
+      <if test="docDate != null">
+        DOC_DATE,
+      </if>
+      <if test="docId != null">
+        DOC_ID,
+      </if>
+      <if test="ownerDept != null">
+        Owner_Dept,
+      </if>
+      <if test="ownerEmp != null">
+        Owner_Emp,
+      </if>
+      <if test="category != null">
+        CATEGORY,
+      </if>
+      <if test="inspectionDate != null">
+        INSPECTION_DATE,
+      </if>
+      <if test="qcTimes != null">
+        QC_TIMES,
+      </if>
+      <if test="inspectionTimes != null">
+        INSPECTION_TIMES,
+      </if>
+      <if test="itemId != null">
+        ITEM_ID,
+      </if>
+      <if test="itemDescription != null">
+        ITEM_DESCRIPTION,
+      </if>
+      <if test="itemFeatureId != null">
+        ITEM_FEATURE_ID,
+      </if>
+      <if test="itemSpecification != null">
+        ITEM_SPECIFICATION,
+      </if>
+      <if test="itemLotId != null">
+        ITEM_LOT_ID,
+      </if>
+      <if test="supplierId != null">
+        SUPPLIER_ID,
+      </if>
+      <if test="inspectionQty != null">
+        INSPECTION_QTY,
+      </if>
+      <if test="inspectionUnitId != null">
+        INSPECTION_UNIT_ID,
+      </if>
+      <if test="strictnessDegree != null">
+        STRICTNESS_DEGREE,
+      </if>
+      <if test="inspectionDueDate != null">
+        INSPECTION_DUE_DATE,
+      </if>
+      <if test="submitDeptId != null">
+        SUBMIT_DEPT_ID,
+      </if>
+      <if test="submitEmpId != null">
+        SUBMIT_EMP_ID,
+      </if>
+      <if test="inventoryQty != null">
+        INVENTORY_QTY,
+      </if>
+      <if test="secondQty != null">
+        SECOND_QTY,
+      </if>
+      <if test="acceptableQty != null">
+        ACCEPTABLE_QTY,
+      </if>
+      <if test="unqualifiedQty != null">
+        UNQUALIFIED_QTY,
+      </if>
+      <if test="destroyedQty != null">
+        DESTROYED_QTY,
+      </if>
+      <if test="decision != null">
+        DECISION,
+      </if>
+      <if test="decisionDescription != null">
+        DECISION_DESCRIPTION,
+      </if>
+      <if test="resultStatus != null">
+        RESULT_STATUS,
+      </if>
+      <if test="reinspection != null">
+        REINSPECTION,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="inspectionPlanId != null">
+        INSPECTION_PLAN_ID,
+      </if>
+      <if test="companyId != null">
+        COMPANY_ID,
+      </if>
+      <if test="sourceId != null">
+        SOURCE_ID,
+      </if>
+      <if test="moRoutingDId != null">
+        MO_ROUTING_D_ID,
+      </if>
+      <if test="operationId != null">
+        OPERATION_ID,
+      </if>
+      <if test="toMoRoutingDId != null">
+        TO_MO_ROUTING_D_ID,
+      </if>
+      <if test="toOperationId != null">
+        TO_OPERATION_ID,
+      </if>
+      <if test="projectId != null">
+        PROJECT_ID,
+      </if>
+      <if test="deductArrivedQty != null">
+        DEDUCT_ARRIVED_QTY,
+      </if>
+      <if test="generateSource != null">
+        GENERATE_SOURCE,
+      </if>
+      <if test="processinstanceid != null">
+        ProcessInstanceId,
+      </if>
+      <if test="printcount != null">
+        PrintCount,
+      </if>
+      <if test="efnetstatus != null">
+        EFNETStatus,
+      </if>
+      <if test="efnetaction != null">
+        EFNETAction,
+      </if>
+      <if test="efnetdoccategory != null">
+        EFNETDOCCategory,
+      </if>
+      <if test="efnetdocnumber != null">
+        EFNETDOCNumber,
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus,
+      </if>
+      <if test="approvedate != null">
+        ApproveDate,
+      </if>
+      <if test="approveby != null">
+        ApproveBy,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate,
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate,
+      </if>
+      <if test="createby != null">
+        CreateBy,
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy,
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy,
+      </if>
+      <if test="udf001 != null">
+        UDF001,
+      </if>
+      <if test="udf002 != null">
+        UDF002,
+      </if>
+      <if test="udf003 != null">
+        UDF003,
+      </if>
+      <if test="udf011 != null">
+        UDF011,
+      </if>
+      <if test="udf012 != null">
+        UDF012,
+      </if>
+      <if test="udf013 != null">
+        UDF013,
+      </if>
+      <if test="udf021 != null">
+        UDF021,
+      </if>
+      <if test="udf022 != null">
+        UDF022,
+      </if>
+      <if test="udf023 != null">
+        UDF023,
+      </if>
+      <if test="udf024 != null">
+        UDF024,
+      </if>
+      <if test="udf025 != null">
+        UDF025,
+      </if>
+      <if test="udf026 != null">
+        UDF026,
+      </if>
+      <if test="udf041 != null">
+        UDF041,
+      </if>
+      <if test="udf042 != null">
+        UDF042,
+      </if>
+      <if test="udf051 != null">
+        UDF051,
+      </if>
+      <if test="udf052 != null">
+        UDF052,
+      </if>
+      <if test="udf053 != null">
+        UDF053,
+      </if>
+      <if test="udf054 != null">
+        UDF054,
+      </if>
+      <if test="ownerOrgRtk != null">
+        Owner_Org_RTK,
+      </if>
+      <if test="ownerOrgRoid != null">
+        Owner_Org_ROid,
+      </if>
+      <if test="version != null">
+        Version,
+      </if>
+      <if test="attachments != null">
+        Attachments,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="poArrivalInspectionId != null">
+        #{poArrivalInspectionId,jdbcType=CHAR},
+      </if>
+      <if test="docNo != null">
+        #{docNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="docDate != null">
+        #{docDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="docId != null">
+        #{docId,jdbcType=CHAR},
+      </if>
+      <if test="ownerDept != null">
+        #{ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="ownerEmp != null">
+        #{ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=NVARCHAR},
+      </if>
+      <if test="inspectionDate != null">
+        #{inspectionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qcTimes != null">
+        #{qcTimes,jdbcType=INTEGER},
+      </if>
+      <if test="inspectionTimes != null">
+        #{inspectionTimes,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemId != null">
+        #{itemId,jdbcType=CHAR},
+      </if>
+      <if test="itemDescription != null">
+        #{itemDescription,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemFeatureId != null">
+        #{itemFeatureId,jdbcType=CHAR},
+      </if>
+      <if test="itemSpecification != null">
+        #{itemSpecification,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemLotId != null">
+        #{itemLotId,jdbcType=CHAR},
+      </if>
+      <if test="supplierId != null">
+        #{supplierId,jdbcType=CHAR},
+      </if>
+      <if test="inspectionQty != null">
+        #{inspectionQty,jdbcType=DECIMAL},
+      </if>
+      <if test="inspectionUnitId != null">
+        #{inspectionUnitId,jdbcType=CHAR},
+      </if>
+      <if test="strictnessDegree != null">
+        #{strictnessDegree,jdbcType=NVARCHAR},
+      </if>
+      <if test="inspectionDueDate != null">
+        #{inspectionDueDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="submitDeptId != null">
+        #{submitDeptId,jdbcType=CHAR},
+      </if>
+      <if test="submitEmpId != null">
+        #{submitEmpId,jdbcType=CHAR},
+      </if>
+      <if test="inventoryQty != null">
+        #{inventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="secondQty != null">
+        #{secondQty,jdbcType=DECIMAL},
+      </if>
+      <if test="acceptableQty != null">
+        #{acceptableQty,jdbcType=DECIMAL},
+      </if>
+      <if test="unqualifiedQty != null">
+        #{unqualifiedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="destroyedQty != null">
+        #{destroyedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="decision != null">
+        #{decision,jdbcType=NVARCHAR},
+      </if>
+      <if test="decisionDescription != null">
+        #{decisionDescription,jdbcType=NVARCHAR},
+      </if>
+      <if test="resultStatus != null">
+        #{resultStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="reinspection != null">
+        #{reinspection,jdbcType=BIT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="inspectionPlanId != null">
+        #{inspectionPlanId,jdbcType=CHAR},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="sourceId != null">
+        #{sourceId,jdbcType=CHAR},
+      </if>
+      <if test="moRoutingDId != null">
+        #{moRoutingDId,jdbcType=CHAR},
+      </if>
+      <if test="operationId != null">
+        #{operationId,jdbcType=CHAR},
+      </if>
+      <if test="toMoRoutingDId != null">
+        #{toMoRoutingDId,jdbcType=CHAR},
+      </if>
+      <if test="toOperationId != null">
+        #{toOperationId,jdbcType=CHAR},
+      </if>
+      <if test="projectId != null">
+        #{projectId,jdbcType=CHAR},
+      </if>
+      <if test="deductArrivedQty != null">
+        #{deductArrivedQty,jdbcType=BIT},
+      </if>
+      <if test="generateSource != null">
+        #{generateSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="processinstanceid != null">
+        #{processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="printcount != null">
+        #{printcount,jdbcType=INTEGER},
+      </if>
+      <if test="efnetstatus != null">
+        #{efnetstatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetaction != null">
+        #{efnetaction,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetdoccategory != null">
+        #{efnetdoccategory,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetdocnumber != null">
+        #{efnetdocnumber,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvestatus != null">
+        #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="udf001 != null">
+        #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="ownerOrgRtk != null">
+        #{ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="ownerOrgRoid != null">
+        #{ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BINARY},
+      </if>
+      <if test="attachments != null">
+        #{attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tb.mbg.model.PoArrivalInspectionExample" resultType="java.lang.Long">
+    select count(*) from PO_ARRIVAL_INSPECTION
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update PO_ARRIVAL_INSPECTION
+    <set>
+      <if test="row.poArrivalInspectionId != null">
+        PO_ARRIVAL_INSPECTION_ID = #{row.poArrivalInspectionId,jdbcType=CHAR},
+      </if>
+      <if test="row.docNo != null">
+        DOC_NO = #{row.docNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.docDate != null">
+        DOC_DATE = #{row.docDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.docId != null">
+        DOC_ID = #{row.docId,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerDept != null">
+        Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerEmp != null">
+        Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="row.category != null">
+        CATEGORY = #{row.category,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.inspectionDate != null">
+        INSPECTION_DATE = #{row.inspectionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.qcTimes != null">
+        QC_TIMES = #{row.qcTimes,jdbcType=INTEGER},
+      </if>
+      <if test="row.inspectionTimes != null">
+        INSPECTION_TIMES = #{row.inspectionTimes,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemId != null">
+        ITEM_ID = #{row.itemId,jdbcType=CHAR},
+      </if>
+      <if test="row.itemDescription != null">
+        ITEM_DESCRIPTION = #{row.itemDescription,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemFeatureId != null">
+        ITEM_FEATURE_ID = #{row.itemFeatureId,jdbcType=CHAR},
+      </if>
+      <if test="row.itemSpecification != null">
+        ITEM_SPECIFICATION = #{row.itemSpecification,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemLotId != null">
+        ITEM_LOT_ID = #{row.itemLotId,jdbcType=CHAR},
+      </if>
+      <if test="row.supplierId != null">
+        SUPPLIER_ID = #{row.supplierId,jdbcType=CHAR},
+      </if>
+      <if test="row.inspectionQty != null">
+        INSPECTION_QTY = #{row.inspectionQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.inspectionUnitId != null">
+        INSPECTION_UNIT_ID = #{row.inspectionUnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.strictnessDegree != null">
+        STRICTNESS_DEGREE = #{row.strictnessDegree,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.inspectionDueDate != null">
+        INSPECTION_DUE_DATE = #{row.inspectionDueDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.submitDeptId != null">
+        SUBMIT_DEPT_ID = #{row.submitDeptId,jdbcType=CHAR},
+      </if>
+      <if test="row.submitEmpId != null">
+        SUBMIT_EMP_ID = #{row.submitEmpId,jdbcType=CHAR},
+      </if>
+      <if test="row.inventoryQty != null">
+        INVENTORY_QTY = #{row.inventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.secondQty != null">
+        SECOND_QTY = #{row.secondQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.acceptableQty != null">
+        ACCEPTABLE_QTY = #{row.acceptableQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.unqualifiedQty != null">
+        UNQUALIFIED_QTY = #{row.unqualifiedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.destroyedQty != null">
+        DESTROYED_QTY = #{row.destroyedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.decision != null">
+        DECISION = #{row.decision,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.decisionDescription != null">
+        DECISION_DESCRIPTION = #{row.decisionDescription,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.resultStatus != null">
+        RESULT_STATUS = #{row.resultStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.reinspection != null">
+        REINSPECTION = #{row.reinspection,jdbcType=BIT},
+      </if>
+      <if test="row.remark != null">
+        REMARK = #{row.remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.inspectionPlanId != null">
+        INSPECTION_PLAN_ID = #{row.inspectionPlanId,jdbcType=CHAR},
+      </if>
+      <if test="row.companyId != null">
+        COMPANY_ID = #{row.companyId,jdbcType=CHAR},
+      </if>
+      <if test="row.sourceId != null">
+        SOURCE_ID = #{row.sourceId,jdbcType=CHAR},
+      </if>
+      <if test="row.moRoutingDId != null">
+        MO_ROUTING_D_ID = #{row.moRoutingDId,jdbcType=CHAR},
+      </if>
+      <if test="row.operationId != null">
+        OPERATION_ID = #{row.operationId,jdbcType=CHAR},
+      </if>
+      <if test="row.toMoRoutingDId != null">
+        TO_MO_ROUTING_D_ID = #{row.toMoRoutingDId,jdbcType=CHAR},
+      </if>
+      <if test="row.toOperationId != null">
+        TO_OPERATION_ID = #{row.toOperationId,jdbcType=CHAR},
+      </if>
+      <if test="row.projectId != null">
+        PROJECT_ID = #{row.projectId,jdbcType=CHAR},
+      </if>
+      <if test="row.deductArrivedQty != null">
+        DEDUCT_ARRIVED_QTY = #{row.deductArrivedQty,jdbcType=BIT},
+      </if>
+      <if test="row.generateSource != null">
+        GENERATE_SOURCE = #{row.generateSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.processinstanceid != null">
+        ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="row.printcount != null">
+        PrintCount = #{row.printcount,jdbcType=INTEGER},
+      </if>
+      <if test="row.efnetstatus != null">
+        EFNETStatus = #{row.efnetstatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.efnetaction != null">
+        EFNETAction = #{row.efnetaction,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.efnetdoccategory != null">
+        EFNETDOCCategory = #{row.efnetdoccategory,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.efnetdocnumber != null">
+        EFNETDOCNumber = #{row.efnetdocnumber,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.approvestatus != null">
+        ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.approvedate != null">
+        ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.approveby != null">
+        ApproveBy = #{row.approveby,jdbcType=CHAR},
+      </if>
+      <if test="row.createdate != null">
+        CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.lastmodifieddate != null">
+        LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.modifieddate != null">
+        ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.createby != null">
+        CreateBy = #{row.createby,jdbcType=CHAR},
+      </if>
+      <if test="row.lastmodifiedby != null">
+        LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.modifiedby != null">
+        ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.udf001 != null">
+        UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf002 != null">
+        UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf003 != null">
+        UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf011 != null">
+        UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf012 != null">
+        UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf013 != null">
+        UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf021 != null">
+        UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf022 != null">
+        UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf023 != null">
+        UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf024 != null">
+        UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf025 != null">
+        UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf026 != null">
+        UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf041 != null">
+        UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf042 != null">
+        UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf051 != null">
+        UDF051 = #{row.udf051,jdbcType=CHAR},
+      </if>
+      <if test="row.udf052 != null">
+        UDF052 = #{row.udf052,jdbcType=CHAR},
+      </if>
+      <if test="row.udf053 != null">
+        UDF053 = #{row.udf053,jdbcType=CHAR},
+      </if>
+      <if test="row.udf054 != null">
+        UDF054 = #{row.udf054,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerOrgRtk != null">
+        Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.ownerOrgRoid != null">
+        Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.version != null">
+        Version = #{row.version,jdbcType=BINARY},
+      </if>
+      <if test="row.attachments != null">
+        Attachments = #{row.attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update PO_ARRIVAL_INSPECTION
+    set PO_ARRIVAL_INSPECTION_ID = #{row.poArrivalInspectionId,jdbcType=CHAR},
+      DOC_NO = #{row.docNo,jdbcType=NVARCHAR},
+      DOC_DATE = #{row.docDate,jdbcType=TIMESTAMP},
+      DOC_ID = #{row.docId,jdbcType=CHAR},
+      Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      CATEGORY = #{row.category,jdbcType=NVARCHAR},
+      INSPECTION_DATE = #{row.inspectionDate,jdbcType=TIMESTAMP},
+      QC_TIMES = #{row.qcTimes,jdbcType=INTEGER},
+      INSPECTION_TIMES = #{row.inspectionTimes,jdbcType=NVARCHAR},
+      ITEM_ID = #{row.itemId,jdbcType=CHAR},
+      ITEM_DESCRIPTION = #{row.itemDescription,jdbcType=NVARCHAR},
+      ITEM_FEATURE_ID = #{row.itemFeatureId,jdbcType=CHAR},
+      ITEM_SPECIFICATION = #{row.itemSpecification,jdbcType=NVARCHAR},
+      ITEM_LOT_ID = #{row.itemLotId,jdbcType=CHAR},
+      SUPPLIER_ID = #{row.supplierId,jdbcType=CHAR},
+      INSPECTION_QTY = #{row.inspectionQty,jdbcType=DECIMAL},
+      INSPECTION_UNIT_ID = #{row.inspectionUnitId,jdbcType=CHAR},
+      STRICTNESS_DEGREE = #{row.strictnessDegree,jdbcType=NVARCHAR},
+      INSPECTION_DUE_DATE = #{row.inspectionDueDate,jdbcType=TIMESTAMP},
+      SUBMIT_DEPT_ID = #{row.submitDeptId,jdbcType=CHAR},
+      SUBMIT_EMP_ID = #{row.submitEmpId,jdbcType=CHAR},
+      INVENTORY_QTY = #{row.inventoryQty,jdbcType=DECIMAL},
+      SECOND_QTY = #{row.secondQty,jdbcType=DECIMAL},
+      ACCEPTABLE_QTY = #{row.acceptableQty,jdbcType=DECIMAL},
+      UNQUALIFIED_QTY = #{row.unqualifiedQty,jdbcType=DECIMAL},
+      DESTROYED_QTY = #{row.destroyedQty,jdbcType=DECIMAL},
+      DECISION = #{row.decision,jdbcType=NVARCHAR},
+      DECISION_DESCRIPTION = #{row.decisionDescription,jdbcType=NVARCHAR},
+      RESULT_STATUS = #{row.resultStatus,jdbcType=NVARCHAR},
+      REINSPECTION = #{row.reinspection,jdbcType=BIT},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      INSPECTION_PLAN_ID = #{row.inspectionPlanId,jdbcType=CHAR},
+      COMPANY_ID = #{row.companyId,jdbcType=CHAR},
+      SOURCE_ID = #{row.sourceId,jdbcType=CHAR},
+      MO_ROUTING_D_ID = #{row.moRoutingDId,jdbcType=CHAR},
+      OPERATION_ID = #{row.operationId,jdbcType=CHAR},
+      TO_MO_ROUTING_D_ID = #{row.toMoRoutingDId,jdbcType=CHAR},
+      TO_OPERATION_ID = #{row.toOperationId,jdbcType=CHAR},
+      PROJECT_ID = #{row.projectId,jdbcType=CHAR},
+      DEDUCT_ARRIVED_QTY = #{row.deductArrivedQty,jdbcType=BIT},
+      GENERATE_SOURCE = #{row.generateSource,jdbcType=NVARCHAR},
+      ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      PrintCount = #{row.printcount,jdbcType=INTEGER},
+      EFNETStatus = #{row.efnetstatus,jdbcType=NVARCHAR},
+      EFNETAction = #{row.efnetaction,jdbcType=NVARCHAR},
+      EFNETDOCCategory = #{row.efnetdoccategory,jdbcType=NVARCHAR},
+      EFNETDOCNumber = #{row.efnetdocnumber,jdbcType=NVARCHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR},
+      Version = #{row.version,jdbcType=BINARY},
+      Attachments = #{row.attachments,jdbcType=LONGNVARCHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update PO_ARRIVAL_INSPECTION
+    set PO_ARRIVAL_INSPECTION_ID = #{row.poArrivalInspectionId,jdbcType=CHAR},
+      DOC_NO = #{row.docNo,jdbcType=NVARCHAR},
+      DOC_DATE = #{row.docDate,jdbcType=TIMESTAMP},
+      DOC_ID = #{row.docId,jdbcType=CHAR},
+      Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      CATEGORY = #{row.category,jdbcType=NVARCHAR},
+      INSPECTION_DATE = #{row.inspectionDate,jdbcType=TIMESTAMP},
+      QC_TIMES = #{row.qcTimes,jdbcType=INTEGER},
+      INSPECTION_TIMES = #{row.inspectionTimes,jdbcType=NVARCHAR},
+      ITEM_ID = #{row.itemId,jdbcType=CHAR},
+      ITEM_DESCRIPTION = #{row.itemDescription,jdbcType=NVARCHAR},
+      ITEM_FEATURE_ID = #{row.itemFeatureId,jdbcType=CHAR},
+      ITEM_SPECIFICATION = #{row.itemSpecification,jdbcType=NVARCHAR},
+      ITEM_LOT_ID = #{row.itemLotId,jdbcType=CHAR},
+      SUPPLIER_ID = #{row.supplierId,jdbcType=CHAR},
+      INSPECTION_QTY = #{row.inspectionQty,jdbcType=DECIMAL},
+      INSPECTION_UNIT_ID = #{row.inspectionUnitId,jdbcType=CHAR},
+      STRICTNESS_DEGREE = #{row.strictnessDegree,jdbcType=NVARCHAR},
+      INSPECTION_DUE_DATE = #{row.inspectionDueDate,jdbcType=TIMESTAMP},
+      SUBMIT_DEPT_ID = #{row.submitDeptId,jdbcType=CHAR},
+      SUBMIT_EMP_ID = #{row.submitEmpId,jdbcType=CHAR},
+      INVENTORY_QTY = #{row.inventoryQty,jdbcType=DECIMAL},
+      SECOND_QTY = #{row.secondQty,jdbcType=DECIMAL},
+      ACCEPTABLE_QTY = #{row.acceptableQty,jdbcType=DECIMAL},
+      UNQUALIFIED_QTY = #{row.unqualifiedQty,jdbcType=DECIMAL},
+      DESTROYED_QTY = #{row.destroyedQty,jdbcType=DECIMAL},
+      DECISION = #{row.decision,jdbcType=NVARCHAR},
+      DECISION_DESCRIPTION = #{row.decisionDescription,jdbcType=NVARCHAR},
+      RESULT_STATUS = #{row.resultStatus,jdbcType=NVARCHAR},
+      REINSPECTION = #{row.reinspection,jdbcType=BIT},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      INSPECTION_PLAN_ID = #{row.inspectionPlanId,jdbcType=CHAR},
+      COMPANY_ID = #{row.companyId,jdbcType=CHAR},
+      SOURCE_ID = #{row.sourceId,jdbcType=CHAR},
+      MO_ROUTING_D_ID = #{row.moRoutingDId,jdbcType=CHAR},
+      OPERATION_ID = #{row.operationId,jdbcType=CHAR},
+      TO_MO_ROUTING_D_ID = #{row.toMoRoutingDId,jdbcType=CHAR},
+      TO_OPERATION_ID = #{row.toOperationId,jdbcType=CHAR},
+      PROJECT_ID = #{row.projectId,jdbcType=CHAR},
+      DEDUCT_ARRIVED_QTY = #{row.deductArrivedQty,jdbcType=BIT},
+      GENERATE_SOURCE = #{row.generateSource,jdbcType=NVARCHAR},
+      ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      PrintCount = #{row.printcount,jdbcType=INTEGER},
+      EFNETStatus = #{row.efnetstatus,jdbcType=NVARCHAR},
+      EFNETAction = #{row.efnetaction,jdbcType=NVARCHAR},
+      EFNETDOCCategory = #{row.efnetdoccategory,jdbcType=NVARCHAR},
+      EFNETDOCNumber = #{row.efnetdocnumber,jdbcType=NVARCHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tb.mbg.model.PoArrivalInspection">
+    update PO_ARRIVAL_INSPECTION
+    <set>
+      <if test="docNo != null">
+        DOC_NO = #{docNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="docDate != null">
+        DOC_DATE = #{docDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="docId != null">
+        DOC_ID = #{docId,jdbcType=CHAR},
+      </if>
+      <if test="ownerDept != null">
+        Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="ownerEmp != null">
+        Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="category != null">
+        CATEGORY = #{category,jdbcType=NVARCHAR},
+      </if>
+      <if test="inspectionDate != null">
+        INSPECTION_DATE = #{inspectionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="qcTimes != null">
+        QC_TIMES = #{qcTimes,jdbcType=INTEGER},
+      </if>
+      <if test="inspectionTimes != null">
+        INSPECTION_TIMES = #{inspectionTimes,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemId != null">
+        ITEM_ID = #{itemId,jdbcType=CHAR},
+      </if>
+      <if test="itemDescription != null">
+        ITEM_DESCRIPTION = #{itemDescription,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemFeatureId != null">
+        ITEM_FEATURE_ID = #{itemFeatureId,jdbcType=CHAR},
+      </if>
+      <if test="itemSpecification != null">
+        ITEM_SPECIFICATION = #{itemSpecification,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemLotId != null">
+        ITEM_LOT_ID = #{itemLotId,jdbcType=CHAR},
+      </if>
+      <if test="supplierId != null">
+        SUPPLIER_ID = #{supplierId,jdbcType=CHAR},
+      </if>
+      <if test="inspectionQty != null">
+        INSPECTION_QTY = #{inspectionQty,jdbcType=DECIMAL},
+      </if>
+      <if test="inspectionUnitId != null">
+        INSPECTION_UNIT_ID = #{inspectionUnitId,jdbcType=CHAR},
+      </if>
+      <if test="strictnessDegree != null">
+        STRICTNESS_DEGREE = #{strictnessDegree,jdbcType=NVARCHAR},
+      </if>
+      <if test="inspectionDueDate != null">
+        INSPECTION_DUE_DATE = #{inspectionDueDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="submitDeptId != null">
+        SUBMIT_DEPT_ID = #{submitDeptId,jdbcType=CHAR},
+      </if>
+      <if test="submitEmpId != null">
+        SUBMIT_EMP_ID = #{submitEmpId,jdbcType=CHAR},
+      </if>
+      <if test="inventoryQty != null">
+        INVENTORY_QTY = #{inventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="secondQty != null">
+        SECOND_QTY = #{secondQty,jdbcType=DECIMAL},
+      </if>
+      <if test="acceptableQty != null">
+        ACCEPTABLE_QTY = #{acceptableQty,jdbcType=DECIMAL},
+      </if>
+      <if test="unqualifiedQty != null">
+        UNQUALIFIED_QTY = #{unqualifiedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="destroyedQty != null">
+        DESTROYED_QTY = #{destroyedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="decision != null">
+        DECISION = #{decision,jdbcType=NVARCHAR},
+      </if>
+      <if test="decisionDescription != null">
+        DECISION_DESCRIPTION = #{decisionDescription,jdbcType=NVARCHAR},
+      </if>
+      <if test="resultStatus != null">
+        RESULT_STATUS = #{resultStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="reinspection != null">
+        REINSPECTION = #{reinspection,jdbcType=BIT},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="inspectionPlanId != null">
+        INSPECTION_PLAN_ID = #{inspectionPlanId,jdbcType=CHAR},
+      </if>
+      <if test="companyId != null">
+        COMPANY_ID = #{companyId,jdbcType=CHAR},
+      </if>
+      <if test="sourceId != null">
+        SOURCE_ID = #{sourceId,jdbcType=CHAR},
+      </if>
+      <if test="moRoutingDId != null">
+        MO_ROUTING_D_ID = #{moRoutingDId,jdbcType=CHAR},
+      </if>
+      <if test="operationId != null">
+        OPERATION_ID = #{operationId,jdbcType=CHAR},
+      </if>
+      <if test="toMoRoutingDId != null">
+        TO_MO_ROUTING_D_ID = #{toMoRoutingDId,jdbcType=CHAR},
+      </if>
+      <if test="toOperationId != null">
+        TO_OPERATION_ID = #{toOperationId,jdbcType=CHAR},
+      </if>
+      <if test="projectId != null">
+        PROJECT_ID = #{projectId,jdbcType=CHAR},
+      </if>
+      <if test="deductArrivedQty != null">
+        DEDUCT_ARRIVED_QTY = #{deductArrivedQty,jdbcType=BIT},
+      </if>
+      <if test="generateSource != null">
+        GENERATE_SOURCE = #{generateSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="processinstanceid != null">
+        ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="printcount != null">
+        PrintCount = #{printcount,jdbcType=INTEGER},
+      </if>
+      <if test="efnetstatus != null">
+        EFNETStatus = #{efnetstatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetaction != null">
+        EFNETAction = #{efnetaction,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetdoccategory != null">
+        EFNETDOCCategory = #{efnetdoccategory,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetdocnumber != null">
+        EFNETDOCNumber = #{efnetdocnumber,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        ApproveBy = #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        CreateBy = #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="udf001 != null">
+        UDF001 = #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        UDF002 = #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        UDF003 = #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        UDF011 = #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        UDF012 = #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        UDF013 = #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        UDF021 = #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        UDF022 = #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        UDF023 = #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        UDF024 = #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        UDF025 = #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        UDF026 = #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        UDF051 = #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        UDF052 = #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        UDF053 = #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        UDF054 = #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="ownerOrgRtk != null">
+        Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="ownerOrgRoid != null">
+        Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        Version = #{version,jdbcType=BINARY},
+      </if>
+      <if test="attachments != null">
+        Attachments = #{attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </set>
+    where PO_ARRIVAL_INSPECTION_ID = #{poArrivalInspectionId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tb.mbg.model.PoArrivalInspection">
+    update PO_ARRIVAL_INSPECTION
+    set DOC_NO = #{docNo,jdbcType=NVARCHAR},
+      DOC_DATE = #{docDate,jdbcType=TIMESTAMP},
+      DOC_ID = #{docId,jdbcType=CHAR},
+      Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      CATEGORY = #{category,jdbcType=NVARCHAR},
+      INSPECTION_DATE = #{inspectionDate,jdbcType=TIMESTAMP},
+      QC_TIMES = #{qcTimes,jdbcType=INTEGER},
+      INSPECTION_TIMES = #{inspectionTimes,jdbcType=NVARCHAR},
+      ITEM_ID = #{itemId,jdbcType=CHAR},
+      ITEM_DESCRIPTION = #{itemDescription,jdbcType=NVARCHAR},
+      ITEM_FEATURE_ID = #{itemFeatureId,jdbcType=CHAR},
+      ITEM_SPECIFICATION = #{itemSpecification,jdbcType=NVARCHAR},
+      ITEM_LOT_ID = #{itemLotId,jdbcType=CHAR},
+      SUPPLIER_ID = #{supplierId,jdbcType=CHAR},
+      INSPECTION_QTY = #{inspectionQty,jdbcType=DECIMAL},
+      INSPECTION_UNIT_ID = #{inspectionUnitId,jdbcType=CHAR},
+      STRICTNESS_DEGREE = #{strictnessDegree,jdbcType=NVARCHAR},
+      INSPECTION_DUE_DATE = #{inspectionDueDate,jdbcType=TIMESTAMP},
+      SUBMIT_DEPT_ID = #{submitDeptId,jdbcType=CHAR},
+      SUBMIT_EMP_ID = #{submitEmpId,jdbcType=CHAR},
+      INVENTORY_QTY = #{inventoryQty,jdbcType=DECIMAL},
+      SECOND_QTY = #{secondQty,jdbcType=DECIMAL},
+      ACCEPTABLE_QTY = #{acceptableQty,jdbcType=DECIMAL},
+      UNQUALIFIED_QTY = #{unqualifiedQty,jdbcType=DECIMAL},
+      DESTROYED_QTY = #{destroyedQty,jdbcType=DECIMAL},
+      DECISION = #{decision,jdbcType=NVARCHAR},
+      DECISION_DESCRIPTION = #{decisionDescription,jdbcType=NVARCHAR},
+      RESULT_STATUS = #{resultStatus,jdbcType=NVARCHAR},
+      REINSPECTION = #{reinspection,jdbcType=BIT},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      INSPECTION_PLAN_ID = #{inspectionPlanId,jdbcType=CHAR},
+      COMPANY_ID = #{companyId,jdbcType=CHAR},
+      SOURCE_ID = #{sourceId,jdbcType=CHAR},
+      MO_ROUTING_D_ID = #{moRoutingDId,jdbcType=CHAR},
+      OPERATION_ID = #{operationId,jdbcType=CHAR},
+      TO_MO_ROUTING_D_ID = #{toMoRoutingDId,jdbcType=CHAR},
+      TO_OPERATION_ID = #{toOperationId,jdbcType=CHAR},
+      PROJECT_ID = #{projectId,jdbcType=CHAR},
+      DEDUCT_ARRIVED_QTY = #{deductArrivedQty,jdbcType=BIT},
+      GENERATE_SOURCE = #{generateSource,jdbcType=NVARCHAR},
+      ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      PrintCount = #{printcount,jdbcType=INTEGER},
+      EFNETStatus = #{efnetstatus,jdbcType=NVARCHAR},
+      EFNETAction = #{efnetaction,jdbcType=NVARCHAR},
+      EFNETDOCCategory = #{efnetdoccategory,jdbcType=NVARCHAR},
+      EFNETDOCNumber = #{efnetdocnumber,jdbcType=NVARCHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR},
+      Version = #{version,jdbcType=BINARY},
+      Attachments = #{attachments,jdbcType=LONGNVARCHAR}
+    where PO_ARRIVAL_INSPECTION_ID = #{poArrivalInspectionId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tb.mbg.model.PoArrivalInspection">
+    update PO_ARRIVAL_INSPECTION
+    set DOC_NO = #{docNo,jdbcType=NVARCHAR},
+      DOC_DATE = #{docDate,jdbcType=TIMESTAMP},
+      DOC_ID = #{docId,jdbcType=CHAR},
+      Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      CATEGORY = #{category,jdbcType=NVARCHAR},
+      INSPECTION_DATE = #{inspectionDate,jdbcType=TIMESTAMP},
+      QC_TIMES = #{qcTimes,jdbcType=INTEGER},
+      INSPECTION_TIMES = #{inspectionTimes,jdbcType=NVARCHAR},
+      ITEM_ID = #{itemId,jdbcType=CHAR},
+      ITEM_DESCRIPTION = #{itemDescription,jdbcType=NVARCHAR},
+      ITEM_FEATURE_ID = #{itemFeatureId,jdbcType=CHAR},
+      ITEM_SPECIFICATION = #{itemSpecification,jdbcType=NVARCHAR},
+      ITEM_LOT_ID = #{itemLotId,jdbcType=CHAR},
+      SUPPLIER_ID = #{supplierId,jdbcType=CHAR},
+      INSPECTION_QTY = #{inspectionQty,jdbcType=DECIMAL},
+      INSPECTION_UNIT_ID = #{inspectionUnitId,jdbcType=CHAR},
+      STRICTNESS_DEGREE = #{strictnessDegree,jdbcType=NVARCHAR},
+      INSPECTION_DUE_DATE = #{inspectionDueDate,jdbcType=TIMESTAMP},
+      SUBMIT_DEPT_ID = #{submitDeptId,jdbcType=CHAR},
+      SUBMIT_EMP_ID = #{submitEmpId,jdbcType=CHAR},
+      INVENTORY_QTY = #{inventoryQty,jdbcType=DECIMAL},
+      SECOND_QTY = #{secondQty,jdbcType=DECIMAL},
+      ACCEPTABLE_QTY = #{acceptableQty,jdbcType=DECIMAL},
+      UNQUALIFIED_QTY = #{unqualifiedQty,jdbcType=DECIMAL},
+      DESTROYED_QTY = #{destroyedQty,jdbcType=DECIMAL},
+      DECISION = #{decision,jdbcType=NVARCHAR},
+      DECISION_DESCRIPTION = #{decisionDescription,jdbcType=NVARCHAR},
+      RESULT_STATUS = #{resultStatus,jdbcType=NVARCHAR},
+      REINSPECTION = #{reinspection,jdbcType=BIT},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      INSPECTION_PLAN_ID = #{inspectionPlanId,jdbcType=CHAR},
+      COMPANY_ID = #{companyId,jdbcType=CHAR},
+      SOURCE_ID = #{sourceId,jdbcType=CHAR},
+      MO_ROUTING_D_ID = #{moRoutingDId,jdbcType=CHAR},
+      OPERATION_ID = #{operationId,jdbcType=CHAR},
+      TO_MO_ROUTING_D_ID = #{toMoRoutingDId,jdbcType=CHAR},
+      TO_OPERATION_ID = #{toOperationId,jdbcType=CHAR},
+      PROJECT_ID = #{projectId,jdbcType=CHAR},
+      DEDUCT_ARRIVED_QTY = #{deductArrivedQty,jdbcType=BIT},
+      GENERATE_SOURCE = #{generateSource,jdbcType=NVARCHAR},
+      ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      PrintCount = #{printcount,jdbcType=INTEGER},
+      EFNETStatus = #{efnetstatus,jdbcType=NVARCHAR},
+      EFNETAction = #{efnetaction,jdbcType=NVARCHAR},
+      EFNETDOCCategory = #{efnetdoccategory,jdbcType=NVARCHAR},
+      EFNETDOCNumber = #{efnetdocnumber,jdbcType=NVARCHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR}
+    where PO_ARRIVAL_INSPECTION_ID = #{poArrivalInspectionId,jdbcType=CHAR}
+  </update>
+</mapper>

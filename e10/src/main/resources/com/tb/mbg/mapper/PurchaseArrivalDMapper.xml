@@ -1,0 +1,2413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tb.mbg.mapper.PurchaseArrivalDMapper">
+  <resultMap id="BaseResultMap" type="com.tb.mbg.model.PurchaseArrivalD">
+    <id column="PURCHASE_ARRIVAL_D_ID" jdbcType="CHAR" property="purchaseArrivalDId" />
+    <result column="SequenceNumber" jdbcType="INTEGER" property="sequencenumber" />
+    <result column="ITEM_TYPE" jdbcType="NVARCHAR" property="itemType" />
+    <result column="ITEM_ID" jdbcType="CHAR" property="itemId" />
+    <result column="ITEM_DESCRIPTION" jdbcType="NVARCHAR" property="itemDescription" />
+    <result column="ITEM_FEATURE_ID" jdbcType="CHAR" property="itemFeatureId" />
+    <result column="ITEM_SPECIFICATION" jdbcType="NVARCHAR" property="itemSpecification" />
+    <result column="PACKING_QTY" jdbcType="NVARCHAR" property="packingQty" />
+    <result column="PRICE_QTY" jdbcType="DECIMAL" property="priceQty" />
+    <result column="INVENTORY_QTY" jdbcType="DECIMAL" property="inventoryQty" />
+    <result column="SECOND_QTY" jdbcType="DECIMAL" property="secondQty" />
+    <result column="PACKING_QTY1" jdbcType="DECIMAL" property="packingQty1" />
+    <result column="PACKING_QTY2" jdbcType="DECIMAL" property="packingQty2" />
+    <result column="PACKING_QTY3" jdbcType="DECIMAL" property="packingQty3" />
+    <result column="PACKING_QTY4" jdbcType="DECIMAL" property="packingQty4" />
+    <result column="PRICE" jdbcType="DECIMAL" property="price" />
+    <result column="DISCOUNT_RATE" jdbcType="DECIMAL" property="discountRate" />
+    <result column="DISCOUNT_AMT" jdbcType="DECIMAL" property="discountAmt" />
+    <result column="DISCOUNTED_PRICE" jdbcType="DECIMAL" property="discountedPrice" />
+    <result column="STANDARD_PRICE" jdbcType="DECIMAL" property="standardPrice" />
+    <result column="TAX_RATE" jdbcType="DECIMAL" property="taxRate" />
+    <result column="AMOUNT_UNINCLUDE_TAX_OC" jdbcType="DECIMAL" property="amountUnincludeTaxOc" />
+    <result column="TAX_OC" jdbcType="DECIMAL" property="taxOc" />
+    <result column="AMOUNT_UNINCLUDE_TAX_BC" jdbcType="DECIMAL" property="amountUnincludeTaxBc" />
+    <result column="TAX_BC" jdbcType="DECIMAL" property="taxBc" />
+    <result column="AMOUNT" jdbcType="DECIMAL" property="amount" />
+    <result column="ACCEPTED_BUSINESS_QTY" jdbcType="DECIMAL" property="acceptedBusinessQty" />
+    <result column="ACCEPTED_INVENTORY_QTY" jdbcType="DECIMAL" property="acceptedInventoryQty" />
+    <result column="RETURN_BUSINESS_QTY" jdbcType="DECIMAL" property="returnBusinessQty" />
+    <result column="SCRAP_BUSINESS_QTY" jdbcType="DECIMAL" property="scrapBusinessQty" />
+    <result column="OVERDUE_INDICATOR" jdbcType="BIT" property="overdueIndicator" />
+    <result column="INSPECTION_STATUS" jdbcType="NVARCHAR" property="inspectionStatus" />
+    <result column="PIECES" jdbcType="INTEGER" property="pieces" />
+    <result column="RETURNED_BUSINESS_QTY" jdbcType="DECIMAL" property="returnedBusinessQty" />
+    <result column="RECEIPTED_BUSINESS_QTY" jdbcType="DECIMAL" property="receiptedBusinessQty" />
+    <result column="RECEIPT_CLOSE" jdbcType="NVARCHAR" property="receiptClose" />
+    <result column="SCRAPED_BUSINESS_QTY" jdbcType="DECIMAL" property="scrapedBusinessQty" />
+    <result column="REMARK" jdbcType="NVARCHAR" property="remark" />
+    <result column="PURCHASE_TYPE" jdbcType="NVARCHAR" property="purchaseType" />
+    <result column="INSPECTED_QTY" jdbcType="DECIMAL" property="inspectedQty" />
+    <result column="SP_RECEIPT_BUSINESS_QTY" jdbcType="DECIMAL" property="spReceiptBusinessQty" />
+    <result column="SP_RECEIPT_INVENTORY_QTY" jdbcType="DECIMAL" property="spReceiptInventoryQty" />
+    <result column="MANUFACTURER" jdbcType="NVARCHAR" property="manufacturer" />
+    <result column="PAYMENT_PENDED" jdbcType="BIT" property="paymentPended" />
+    <result column="QUALIFIED_BUSINESS_QTY" jdbcType="DECIMAL" property="qualifiedBusinessQty" />
+    <result column="UNQUALIFIED_BUSINESS_QTY" jdbcType="DECIMAL" property="unqualifiedBusinessQty" />
+    <result column="IN_DESTROYED_BUSINESS_QTY" jdbcType="DECIMAL" property="inDestroyedBusinessQty" />
+    <result column="PRICE_UNIT_ID" jdbcType="CHAR" property="priceUnitId" />
+    <result column="BUSINESS_UNIT_ID" jdbcType="CHAR" property="businessUnitId" />
+    <result column="BUSINESS_QTY" jdbcType="DECIMAL" property="businessQty" />
+    <result column="PACKING_MODE_ID" jdbcType="CHAR" property="packingModeId" />
+    <result column="PACKING1_UNIT_ID" jdbcType="CHAR" property="packing1UnitId" />
+    <result column="PACKING2_UNIT_ID" jdbcType="CHAR" property="packing2UnitId" />
+    <result column="PACKING3_UNIT_ID" jdbcType="CHAR" property="packing3UnitId" />
+    <result column="PACKING4_UNIT_ID" jdbcType="CHAR" property="packing4UnitId" />
+    <result column="TAX_ID" jdbcType="CHAR" property="taxId" />
+    <result column="WAREHOUSE_ID" jdbcType="CHAR" property="warehouseId" />
+    <result column="OPERATION_ID" jdbcType="CHAR" property="operationId" />
+    <result column="BIN_ID" jdbcType="CHAR" property="binId" />
+    <result column="ITEM_LOT_ID" jdbcType="CHAR" property="itemLotId" />
+    <result column="ITEM_CERTIFICATION_D_ID" jdbcType="CHAR" property="itemCertificationDId" />
+    <result column="MO_ID" jdbcType="CHAR" property="moId" />
+    <result column="SETTLEMENT_PRICE_QTY" jdbcType="DECIMAL" property="settlementPriceQty" />
+    <result column="SETTLEMENT_AMT_UN_TAX_OC" jdbcType="DECIMAL" property="settlementAmtUnTaxOc" />
+    <result column="SETTLEMENT_TAX_OC" jdbcType="DECIMAL" property="settlementTaxOc" />
+    <result column="PURCHASE_ORDER_ID" jdbcType="CHAR" property="purchaseOrderId" />
+    <result column="SIGN_TYPE" jdbcType="NVARCHAR" property="signType" />
+    <result column="RETURN_REASON_ID" jdbcType="CHAR" property="returnReasonId" />
+    <result column="SUPP_INDEM_BUSINESS_QTY" jdbcType="DECIMAL" property="suppIndemBusinessQty" />
+    <result column="SUPP_INDEM_PRICE_QTY" jdbcType="DECIMAL" property="suppIndemPriceQty" />
+    <result column="LOSS_BUSINESS_QTY" jdbcType="DECIMAL" property="lossBusinessQty" />
+    <result column="LOSS_PRICE_QTY" jdbcType="DECIMAL" property="lossPriceQty" />
+    <result column="SHOULD_SETTLE_PRICE_QTY" jdbcType="DECIMAL" property="shouldSettlePriceQty" />
+    <result column="JUDGED_QTY" jdbcType="DECIMAL" property="judgedQty" />
+    <result column="SP_APPROVE_FLAG" jdbcType="BIT" property="spApproveFlag" />
+    <result column="PROJECT_ID" jdbcType="CHAR" property="projectId" />
+    <result column="DEDUCT_ARRIVED_QTY" jdbcType="BIT" property="deductArrivedQty" />
+    <result column="SN_COLLECTED_QTY" jdbcType="DECIMAL" property="snCollectedQty" />
+    <result column="SN_COLLECTED_STATUS" jdbcType="NVARCHAR" property="snCollectedStatus" />
+    <result column="WIP_DOCNO" jdbcType="NVARCHAR" property="wipDocno" />
+    <result column="BUDGET_ADMIN_UNIT_ID" jdbcType="CHAR" property="budgetAdminUnitId" />
+    <result column="BUDGET_GROUP_ID" jdbcType="CHAR" property="budgetGroupId" />
+    <result column="BUDGET_ITEM_ID" jdbcType="CHAR" property="budgetItemId" />
+    <result column="BUDGET_ID" jdbcType="CHAR" property="budgetId" />
+    <result column="BUDGET_D_ID" jdbcType="CHAR" property="budgetDId" />
+    <result column="PRE_BUDGET_ID" jdbcType="CHAR" property="preBudgetId" />
+    <result column="PRE_BUDGET_D_ID" jdbcType="CHAR" property="preBudgetDId" />
+    <result column="INNER_ORDER_DOC_SD_ID" jdbcType="CHAR" property="innerOrderDocSdId" />
+    <result column="GENERATE_SOURCE" jdbcType="NVARCHAR" property="generateSource" />
+    <result column="UDF001" jdbcType="DECIMAL" property="udf001" />
+    <result column="UDF002" jdbcType="DECIMAL" property="udf002" />
+    <result column="UDF003" jdbcType="DECIMAL" property="udf003" />
+    <result column="UDF011" jdbcType="DECIMAL" property="udf011" />
+    <result column="UDF012" jdbcType="DECIMAL" property="udf012" />
+    <result column="UDF013" jdbcType="DECIMAL" property="udf013" />
+    <result column="UDF021" jdbcType="NVARCHAR" property="udf021" />
+    <result column="UDF022" jdbcType="NVARCHAR" property="udf022" />
+    <result column="UDF023" jdbcType="NVARCHAR" property="udf023" />
+    <result column="UDF024" jdbcType="NVARCHAR" property="udf024" />
+    <result column="UDF025" jdbcType="NVARCHAR" property="udf025" />
+    <result column="UDF026" jdbcType="NVARCHAR" property="udf026" />
+    <result column="UDF041" jdbcType="TIMESTAMP" property="udf041" />
+    <result column="UDF042" jdbcType="TIMESTAMP" property="udf042" />
+    <result column="UDF051" jdbcType="CHAR" property="udf051" />
+    <result column="UDF052" jdbcType="CHAR" property="udf052" />
+    <result column="UDF053" jdbcType="CHAR" property="udf053" />
+    <result column="UDF054" jdbcType="CHAR" property="udf054" />
+    <result column="ApproveStatus" jdbcType="NVARCHAR" property="approvestatus" />
+    <result column="ApproveDate" jdbcType="TIMESTAMP" property="approvedate" />
+    <result column="ApproveBy" jdbcType="CHAR" property="approveby" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="LastModifiedDate" jdbcType="TIMESTAMP" property="lastmodifieddate" />
+    <result column="ModifiedDate" jdbcType="TIMESTAMP" property="modifieddate" />
+    <result column="CreateBy" jdbcType="CHAR" property="createby" />
+    <result column="LastModifiedBy" jdbcType="CHAR" property="lastmodifiedby" />
+    <result column="ModifiedBy" jdbcType="CHAR" property="modifiedby" />
+    <result column="REFERENCE_SOURCE_ID_RTK" jdbcType="NVARCHAR" property="referenceSourceIdRtk" />
+    <result column="REFERENCE_SOURCE_ID_ROid" jdbcType="CHAR" property="referenceSourceIdRoid" />
+    <result column="SOURCE_ID_RTK" jdbcType="NVARCHAR" property="sourceIdRtk" />
+    <result column="SOURCE_ID_ROid" jdbcType="CHAR" property="sourceIdRoid" />
+    <result column="SOURCE_ORDER_RTK" jdbcType="NVARCHAR" property="sourceOrderRtk" />
+    <result column="SOURCE_ORDER_ROid" jdbcType="CHAR" property="sourceOrderRoid" />
+    <result column="SYNERGY_SOURCE_ID_RTK" jdbcType="NVARCHAR" property="synergySourceIdRtk" />
+    <result column="SYNERGY_SOURCE_ID_ROid" jdbcType="CHAR" property="synergySourceIdRoid" />
+    <result column="PURCHASE_ARRIVAL_ID" jdbcType="CHAR" property="purchaseArrivalId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tb.mbg.model.PurchaseArrivalD">
+    <result column="Version" jdbcType="BINARY" property="version" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    PURCHASE_ARRIVAL_D_ID, SequenceNumber, ITEM_TYPE, ITEM_ID, ITEM_DESCRIPTION, ITEM_FEATURE_ID, 
+    ITEM_SPECIFICATION, PACKING_QTY, PRICE_QTY, INVENTORY_QTY, SECOND_QTY, PACKING_QTY1, 
+    PACKING_QTY2, PACKING_QTY3, PACKING_QTY4, PRICE, DISCOUNT_RATE, DISCOUNT_AMT, DISCOUNTED_PRICE, 
+    STANDARD_PRICE, TAX_RATE, AMOUNT_UNINCLUDE_TAX_OC, TAX_OC, AMOUNT_UNINCLUDE_TAX_BC, 
+    TAX_BC, AMOUNT, ACCEPTED_BUSINESS_QTY, ACCEPTED_INVENTORY_QTY, RETURN_BUSINESS_QTY, 
+    SCRAP_BUSINESS_QTY, OVERDUE_INDICATOR, INSPECTION_STATUS, PIECES, RETURNED_BUSINESS_QTY, 
+    RECEIPTED_BUSINESS_QTY, RECEIPT_CLOSE, SCRAPED_BUSINESS_QTY, REMARK, PURCHASE_TYPE, 
+    INSPECTED_QTY, SP_RECEIPT_BUSINESS_QTY, SP_RECEIPT_INVENTORY_QTY, MANUFACTURER, PAYMENT_PENDED, 
+    QUALIFIED_BUSINESS_QTY, UNQUALIFIED_BUSINESS_QTY, IN_DESTROYED_BUSINESS_QTY, PRICE_UNIT_ID, 
+    BUSINESS_UNIT_ID, BUSINESS_QTY, PACKING_MODE_ID, PACKING1_UNIT_ID, PACKING2_UNIT_ID, 
+    PACKING3_UNIT_ID, PACKING4_UNIT_ID, TAX_ID, WAREHOUSE_ID, OPERATION_ID, BIN_ID, ITEM_LOT_ID, 
+    ITEM_CERTIFICATION_D_ID, MO_ID, SETTLEMENT_PRICE_QTY, SETTLEMENT_AMT_UN_TAX_OC, SETTLEMENT_TAX_OC, 
+    PURCHASE_ORDER_ID, SIGN_TYPE, RETURN_REASON_ID, SUPP_INDEM_BUSINESS_QTY, SUPP_INDEM_PRICE_QTY, 
+    LOSS_BUSINESS_QTY, LOSS_PRICE_QTY, SHOULD_SETTLE_PRICE_QTY, JUDGED_QTY, SP_APPROVE_FLAG, 
+    PROJECT_ID, DEDUCT_ARRIVED_QTY, SN_COLLECTED_QTY, SN_COLLECTED_STATUS, WIP_DOCNO, 
+    BUDGET_ADMIN_UNIT_ID, BUDGET_GROUP_ID, BUDGET_ITEM_ID, BUDGET_ID, BUDGET_D_ID, PRE_BUDGET_ID, 
+    PRE_BUDGET_D_ID, INNER_ORDER_DOC_SD_ID, GENERATE_SOURCE, UDF001, UDF002, UDF003, 
+    UDF011, UDF012, UDF013, UDF021, UDF022, UDF023, UDF024, UDF025, UDF026, UDF041, UDF042, 
+    UDF051, UDF052, UDF053, UDF054, ApproveStatus, ApproveDate, ApproveBy, CreateDate, 
+    LastModifiedDate, ModifiedDate, CreateBy, LastModifiedBy, ModifiedBy, REFERENCE_SOURCE_ID_RTK, 
+    REFERENCE_SOURCE_ID_ROid, SOURCE_ID_RTK, SOURCE_ID_ROid, SOURCE_ORDER_RTK, SOURCE_ORDER_ROid, 
+    SYNERGY_SOURCE_ID_RTK, SYNERGY_SOURCE_ID_ROid, PURCHASE_ARRIVAL_ID
+  </sql>
+  <sql id="Blob_Column_List">
+    Version
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.tb.mbg.model.PurchaseArrivalDExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from PURCHASE_ARRIVAL_D
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.tb.mbg.model.PurchaseArrivalDExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from PURCHASE_ARRIVAL_D
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from PURCHASE_ARRIVAL_D
+    where PURCHASE_ARRIVAL_D_ID = #{purchaseArrivalDId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PURCHASE_ARRIVAL_D
+    where PURCHASE_ARRIVAL_D_ID = #{purchaseArrivalDId,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tb.mbg.model.PurchaseArrivalDExample">
+    delete from PURCHASE_ARRIVAL_D
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tb.mbg.model.PurchaseArrivalD">
+    insert into PURCHASE_ARRIVAL_D (PURCHASE_ARRIVAL_D_ID, SequenceNumber, 
+      ITEM_TYPE, ITEM_ID, ITEM_DESCRIPTION, 
+      ITEM_FEATURE_ID, ITEM_SPECIFICATION, PACKING_QTY, 
+      PRICE_QTY, INVENTORY_QTY, SECOND_QTY, 
+      PACKING_QTY1, PACKING_QTY2, PACKING_QTY3, 
+      PACKING_QTY4, PRICE, DISCOUNT_RATE, 
+      DISCOUNT_AMT, DISCOUNTED_PRICE, STANDARD_PRICE, 
+      TAX_RATE, AMOUNT_UNINCLUDE_TAX_OC, TAX_OC, 
+      AMOUNT_UNINCLUDE_TAX_BC, TAX_BC, AMOUNT, 
+      ACCEPTED_BUSINESS_QTY, ACCEPTED_INVENTORY_QTY, 
+      RETURN_BUSINESS_QTY, SCRAP_BUSINESS_QTY, OVERDUE_INDICATOR, 
+      INSPECTION_STATUS, PIECES, RETURNED_BUSINESS_QTY, 
+      RECEIPTED_BUSINESS_QTY, RECEIPT_CLOSE, SCRAPED_BUSINESS_QTY, 
+      REMARK, PURCHASE_TYPE, INSPECTED_QTY, 
+      SP_RECEIPT_BUSINESS_QTY, SP_RECEIPT_INVENTORY_QTY, 
+      MANUFACTURER, PAYMENT_PENDED, QUALIFIED_BUSINESS_QTY, 
+      UNQUALIFIED_BUSINESS_QTY, IN_DESTROYED_BUSINESS_QTY, 
+      PRICE_UNIT_ID, BUSINESS_UNIT_ID, BUSINESS_QTY, 
+      PACKING_MODE_ID, PACKING1_UNIT_ID, PACKING2_UNIT_ID, 
+      PACKING3_UNIT_ID, PACKING4_UNIT_ID, TAX_ID, 
+      WAREHOUSE_ID, OPERATION_ID, BIN_ID, 
+      ITEM_LOT_ID, ITEM_CERTIFICATION_D_ID, MO_ID, 
+      SETTLEMENT_PRICE_QTY, SETTLEMENT_AMT_UN_TAX_OC, 
+      SETTLEMENT_TAX_OC, PURCHASE_ORDER_ID, SIGN_TYPE, 
+      RETURN_REASON_ID, SUPP_INDEM_BUSINESS_QTY, SUPP_INDEM_PRICE_QTY, 
+      LOSS_BUSINESS_QTY, LOSS_PRICE_QTY, SHOULD_SETTLE_PRICE_QTY, 
+      JUDGED_QTY, SP_APPROVE_FLAG, PROJECT_ID, 
+      DEDUCT_ARRIVED_QTY, SN_COLLECTED_QTY, SN_COLLECTED_STATUS, 
+      WIP_DOCNO, BUDGET_ADMIN_UNIT_ID, BUDGET_GROUP_ID, 
+      BUDGET_ITEM_ID, BUDGET_ID, BUDGET_D_ID, 
+      PRE_BUDGET_ID, PRE_BUDGET_D_ID, INNER_ORDER_DOC_SD_ID, 
+      GENERATE_SOURCE, UDF001, UDF002, 
+      UDF003, UDF011, UDF012, 
+      UDF013, UDF021, UDF022, 
+      UDF023, UDF024, UDF025, 
+      UDF026, UDF041, UDF042, 
+      UDF051, UDF052, UDF053, UDF054, 
+      ApproveStatus, ApproveDate, ApproveBy, 
+      CreateDate, LastModifiedDate, ModifiedDate, 
+      CreateBy, LastModifiedBy, ModifiedBy, 
+      REFERENCE_SOURCE_ID_RTK, REFERENCE_SOURCE_ID_ROid, 
+      SOURCE_ID_RTK, SOURCE_ID_ROid, SOURCE_ORDER_RTK, 
+      SOURCE_ORDER_ROid, SYNERGY_SOURCE_ID_RTK, SYNERGY_SOURCE_ID_ROid, 
+      PURCHASE_ARRIVAL_ID, Version)
+    values (#{purchaseArrivalDId,jdbcType=CHAR}, #{sequencenumber,jdbcType=INTEGER}, 
+      #{itemType,jdbcType=NVARCHAR}, #{itemId,jdbcType=CHAR}, #{itemDescription,jdbcType=NVARCHAR}, 
+      #{itemFeatureId,jdbcType=CHAR}, #{itemSpecification,jdbcType=NVARCHAR}, #{packingQty,jdbcType=NVARCHAR}, 
+      #{priceQty,jdbcType=DECIMAL}, #{inventoryQty,jdbcType=DECIMAL}, #{secondQty,jdbcType=DECIMAL}, 
+      #{packingQty1,jdbcType=DECIMAL}, #{packingQty2,jdbcType=DECIMAL}, #{packingQty3,jdbcType=DECIMAL}, 
+      #{packingQty4,jdbcType=DECIMAL}, #{price,jdbcType=DECIMAL}, #{discountRate,jdbcType=DECIMAL}, 
+      #{discountAmt,jdbcType=DECIMAL}, #{discountedPrice,jdbcType=DECIMAL}, #{standardPrice,jdbcType=DECIMAL}, 
+      #{taxRate,jdbcType=DECIMAL}, #{amountUnincludeTaxOc,jdbcType=DECIMAL}, #{taxOc,jdbcType=DECIMAL}, 
+      #{amountUnincludeTaxBc,jdbcType=DECIMAL}, #{taxBc,jdbcType=DECIMAL}, #{amount,jdbcType=DECIMAL}, 
+      #{acceptedBusinessQty,jdbcType=DECIMAL}, #{acceptedInventoryQty,jdbcType=DECIMAL}, 
+      #{returnBusinessQty,jdbcType=DECIMAL}, #{scrapBusinessQty,jdbcType=DECIMAL}, #{overdueIndicator,jdbcType=BIT}, 
+      #{inspectionStatus,jdbcType=NVARCHAR}, #{pieces,jdbcType=INTEGER}, #{returnedBusinessQty,jdbcType=DECIMAL}, 
+      #{receiptedBusinessQty,jdbcType=DECIMAL}, #{receiptClose,jdbcType=NVARCHAR}, #{scrapedBusinessQty,jdbcType=DECIMAL}, 
+      #{remark,jdbcType=NVARCHAR}, #{purchaseType,jdbcType=NVARCHAR}, #{inspectedQty,jdbcType=DECIMAL}, 
+      #{spReceiptBusinessQty,jdbcType=DECIMAL}, #{spReceiptInventoryQty,jdbcType=DECIMAL}, 
+      #{manufacturer,jdbcType=NVARCHAR}, #{paymentPended,jdbcType=BIT}, #{qualifiedBusinessQty,jdbcType=DECIMAL}, 
+      #{unqualifiedBusinessQty,jdbcType=DECIMAL}, #{inDestroyedBusinessQty,jdbcType=DECIMAL}, 
+      #{priceUnitId,jdbcType=CHAR}, #{businessUnitId,jdbcType=CHAR}, #{businessQty,jdbcType=DECIMAL}, 
+      #{packingModeId,jdbcType=CHAR}, #{packing1UnitId,jdbcType=CHAR}, #{packing2UnitId,jdbcType=CHAR}, 
+      #{packing3UnitId,jdbcType=CHAR}, #{packing4UnitId,jdbcType=CHAR}, #{taxId,jdbcType=CHAR}, 
+      #{warehouseId,jdbcType=CHAR}, #{operationId,jdbcType=CHAR}, #{binId,jdbcType=CHAR}, 
+      #{itemLotId,jdbcType=CHAR}, #{itemCertificationDId,jdbcType=CHAR}, #{moId,jdbcType=CHAR}, 
+      #{settlementPriceQty,jdbcType=DECIMAL}, #{settlementAmtUnTaxOc,jdbcType=DECIMAL}, 
+      #{settlementTaxOc,jdbcType=DECIMAL}, #{purchaseOrderId,jdbcType=CHAR}, #{signType,jdbcType=NVARCHAR}, 
+      #{returnReasonId,jdbcType=CHAR}, #{suppIndemBusinessQty,jdbcType=DECIMAL}, #{suppIndemPriceQty,jdbcType=DECIMAL}, 
+      #{lossBusinessQty,jdbcType=DECIMAL}, #{lossPriceQty,jdbcType=DECIMAL}, #{shouldSettlePriceQty,jdbcType=DECIMAL}, 
+      #{judgedQty,jdbcType=DECIMAL}, #{spApproveFlag,jdbcType=BIT}, #{projectId,jdbcType=CHAR}, 
+      #{deductArrivedQty,jdbcType=BIT}, #{snCollectedQty,jdbcType=DECIMAL}, #{snCollectedStatus,jdbcType=NVARCHAR}, 
+      #{wipDocno,jdbcType=NVARCHAR}, #{budgetAdminUnitId,jdbcType=CHAR}, #{budgetGroupId,jdbcType=CHAR}, 
+      #{budgetItemId,jdbcType=CHAR}, #{budgetId,jdbcType=CHAR}, #{budgetDId,jdbcType=CHAR}, 
+      #{preBudgetId,jdbcType=CHAR}, #{preBudgetDId,jdbcType=CHAR}, #{innerOrderDocSdId,jdbcType=CHAR}, 
+      #{generateSource,jdbcType=NVARCHAR}, #{udf001,jdbcType=DECIMAL}, #{udf002,jdbcType=DECIMAL}, 
+      #{udf003,jdbcType=DECIMAL}, #{udf011,jdbcType=DECIMAL}, #{udf012,jdbcType=DECIMAL}, 
+      #{udf013,jdbcType=DECIMAL}, #{udf021,jdbcType=NVARCHAR}, #{udf022,jdbcType=NVARCHAR}, 
+      #{udf023,jdbcType=NVARCHAR}, #{udf024,jdbcType=NVARCHAR}, #{udf025,jdbcType=NVARCHAR}, 
+      #{udf026,jdbcType=NVARCHAR}, #{udf041,jdbcType=TIMESTAMP}, #{udf042,jdbcType=TIMESTAMP}, 
+      #{udf051,jdbcType=CHAR}, #{udf052,jdbcType=CHAR}, #{udf053,jdbcType=CHAR}, #{udf054,jdbcType=CHAR}, 
+      #{approvestatus,jdbcType=NVARCHAR}, #{approvedate,jdbcType=TIMESTAMP}, #{approveby,jdbcType=CHAR}, 
+      #{createdate,jdbcType=TIMESTAMP}, #{lastmodifieddate,jdbcType=TIMESTAMP}, #{modifieddate,jdbcType=TIMESTAMP}, 
+      #{createby,jdbcType=CHAR}, #{lastmodifiedby,jdbcType=CHAR}, #{modifiedby,jdbcType=CHAR}, 
+      #{referenceSourceIdRtk,jdbcType=NVARCHAR}, #{referenceSourceIdRoid,jdbcType=CHAR}, 
+      #{sourceIdRtk,jdbcType=NVARCHAR}, #{sourceIdRoid,jdbcType=CHAR}, #{sourceOrderRtk,jdbcType=NVARCHAR}, 
+      #{sourceOrderRoid,jdbcType=CHAR}, #{synergySourceIdRtk,jdbcType=NVARCHAR}, #{synergySourceIdRoid,jdbcType=CHAR}, 
+      #{purchaseArrivalId,jdbcType=CHAR}, #{version,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tb.mbg.model.PurchaseArrivalD">
+    insert into PURCHASE_ARRIVAL_D
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="purchaseArrivalDId != null">
+        PURCHASE_ARRIVAL_D_ID,
+      </if>
+      <if test="sequencenumber != null">
+        SequenceNumber,
+      </if>
+      <if test="itemType != null">
+        ITEM_TYPE,
+      </if>
+      <if test="itemId != null">
+        ITEM_ID,
+      </if>
+      <if test="itemDescription != null">
+        ITEM_DESCRIPTION,
+      </if>
+      <if test="itemFeatureId != null">
+        ITEM_FEATURE_ID,
+      </if>
+      <if test="itemSpecification != null">
+        ITEM_SPECIFICATION,
+      </if>
+      <if test="packingQty != null">
+        PACKING_QTY,
+      </if>
+      <if test="priceQty != null">
+        PRICE_QTY,
+      </if>
+      <if test="inventoryQty != null">
+        INVENTORY_QTY,
+      </if>
+      <if test="secondQty != null">
+        SECOND_QTY,
+      </if>
+      <if test="packingQty1 != null">
+        PACKING_QTY1,
+      </if>
+      <if test="packingQty2 != null">
+        PACKING_QTY2,
+      </if>
+      <if test="packingQty3 != null">
+        PACKING_QTY3,
+      </if>
+      <if test="packingQty4 != null">
+        PACKING_QTY4,
+      </if>
+      <if test="price != null">
+        PRICE,
+      </if>
+      <if test="discountRate != null">
+        DISCOUNT_RATE,
+      </if>
+      <if test="discountAmt != null">
+        DISCOUNT_AMT,
+      </if>
+      <if test="discountedPrice != null">
+        DISCOUNTED_PRICE,
+      </if>
+      <if test="standardPrice != null">
+        STANDARD_PRICE,
+      </if>
+      <if test="taxRate != null">
+        TAX_RATE,
+      </if>
+      <if test="amountUnincludeTaxOc != null">
+        AMOUNT_UNINCLUDE_TAX_OC,
+      </if>
+      <if test="taxOc != null">
+        TAX_OC,
+      </if>
+      <if test="amountUnincludeTaxBc != null">
+        AMOUNT_UNINCLUDE_TAX_BC,
+      </if>
+      <if test="taxBc != null">
+        TAX_BC,
+      </if>
+      <if test="amount != null">
+        AMOUNT,
+      </if>
+      <if test="acceptedBusinessQty != null">
+        ACCEPTED_BUSINESS_QTY,
+      </if>
+      <if test="acceptedInventoryQty != null">
+        ACCEPTED_INVENTORY_QTY,
+      </if>
+      <if test="returnBusinessQty != null">
+        RETURN_BUSINESS_QTY,
+      </if>
+      <if test="scrapBusinessQty != null">
+        SCRAP_BUSINESS_QTY,
+      </if>
+      <if test="overdueIndicator != null">
+        OVERDUE_INDICATOR,
+      </if>
+      <if test="inspectionStatus != null">
+        INSPECTION_STATUS,
+      </if>
+      <if test="pieces != null">
+        PIECES,
+      </if>
+      <if test="returnedBusinessQty != null">
+        RETURNED_BUSINESS_QTY,
+      </if>
+      <if test="receiptedBusinessQty != null">
+        RECEIPTED_BUSINESS_QTY,
+      </if>
+      <if test="receiptClose != null">
+        RECEIPT_CLOSE,
+      </if>
+      <if test="scrapedBusinessQty != null">
+        SCRAPED_BUSINESS_QTY,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="purchaseType != null">
+        PURCHASE_TYPE,
+      </if>
+      <if test="inspectedQty != null">
+        INSPECTED_QTY,
+      </if>
+      <if test="spReceiptBusinessQty != null">
+        SP_RECEIPT_BUSINESS_QTY,
+      </if>
+      <if test="spReceiptInventoryQty != null">
+        SP_RECEIPT_INVENTORY_QTY,
+      </if>
+      <if test="manufacturer != null">
+        MANUFACTURER,
+      </if>
+      <if test="paymentPended != null">
+        PAYMENT_PENDED,
+      </if>
+      <if test="qualifiedBusinessQty != null">
+        QUALIFIED_BUSINESS_QTY,
+      </if>
+      <if test="unqualifiedBusinessQty != null">
+        UNQUALIFIED_BUSINESS_QTY,
+      </if>
+      <if test="inDestroyedBusinessQty != null">
+        IN_DESTROYED_BUSINESS_QTY,
+      </if>
+      <if test="priceUnitId != null">
+        PRICE_UNIT_ID,
+      </if>
+      <if test="businessUnitId != null">
+        BUSINESS_UNIT_ID,
+      </if>
+      <if test="businessQty != null">
+        BUSINESS_QTY,
+      </if>
+      <if test="packingModeId != null">
+        PACKING_MODE_ID,
+      </if>
+      <if test="packing1UnitId != null">
+        PACKING1_UNIT_ID,
+      </if>
+      <if test="packing2UnitId != null">
+        PACKING2_UNIT_ID,
+      </if>
+      <if test="packing3UnitId != null">
+        PACKING3_UNIT_ID,
+      </if>
+      <if test="packing4UnitId != null">
+        PACKING4_UNIT_ID,
+      </if>
+      <if test="taxId != null">
+        TAX_ID,
+      </if>
+      <if test="warehouseId != null">
+        WAREHOUSE_ID,
+      </if>
+      <if test="operationId != null">
+        OPERATION_ID,
+      </if>
+      <if test="binId != null">
+        BIN_ID,
+      </if>
+      <if test="itemLotId != null">
+        ITEM_LOT_ID,
+      </if>
+      <if test="itemCertificationDId != null">
+        ITEM_CERTIFICATION_D_ID,
+      </if>
+      <if test="moId != null">
+        MO_ID,
+      </if>
+      <if test="settlementPriceQty != null">
+        SETTLEMENT_PRICE_QTY,
+      </if>
+      <if test="settlementAmtUnTaxOc != null">
+        SETTLEMENT_AMT_UN_TAX_OC,
+      </if>
+      <if test="settlementTaxOc != null">
+        SETTLEMENT_TAX_OC,
+      </if>
+      <if test="purchaseOrderId != null">
+        PURCHASE_ORDER_ID,
+      </if>
+      <if test="signType != null">
+        SIGN_TYPE,
+      </if>
+      <if test="returnReasonId != null">
+        RETURN_REASON_ID,
+      </if>
+      <if test="suppIndemBusinessQty != null">
+        SUPP_INDEM_BUSINESS_QTY,
+      </if>
+      <if test="suppIndemPriceQty != null">
+        SUPP_INDEM_PRICE_QTY,
+      </if>
+      <if test="lossBusinessQty != null">
+        LOSS_BUSINESS_QTY,
+      </if>
+      <if test="lossPriceQty != null">
+        LOSS_PRICE_QTY,
+      </if>
+      <if test="shouldSettlePriceQty != null">
+        SHOULD_SETTLE_PRICE_QTY,
+      </if>
+      <if test="judgedQty != null">
+        JUDGED_QTY,
+      </if>
+      <if test="spApproveFlag != null">
+        SP_APPROVE_FLAG,
+      </if>
+      <if test="projectId != null">
+        PROJECT_ID,
+      </if>
+      <if test="deductArrivedQty != null">
+        DEDUCT_ARRIVED_QTY,
+      </if>
+      <if test="snCollectedQty != null">
+        SN_COLLECTED_QTY,
+      </if>
+      <if test="snCollectedStatus != null">
+        SN_COLLECTED_STATUS,
+      </if>
+      <if test="wipDocno != null">
+        WIP_DOCNO,
+      </if>
+      <if test="budgetAdminUnitId != null">
+        BUDGET_ADMIN_UNIT_ID,
+      </if>
+      <if test="budgetGroupId != null">
+        BUDGET_GROUP_ID,
+      </if>
+      <if test="budgetItemId != null">
+        BUDGET_ITEM_ID,
+      </if>
+      <if test="budgetId != null">
+        BUDGET_ID,
+      </if>
+      <if test="budgetDId != null">
+        BUDGET_D_ID,
+      </if>
+      <if test="preBudgetId != null">
+        PRE_BUDGET_ID,
+      </if>
+      <if test="preBudgetDId != null">
+        PRE_BUDGET_D_ID,
+      </if>
+      <if test="innerOrderDocSdId != null">
+        INNER_ORDER_DOC_SD_ID,
+      </if>
+      <if test="generateSource != null">
+        GENERATE_SOURCE,
+      </if>
+      <if test="udf001 != null">
+        UDF001,
+      </if>
+      <if test="udf002 != null">
+        UDF002,
+      </if>
+      <if test="udf003 != null">
+        UDF003,
+      </if>
+      <if test="udf011 != null">
+        UDF011,
+      </if>
+      <if test="udf012 != null">
+        UDF012,
+      </if>
+      <if test="udf013 != null">
+        UDF013,
+      </if>
+      <if test="udf021 != null">
+        UDF021,
+      </if>
+      <if test="udf022 != null">
+        UDF022,
+      </if>
+      <if test="udf023 != null">
+        UDF023,
+      </if>
+      <if test="udf024 != null">
+        UDF024,
+      </if>
+      <if test="udf025 != null">
+        UDF025,
+      </if>
+      <if test="udf026 != null">
+        UDF026,
+      </if>
+      <if test="udf041 != null">
+        UDF041,
+      </if>
+      <if test="udf042 != null">
+        UDF042,
+      </if>
+      <if test="udf051 != null">
+        UDF051,
+      </if>
+      <if test="udf052 != null">
+        UDF052,
+      </if>
+      <if test="udf053 != null">
+        UDF053,
+      </if>
+      <if test="udf054 != null">
+        UDF054,
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus,
+      </if>
+      <if test="approvedate != null">
+        ApproveDate,
+      </if>
+      <if test="approveby != null">
+        ApproveBy,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate,
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate,
+      </if>
+      <if test="createby != null">
+        CreateBy,
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy,
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy,
+      </if>
+      <if test="referenceSourceIdRtk != null">
+        REFERENCE_SOURCE_ID_RTK,
+      </if>
+      <if test="referenceSourceIdRoid != null">
+        REFERENCE_SOURCE_ID_ROid,
+      </if>
+      <if test="sourceIdRtk != null">
+        SOURCE_ID_RTK,
+      </if>
+      <if test="sourceIdRoid != null">
+        SOURCE_ID_ROid,
+      </if>
+      <if test="sourceOrderRtk != null">
+        SOURCE_ORDER_RTK,
+      </if>
+      <if test="sourceOrderRoid != null">
+        SOURCE_ORDER_ROid,
+      </if>
+      <if test="synergySourceIdRtk != null">
+        SYNERGY_SOURCE_ID_RTK,
+      </if>
+      <if test="synergySourceIdRoid != null">
+        SYNERGY_SOURCE_ID_ROid,
+      </if>
+      <if test="purchaseArrivalId != null">
+        PURCHASE_ARRIVAL_ID,
+      </if>
+      <if test="version != null">
+        Version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="purchaseArrivalDId != null">
+        #{purchaseArrivalDId,jdbcType=CHAR},
+      </if>
+      <if test="sequencenumber != null">
+        #{sequencenumber,jdbcType=INTEGER},
+      </if>
+      <if test="itemType != null">
+        #{itemType,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemId != null">
+        #{itemId,jdbcType=CHAR},
+      </if>
+      <if test="itemDescription != null">
+        #{itemDescription,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemFeatureId != null">
+        #{itemFeatureId,jdbcType=CHAR},
+      </if>
+      <if test="itemSpecification != null">
+        #{itemSpecification,jdbcType=NVARCHAR},
+      </if>
+      <if test="packingQty != null">
+        #{packingQty,jdbcType=NVARCHAR},
+      </if>
+      <if test="priceQty != null">
+        #{priceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="inventoryQty != null">
+        #{inventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="secondQty != null">
+        #{secondQty,jdbcType=DECIMAL},
+      </if>
+      <if test="packingQty1 != null">
+        #{packingQty1,jdbcType=DECIMAL},
+      </if>
+      <if test="packingQty2 != null">
+        #{packingQty2,jdbcType=DECIMAL},
+      </if>
+      <if test="packingQty3 != null">
+        #{packingQty3,jdbcType=DECIMAL},
+      </if>
+      <if test="packingQty4 != null">
+        #{packingQty4,jdbcType=DECIMAL},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="discountRate != null">
+        #{discountRate,jdbcType=DECIMAL},
+      </if>
+      <if test="discountAmt != null">
+        #{discountAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="discountedPrice != null">
+        #{discountedPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="standardPrice != null">
+        #{standardPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="taxRate != null">
+        #{taxRate,jdbcType=DECIMAL},
+      </if>
+      <if test="amountUnincludeTaxOc != null">
+        #{amountUnincludeTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="taxOc != null">
+        #{taxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="amountUnincludeTaxBc != null">
+        #{amountUnincludeTaxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="taxBc != null">
+        #{taxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="acceptedBusinessQty != null">
+        #{acceptedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="acceptedInventoryQty != null">
+        #{acceptedInventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="returnBusinessQty != null">
+        #{returnBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="scrapBusinessQty != null">
+        #{scrapBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueIndicator != null">
+        #{overdueIndicator,jdbcType=BIT},
+      </if>
+      <if test="inspectionStatus != null">
+        #{inspectionStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="pieces != null">
+        #{pieces,jdbcType=INTEGER},
+      </if>
+      <if test="returnedBusinessQty != null">
+        #{returnedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="receiptedBusinessQty != null">
+        #{receiptedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="receiptClose != null">
+        #{receiptClose,jdbcType=NVARCHAR},
+      </if>
+      <if test="scrapedBusinessQty != null">
+        #{scrapedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="purchaseType != null">
+        #{purchaseType,jdbcType=NVARCHAR},
+      </if>
+      <if test="inspectedQty != null">
+        #{inspectedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="spReceiptBusinessQty != null">
+        #{spReceiptBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="spReceiptInventoryQty != null">
+        #{spReceiptInventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="manufacturer != null">
+        #{manufacturer,jdbcType=NVARCHAR},
+      </if>
+      <if test="paymentPended != null">
+        #{paymentPended,jdbcType=BIT},
+      </if>
+      <if test="qualifiedBusinessQty != null">
+        #{qualifiedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="unqualifiedBusinessQty != null">
+        #{unqualifiedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="inDestroyedBusinessQty != null">
+        #{inDestroyedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="priceUnitId != null">
+        #{priceUnitId,jdbcType=CHAR},
+      </if>
+      <if test="businessUnitId != null">
+        #{businessUnitId,jdbcType=CHAR},
+      </if>
+      <if test="businessQty != null">
+        #{businessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="packingModeId != null">
+        #{packingModeId,jdbcType=CHAR},
+      </if>
+      <if test="packing1UnitId != null">
+        #{packing1UnitId,jdbcType=CHAR},
+      </if>
+      <if test="packing2UnitId != null">
+        #{packing2UnitId,jdbcType=CHAR},
+      </if>
+      <if test="packing3UnitId != null">
+        #{packing3UnitId,jdbcType=CHAR},
+      </if>
+      <if test="packing4UnitId != null">
+        #{packing4UnitId,jdbcType=CHAR},
+      </if>
+      <if test="taxId != null">
+        #{taxId,jdbcType=CHAR},
+      </if>
+      <if test="warehouseId != null">
+        #{warehouseId,jdbcType=CHAR},
+      </if>
+      <if test="operationId != null">
+        #{operationId,jdbcType=CHAR},
+      </if>
+      <if test="binId != null">
+        #{binId,jdbcType=CHAR},
+      </if>
+      <if test="itemLotId != null">
+        #{itemLotId,jdbcType=CHAR},
+      </if>
+      <if test="itemCertificationDId != null">
+        #{itemCertificationDId,jdbcType=CHAR},
+      </if>
+      <if test="moId != null">
+        #{moId,jdbcType=CHAR},
+      </if>
+      <if test="settlementPriceQty != null">
+        #{settlementPriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="settlementAmtUnTaxOc != null">
+        #{settlementAmtUnTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="settlementTaxOc != null">
+        #{settlementTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="purchaseOrderId != null">
+        #{purchaseOrderId,jdbcType=CHAR},
+      </if>
+      <if test="signType != null">
+        #{signType,jdbcType=NVARCHAR},
+      </if>
+      <if test="returnReasonId != null">
+        #{returnReasonId,jdbcType=CHAR},
+      </if>
+      <if test="suppIndemBusinessQty != null">
+        #{suppIndemBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="suppIndemPriceQty != null">
+        #{suppIndemPriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="lossBusinessQty != null">
+        #{lossBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="lossPriceQty != null">
+        #{lossPriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="shouldSettlePriceQty != null">
+        #{shouldSettlePriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="judgedQty != null">
+        #{judgedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="spApproveFlag != null">
+        #{spApproveFlag,jdbcType=BIT},
+      </if>
+      <if test="projectId != null">
+        #{projectId,jdbcType=CHAR},
+      </if>
+      <if test="deductArrivedQty != null">
+        #{deductArrivedQty,jdbcType=BIT},
+      </if>
+      <if test="snCollectedQty != null">
+        #{snCollectedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="snCollectedStatus != null">
+        #{snCollectedStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="wipDocno != null">
+        #{wipDocno,jdbcType=NVARCHAR},
+      </if>
+      <if test="budgetAdminUnitId != null">
+        #{budgetAdminUnitId,jdbcType=CHAR},
+      </if>
+      <if test="budgetGroupId != null">
+        #{budgetGroupId,jdbcType=CHAR},
+      </if>
+      <if test="budgetItemId != null">
+        #{budgetItemId,jdbcType=CHAR},
+      </if>
+      <if test="budgetId != null">
+        #{budgetId,jdbcType=CHAR},
+      </if>
+      <if test="budgetDId != null">
+        #{budgetDId,jdbcType=CHAR},
+      </if>
+      <if test="preBudgetId != null">
+        #{preBudgetId,jdbcType=CHAR},
+      </if>
+      <if test="preBudgetDId != null">
+        #{preBudgetDId,jdbcType=CHAR},
+      </if>
+      <if test="innerOrderDocSdId != null">
+        #{innerOrderDocSdId,jdbcType=CHAR},
+      </if>
+      <if test="generateSource != null">
+        #{generateSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf001 != null">
+        #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="referenceSourceIdRtk != null">
+        #{referenceSourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="referenceSourceIdRoid != null">
+        #{referenceSourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="sourceIdRtk != null">
+        #{sourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="sourceIdRoid != null">
+        #{sourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="sourceOrderRtk != null">
+        #{sourceOrderRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="sourceOrderRoid != null">
+        #{sourceOrderRoid,jdbcType=CHAR},
+      </if>
+      <if test="synergySourceIdRtk != null">
+        #{synergySourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="synergySourceIdRoid != null">
+        #{synergySourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="purchaseArrivalId != null">
+        #{purchaseArrivalId,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tb.mbg.model.PurchaseArrivalDExample" resultType="java.lang.Long">
+    select count(*) from PURCHASE_ARRIVAL_D
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update PURCHASE_ARRIVAL_D
+    <set>
+      <if test="row.purchaseArrivalDId != null">
+        PURCHASE_ARRIVAL_D_ID = #{row.purchaseArrivalDId,jdbcType=CHAR},
+      </if>
+      <if test="row.sequencenumber != null">
+        SequenceNumber = #{row.sequencenumber,jdbcType=INTEGER},
+      </if>
+      <if test="row.itemType != null">
+        ITEM_TYPE = #{row.itemType,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemId != null">
+        ITEM_ID = #{row.itemId,jdbcType=CHAR},
+      </if>
+      <if test="row.itemDescription != null">
+        ITEM_DESCRIPTION = #{row.itemDescription,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemFeatureId != null">
+        ITEM_FEATURE_ID = #{row.itemFeatureId,jdbcType=CHAR},
+      </if>
+      <if test="row.itemSpecification != null">
+        ITEM_SPECIFICATION = #{row.itemSpecification,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.packingQty != null">
+        PACKING_QTY = #{row.packingQty,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.priceQty != null">
+        PRICE_QTY = #{row.priceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.inventoryQty != null">
+        INVENTORY_QTY = #{row.inventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.secondQty != null">
+        SECOND_QTY = #{row.secondQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.packingQty1 != null">
+        PACKING_QTY1 = #{row.packingQty1,jdbcType=DECIMAL},
+      </if>
+      <if test="row.packingQty2 != null">
+        PACKING_QTY2 = #{row.packingQty2,jdbcType=DECIMAL},
+      </if>
+      <if test="row.packingQty3 != null">
+        PACKING_QTY3 = #{row.packingQty3,jdbcType=DECIMAL},
+      </if>
+      <if test="row.packingQty4 != null">
+        PACKING_QTY4 = #{row.packingQty4,jdbcType=DECIMAL},
+      </if>
+      <if test="row.price != null">
+        PRICE = #{row.price,jdbcType=DECIMAL},
+      </if>
+      <if test="row.discountRate != null">
+        DISCOUNT_RATE = #{row.discountRate,jdbcType=DECIMAL},
+      </if>
+      <if test="row.discountAmt != null">
+        DISCOUNT_AMT = #{row.discountAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="row.discountedPrice != null">
+        DISCOUNTED_PRICE = #{row.discountedPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="row.standardPrice != null">
+        STANDARD_PRICE = #{row.standardPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="row.taxRate != null">
+        TAX_RATE = #{row.taxRate,jdbcType=DECIMAL},
+      </if>
+      <if test="row.amountUnincludeTaxOc != null">
+        AMOUNT_UNINCLUDE_TAX_OC = #{row.amountUnincludeTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.taxOc != null">
+        TAX_OC = #{row.taxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.amountUnincludeTaxBc != null">
+        AMOUNT_UNINCLUDE_TAX_BC = #{row.amountUnincludeTaxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.taxBc != null">
+        TAX_BC = #{row.taxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.amount != null">
+        AMOUNT = #{row.amount,jdbcType=DECIMAL},
+      </if>
+      <if test="row.acceptedBusinessQty != null">
+        ACCEPTED_BUSINESS_QTY = #{row.acceptedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.acceptedInventoryQty != null">
+        ACCEPTED_INVENTORY_QTY = #{row.acceptedInventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.returnBusinessQty != null">
+        RETURN_BUSINESS_QTY = #{row.returnBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.scrapBusinessQty != null">
+        SCRAP_BUSINESS_QTY = #{row.scrapBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.overdueIndicator != null">
+        OVERDUE_INDICATOR = #{row.overdueIndicator,jdbcType=BIT},
+      </if>
+      <if test="row.inspectionStatus != null">
+        INSPECTION_STATUS = #{row.inspectionStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.pieces != null">
+        PIECES = #{row.pieces,jdbcType=INTEGER},
+      </if>
+      <if test="row.returnedBusinessQty != null">
+        RETURNED_BUSINESS_QTY = #{row.returnedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.receiptedBusinessQty != null">
+        RECEIPTED_BUSINESS_QTY = #{row.receiptedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.receiptClose != null">
+        RECEIPT_CLOSE = #{row.receiptClose,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.scrapedBusinessQty != null">
+        SCRAPED_BUSINESS_QTY = #{row.scrapedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.remark != null">
+        REMARK = #{row.remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.purchaseType != null">
+        PURCHASE_TYPE = #{row.purchaseType,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.inspectedQty != null">
+        INSPECTED_QTY = #{row.inspectedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.spReceiptBusinessQty != null">
+        SP_RECEIPT_BUSINESS_QTY = #{row.spReceiptBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.spReceiptInventoryQty != null">
+        SP_RECEIPT_INVENTORY_QTY = #{row.spReceiptInventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.manufacturer != null">
+        MANUFACTURER = #{row.manufacturer,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.paymentPended != null">
+        PAYMENT_PENDED = #{row.paymentPended,jdbcType=BIT},
+      </if>
+      <if test="row.qualifiedBusinessQty != null">
+        QUALIFIED_BUSINESS_QTY = #{row.qualifiedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.unqualifiedBusinessQty != null">
+        UNQUALIFIED_BUSINESS_QTY = #{row.unqualifiedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.inDestroyedBusinessQty != null">
+        IN_DESTROYED_BUSINESS_QTY = #{row.inDestroyedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.priceUnitId != null">
+        PRICE_UNIT_ID = #{row.priceUnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.businessUnitId != null">
+        BUSINESS_UNIT_ID = #{row.businessUnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.businessQty != null">
+        BUSINESS_QTY = #{row.businessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.packingModeId != null">
+        PACKING_MODE_ID = #{row.packingModeId,jdbcType=CHAR},
+      </if>
+      <if test="row.packing1UnitId != null">
+        PACKING1_UNIT_ID = #{row.packing1UnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.packing2UnitId != null">
+        PACKING2_UNIT_ID = #{row.packing2UnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.packing3UnitId != null">
+        PACKING3_UNIT_ID = #{row.packing3UnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.packing4UnitId != null">
+        PACKING4_UNIT_ID = #{row.packing4UnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.taxId != null">
+        TAX_ID = #{row.taxId,jdbcType=CHAR},
+      </if>
+      <if test="row.warehouseId != null">
+        WAREHOUSE_ID = #{row.warehouseId,jdbcType=CHAR},
+      </if>
+      <if test="row.operationId != null">
+        OPERATION_ID = #{row.operationId,jdbcType=CHAR},
+      </if>
+      <if test="row.binId != null">
+        BIN_ID = #{row.binId,jdbcType=CHAR},
+      </if>
+      <if test="row.itemLotId != null">
+        ITEM_LOT_ID = #{row.itemLotId,jdbcType=CHAR},
+      </if>
+      <if test="row.itemCertificationDId != null">
+        ITEM_CERTIFICATION_D_ID = #{row.itemCertificationDId,jdbcType=CHAR},
+      </if>
+      <if test="row.moId != null">
+        MO_ID = #{row.moId,jdbcType=CHAR},
+      </if>
+      <if test="row.settlementPriceQty != null">
+        SETTLEMENT_PRICE_QTY = #{row.settlementPriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.settlementAmtUnTaxOc != null">
+        SETTLEMENT_AMT_UN_TAX_OC = #{row.settlementAmtUnTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.settlementTaxOc != null">
+        SETTLEMENT_TAX_OC = #{row.settlementTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.purchaseOrderId != null">
+        PURCHASE_ORDER_ID = #{row.purchaseOrderId,jdbcType=CHAR},
+      </if>
+      <if test="row.signType != null">
+        SIGN_TYPE = #{row.signType,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.returnReasonId != null">
+        RETURN_REASON_ID = #{row.returnReasonId,jdbcType=CHAR},
+      </if>
+      <if test="row.suppIndemBusinessQty != null">
+        SUPP_INDEM_BUSINESS_QTY = #{row.suppIndemBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.suppIndemPriceQty != null">
+        SUPP_INDEM_PRICE_QTY = #{row.suppIndemPriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.lossBusinessQty != null">
+        LOSS_BUSINESS_QTY = #{row.lossBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.lossPriceQty != null">
+        LOSS_PRICE_QTY = #{row.lossPriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.shouldSettlePriceQty != null">
+        SHOULD_SETTLE_PRICE_QTY = #{row.shouldSettlePriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.judgedQty != null">
+        JUDGED_QTY = #{row.judgedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.spApproveFlag != null">
+        SP_APPROVE_FLAG = #{row.spApproveFlag,jdbcType=BIT},
+      </if>
+      <if test="row.projectId != null">
+        PROJECT_ID = #{row.projectId,jdbcType=CHAR},
+      </if>
+      <if test="row.deductArrivedQty != null">
+        DEDUCT_ARRIVED_QTY = #{row.deductArrivedQty,jdbcType=BIT},
+      </if>
+      <if test="row.snCollectedQty != null">
+        SN_COLLECTED_QTY = #{row.snCollectedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.snCollectedStatus != null">
+        SN_COLLECTED_STATUS = #{row.snCollectedStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.wipDocno != null">
+        WIP_DOCNO = #{row.wipDocno,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.budgetAdminUnitId != null">
+        BUDGET_ADMIN_UNIT_ID = #{row.budgetAdminUnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.budgetGroupId != null">
+        BUDGET_GROUP_ID = #{row.budgetGroupId,jdbcType=CHAR},
+      </if>
+      <if test="row.budgetItemId != null">
+        BUDGET_ITEM_ID = #{row.budgetItemId,jdbcType=CHAR},
+      </if>
+      <if test="row.budgetId != null">
+        BUDGET_ID = #{row.budgetId,jdbcType=CHAR},
+      </if>
+      <if test="row.budgetDId != null">
+        BUDGET_D_ID = #{row.budgetDId,jdbcType=CHAR},
+      </if>
+      <if test="row.preBudgetId != null">
+        PRE_BUDGET_ID = #{row.preBudgetId,jdbcType=CHAR},
+      </if>
+      <if test="row.preBudgetDId != null">
+        PRE_BUDGET_D_ID = #{row.preBudgetDId,jdbcType=CHAR},
+      </if>
+      <if test="row.innerOrderDocSdId != null">
+        INNER_ORDER_DOC_SD_ID = #{row.innerOrderDocSdId,jdbcType=CHAR},
+      </if>
+      <if test="row.generateSource != null">
+        GENERATE_SOURCE = #{row.generateSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf001 != null">
+        UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf002 != null">
+        UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf003 != null">
+        UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf011 != null">
+        UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf012 != null">
+        UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf013 != null">
+        UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf021 != null">
+        UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf022 != null">
+        UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf023 != null">
+        UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf024 != null">
+        UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf025 != null">
+        UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf026 != null">
+        UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf041 != null">
+        UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf042 != null">
+        UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf051 != null">
+        UDF051 = #{row.udf051,jdbcType=CHAR},
+      </if>
+      <if test="row.udf052 != null">
+        UDF052 = #{row.udf052,jdbcType=CHAR},
+      </if>
+      <if test="row.udf053 != null">
+        UDF053 = #{row.udf053,jdbcType=CHAR},
+      </if>
+      <if test="row.udf054 != null">
+        UDF054 = #{row.udf054,jdbcType=CHAR},
+      </if>
+      <if test="row.approvestatus != null">
+        ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.approvedate != null">
+        ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.approveby != null">
+        ApproveBy = #{row.approveby,jdbcType=CHAR},
+      </if>
+      <if test="row.createdate != null">
+        CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.lastmodifieddate != null">
+        LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.modifieddate != null">
+        ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.createby != null">
+        CreateBy = #{row.createby,jdbcType=CHAR},
+      </if>
+      <if test="row.lastmodifiedby != null">
+        LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.modifiedby != null">
+        ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.referenceSourceIdRtk != null">
+        REFERENCE_SOURCE_ID_RTK = #{row.referenceSourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.referenceSourceIdRoid != null">
+        REFERENCE_SOURCE_ID_ROid = #{row.referenceSourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.sourceIdRtk != null">
+        SOURCE_ID_RTK = #{row.sourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.sourceIdRoid != null">
+        SOURCE_ID_ROid = #{row.sourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.sourceOrderRtk != null">
+        SOURCE_ORDER_RTK = #{row.sourceOrderRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.sourceOrderRoid != null">
+        SOURCE_ORDER_ROid = #{row.sourceOrderRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.synergySourceIdRtk != null">
+        SYNERGY_SOURCE_ID_RTK = #{row.synergySourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.synergySourceIdRoid != null">
+        SYNERGY_SOURCE_ID_ROid = #{row.synergySourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.purchaseArrivalId != null">
+        PURCHASE_ARRIVAL_ID = #{row.purchaseArrivalId,jdbcType=CHAR},
+      </if>
+      <if test="row.version != null">
+        Version = #{row.version,jdbcType=BINARY},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update PURCHASE_ARRIVAL_D
+    set PURCHASE_ARRIVAL_D_ID = #{row.purchaseArrivalDId,jdbcType=CHAR},
+      SequenceNumber = #{row.sequencenumber,jdbcType=INTEGER},
+      ITEM_TYPE = #{row.itemType,jdbcType=NVARCHAR},
+      ITEM_ID = #{row.itemId,jdbcType=CHAR},
+      ITEM_DESCRIPTION = #{row.itemDescription,jdbcType=NVARCHAR},
+      ITEM_FEATURE_ID = #{row.itemFeatureId,jdbcType=CHAR},
+      ITEM_SPECIFICATION = #{row.itemSpecification,jdbcType=NVARCHAR},
+      PACKING_QTY = #{row.packingQty,jdbcType=NVARCHAR},
+      PRICE_QTY = #{row.priceQty,jdbcType=DECIMAL},
+      INVENTORY_QTY = #{row.inventoryQty,jdbcType=DECIMAL},
+      SECOND_QTY = #{row.secondQty,jdbcType=DECIMAL},
+      PACKING_QTY1 = #{row.packingQty1,jdbcType=DECIMAL},
+      PACKING_QTY2 = #{row.packingQty2,jdbcType=DECIMAL},
+      PACKING_QTY3 = #{row.packingQty3,jdbcType=DECIMAL},
+      PACKING_QTY4 = #{row.packingQty4,jdbcType=DECIMAL},
+      PRICE = #{row.price,jdbcType=DECIMAL},
+      DISCOUNT_RATE = #{row.discountRate,jdbcType=DECIMAL},
+      DISCOUNT_AMT = #{row.discountAmt,jdbcType=DECIMAL},
+      DISCOUNTED_PRICE = #{row.discountedPrice,jdbcType=DECIMAL},
+      STANDARD_PRICE = #{row.standardPrice,jdbcType=DECIMAL},
+      TAX_RATE = #{row.taxRate,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_OC = #{row.amountUnincludeTaxOc,jdbcType=DECIMAL},
+      TAX_OC = #{row.taxOc,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_BC = #{row.amountUnincludeTaxBc,jdbcType=DECIMAL},
+      TAX_BC = #{row.taxBc,jdbcType=DECIMAL},
+      AMOUNT = #{row.amount,jdbcType=DECIMAL},
+      ACCEPTED_BUSINESS_QTY = #{row.acceptedBusinessQty,jdbcType=DECIMAL},
+      ACCEPTED_INVENTORY_QTY = #{row.acceptedInventoryQty,jdbcType=DECIMAL},
+      RETURN_BUSINESS_QTY = #{row.returnBusinessQty,jdbcType=DECIMAL},
+      SCRAP_BUSINESS_QTY = #{row.scrapBusinessQty,jdbcType=DECIMAL},
+      OVERDUE_INDICATOR = #{row.overdueIndicator,jdbcType=BIT},
+      INSPECTION_STATUS = #{row.inspectionStatus,jdbcType=NVARCHAR},
+      PIECES = #{row.pieces,jdbcType=INTEGER},
+      RETURNED_BUSINESS_QTY = #{row.returnedBusinessQty,jdbcType=DECIMAL},
+      RECEIPTED_BUSINESS_QTY = #{row.receiptedBusinessQty,jdbcType=DECIMAL},
+      RECEIPT_CLOSE = #{row.receiptClose,jdbcType=NVARCHAR},
+      SCRAPED_BUSINESS_QTY = #{row.scrapedBusinessQty,jdbcType=DECIMAL},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      PURCHASE_TYPE = #{row.purchaseType,jdbcType=NVARCHAR},
+      INSPECTED_QTY = #{row.inspectedQty,jdbcType=DECIMAL},
+      SP_RECEIPT_BUSINESS_QTY = #{row.spReceiptBusinessQty,jdbcType=DECIMAL},
+      SP_RECEIPT_INVENTORY_QTY = #{row.spReceiptInventoryQty,jdbcType=DECIMAL},
+      MANUFACTURER = #{row.manufacturer,jdbcType=NVARCHAR},
+      PAYMENT_PENDED = #{row.paymentPended,jdbcType=BIT},
+      QUALIFIED_BUSINESS_QTY = #{row.qualifiedBusinessQty,jdbcType=DECIMAL},
+      UNQUALIFIED_BUSINESS_QTY = #{row.unqualifiedBusinessQty,jdbcType=DECIMAL},
+      IN_DESTROYED_BUSINESS_QTY = #{row.inDestroyedBusinessQty,jdbcType=DECIMAL},
+      PRICE_UNIT_ID = #{row.priceUnitId,jdbcType=CHAR},
+      BUSINESS_UNIT_ID = #{row.businessUnitId,jdbcType=CHAR},
+      BUSINESS_QTY = #{row.businessQty,jdbcType=DECIMAL},
+      PACKING_MODE_ID = #{row.packingModeId,jdbcType=CHAR},
+      PACKING1_UNIT_ID = #{row.packing1UnitId,jdbcType=CHAR},
+      PACKING2_UNIT_ID = #{row.packing2UnitId,jdbcType=CHAR},
+      PACKING3_UNIT_ID = #{row.packing3UnitId,jdbcType=CHAR},
+      PACKING4_UNIT_ID = #{row.packing4UnitId,jdbcType=CHAR},
+      TAX_ID = #{row.taxId,jdbcType=CHAR},
+      WAREHOUSE_ID = #{row.warehouseId,jdbcType=CHAR},
+      OPERATION_ID = #{row.operationId,jdbcType=CHAR},
+      BIN_ID = #{row.binId,jdbcType=CHAR},
+      ITEM_LOT_ID = #{row.itemLotId,jdbcType=CHAR},
+      ITEM_CERTIFICATION_D_ID = #{row.itemCertificationDId,jdbcType=CHAR},
+      MO_ID = #{row.moId,jdbcType=CHAR},
+      SETTLEMENT_PRICE_QTY = #{row.settlementPriceQty,jdbcType=DECIMAL},
+      SETTLEMENT_AMT_UN_TAX_OC = #{row.settlementAmtUnTaxOc,jdbcType=DECIMAL},
+      SETTLEMENT_TAX_OC = #{row.settlementTaxOc,jdbcType=DECIMAL},
+      PURCHASE_ORDER_ID = #{row.purchaseOrderId,jdbcType=CHAR},
+      SIGN_TYPE = #{row.signType,jdbcType=NVARCHAR},
+      RETURN_REASON_ID = #{row.returnReasonId,jdbcType=CHAR},
+      SUPP_INDEM_BUSINESS_QTY = #{row.suppIndemBusinessQty,jdbcType=DECIMAL},
+      SUPP_INDEM_PRICE_QTY = #{row.suppIndemPriceQty,jdbcType=DECIMAL},
+      LOSS_BUSINESS_QTY = #{row.lossBusinessQty,jdbcType=DECIMAL},
+      LOSS_PRICE_QTY = #{row.lossPriceQty,jdbcType=DECIMAL},
+      SHOULD_SETTLE_PRICE_QTY = #{row.shouldSettlePriceQty,jdbcType=DECIMAL},
+      JUDGED_QTY = #{row.judgedQty,jdbcType=DECIMAL},
+      SP_APPROVE_FLAG = #{row.spApproveFlag,jdbcType=BIT},
+      PROJECT_ID = #{row.projectId,jdbcType=CHAR},
+      DEDUCT_ARRIVED_QTY = #{row.deductArrivedQty,jdbcType=BIT},
+      SN_COLLECTED_QTY = #{row.snCollectedQty,jdbcType=DECIMAL},
+      SN_COLLECTED_STATUS = #{row.snCollectedStatus,jdbcType=NVARCHAR},
+      WIP_DOCNO = #{row.wipDocno,jdbcType=NVARCHAR},
+      BUDGET_ADMIN_UNIT_ID = #{row.budgetAdminUnitId,jdbcType=CHAR},
+      BUDGET_GROUP_ID = #{row.budgetGroupId,jdbcType=CHAR},
+      BUDGET_ITEM_ID = #{row.budgetItemId,jdbcType=CHAR},
+      BUDGET_ID = #{row.budgetId,jdbcType=CHAR},
+      BUDGET_D_ID = #{row.budgetDId,jdbcType=CHAR},
+      PRE_BUDGET_ID = #{row.preBudgetId,jdbcType=CHAR},
+      PRE_BUDGET_D_ID = #{row.preBudgetDId,jdbcType=CHAR},
+      INNER_ORDER_DOC_SD_ID = #{row.innerOrderDocSdId,jdbcType=CHAR},
+      GENERATE_SOURCE = #{row.generateSource,jdbcType=NVARCHAR},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      REFERENCE_SOURCE_ID_RTK = #{row.referenceSourceIdRtk,jdbcType=NVARCHAR},
+      REFERENCE_SOURCE_ID_ROid = #{row.referenceSourceIdRoid,jdbcType=CHAR},
+      SOURCE_ID_RTK = #{row.sourceIdRtk,jdbcType=NVARCHAR},
+      SOURCE_ID_ROid = #{row.sourceIdRoid,jdbcType=CHAR},
+      SOURCE_ORDER_RTK = #{row.sourceOrderRtk,jdbcType=NVARCHAR},
+      SOURCE_ORDER_ROid = #{row.sourceOrderRoid,jdbcType=CHAR},
+      SYNERGY_SOURCE_ID_RTK = #{row.synergySourceIdRtk,jdbcType=NVARCHAR},
+      SYNERGY_SOURCE_ID_ROid = #{row.synergySourceIdRoid,jdbcType=CHAR},
+      PURCHASE_ARRIVAL_ID = #{row.purchaseArrivalId,jdbcType=CHAR},
+      Version = #{row.version,jdbcType=BINARY}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update PURCHASE_ARRIVAL_D
+    set PURCHASE_ARRIVAL_D_ID = #{row.purchaseArrivalDId,jdbcType=CHAR},
+      SequenceNumber = #{row.sequencenumber,jdbcType=INTEGER},
+      ITEM_TYPE = #{row.itemType,jdbcType=NVARCHAR},
+      ITEM_ID = #{row.itemId,jdbcType=CHAR},
+      ITEM_DESCRIPTION = #{row.itemDescription,jdbcType=NVARCHAR},
+      ITEM_FEATURE_ID = #{row.itemFeatureId,jdbcType=CHAR},
+      ITEM_SPECIFICATION = #{row.itemSpecification,jdbcType=NVARCHAR},
+      PACKING_QTY = #{row.packingQty,jdbcType=NVARCHAR},
+      PRICE_QTY = #{row.priceQty,jdbcType=DECIMAL},
+      INVENTORY_QTY = #{row.inventoryQty,jdbcType=DECIMAL},
+      SECOND_QTY = #{row.secondQty,jdbcType=DECIMAL},
+      PACKING_QTY1 = #{row.packingQty1,jdbcType=DECIMAL},
+      PACKING_QTY2 = #{row.packingQty2,jdbcType=DECIMAL},
+      PACKING_QTY3 = #{row.packingQty3,jdbcType=DECIMAL},
+      PACKING_QTY4 = #{row.packingQty4,jdbcType=DECIMAL},
+      PRICE = #{row.price,jdbcType=DECIMAL},
+      DISCOUNT_RATE = #{row.discountRate,jdbcType=DECIMAL},
+      DISCOUNT_AMT = #{row.discountAmt,jdbcType=DECIMAL},
+      DISCOUNTED_PRICE = #{row.discountedPrice,jdbcType=DECIMAL},
+      STANDARD_PRICE = #{row.standardPrice,jdbcType=DECIMAL},
+      TAX_RATE = #{row.taxRate,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_OC = #{row.amountUnincludeTaxOc,jdbcType=DECIMAL},
+      TAX_OC = #{row.taxOc,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_BC = #{row.amountUnincludeTaxBc,jdbcType=DECIMAL},
+      TAX_BC = #{row.taxBc,jdbcType=DECIMAL},
+      AMOUNT = #{row.amount,jdbcType=DECIMAL},
+      ACCEPTED_BUSINESS_QTY = #{row.acceptedBusinessQty,jdbcType=DECIMAL},
+      ACCEPTED_INVENTORY_QTY = #{row.acceptedInventoryQty,jdbcType=DECIMAL},
+      RETURN_BUSINESS_QTY = #{row.returnBusinessQty,jdbcType=DECIMAL},
+      SCRAP_BUSINESS_QTY = #{row.scrapBusinessQty,jdbcType=DECIMAL},
+      OVERDUE_INDICATOR = #{row.overdueIndicator,jdbcType=BIT},
+      INSPECTION_STATUS = #{row.inspectionStatus,jdbcType=NVARCHAR},
+      PIECES = #{row.pieces,jdbcType=INTEGER},
+      RETURNED_BUSINESS_QTY = #{row.returnedBusinessQty,jdbcType=DECIMAL},
+      RECEIPTED_BUSINESS_QTY = #{row.receiptedBusinessQty,jdbcType=DECIMAL},
+      RECEIPT_CLOSE = #{row.receiptClose,jdbcType=NVARCHAR},
+      SCRAPED_BUSINESS_QTY = #{row.scrapedBusinessQty,jdbcType=DECIMAL},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      PURCHASE_TYPE = #{row.purchaseType,jdbcType=NVARCHAR},
+      INSPECTED_QTY = #{row.inspectedQty,jdbcType=DECIMAL},
+      SP_RECEIPT_BUSINESS_QTY = #{row.spReceiptBusinessQty,jdbcType=DECIMAL},
+      SP_RECEIPT_INVENTORY_QTY = #{row.spReceiptInventoryQty,jdbcType=DECIMAL},
+      MANUFACTURER = #{row.manufacturer,jdbcType=NVARCHAR},
+      PAYMENT_PENDED = #{row.paymentPended,jdbcType=BIT},
+      QUALIFIED_BUSINESS_QTY = #{row.qualifiedBusinessQty,jdbcType=DECIMAL},
+      UNQUALIFIED_BUSINESS_QTY = #{row.unqualifiedBusinessQty,jdbcType=DECIMAL},
+      IN_DESTROYED_BUSINESS_QTY = #{row.inDestroyedBusinessQty,jdbcType=DECIMAL},
+      PRICE_UNIT_ID = #{row.priceUnitId,jdbcType=CHAR},
+      BUSINESS_UNIT_ID = #{row.businessUnitId,jdbcType=CHAR},
+      BUSINESS_QTY = #{row.businessQty,jdbcType=DECIMAL},
+      PACKING_MODE_ID = #{row.packingModeId,jdbcType=CHAR},
+      PACKING1_UNIT_ID = #{row.packing1UnitId,jdbcType=CHAR},
+      PACKING2_UNIT_ID = #{row.packing2UnitId,jdbcType=CHAR},
+      PACKING3_UNIT_ID = #{row.packing3UnitId,jdbcType=CHAR},
+      PACKING4_UNIT_ID = #{row.packing4UnitId,jdbcType=CHAR},
+      TAX_ID = #{row.taxId,jdbcType=CHAR},
+      WAREHOUSE_ID = #{row.warehouseId,jdbcType=CHAR},
+      OPERATION_ID = #{row.operationId,jdbcType=CHAR},
+      BIN_ID = #{row.binId,jdbcType=CHAR},
+      ITEM_LOT_ID = #{row.itemLotId,jdbcType=CHAR},
+      ITEM_CERTIFICATION_D_ID = #{row.itemCertificationDId,jdbcType=CHAR},
+      MO_ID = #{row.moId,jdbcType=CHAR},
+      SETTLEMENT_PRICE_QTY = #{row.settlementPriceQty,jdbcType=DECIMAL},
+      SETTLEMENT_AMT_UN_TAX_OC = #{row.settlementAmtUnTaxOc,jdbcType=DECIMAL},
+      SETTLEMENT_TAX_OC = #{row.settlementTaxOc,jdbcType=DECIMAL},
+      PURCHASE_ORDER_ID = #{row.purchaseOrderId,jdbcType=CHAR},
+      SIGN_TYPE = #{row.signType,jdbcType=NVARCHAR},
+      RETURN_REASON_ID = #{row.returnReasonId,jdbcType=CHAR},
+      SUPP_INDEM_BUSINESS_QTY = #{row.suppIndemBusinessQty,jdbcType=DECIMAL},
+      SUPP_INDEM_PRICE_QTY = #{row.suppIndemPriceQty,jdbcType=DECIMAL},
+      LOSS_BUSINESS_QTY = #{row.lossBusinessQty,jdbcType=DECIMAL},
+      LOSS_PRICE_QTY = #{row.lossPriceQty,jdbcType=DECIMAL},
+      SHOULD_SETTLE_PRICE_QTY = #{row.shouldSettlePriceQty,jdbcType=DECIMAL},
+      JUDGED_QTY = #{row.judgedQty,jdbcType=DECIMAL},
+      SP_APPROVE_FLAG = #{row.spApproveFlag,jdbcType=BIT},
+      PROJECT_ID = #{row.projectId,jdbcType=CHAR},
+      DEDUCT_ARRIVED_QTY = #{row.deductArrivedQty,jdbcType=BIT},
+      SN_COLLECTED_QTY = #{row.snCollectedQty,jdbcType=DECIMAL},
+      SN_COLLECTED_STATUS = #{row.snCollectedStatus,jdbcType=NVARCHAR},
+      WIP_DOCNO = #{row.wipDocno,jdbcType=NVARCHAR},
+      BUDGET_ADMIN_UNIT_ID = #{row.budgetAdminUnitId,jdbcType=CHAR},
+      BUDGET_GROUP_ID = #{row.budgetGroupId,jdbcType=CHAR},
+      BUDGET_ITEM_ID = #{row.budgetItemId,jdbcType=CHAR},
+      BUDGET_ID = #{row.budgetId,jdbcType=CHAR},
+      BUDGET_D_ID = #{row.budgetDId,jdbcType=CHAR},
+      PRE_BUDGET_ID = #{row.preBudgetId,jdbcType=CHAR},
+      PRE_BUDGET_D_ID = #{row.preBudgetDId,jdbcType=CHAR},
+      INNER_ORDER_DOC_SD_ID = #{row.innerOrderDocSdId,jdbcType=CHAR},
+      GENERATE_SOURCE = #{row.generateSource,jdbcType=NVARCHAR},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      REFERENCE_SOURCE_ID_RTK = #{row.referenceSourceIdRtk,jdbcType=NVARCHAR},
+      REFERENCE_SOURCE_ID_ROid = #{row.referenceSourceIdRoid,jdbcType=CHAR},
+      SOURCE_ID_RTK = #{row.sourceIdRtk,jdbcType=NVARCHAR},
+      SOURCE_ID_ROid = #{row.sourceIdRoid,jdbcType=CHAR},
+      SOURCE_ORDER_RTK = #{row.sourceOrderRtk,jdbcType=NVARCHAR},
+      SOURCE_ORDER_ROid = #{row.sourceOrderRoid,jdbcType=CHAR},
+      SYNERGY_SOURCE_ID_RTK = #{row.synergySourceIdRtk,jdbcType=NVARCHAR},
+      SYNERGY_SOURCE_ID_ROid = #{row.synergySourceIdRoid,jdbcType=CHAR},
+      PURCHASE_ARRIVAL_ID = #{row.purchaseArrivalId,jdbcType=CHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tb.mbg.model.PurchaseArrivalD">
+    update PURCHASE_ARRIVAL_D
+    <set>
+      <if test="sequencenumber != null">
+        SequenceNumber = #{sequencenumber,jdbcType=INTEGER},
+      </if>
+      <if test="itemType != null">
+        ITEM_TYPE = #{itemType,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemId != null">
+        ITEM_ID = #{itemId,jdbcType=CHAR},
+      </if>
+      <if test="itemDescription != null">
+        ITEM_DESCRIPTION = #{itemDescription,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemFeatureId != null">
+        ITEM_FEATURE_ID = #{itemFeatureId,jdbcType=CHAR},
+      </if>
+      <if test="itemSpecification != null">
+        ITEM_SPECIFICATION = #{itemSpecification,jdbcType=NVARCHAR},
+      </if>
+      <if test="packingQty != null">
+        PACKING_QTY = #{packingQty,jdbcType=NVARCHAR},
+      </if>
+      <if test="priceQty != null">
+        PRICE_QTY = #{priceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="inventoryQty != null">
+        INVENTORY_QTY = #{inventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="secondQty != null">
+        SECOND_QTY = #{secondQty,jdbcType=DECIMAL},
+      </if>
+      <if test="packingQty1 != null">
+        PACKING_QTY1 = #{packingQty1,jdbcType=DECIMAL},
+      </if>
+      <if test="packingQty2 != null">
+        PACKING_QTY2 = #{packingQty2,jdbcType=DECIMAL},
+      </if>
+      <if test="packingQty3 != null">
+        PACKING_QTY3 = #{packingQty3,jdbcType=DECIMAL},
+      </if>
+      <if test="packingQty4 != null">
+        PACKING_QTY4 = #{packingQty4,jdbcType=DECIMAL},
+      </if>
+      <if test="price != null">
+        PRICE = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="discountRate != null">
+        DISCOUNT_RATE = #{discountRate,jdbcType=DECIMAL},
+      </if>
+      <if test="discountAmt != null">
+        DISCOUNT_AMT = #{discountAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="discountedPrice != null">
+        DISCOUNTED_PRICE = #{discountedPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="standardPrice != null">
+        STANDARD_PRICE = #{standardPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="taxRate != null">
+        TAX_RATE = #{taxRate,jdbcType=DECIMAL},
+      </if>
+      <if test="amountUnincludeTaxOc != null">
+        AMOUNT_UNINCLUDE_TAX_OC = #{amountUnincludeTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="taxOc != null">
+        TAX_OC = #{taxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="amountUnincludeTaxBc != null">
+        AMOUNT_UNINCLUDE_TAX_BC = #{amountUnincludeTaxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="taxBc != null">
+        TAX_BC = #{taxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="amount != null">
+        AMOUNT = #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="acceptedBusinessQty != null">
+        ACCEPTED_BUSINESS_QTY = #{acceptedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="acceptedInventoryQty != null">
+        ACCEPTED_INVENTORY_QTY = #{acceptedInventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="returnBusinessQty != null">
+        RETURN_BUSINESS_QTY = #{returnBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="scrapBusinessQty != null">
+        SCRAP_BUSINESS_QTY = #{scrapBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="overdueIndicator != null">
+        OVERDUE_INDICATOR = #{overdueIndicator,jdbcType=BIT},
+      </if>
+      <if test="inspectionStatus != null">
+        INSPECTION_STATUS = #{inspectionStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="pieces != null">
+        PIECES = #{pieces,jdbcType=INTEGER},
+      </if>
+      <if test="returnedBusinessQty != null">
+        RETURNED_BUSINESS_QTY = #{returnedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="receiptedBusinessQty != null">
+        RECEIPTED_BUSINESS_QTY = #{receiptedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="receiptClose != null">
+        RECEIPT_CLOSE = #{receiptClose,jdbcType=NVARCHAR},
+      </if>
+      <if test="scrapedBusinessQty != null">
+        SCRAPED_BUSINESS_QTY = #{scrapedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="purchaseType != null">
+        PURCHASE_TYPE = #{purchaseType,jdbcType=NVARCHAR},
+      </if>
+      <if test="inspectedQty != null">
+        INSPECTED_QTY = #{inspectedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="spReceiptBusinessQty != null">
+        SP_RECEIPT_BUSINESS_QTY = #{spReceiptBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="spReceiptInventoryQty != null">
+        SP_RECEIPT_INVENTORY_QTY = #{spReceiptInventoryQty,jdbcType=DECIMAL},
+      </if>
+      <if test="manufacturer != null">
+        MANUFACTURER = #{manufacturer,jdbcType=NVARCHAR},
+      </if>
+      <if test="paymentPended != null">
+        PAYMENT_PENDED = #{paymentPended,jdbcType=BIT},
+      </if>
+      <if test="qualifiedBusinessQty != null">
+        QUALIFIED_BUSINESS_QTY = #{qualifiedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="unqualifiedBusinessQty != null">
+        UNQUALIFIED_BUSINESS_QTY = #{unqualifiedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="inDestroyedBusinessQty != null">
+        IN_DESTROYED_BUSINESS_QTY = #{inDestroyedBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="priceUnitId != null">
+        PRICE_UNIT_ID = #{priceUnitId,jdbcType=CHAR},
+      </if>
+      <if test="businessUnitId != null">
+        BUSINESS_UNIT_ID = #{businessUnitId,jdbcType=CHAR},
+      </if>
+      <if test="businessQty != null">
+        BUSINESS_QTY = #{businessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="packingModeId != null">
+        PACKING_MODE_ID = #{packingModeId,jdbcType=CHAR},
+      </if>
+      <if test="packing1UnitId != null">
+        PACKING1_UNIT_ID = #{packing1UnitId,jdbcType=CHAR},
+      </if>
+      <if test="packing2UnitId != null">
+        PACKING2_UNIT_ID = #{packing2UnitId,jdbcType=CHAR},
+      </if>
+      <if test="packing3UnitId != null">
+        PACKING3_UNIT_ID = #{packing3UnitId,jdbcType=CHAR},
+      </if>
+      <if test="packing4UnitId != null">
+        PACKING4_UNIT_ID = #{packing4UnitId,jdbcType=CHAR},
+      </if>
+      <if test="taxId != null">
+        TAX_ID = #{taxId,jdbcType=CHAR},
+      </if>
+      <if test="warehouseId != null">
+        WAREHOUSE_ID = #{warehouseId,jdbcType=CHAR},
+      </if>
+      <if test="operationId != null">
+        OPERATION_ID = #{operationId,jdbcType=CHAR},
+      </if>
+      <if test="binId != null">
+        BIN_ID = #{binId,jdbcType=CHAR},
+      </if>
+      <if test="itemLotId != null">
+        ITEM_LOT_ID = #{itemLotId,jdbcType=CHAR},
+      </if>
+      <if test="itemCertificationDId != null">
+        ITEM_CERTIFICATION_D_ID = #{itemCertificationDId,jdbcType=CHAR},
+      </if>
+      <if test="moId != null">
+        MO_ID = #{moId,jdbcType=CHAR},
+      </if>
+      <if test="settlementPriceQty != null">
+        SETTLEMENT_PRICE_QTY = #{settlementPriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="settlementAmtUnTaxOc != null">
+        SETTLEMENT_AMT_UN_TAX_OC = #{settlementAmtUnTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="settlementTaxOc != null">
+        SETTLEMENT_TAX_OC = #{settlementTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="purchaseOrderId != null">
+        PURCHASE_ORDER_ID = #{purchaseOrderId,jdbcType=CHAR},
+      </if>
+      <if test="signType != null">
+        SIGN_TYPE = #{signType,jdbcType=NVARCHAR},
+      </if>
+      <if test="returnReasonId != null">
+        RETURN_REASON_ID = #{returnReasonId,jdbcType=CHAR},
+      </if>
+      <if test="suppIndemBusinessQty != null">
+        SUPP_INDEM_BUSINESS_QTY = #{suppIndemBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="suppIndemPriceQty != null">
+        SUPP_INDEM_PRICE_QTY = #{suppIndemPriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="lossBusinessQty != null">
+        LOSS_BUSINESS_QTY = #{lossBusinessQty,jdbcType=DECIMAL},
+      </if>
+      <if test="lossPriceQty != null">
+        LOSS_PRICE_QTY = #{lossPriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="shouldSettlePriceQty != null">
+        SHOULD_SETTLE_PRICE_QTY = #{shouldSettlePriceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="judgedQty != null">
+        JUDGED_QTY = #{judgedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="spApproveFlag != null">
+        SP_APPROVE_FLAG = #{spApproveFlag,jdbcType=BIT},
+      </if>
+      <if test="projectId != null">
+        PROJECT_ID = #{projectId,jdbcType=CHAR},
+      </if>
+      <if test="deductArrivedQty != null">
+        DEDUCT_ARRIVED_QTY = #{deductArrivedQty,jdbcType=BIT},
+      </if>
+      <if test="snCollectedQty != null">
+        SN_COLLECTED_QTY = #{snCollectedQty,jdbcType=DECIMAL},
+      </if>
+      <if test="snCollectedStatus != null">
+        SN_COLLECTED_STATUS = #{snCollectedStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="wipDocno != null">
+        WIP_DOCNO = #{wipDocno,jdbcType=NVARCHAR},
+      </if>
+      <if test="budgetAdminUnitId != null">
+        BUDGET_ADMIN_UNIT_ID = #{budgetAdminUnitId,jdbcType=CHAR},
+      </if>
+      <if test="budgetGroupId != null">
+        BUDGET_GROUP_ID = #{budgetGroupId,jdbcType=CHAR},
+      </if>
+      <if test="budgetItemId != null">
+        BUDGET_ITEM_ID = #{budgetItemId,jdbcType=CHAR},
+      </if>
+      <if test="budgetId != null">
+        BUDGET_ID = #{budgetId,jdbcType=CHAR},
+      </if>
+      <if test="budgetDId != null">
+        BUDGET_D_ID = #{budgetDId,jdbcType=CHAR},
+      </if>
+      <if test="preBudgetId != null">
+        PRE_BUDGET_ID = #{preBudgetId,jdbcType=CHAR},
+      </if>
+      <if test="preBudgetDId != null">
+        PRE_BUDGET_D_ID = #{preBudgetDId,jdbcType=CHAR},
+      </if>
+      <if test="innerOrderDocSdId != null">
+        INNER_ORDER_DOC_SD_ID = #{innerOrderDocSdId,jdbcType=CHAR},
+      </if>
+      <if test="generateSource != null">
+        GENERATE_SOURCE = #{generateSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf001 != null">
+        UDF001 = #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        UDF002 = #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        UDF003 = #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        UDF011 = #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        UDF012 = #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        UDF013 = #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        UDF021 = #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        UDF022 = #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        UDF023 = #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        UDF024 = #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        UDF025 = #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        UDF026 = #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        UDF051 = #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        UDF052 = #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        UDF053 = #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        UDF054 = #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        ApproveBy = #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        CreateBy = #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="referenceSourceIdRtk != null">
+        REFERENCE_SOURCE_ID_RTK = #{referenceSourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="referenceSourceIdRoid != null">
+        REFERENCE_SOURCE_ID_ROid = #{referenceSourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="sourceIdRtk != null">
+        SOURCE_ID_RTK = #{sourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="sourceIdRoid != null">
+        SOURCE_ID_ROid = #{sourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="sourceOrderRtk != null">
+        SOURCE_ORDER_RTK = #{sourceOrderRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="sourceOrderRoid != null">
+        SOURCE_ORDER_ROid = #{sourceOrderRoid,jdbcType=CHAR},
+      </if>
+      <if test="synergySourceIdRtk != null">
+        SYNERGY_SOURCE_ID_RTK = #{synergySourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="synergySourceIdRoid != null">
+        SYNERGY_SOURCE_ID_ROid = #{synergySourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="purchaseArrivalId != null">
+        PURCHASE_ARRIVAL_ID = #{purchaseArrivalId,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        Version = #{version,jdbcType=BINARY},
+      </if>
+    </set>
+    where PURCHASE_ARRIVAL_D_ID = #{purchaseArrivalDId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tb.mbg.model.PurchaseArrivalD">
+    update PURCHASE_ARRIVAL_D
+    set SequenceNumber = #{sequencenumber,jdbcType=INTEGER},
+      ITEM_TYPE = #{itemType,jdbcType=NVARCHAR},
+      ITEM_ID = #{itemId,jdbcType=CHAR},
+      ITEM_DESCRIPTION = #{itemDescription,jdbcType=NVARCHAR},
+      ITEM_FEATURE_ID = #{itemFeatureId,jdbcType=CHAR},
+      ITEM_SPECIFICATION = #{itemSpecification,jdbcType=NVARCHAR},
+      PACKING_QTY = #{packingQty,jdbcType=NVARCHAR},
+      PRICE_QTY = #{priceQty,jdbcType=DECIMAL},
+      INVENTORY_QTY = #{inventoryQty,jdbcType=DECIMAL},
+      SECOND_QTY = #{secondQty,jdbcType=DECIMAL},
+      PACKING_QTY1 = #{packingQty1,jdbcType=DECIMAL},
+      PACKING_QTY2 = #{packingQty2,jdbcType=DECIMAL},
+      PACKING_QTY3 = #{packingQty3,jdbcType=DECIMAL},
+      PACKING_QTY4 = #{packingQty4,jdbcType=DECIMAL},
+      PRICE = #{price,jdbcType=DECIMAL},
+      DISCOUNT_RATE = #{discountRate,jdbcType=DECIMAL},
+      DISCOUNT_AMT = #{discountAmt,jdbcType=DECIMAL},
+      DISCOUNTED_PRICE = #{discountedPrice,jdbcType=DECIMAL},
+      STANDARD_PRICE = #{standardPrice,jdbcType=DECIMAL},
+      TAX_RATE = #{taxRate,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_OC = #{amountUnincludeTaxOc,jdbcType=DECIMAL},
+      TAX_OC = #{taxOc,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_BC = #{amountUnincludeTaxBc,jdbcType=DECIMAL},
+      TAX_BC = #{taxBc,jdbcType=DECIMAL},
+      AMOUNT = #{amount,jdbcType=DECIMAL},
+      ACCEPTED_BUSINESS_QTY = #{acceptedBusinessQty,jdbcType=DECIMAL},
+      ACCEPTED_INVENTORY_QTY = #{acceptedInventoryQty,jdbcType=DECIMAL},
+      RETURN_BUSINESS_QTY = #{returnBusinessQty,jdbcType=DECIMAL},
+      SCRAP_BUSINESS_QTY = #{scrapBusinessQty,jdbcType=DECIMAL},
+      OVERDUE_INDICATOR = #{overdueIndicator,jdbcType=BIT},
+      INSPECTION_STATUS = #{inspectionStatus,jdbcType=NVARCHAR},
+      PIECES = #{pieces,jdbcType=INTEGER},
+      RETURNED_BUSINESS_QTY = #{returnedBusinessQty,jdbcType=DECIMAL},
+      RECEIPTED_BUSINESS_QTY = #{receiptedBusinessQty,jdbcType=DECIMAL},
+      RECEIPT_CLOSE = #{receiptClose,jdbcType=NVARCHAR},
+      SCRAPED_BUSINESS_QTY = #{scrapedBusinessQty,jdbcType=DECIMAL},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      PURCHASE_TYPE = #{purchaseType,jdbcType=NVARCHAR},
+      INSPECTED_QTY = #{inspectedQty,jdbcType=DECIMAL},
+      SP_RECEIPT_BUSINESS_QTY = #{spReceiptBusinessQty,jdbcType=DECIMAL},
+      SP_RECEIPT_INVENTORY_QTY = #{spReceiptInventoryQty,jdbcType=DECIMAL},
+      MANUFACTURER = #{manufacturer,jdbcType=NVARCHAR},
+      PAYMENT_PENDED = #{paymentPended,jdbcType=BIT},
+      QUALIFIED_BUSINESS_QTY = #{qualifiedBusinessQty,jdbcType=DECIMAL},
+      UNQUALIFIED_BUSINESS_QTY = #{unqualifiedBusinessQty,jdbcType=DECIMAL},
+      IN_DESTROYED_BUSINESS_QTY = #{inDestroyedBusinessQty,jdbcType=DECIMAL},
+      PRICE_UNIT_ID = #{priceUnitId,jdbcType=CHAR},
+      BUSINESS_UNIT_ID = #{businessUnitId,jdbcType=CHAR},
+      BUSINESS_QTY = #{businessQty,jdbcType=DECIMAL},
+      PACKING_MODE_ID = #{packingModeId,jdbcType=CHAR},
+      PACKING1_UNIT_ID = #{packing1UnitId,jdbcType=CHAR},
+      PACKING2_UNIT_ID = #{packing2UnitId,jdbcType=CHAR},
+      PACKING3_UNIT_ID = #{packing3UnitId,jdbcType=CHAR},
+      PACKING4_UNIT_ID = #{packing4UnitId,jdbcType=CHAR},
+      TAX_ID = #{taxId,jdbcType=CHAR},
+      WAREHOUSE_ID = #{warehouseId,jdbcType=CHAR},
+      OPERATION_ID = #{operationId,jdbcType=CHAR},
+      BIN_ID = #{binId,jdbcType=CHAR},
+      ITEM_LOT_ID = #{itemLotId,jdbcType=CHAR},
+      ITEM_CERTIFICATION_D_ID = #{itemCertificationDId,jdbcType=CHAR},
+      MO_ID = #{moId,jdbcType=CHAR},
+      SETTLEMENT_PRICE_QTY = #{settlementPriceQty,jdbcType=DECIMAL},
+      SETTLEMENT_AMT_UN_TAX_OC = #{settlementAmtUnTaxOc,jdbcType=DECIMAL},
+      SETTLEMENT_TAX_OC = #{settlementTaxOc,jdbcType=DECIMAL},
+      PURCHASE_ORDER_ID = #{purchaseOrderId,jdbcType=CHAR},
+      SIGN_TYPE = #{signType,jdbcType=NVARCHAR},
+      RETURN_REASON_ID = #{returnReasonId,jdbcType=CHAR},
+      SUPP_INDEM_BUSINESS_QTY = #{suppIndemBusinessQty,jdbcType=DECIMAL},
+      SUPP_INDEM_PRICE_QTY = #{suppIndemPriceQty,jdbcType=DECIMAL},
+      LOSS_BUSINESS_QTY = #{lossBusinessQty,jdbcType=DECIMAL},
+      LOSS_PRICE_QTY = #{lossPriceQty,jdbcType=DECIMAL},
+      SHOULD_SETTLE_PRICE_QTY = #{shouldSettlePriceQty,jdbcType=DECIMAL},
+      JUDGED_QTY = #{judgedQty,jdbcType=DECIMAL},
+      SP_APPROVE_FLAG = #{spApproveFlag,jdbcType=BIT},
+      PROJECT_ID = #{projectId,jdbcType=CHAR},
+      DEDUCT_ARRIVED_QTY = #{deductArrivedQty,jdbcType=BIT},
+      SN_COLLECTED_QTY = #{snCollectedQty,jdbcType=DECIMAL},
+      SN_COLLECTED_STATUS = #{snCollectedStatus,jdbcType=NVARCHAR},
+      WIP_DOCNO = #{wipDocno,jdbcType=NVARCHAR},
+      BUDGET_ADMIN_UNIT_ID = #{budgetAdminUnitId,jdbcType=CHAR},
+      BUDGET_GROUP_ID = #{budgetGroupId,jdbcType=CHAR},
+      BUDGET_ITEM_ID = #{budgetItemId,jdbcType=CHAR},
+      BUDGET_ID = #{budgetId,jdbcType=CHAR},
+      BUDGET_D_ID = #{budgetDId,jdbcType=CHAR},
+      PRE_BUDGET_ID = #{preBudgetId,jdbcType=CHAR},
+      PRE_BUDGET_D_ID = #{preBudgetDId,jdbcType=CHAR},
+      INNER_ORDER_DOC_SD_ID = #{innerOrderDocSdId,jdbcType=CHAR},
+      GENERATE_SOURCE = #{generateSource,jdbcType=NVARCHAR},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      REFERENCE_SOURCE_ID_RTK = #{referenceSourceIdRtk,jdbcType=NVARCHAR},
+      REFERENCE_SOURCE_ID_ROid = #{referenceSourceIdRoid,jdbcType=CHAR},
+      SOURCE_ID_RTK = #{sourceIdRtk,jdbcType=NVARCHAR},
+      SOURCE_ID_ROid = #{sourceIdRoid,jdbcType=CHAR},
+      SOURCE_ORDER_RTK = #{sourceOrderRtk,jdbcType=NVARCHAR},
+      SOURCE_ORDER_ROid = #{sourceOrderRoid,jdbcType=CHAR},
+      SYNERGY_SOURCE_ID_RTK = #{synergySourceIdRtk,jdbcType=NVARCHAR},
+      SYNERGY_SOURCE_ID_ROid = #{synergySourceIdRoid,jdbcType=CHAR},
+      PURCHASE_ARRIVAL_ID = #{purchaseArrivalId,jdbcType=CHAR},
+      Version = #{version,jdbcType=BINARY}
+    where PURCHASE_ARRIVAL_D_ID = #{purchaseArrivalDId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tb.mbg.model.PurchaseArrivalD">
+    update PURCHASE_ARRIVAL_D
+    set SequenceNumber = #{sequencenumber,jdbcType=INTEGER},
+      ITEM_TYPE = #{itemType,jdbcType=NVARCHAR},
+      ITEM_ID = #{itemId,jdbcType=CHAR},
+      ITEM_DESCRIPTION = #{itemDescription,jdbcType=NVARCHAR},
+      ITEM_FEATURE_ID = #{itemFeatureId,jdbcType=CHAR},
+      ITEM_SPECIFICATION = #{itemSpecification,jdbcType=NVARCHAR},
+      PACKING_QTY = #{packingQty,jdbcType=NVARCHAR},
+      PRICE_QTY = #{priceQty,jdbcType=DECIMAL},
+      INVENTORY_QTY = #{inventoryQty,jdbcType=DECIMAL},
+      SECOND_QTY = #{secondQty,jdbcType=DECIMAL},
+      PACKING_QTY1 = #{packingQty1,jdbcType=DECIMAL},
+      PACKING_QTY2 = #{packingQty2,jdbcType=DECIMAL},
+      PACKING_QTY3 = #{packingQty3,jdbcType=DECIMAL},
+      PACKING_QTY4 = #{packingQty4,jdbcType=DECIMAL},
+      PRICE = #{price,jdbcType=DECIMAL},
+      DISCOUNT_RATE = #{discountRate,jdbcType=DECIMAL},
+      DISCOUNT_AMT = #{discountAmt,jdbcType=DECIMAL},
+      DISCOUNTED_PRICE = #{discountedPrice,jdbcType=DECIMAL},
+      STANDARD_PRICE = #{standardPrice,jdbcType=DECIMAL},
+      TAX_RATE = #{taxRate,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_OC = #{amountUnincludeTaxOc,jdbcType=DECIMAL},
+      TAX_OC = #{taxOc,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_BC = #{amountUnincludeTaxBc,jdbcType=DECIMAL},
+      TAX_BC = #{taxBc,jdbcType=DECIMAL},
+      AMOUNT = #{amount,jdbcType=DECIMAL},
+      ACCEPTED_BUSINESS_QTY = #{acceptedBusinessQty,jdbcType=DECIMAL},
+      ACCEPTED_INVENTORY_QTY = #{acceptedInventoryQty,jdbcType=DECIMAL},
+      RETURN_BUSINESS_QTY = #{returnBusinessQty,jdbcType=DECIMAL},
+      SCRAP_BUSINESS_QTY = #{scrapBusinessQty,jdbcType=DECIMAL},
+      OVERDUE_INDICATOR = #{overdueIndicator,jdbcType=BIT},
+      INSPECTION_STATUS = #{inspectionStatus,jdbcType=NVARCHAR},
+      PIECES = #{pieces,jdbcType=INTEGER},
+      RETURNED_BUSINESS_QTY = #{returnedBusinessQty,jdbcType=DECIMAL},
+      RECEIPTED_BUSINESS_QTY = #{receiptedBusinessQty,jdbcType=DECIMAL},
+      RECEIPT_CLOSE = #{receiptClose,jdbcType=NVARCHAR},
+      SCRAPED_BUSINESS_QTY = #{scrapedBusinessQty,jdbcType=DECIMAL},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      PURCHASE_TYPE = #{purchaseType,jdbcType=NVARCHAR},
+      INSPECTED_QTY = #{inspectedQty,jdbcType=DECIMAL},
+      SP_RECEIPT_BUSINESS_QTY = #{spReceiptBusinessQty,jdbcType=DECIMAL},
+      SP_RECEIPT_INVENTORY_QTY = #{spReceiptInventoryQty,jdbcType=DECIMAL},
+      MANUFACTURER = #{manufacturer,jdbcType=NVARCHAR},
+      PAYMENT_PENDED = #{paymentPended,jdbcType=BIT},
+      QUALIFIED_BUSINESS_QTY = #{qualifiedBusinessQty,jdbcType=DECIMAL},
+      UNQUALIFIED_BUSINESS_QTY = #{unqualifiedBusinessQty,jdbcType=DECIMAL},
+      IN_DESTROYED_BUSINESS_QTY = #{inDestroyedBusinessQty,jdbcType=DECIMAL},
+      PRICE_UNIT_ID = #{priceUnitId,jdbcType=CHAR},
+      BUSINESS_UNIT_ID = #{businessUnitId,jdbcType=CHAR},
+      BUSINESS_QTY = #{businessQty,jdbcType=DECIMAL},
+      PACKING_MODE_ID = #{packingModeId,jdbcType=CHAR},
+      PACKING1_UNIT_ID = #{packing1UnitId,jdbcType=CHAR},
+      PACKING2_UNIT_ID = #{packing2UnitId,jdbcType=CHAR},
+      PACKING3_UNIT_ID = #{packing3UnitId,jdbcType=CHAR},
+      PACKING4_UNIT_ID = #{packing4UnitId,jdbcType=CHAR},
+      TAX_ID = #{taxId,jdbcType=CHAR},
+      WAREHOUSE_ID = #{warehouseId,jdbcType=CHAR},
+      OPERATION_ID = #{operationId,jdbcType=CHAR},
+      BIN_ID = #{binId,jdbcType=CHAR},
+      ITEM_LOT_ID = #{itemLotId,jdbcType=CHAR},
+      ITEM_CERTIFICATION_D_ID = #{itemCertificationDId,jdbcType=CHAR},
+      MO_ID = #{moId,jdbcType=CHAR},
+      SETTLEMENT_PRICE_QTY = #{settlementPriceQty,jdbcType=DECIMAL},
+      SETTLEMENT_AMT_UN_TAX_OC = #{settlementAmtUnTaxOc,jdbcType=DECIMAL},
+      SETTLEMENT_TAX_OC = #{settlementTaxOc,jdbcType=DECIMAL},
+      PURCHASE_ORDER_ID = #{purchaseOrderId,jdbcType=CHAR},
+      SIGN_TYPE = #{signType,jdbcType=NVARCHAR},
+      RETURN_REASON_ID = #{returnReasonId,jdbcType=CHAR},
+      SUPP_INDEM_BUSINESS_QTY = #{suppIndemBusinessQty,jdbcType=DECIMAL},
+      SUPP_INDEM_PRICE_QTY = #{suppIndemPriceQty,jdbcType=DECIMAL},
+      LOSS_BUSINESS_QTY = #{lossBusinessQty,jdbcType=DECIMAL},
+      LOSS_PRICE_QTY = #{lossPriceQty,jdbcType=DECIMAL},
+      SHOULD_SETTLE_PRICE_QTY = #{shouldSettlePriceQty,jdbcType=DECIMAL},
+      JUDGED_QTY = #{judgedQty,jdbcType=DECIMAL},
+      SP_APPROVE_FLAG = #{spApproveFlag,jdbcType=BIT},
+      PROJECT_ID = #{projectId,jdbcType=CHAR},
+      DEDUCT_ARRIVED_QTY = #{deductArrivedQty,jdbcType=BIT},
+      SN_COLLECTED_QTY = #{snCollectedQty,jdbcType=DECIMAL},
+      SN_COLLECTED_STATUS = #{snCollectedStatus,jdbcType=NVARCHAR},
+      WIP_DOCNO = #{wipDocno,jdbcType=NVARCHAR},
+      BUDGET_ADMIN_UNIT_ID = #{budgetAdminUnitId,jdbcType=CHAR},
+      BUDGET_GROUP_ID = #{budgetGroupId,jdbcType=CHAR},
+      BUDGET_ITEM_ID = #{budgetItemId,jdbcType=CHAR},
+      BUDGET_ID = #{budgetId,jdbcType=CHAR},
+      BUDGET_D_ID = #{budgetDId,jdbcType=CHAR},
+      PRE_BUDGET_ID = #{preBudgetId,jdbcType=CHAR},
+      PRE_BUDGET_D_ID = #{preBudgetDId,jdbcType=CHAR},
+      INNER_ORDER_DOC_SD_ID = #{innerOrderDocSdId,jdbcType=CHAR},
+      GENERATE_SOURCE = #{generateSource,jdbcType=NVARCHAR},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      REFERENCE_SOURCE_ID_RTK = #{referenceSourceIdRtk,jdbcType=NVARCHAR},
+      REFERENCE_SOURCE_ID_ROid = #{referenceSourceIdRoid,jdbcType=CHAR},
+      SOURCE_ID_RTK = #{sourceIdRtk,jdbcType=NVARCHAR},
+      SOURCE_ID_ROid = #{sourceIdRoid,jdbcType=CHAR},
+      SOURCE_ORDER_RTK = #{sourceOrderRtk,jdbcType=NVARCHAR},
+      SOURCE_ORDER_ROid = #{sourceOrderRoid,jdbcType=CHAR},
+      SYNERGY_SOURCE_ID_RTK = #{synergySourceIdRtk,jdbcType=NVARCHAR},
+      SYNERGY_SOURCE_ID_ROid = #{synergySourceIdRoid,jdbcType=CHAR},
+      PURCHASE_ARRIVAL_ID = #{purchaseArrivalId,jdbcType=CHAR}
+    where PURCHASE_ARRIVAL_D_ID = #{purchaseArrivalDId,jdbcType=CHAR}
+  </update>
+</mapper>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tb.mbg.mapper.E10AssociateQueryMapper">
+    <resultMap id="HasntA519OrderModelResultMap" type="com.tb.mbg.model.HasntA519OrderModel">
+        <result column="ITEM_CODE" property="itemCode"/>
+        <result column="ITEM_DESCRIPTION" property="itemDescription"/>
+        <result column="ITEM_SPECIFICATION" property="itemSpecification"/>
+    </resultMap>
+
+    <resultMap id="QuantityOfShipmentResultMap" type="com.tb.mbg.model.QuantityOfShipment">
+        <result column="ITEM_CODE" property="itemCode"/>
+        <result column="ITEM_NAME" property="itemName"/>
+        <result column="QUANTITY" property="businessQty"/>
+    </resultMap>
+
+    <resultMap id="ProductionOfHasInventoryResultMap" type="com.tb.mbg.model.ProductionOfHasInventory">
+        <result column="ITEM_CODE" property="itemCode"/>
+        <result column="ITEM_NAME" property="itemName"/>
+        <result column="INVENTORY_QTY" property="inventoryQty"/>
+        <result column="ITEM_SPECIFICATION" property="itemSpecification"/>
+        <result column="UNIT_NAME" property="unitName"/>
+        <result column="WAREHOUSE_NAME" property="warehouseName"/>
+    </resultMap>
+
+    <resultMap id="PurchaseArrivalResultMap" type="com.tb.mbg.model.PurchaseArrivalModel">
+        <result column="ITEM_CODE" property="itemCode"/>
+        <result column="ITEM_DESCRIPTION" property="itemDescription"/>
+        <result column="ITEM_SPECIFICATION" property="itemSpecification"/>
+        <result column="DOC_NO" property="docNo"/>
+        <result column="LastModifiedDate" property="lastModifiedDate"/>
+        <result column="SUPPLIER_NAME" property="supplierName"/>
+        <result column="INSPECTION_STATUS" property="inspectionStatus"/>
+        <result column="BUSINESS_QTY" property="businessQty"/>
+        <result column="SUPPLY_CENTER_NAME" property="supplyCenterName"/>
+        <result column="UNIT_NAME" property="unitName"/>
+    </resultMap>
+
+    <resultMap id="EngineeringChangeResultMap" type="com.tb.mbg.model.EngineeringChange">
+        <result column="DOC_NO" property="docNo"/>
+        <result column="DOC_DATE" property="docDate"/>
+        <result column="DOC_NAME" property="docName"/>
+        <result column="PLANT_NAME" property="plantName"/>
+        <result column="DESCRIPTION" property="description"/>
+        <result column="CONTENT" property="content"/>
+        <result column="REASON_DESC" property="reasonDesc"/>
+        <result column="EMPLOYEE_NAME" property="employeeName"/>
+        <result column="ADMIN_UNIT_NAME" property="adminUnitName"/>
+        <result column="ECN_ID" property="ecnId"/>
+    </resultMap>
+
+    <resultMap id="EngineeringChangeBOMChangeResultMap" type="com.tb.mbg.model.EngineeringChangeBOMChange">
+        <result column="CHANGE_TYPE" property="changeType"/>
+        <result column="ITEM_CODE" property="itemCode"/>
+        <result column="ITEM_NAME" property="itemName"/>
+    </resultMap>
+
+    <resultMap id="BomResultMap" type="com.tb.mbg.model.Bom">
+        <result column="PLANT_NAME" property="plantName"/>
+        <result column="ITEM_CODE" property="mainItemCode"/>
+        <result column="ITEM_NAME" property="mainItemName"/>
+        <result column="ITEM_SPECIFICATION" property="mainItemSpecification"/>
+        <result column="ROUTING_DES" property="routingDes"/>
+        <result column="BOM_ID" property="bomId"/>
+        <result column="APPROVE_STATUS" property="approveStatus"/>
+        <result column="USER_NAME" property="userName"/>
+    </resultMap>
+
+    <resultMap id="BomDResultMap" type="com.tb.mbg.model.BomD">
+        <result column="UNIT_NAME" property="unitName"/>
+        <result column="ITEM_CODE" property="itemCode"/>
+        <result column="ITEM_NAME" property="itemName"/>
+        <result column="ITEM_SPECIFICATION" property="itemSpecification"/>
+        <result column="ITEM_FEATURE_CODE" property="itemFeatureCode"/>
+        <result column="ITEM_FEATURE_SPECIFICATION" property="itemFeatureSpecification"/>
+        <result column="QTY_PER" property="qtyPer"/>
+        <result column="DENOMINATOR" property="denominator"/>
+        <result column="UDF001" property="udf001"/>
+        <result column="UDF002" property="udf002"/>
+    </resultMap>
+
+    <select id="getHastA519OrderList" resultMap="HasntA519OrderModelResultMap">
+        SELECT DISTINCT C.ITEM_CODE,A.ITEM_DESCRIPTION,A.ITEM_SPECIFICATION
+        FROM SALES_ORDER_DOC_D A
+                 LEFT JOIN SALES_ORDER_DOC B ON A.SALES_ORDER_DOC_ID=B.SALES_ORDER_DOC_ID
+                 LEFT JOIN ITEM C ON C.ITEM_BUSINESS_ID=A.ITEM_ID
+                 LEFT JOIN CUSTOMER D ON D.CUSTOMER_BUSINESS_ID=B.CUSTOMER_ID
+        WHERE A.ITEM_ID NOT IN (SELECT ITEM_ID FROM MO WHERE DOC_NO NOT LIKE 'A516%')
+          AND B.DOC_DATE>=#{date}
+          AND C.ITEM_CODE NOT LIKE '3%'
+        GROUP BY C.ITEM_CODE,A.ITEM_DESCRIPTION,A.ITEM_SPECIFICATION,D.CUSTOMER_NAME
+    </select>
+
+    <select id="getQuantityOfShipment" resultMap="QuantityOfShipmentResultMap">
+        SELECT B.ITEM_CODE,B.ITEM_NAME,SUM(A.BUSINESS_QTY) QUANTITY
+        FROM SALES_ISSUE_D A
+            LEFT JOIN ITEM B ON A.ITEM_ID=B.ITEM_BUSINESS_ID
+        WHERE B.ITEM_NAME LIKE concat('%',#{itemName},'%')
+        GROUP BY B.ITEM_CODE,B.ITEM_NAME
+    </select>
+
+    <select id="getProductionOfHasInventoryList" resultMap="ProductionOfHasInventoryResultMap">
+        SELECT B.ITEM_NAME,B.ITEM_CODE,A.INVENTORY_QTY,C.UNIT_NAME,B.ITEM_SPECIFICATION,D.WAREHOUSE_NAME
+        FROM ITEM_WAREHOUSE A
+            LEFT JOIN ITEM B ON B.ITEM_BUSINESS_ID=A.ITEM_ID
+            LEFT JOIN UNIT C ON B.STOCK_UNIT_ID  = C.UNIT_ID
+            LEFT JOIN WAREHOUSE D ON D.WAREHOUSE_ID = A.WAREHOUSE_ID
+        WHERE  A.WAREHOUSE_ID=#{warehouseId}  AND A.INVENTORY_QTY>0
+    </select>
+
+    <select id="getPurchaseArrivalList" resultMap="PurchaseArrivalResultMap">
+        SELECT E.SUPPLY_CENTER_NAME, C.ITEM_CODE,A.ITEM_DESCRIPTION,A.ITEM_SPECIFICATION,B.DOC_NO,A.LastModifiedDate,D.SUPPLIER_NAME,CASE A.INSPECTION_STATUS WHEN '1' THEN '免检' ELSE (CASE A.INSPECTION_STATUS WHEN '2' THEN '待检' ELSE (CASE A.INSPECTION_STATUS WHEN '3' THEN '部分待检' ELSE (CASE A.INSPECTION_STATUS WHEN '4' THEN '检验完成' END) END) END) END INSPECTION_STATUS,A.BUSINESS_QTY,F.UNIT_NAME
+        FROM PURCHASE_ARRIVAL_D A
+                 LEFT JOIN PURCHASE_ARRIVAL B ON A.PURCHASE_ARRIVAL_ID = B.PURCHASE_ARRIVAL_ID
+                 LEFT JOIN ITEM C ON A.ITEM_ID = C.ITEM_BUSINESS_ID
+                 LEFT JOIN SUPPLIER D ON B.SUPPLIER_ID = D.SUPPLIER_BUSINESS_ID
+                 LEFT JOIN SUPPLY_CENTER E ON E.SUPPLY_CENTER_ID = B.Owner_Org_ROid
+                 LEFT JOIN UNIT F ON F.UNIT_ID = A.BUSINESS_UNIT_ID
+        WHERE A.LastModifiedDate > #{date}
+        AND B.Owner_Org_RTK = 'SUPPLY_CENTER'
+          /** 审核完成才可以推送 */
+        AND B.ApproveStatus = 'Y'
+        ORDER BY A.CreateDate DESC
+    </select>
+    
+    <select id="getEngineeringChangeList" resultMap="EngineeringChangeResultMap">
+        SELECT A.DOC_NO,A.DOC_DATE,F.DOC_NAME,C.PLANT_NAME,B.DESCRIPTION,A.CONTENT,A.REASON_DESC,D.EMPLOYEE_NAME,E.ADMIN_UNIT_NAME,A.ECN_ID
+        FROM ECN A
+                 LEFT JOIN CODING B ON B.CODING_ID = A.REASON_ID
+                 LEFT JOIN PLANT C ON C.PLANT_ID = A.Owner_Org_ROid
+                 LEFT JOIN EMPLOYEE D ON D.EMPLOYEE_ID = A.Owner_Emp
+                 LEFT JOIN ADMIN_UNIT E ON E.ADMIN_UNIT_ID = A.Owner_Dept
+                 LEFT JOIN DOC F ON F.DOC_ID = A.DOC_ID
+        WHERE A.ApproveStatus = 'Y'
+          AND A.LastModifiedDate > #{date}
+          AND A.Owner_Org_RTK = 'PLANT'
+        ORDER BY A.CreateDate DESC
+    </select>
+
+    <select id="getEngineeringChangeBOMChangeList" resultMap="EngineeringChangeBOMChangeResultMap">
+        SELECT CASE A.CHANGE_TYPE WHEN '1' THEN '修改' ELSE (CASE A.CHANGE_TYPE WHEN '2' THEN '失效' ELSE (CASE A.CHANGE_TYPE WHEN '3' THEN '发布' END) END) END CHANGE_TYPE, C.ITEM_CODE, C.ITEM_NAME
+        FROM ECN_D A
+                 LEFT JOIN BOM B ON B.BOM_ID = A.PARENT_ITEM_ID
+                 LEFT JOIN ITEM C ON B.ITEM_ID = C.ITEM_BUSINESS_ID
+        WHERE A.ECN_ID = #{ecnId}
+    </select>
+
+    <select id="getNewBom" resultMap="BomResultMap">
+        SELECT C.PLANT_NAME, B.ITEM_CODE, B.ITEM_NAME, B.ITEM_SPECIFICATION, D.ROUTING_DES, A.BOM_ID, CASE A.ApproveStatus WHEN 'N' THEN '未生效' ELSE (CASE A.ApproveStatus WHEN 'Y' THEN '生效' END) END APPROVE_STATUS, E.USER_NAME
+        FROM BOM A
+                 LEFT JOIN ITEM B ON B.ITEM_BUSINESS_ID = A.ITEM_ID
+                 LEFT JOIN PLANT C ON C.PLANT_ID = A.REFERENCE_PLANT_ID
+                 LEFT JOIN ITEM_ROUTING D ON D.ITEM_ID = A.ITEM_ID
+                 LEFT JOIN [USER] E ON A.CreateBy = E.USER_ID
+        WHERE A.CreateDate > #{date}
+    </select>
+
+    <select id="getBomDByBomId" resultMap="BomDResultMap">
+        SELECT B.ITEM_CODE, B.ITEM_NAME, B.ITEM_SPECIFICATION, C.UNIT_NAME, D.ITEM_FEATURE_CODE, D.ITEM_SPECIFICATION ITEM_FEATURE_SPECIFICATION, A.QTY_PER, A.DENOMINATOR, A.UDF001, A.UDF002
+        FROM BOM_D A
+                 LEFT JOIN ITEM B ON B.ITEM_BUSINESS_ID = A.SOURCE_ID_ROid
+                 LEFT JOIN UNIT C ON C.UNIT_ID = B.STOCK_UNIT_ID
+                 LEFT JOIN ITEM_FEATURE D ON D.ITEM_FEATURE_ID = A.SUB_ITEM_FEATURE_ID
+        WHERE A.BOM_ID = #{bomId}
+    </select>
+</mapper>

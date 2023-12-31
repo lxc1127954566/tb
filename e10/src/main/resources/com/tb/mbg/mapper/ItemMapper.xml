@@ -1,0 +1,1636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tb.mbg.mapper.ItemMapper">
+  <resultMap id="BaseResultMap" type="com.tb.mbg.model.Item">
+    <id column="ITEM_BUSINESS_ID" jdbcType="CHAR" property="itemBusinessId" />
+    <result column="Owner_Dept" jdbcType="CHAR" property="ownerDept" />
+    <result column="Owner_Emp" jdbcType="CHAR" property="ownerEmp" />
+    <result column="INVENTORY_MANAGEMENT" jdbcType="BIT" property="inventoryManagement" />
+    <result column="ITEM_CODE" jdbcType="NVARCHAR" property="itemCode" />
+    <result column="ITEM_NAME" jdbcType="NVARCHAR" property="itemName" />
+    <result column="REMARK" jdbcType="NVARCHAR" property="remark" />
+    <result column="CHANGE_ITEM_SPEC" jdbcType="BIT" property="changeItemSpec" />
+    <result column="SHORTCUT" jdbcType="NVARCHAR" property="shortcut" />
+    <result column="ITEM_SPECIFICATION" jdbcType="NVARCHAR" property="itemSpecification" />
+    <result column="LOT_CONTROL" jdbcType="NVARCHAR" property="lotControl" />
+    <result column="LOT_EXPIRE_DAY" jdbcType="INTEGER" property="lotExpireDay" />
+    <result column="LOT_WAITING_DAY" jdbcType="INTEGER" property="lotWaitingDay" />
+    <result column="LOT_REINSPECTION_DAY" jdbcType="INTEGER" property="lotReinspectionDay" />
+    <result column="LOT_FAILURE_CONTROL" jdbcType="NVARCHAR" property="lotFailureControl" />
+    <result column="UNIT_MODE" jdbcType="NVARCHAR" property="unitMode" />
+    <result column="INVENTORY_CHECK_BY" jdbcType="NVARCHAR" property="inventoryCheckBy" />
+    <result column="ITEM_SN_MANAGEMENT" jdbcType="BIT" property="itemSnManagement" />
+    <result column="SN_ENTRY_MODE" jdbcType="NVARCHAR" property="snEntryMode" />
+    <result column="ITEM_FEATURE_CONTROL" jdbcType="BIT" property="itemFeatureControl" />
+    <result column="PACKING_UNIT" jdbcType="BIT" property="packingUnit" />
+    <result column="STATUS" jdbcType="NVARCHAR" property="status" />
+    <result column="E_ITEM" jdbcType="NVARCHAR" property="eItem" />
+    <result column="E_CODE" jdbcType="NVARCHAR" property="eCode" />
+    <result column="FEATURE_GENERATE_MODE" jdbcType="NVARCHAR" property="featureGenerateMode" />
+    <result column="CKD" jdbcType="BIT" property="ckd" />
+    <result column="ITEM_PICTURE" jdbcType="NVARCHAR" property="itemPicture" />
+    <result column="JOINT_PRODUCT_CONTROL" jdbcType="BIT" property="jointProductControl" />
+    <result column="NEED_CERTIFICATION" jdbcType="BIT" property="needCertification" />
+    <result column="LOT_NO_RULE_ID" jdbcType="CHAR" property="lotNoRuleId" />
+    <result column="SN_NO_RULE_ID" jdbcType="CHAR" property="snNoRuleId" />
+    <result column="FEATURE_GROUP_ID" jdbcType="CHAR" property="featureGroupId" />
+    <result column="SECOND_UNIT_ID" jdbcType="CHAR" property="secondUnitId" />
+    <result column="STOCK_UNIT_ID" jdbcType="CHAR" property="stockUnitId" />
+    <result column="LIFECYCLE_ID" jdbcType="CHAR" property="lifecycleId" />
+    <result column="LOGISTIC_UNIT_ID" jdbcType="CHAR" property="logisticUnitId" />
+    <result column="ISWEIGHT" jdbcType="BIT" property="isweight" />
+    <result column="WEIGHT_PRICE" jdbcType="BIT" property="weightPrice" />
+    <result column="WEIGHT_PLU" jdbcType="NVARCHAR" property="weightPlu" />
+    <result column="WEIGHT_UNIT_ID" jdbcType="CHAR" property="weightUnitId" />
+    <result column="SOURCE" jdbcType="NVARCHAR" property="source" />
+    <result column="PLM_DATAKEY" jdbcType="NVARCHAR" property="plmDatakey" />
+    <result column="ITEM_PIC" jdbcType="NVARCHAR" property="itemPic" />
+    <result column="ITEM_DESC" jdbcType="NVARCHAR" property="itemDesc" />
+    <result column="DRAWING_NO" jdbcType="NVARCHAR" property="drawingNo" />
+    <result column="DRAWING_NO_FROM" jdbcType="NVARCHAR" property="drawingNoFrom" />
+    <result column="ITEM_NET_WEIGHT" jdbcType="DECIMAL" property="itemNetWeight" />
+    <result column="NET_WEIGHT_UNIT_ID" jdbcType="CHAR" property="netWeightUnitId" />
+    <result column="SERVICE_ITEM" jdbcType="BIT" property="serviceItem" />
+    <result column="ASSET" jdbcType="BIT" property="asset" />
+    <result column="UDF001" jdbcType="DECIMAL" property="udf001" />
+    <result column="UDF002" jdbcType="DECIMAL" property="udf002" />
+    <result column="UDF003" jdbcType="DECIMAL" property="udf003" />
+    <result column="UDF011" jdbcType="DECIMAL" property="udf011" />
+    <result column="UDF012" jdbcType="DECIMAL" property="udf012" />
+    <result column="UDF013" jdbcType="DECIMAL" property="udf013" />
+    <result column="UDF021" jdbcType="NVARCHAR" property="udf021" />
+    <result column="UDF022" jdbcType="NVARCHAR" property="udf022" />
+    <result column="UDF023" jdbcType="NVARCHAR" property="udf023" />
+    <result column="UDF024" jdbcType="NVARCHAR" property="udf024" />
+    <result column="UDF025" jdbcType="NVARCHAR" property="udf025" />
+    <result column="UDF026" jdbcType="NVARCHAR" property="udf026" />
+    <result column="UDF041" jdbcType="TIMESTAMP" property="udf041" />
+    <result column="UDF042" jdbcType="TIMESTAMP" property="udf042" />
+    <result column="UDF051" jdbcType="CHAR" property="udf051" />
+    <result column="UDF052" jdbcType="CHAR" property="udf052" />
+    <result column="UDF053" jdbcType="CHAR" property="udf053" />
+    <result column="UDF054" jdbcType="CHAR" property="udf054" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="LastModifiedDate" jdbcType="TIMESTAMP" property="lastmodifieddate" />
+    <result column="ModifiedDate" jdbcType="TIMESTAMP" property="modifieddate" />
+    <result column="CreateBy" jdbcType="CHAR" property="createby" />
+    <result column="LastModifiedBy" jdbcType="CHAR" property="lastmodifiedby" />
+    <result column="ModifiedBy" jdbcType="CHAR" property="modifiedby" />
+    <result column="ProcessInstanceId" jdbcType="CHAR" property="processinstanceid" />
+    <result column="ApproveStatus" jdbcType="NVARCHAR" property="approvestatus" />
+    <result column="ApproveDate" jdbcType="TIMESTAMP" property="approvedate" />
+    <result column="ApproveBy" jdbcType="CHAR" property="approveby" />
+    <result column="Owner_Org_RTK" jdbcType="NVARCHAR" property="ownerOrgRtk" />
+    <result column="Owner_Org_ROid" jdbcType="CHAR" property="ownerOrgRoid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tb.mbg.model.Item">
+    <result column="ITEM_DESC2" jdbcType="LONGNVARCHAR" property="itemDesc2" />
+    <result column="Attachments" jdbcType="LONGNVARCHAR" property="attachments" />
+    <result column="Version" jdbcType="BINARY" property="version" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ITEM_BUSINESS_ID, Owner_Dept, Owner_Emp, INVENTORY_MANAGEMENT, ITEM_CODE, ITEM_NAME, 
+    REMARK, CHANGE_ITEM_SPEC, SHORTCUT, ITEM_SPECIFICATION, LOT_CONTROL, LOT_EXPIRE_DAY, 
+    LOT_WAITING_DAY, LOT_REINSPECTION_DAY, LOT_FAILURE_CONTROL, UNIT_MODE, INVENTORY_CHECK_BY, 
+    ITEM_SN_MANAGEMENT, SN_ENTRY_MODE, ITEM_FEATURE_CONTROL, PACKING_UNIT, STATUS, E_ITEM, 
+    E_CODE, FEATURE_GENERATE_MODE, CKD, ITEM_PICTURE, JOINT_PRODUCT_CONTROL, NEED_CERTIFICATION, 
+    LOT_NO_RULE_ID, SN_NO_RULE_ID, FEATURE_GROUP_ID, SECOND_UNIT_ID, STOCK_UNIT_ID, LIFECYCLE_ID, 
+    LOGISTIC_UNIT_ID, ISWEIGHT, WEIGHT_PRICE, WEIGHT_PLU, WEIGHT_UNIT_ID, SOURCE, PLM_DATAKEY, 
+    ITEM_PIC, ITEM_DESC, DRAWING_NO, DRAWING_NO_FROM, ITEM_NET_WEIGHT, NET_WEIGHT_UNIT_ID, 
+    SERVICE_ITEM, ASSET, UDF001, UDF002, UDF003, UDF011, UDF012, UDF013, UDF021, UDF022, 
+    UDF023, UDF024, UDF025, UDF026, UDF041, UDF042, UDF051, UDF052, UDF053, UDF054, CreateDate, 
+    LastModifiedDate, ModifiedDate, CreateBy, LastModifiedBy, ModifiedBy, ProcessInstanceId, 
+    ApproveStatus, ApproveDate, ApproveBy, Owner_Org_RTK, Owner_Org_ROid
+  </sql>
+  <sql id="Blob_Column_List">
+    ITEM_DESC2, Attachments, Version
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.tb.mbg.model.ItemExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ITEM
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.tb.mbg.model.ItemExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ITEM
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ITEM
+    where ITEM_BUSINESS_ID = #{itemBusinessId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ITEM
+    where ITEM_BUSINESS_ID = #{itemBusinessId,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tb.mbg.model.ItemExample">
+    delete from ITEM
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tb.mbg.model.Item">
+    insert into ITEM (ITEM_BUSINESS_ID, Owner_Dept, Owner_Emp, 
+      INVENTORY_MANAGEMENT, ITEM_CODE, ITEM_NAME, 
+      REMARK, CHANGE_ITEM_SPEC, SHORTCUT, 
+      ITEM_SPECIFICATION, LOT_CONTROL, LOT_EXPIRE_DAY, 
+      LOT_WAITING_DAY, LOT_REINSPECTION_DAY, LOT_FAILURE_CONTROL, 
+      UNIT_MODE, INVENTORY_CHECK_BY, ITEM_SN_MANAGEMENT, 
+      SN_ENTRY_MODE, ITEM_FEATURE_CONTROL, PACKING_UNIT, 
+      STATUS, E_ITEM, E_CODE, 
+      FEATURE_GENERATE_MODE, CKD, ITEM_PICTURE, 
+      JOINT_PRODUCT_CONTROL, NEED_CERTIFICATION, LOT_NO_RULE_ID, 
+      SN_NO_RULE_ID, FEATURE_GROUP_ID, SECOND_UNIT_ID, 
+      STOCK_UNIT_ID, LIFECYCLE_ID, LOGISTIC_UNIT_ID, 
+      ISWEIGHT, WEIGHT_PRICE, WEIGHT_PLU, 
+      WEIGHT_UNIT_ID, SOURCE, PLM_DATAKEY, 
+      ITEM_PIC, ITEM_DESC, DRAWING_NO, 
+      DRAWING_NO_FROM, ITEM_NET_WEIGHT, NET_WEIGHT_UNIT_ID, 
+      SERVICE_ITEM, ASSET, UDF001, 
+      UDF002, UDF003, UDF011, 
+      UDF012, UDF013, UDF021, 
+      UDF022, UDF023, UDF024, 
+      UDF025, UDF026, UDF041, 
+      UDF042, UDF051, UDF052, 
+      UDF053, UDF054, CreateDate, 
+      LastModifiedDate, ModifiedDate, CreateBy, 
+      LastModifiedBy, ModifiedBy, ProcessInstanceId, 
+      ApproveStatus, ApproveDate, ApproveBy, 
+      Owner_Org_RTK, Owner_Org_ROid, ITEM_DESC2, 
+      Attachments, Version)
+    values (#{itemBusinessId,jdbcType=CHAR}, #{ownerDept,jdbcType=CHAR}, #{ownerEmp,jdbcType=CHAR}, 
+      #{inventoryManagement,jdbcType=BIT}, #{itemCode,jdbcType=NVARCHAR}, #{itemName,jdbcType=NVARCHAR}, 
+      #{remark,jdbcType=NVARCHAR}, #{changeItemSpec,jdbcType=BIT}, #{shortcut,jdbcType=NVARCHAR}, 
+      #{itemSpecification,jdbcType=NVARCHAR}, #{lotControl,jdbcType=NVARCHAR}, #{lotExpireDay,jdbcType=INTEGER}, 
+      #{lotWaitingDay,jdbcType=INTEGER}, #{lotReinspectionDay,jdbcType=INTEGER}, #{lotFailureControl,jdbcType=NVARCHAR}, 
+      #{unitMode,jdbcType=NVARCHAR}, #{inventoryCheckBy,jdbcType=NVARCHAR}, #{itemSnManagement,jdbcType=BIT}, 
+      #{snEntryMode,jdbcType=NVARCHAR}, #{itemFeatureControl,jdbcType=BIT}, #{packingUnit,jdbcType=BIT}, 
+      #{status,jdbcType=NVARCHAR}, #{eItem,jdbcType=NVARCHAR}, #{eCode,jdbcType=NVARCHAR}, 
+      #{featureGenerateMode,jdbcType=NVARCHAR}, #{ckd,jdbcType=BIT}, #{itemPicture,jdbcType=NVARCHAR}, 
+      #{jointProductControl,jdbcType=BIT}, #{needCertification,jdbcType=BIT}, #{lotNoRuleId,jdbcType=CHAR}, 
+      #{snNoRuleId,jdbcType=CHAR}, #{featureGroupId,jdbcType=CHAR}, #{secondUnitId,jdbcType=CHAR}, 
+      #{stockUnitId,jdbcType=CHAR}, #{lifecycleId,jdbcType=CHAR}, #{logisticUnitId,jdbcType=CHAR}, 
+      #{isweight,jdbcType=BIT}, #{weightPrice,jdbcType=BIT}, #{weightPlu,jdbcType=NVARCHAR}, 
+      #{weightUnitId,jdbcType=CHAR}, #{source,jdbcType=NVARCHAR}, #{plmDatakey,jdbcType=NVARCHAR}, 
+      #{itemPic,jdbcType=NVARCHAR}, #{itemDesc,jdbcType=NVARCHAR}, #{drawingNo,jdbcType=NVARCHAR}, 
+      #{drawingNoFrom,jdbcType=NVARCHAR}, #{itemNetWeight,jdbcType=DECIMAL}, #{netWeightUnitId,jdbcType=CHAR}, 
+      #{serviceItem,jdbcType=BIT}, #{asset,jdbcType=BIT}, #{udf001,jdbcType=DECIMAL}, 
+      #{udf002,jdbcType=DECIMAL}, #{udf003,jdbcType=DECIMAL}, #{udf011,jdbcType=DECIMAL}, 
+      #{udf012,jdbcType=DECIMAL}, #{udf013,jdbcType=DECIMAL}, #{udf021,jdbcType=NVARCHAR}, 
+      #{udf022,jdbcType=NVARCHAR}, #{udf023,jdbcType=NVARCHAR}, #{udf024,jdbcType=NVARCHAR}, 
+      #{udf025,jdbcType=NVARCHAR}, #{udf026,jdbcType=NVARCHAR}, #{udf041,jdbcType=TIMESTAMP}, 
+      #{udf042,jdbcType=TIMESTAMP}, #{udf051,jdbcType=CHAR}, #{udf052,jdbcType=CHAR}, 
+      #{udf053,jdbcType=CHAR}, #{udf054,jdbcType=CHAR}, #{createdate,jdbcType=TIMESTAMP}, 
+      #{lastmodifieddate,jdbcType=TIMESTAMP}, #{modifieddate,jdbcType=TIMESTAMP}, #{createby,jdbcType=CHAR}, 
+      #{lastmodifiedby,jdbcType=CHAR}, #{modifiedby,jdbcType=CHAR}, #{processinstanceid,jdbcType=CHAR}, 
+      #{approvestatus,jdbcType=NVARCHAR}, #{approvedate,jdbcType=TIMESTAMP}, #{approveby,jdbcType=CHAR}, 
+      #{ownerOrgRtk,jdbcType=NVARCHAR}, #{ownerOrgRoid,jdbcType=CHAR}, #{itemDesc2,jdbcType=LONGNVARCHAR}, 
+      #{attachments,jdbcType=LONGNVARCHAR}, #{version,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tb.mbg.model.Item">
+    insert into ITEM
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="itemBusinessId != null">
+        ITEM_BUSINESS_ID,
+      </if>
+      <if test="ownerDept != null">
+        Owner_Dept,
+      </if>
+      <if test="ownerEmp != null">
+        Owner_Emp,
+      </if>
+      <if test="inventoryManagement != null">
+        INVENTORY_MANAGEMENT,
+      </if>
+      <if test="itemCode != null">
+        ITEM_CODE,
+      </if>
+      <if test="itemName != null">
+        ITEM_NAME,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="changeItemSpec != null">
+        CHANGE_ITEM_SPEC,
+      </if>
+      <if test="shortcut != null">
+        SHORTCUT,
+      </if>
+      <if test="itemSpecification != null">
+        ITEM_SPECIFICATION,
+      </if>
+      <if test="lotControl != null">
+        LOT_CONTROL,
+      </if>
+      <if test="lotExpireDay != null">
+        LOT_EXPIRE_DAY,
+      </if>
+      <if test="lotWaitingDay != null">
+        LOT_WAITING_DAY,
+      </if>
+      <if test="lotReinspectionDay != null">
+        LOT_REINSPECTION_DAY,
+      </if>
+      <if test="lotFailureControl != null">
+        LOT_FAILURE_CONTROL,
+      </if>
+      <if test="unitMode != null">
+        UNIT_MODE,
+      </if>
+      <if test="inventoryCheckBy != null">
+        INVENTORY_CHECK_BY,
+      </if>
+      <if test="itemSnManagement != null">
+        ITEM_SN_MANAGEMENT,
+      </if>
+      <if test="snEntryMode != null">
+        SN_ENTRY_MODE,
+      </if>
+      <if test="itemFeatureControl != null">
+        ITEM_FEATURE_CONTROL,
+      </if>
+      <if test="packingUnit != null">
+        PACKING_UNIT,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="eItem != null">
+        E_ITEM,
+      </if>
+      <if test="eCode != null">
+        E_CODE,
+      </if>
+      <if test="featureGenerateMode != null">
+        FEATURE_GENERATE_MODE,
+      </if>
+      <if test="ckd != null">
+        CKD,
+      </if>
+      <if test="itemPicture != null">
+        ITEM_PICTURE,
+      </if>
+      <if test="jointProductControl != null">
+        JOINT_PRODUCT_CONTROL,
+      </if>
+      <if test="needCertification != null">
+        NEED_CERTIFICATION,
+      </if>
+      <if test="lotNoRuleId != null">
+        LOT_NO_RULE_ID,
+      </if>
+      <if test="snNoRuleId != null">
+        SN_NO_RULE_ID,
+      </if>
+      <if test="featureGroupId != null">
+        FEATURE_GROUP_ID,
+      </if>
+      <if test="secondUnitId != null">
+        SECOND_UNIT_ID,
+      </if>
+      <if test="stockUnitId != null">
+        STOCK_UNIT_ID,
+      </if>
+      <if test="lifecycleId != null">
+        LIFECYCLE_ID,
+      </if>
+      <if test="logisticUnitId != null">
+        LOGISTIC_UNIT_ID,
+      </if>
+      <if test="isweight != null">
+        ISWEIGHT,
+      </if>
+      <if test="weightPrice != null">
+        WEIGHT_PRICE,
+      </if>
+      <if test="weightPlu != null">
+        WEIGHT_PLU,
+      </if>
+      <if test="weightUnitId != null">
+        WEIGHT_UNIT_ID,
+      </if>
+      <if test="source != null">
+        SOURCE,
+      </if>
+      <if test="plmDatakey != null">
+        PLM_DATAKEY,
+      </if>
+      <if test="itemPic != null">
+        ITEM_PIC,
+      </if>
+      <if test="itemDesc != null">
+        ITEM_DESC,
+      </if>
+      <if test="drawingNo != null">
+        DRAWING_NO,
+      </if>
+      <if test="drawingNoFrom != null">
+        DRAWING_NO_FROM,
+      </if>
+      <if test="itemNetWeight != null">
+        ITEM_NET_WEIGHT,
+      </if>
+      <if test="netWeightUnitId != null">
+        NET_WEIGHT_UNIT_ID,
+      </if>
+      <if test="serviceItem != null">
+        SERVICE_ITEM,
+      </if>
+      <if test="asset != null">
+        ASSET,
+      </if>
+      <if test="udf001 != null">
+        UDF001,
+      </if>
+      <if test="udf002 != null">
+        UDF002,
+      </if>
+      <if test="udf003 != null">
+        UDF003,
+      </if>
+      <if test="udf011 != null">
+        UDF011,
+      </if>
+      <if test="udf012 != null">
+        UDF012,
+      </if>
+      <if test="udf013 != null">
+        UDF013,
+      </if>
+      <if test="udf021 != null">
+        UDF021,
+      </if>
+      <if test="udf022 != null">
+        UDF022,
+      </if>
+      <if test="udf023 != null">
+        UDF023,
+      </if>
+      <if test="udf024 != null">
+        UDF024,
+      </if>
+      <if test="udf025 != null">
+        UDF025,
+      </if>
+      <if test="udf026 != null">
+        UDF026,
+      </if>
+      <if test="udf041 != null">
+        UDF041,
+      </if>
+      <if test="udf042 != null">
+        UDF042,
+      </if>
+      <if test="udf051 != null">
+        UDF051,
+      </if>
+      <if test="udf052 != null">
+        UDF052,
+      </if>
+      <if test="udf053 != null">
+        UDF053,
+      </if>
+      <if test="udf054 != null">
+        UDF054,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate,
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate,
+      </if>
+      <if test="createby != null">
+        CreateBy,
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy,
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy,
+      </if>
+      <if test="processinstanceid != null">
+        ProcessInstanceId,
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus,
+      </if>
+      <if test="approvedate != null">
+        ApproveDate,
+      </if>
+      <if test="approveby != null">
+        ApproveBy,
+      </if>
+      <if test="ownerOrgRtk != null">
+        Owner_Org_RTK,
+      </if>
+      <if test="ownerOrgRoid != null">
+        Owner_Org_ROid,
+      </if>
+      <if test="itemDesc2 != null">
+        ITEM_DESC2,
+      </if>
+      <if test="attachments != null">
+        Attachments,
+      </if>
+      <if test="version != null">
+        Version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="itemBusinessId != null">
+        #{itemBusinessId,jdbcType=CHAR},
+      </if>
+      <if test="ownerDept != null">
+        #{ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="ownerEmp != null">
+        #{ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="inventoryManagement != null">
+        #{inventoryManagement,jdbcType=BIT},
+      </if>
+      <if test="itemCode != null">
+        #{itemCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemName != null">
+        #{itemName,jdbcType=NVARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="changeItemSpec != null">
+        #{changeItemSpec,jdbcType=BIT},
+      </if>
+      <if test="shortcut != null">
+        #{shortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemSpecification != null">
+        #{itemSpecification,jdbcType=NVARCHAR},
+      </if>
+      <if test="lotControl != null">
+        #{lotControl,jdbcType=NVARCHAR},
+      </if>
+      <if test="lotExpireDay != null">
+        #{lotExpireDay,jdbcType=INTEGER},
+      </if>
+      <if test="lotWaitingDay != null">
+        #{lotWaitingDay,jdbcType=INTEGER},
+      </if>
+      <if test="lotReinspectionDay != null">
+        #{lotReinspectionDay,jdbcType=INTEGER},
+      </if>
+      <if test="lotFailureControl != null">
+        #{lotFailureControl,jdbcType=NVARCHAR},
+      </if>
+      <if test="unitMode != null">
+        #{unitMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="inventoryCheckBy != null">
+        #{inventoryCheckBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemSnManagement != null">
+        #{itemSnManagement,jdbcType=BIT},
+      </if>
+      <if test="snEntryMode != null">
+        #{snEntryMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemFeatureControl != null">
+        #{itemFeatureControl,jdbcType=BIT},
+      </if>
+      <if test="packingUnit != null">
+        #{packingUnit,jdbcType=BIT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=NVARCHAR},
+      </if>
+      <if test="eItem != null">
+        #{eItem,jdbcType=NVARCHAR},
+      </if>
+      <if test="eCode != null">
+        #{eCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="featureGenerateMode != null">
+        #{featureGenerateMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="ckd != null">
+        #{ckd,jdbcType=BIT},
+      </if>
+      <if test="itemPicture != null">
+        #{itemPicture,jdbcType=NVARCHAR},
+      </if>
+      <if test="jointProductControl != null">
+        #{jointProductControl,jdbcType=BIT},
+      </if>
+      <if test="needCertification != null">
+        #{needCertification,jdbcType=BIT},
+      </if>
+      <if test="lotNoRuleId != null">
+        #{lotNoRuleId,jdbcType=CHAR},
+      </if>
+      <if test="snNoRuleId != null">
+        #{snNoRuleId,jdbcType=CHAR},
+      </if>
+      <if test="featureGroupId != null">
+        #{featureGroupId,jdbcType=CHAR},
+      </if>
+      <if test="secondUnitId != null">
+        #{secondUnitId,jdbcType=CHAR},
+      </if>
+      <if test="stockUnitId != null">
+        #{stockUnitId,jdbcType=CHAR},
+      </if>
+      <if test="lifecycleId != null">
+        #{lifecycleId,jdbcType=CHAR},
+      </if>
+      <if test="logisticUnitId != null">
+        #{logisticUnitId,jdbcType=CHAR},
+      </if>
+      <if test="isweight != null">
+        #{isweight,jdbcType=BIT},
+      </if>
+      <if test="weightPrice != null">
+        #{weightPrice,jdbcType=BIT},
+      </if>
+      <if test="weightPlu != null">
+        #{weightPlu,jdbcType=NVARCHAR},
+      </if>
+      <if test="weightUnitId != null">
+        #{weightUnitId,jdbcType=CHAR},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=NVARCHAR},
+      </if>
+      <if test="plmDatakey != null">
+        #{plmDatakey,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemPic != null">
+        #{itemPic,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemDesc != null">
+        #{itemDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="drawingNo != null">
+        #{drawingNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="drawingNoFrom != null">
+        #{drawingNoFrom,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemNetWeight != null">
+        #{itemNetWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="netWeightUnitId != null">
+        #{netWeightUnitId,jdbcType=CHAR},
+      </if>
+      <if test="serviceItem != null">
+        #{serviceItem,jdbcType=BIT},
+      </if>
+      <if test="asset != null">
+        #{asset,jdbcType=BIT},
+      </if>
+      <if test="udf001 != null">
+        #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="processinstanceid != null">
+        #{processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="ownerOrgRtk != null">
+        #{ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="ownerOrgRoid != null">
+        #{ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="itemDesc2 != null">
+        #{itemDesc2,jdbcType=LONGNVARCHAR},
+      </if>
+      <if test="attachments != null">
+        #{attachments,jdbcType=LONGNVARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tb.mbg.model.ItemExample" resultType="java.lang.Long">
+    select count(*) from ITEM
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ITEM
+    <set>
+      <if test="row.itemBusinessId != null">
+        ITEM_BUSINESS_ID = #{row.itemBusinessId,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerDept != null">
+        Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerEmp != null">
+        Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="row.inventoryManagement != null">
+        INVENTORY_MANAGEMENT = #{row.inventoryManagement,jdbcType=BIT},
+      </if>
+      <if test="row.itemCode != null">
+        ITEM_CODE = #{row.itemCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemName != null">
+        ITEM_NAME = #{row.itemName,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.remark != null">
+        REMARK = #{row.remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.changeItemSpec != null">
+        CHANGE_ITEM_SPEC = #{row.changeItemSpec,jdbcType=BIT},
+      </if>
+      <if test="row.shortcut != null">
+        SHORTCUT = #{row.shortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemSpecification != null">
+        ITEM_SPECIFICATION = #{row.itemSpecification,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.lotControl != null">
+        LOT_CONTROL = #{row.lotControl,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.lotExpireDay != null">
+        LOT_EXPIRE_DAY = #{row.lotExpireDay,jdbcType=INTEGER},
+      </if>
+      <if test="row.lotWaitingDay != null">
+        LOT_WAITING_DAY = #{row.lotWaitingDay,jdbcType=INTEGER},
+      </if>
+      <if test="row.lotReinspectionDay != null">
+        LOT_REINSPECTION_DAY = #{row.lotReinspectionDay,jdbcType=INTEGER},
+      </if>
+      <if test="row.lotFailureControl != null">
+        LOT_FAILURE_CONTROL = #{row.lotFailureControl,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.unitMode != null">
+        UNIT_MODE = #{row.unitMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.inventoryCheckBy != null">
+        INVENTORY_CHECK_BY = #{row.inventoryCheckBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemSnManagement != null">
+        ITEM_SN_MANAGEMENT = #{row.itemSnManagement,jdbcType=BIT},
+      </if>
+      <if test="row.snEntryMode != null">
+        SN_ENTRY_MODE = #{row.snEntryMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemFeatureControl != null">
+        ITEM_FEATURE_CONTROL = #{row.itemFeatureControl,jdbcType=BIT},
+      </if>
+      <if test="row.packingUnit != null">
+        PACKING_UNIT = #{row.packingUnit,jdbcType=BIT},
+      </if>
+      <if test="row.status != null">
+        STATUS = #{row.status,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.eItem != null">
+        E_ITEM = #{row.eItem,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.eCode != null">
+        E_CODE = #{row.eCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.featureGenerateMode != null">
+        FEATURE_GENERATE_MODE = #{row.featureGenerateMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.ckd != null">
+        CKD = #{row.ckd,jdbcType=BIT},
+      </if>
+      <if test="row.itemPicture != null">
+        ITEM_PICTURE = #{row.itemPicture,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.jointProductControl != null">
+        JOINT_PRODUCT_CONTROL = #{row.jointProductControl,jdbcType=BIT},
+      </if>
+      <if test="row.needCertification != null">
+        NEED_CERTIFICATION = #{row.needCertification,jdbcType=BIT},
+      </if>
+      <if test="row.lotNoRuleId != null">
+        LOT_NO_RULE_ID = #{row.lotNoRuleId,jdbcType=CHAR},
+      </if>
+      <if test="row.snNoRuleId != null">
+        SN_NO_RULE_ID = #{row.snNoRuleId,jdbcType=CHAR},
+      </if>
+      <if test="row.featureGroupId != null">
+        FEATURE_GROUP_ID = #{row.featureGroupId,jdbcType=CHAR},
+      </if>
+      <if test="row.secondUnitId != null">
+        SECOND_UNIT_ID = #{row.secondUnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.stockUnitId != null">
+        STOCK_UNIT_ID = #{row.stockUnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.lifecycleId != null">
+        LIFECYCLE_ID = #{row.lifecycleId,jdbcType=CHAR},
+      </if>
+      <if test="row.logisticUnitId != null">
+        LOGISTIC_UNIT_ID = #{row.logisticUnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.isweight != null">
+        ISWEIGHT = #{row.isweight,jdbcType=BIT},
+      </if>
+      <if test="row.weightPrice != null">
+        WEIGHT_PRICE = #{row.weightPrice,jdbcType=BIT},
+      </if>
+      <if test="row.weightPlu != null">
+        WEIGHT_PLU = #{row.weightPlu,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.weightUnitId != null">
+        WEIGHT_UNIT_ID = #{row.weightUnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.source != null">
+        SOURCE = #{row.source,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.plmDatakey != null">
+        PLM_DATAKEY = #{row.plmDatakey,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemPic != null">
+        ITEM_PIC = #{row.itemPic,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemDesc != null">
+        ITEM_DESC = #{row.itemDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.drawingNo != null">
+        DRAWING_NO = #{row.drawingNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.drawingNoFrom != null">
+        DRAWING_NO_FROM = #{row.drawingNoFrom,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemNetWeight != null">
+        ITEM_NET_WEIGHT = #{row.itemNetWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="row.netWeightUnitId != null">
+        NET_WEIGHT_UNIT_ID = #{row.netWeightUnitId,jdbcType=CHAR},
+      </if>
+      <if test="row.serviceItem != null">
+        SERVICE_ITEM = #{row.serviceItem,jdbcType=BIT},
+      </if>
+      <if test="row.asset != null">
+        ASSET = #{row.asset,jdbcType=BIT},
+      </if>
+      <if test="row.udf001 != null">
+        UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf002 != null">
+        UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf003 != null">
+        UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf011 != null">
+        UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf012 != null">
+        UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf013 != null">
+        UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf021 != null">
+        UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf022 != null">
+        UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf023 != null">
+        UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf024 != null">
+        UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf025 != null">
+        UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf026 != null">
+        UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf041 != null">
+        UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf042 != null">
+        UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf051 != null">
+        UDF051 = #{row.udf051,jdbcType=CHAR},
+      </if>
+      <if test="row.udf052 != null">
+        UDF052 = #{row.udf052,jdbcType=CHAR},
+      </if>
+      <if test="row.udf053 != null">
+        UDF053 = #{row.udf053,jdbcType=CHAR},
+      </if>
+      <if test="row.udf054 != null">
+        UDF054 = #{row.udf054,jdbcType=CHAR},
+      </if>
+      <if test="row.createdate != null">
+        CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.lastmodifieddate != null">
+        LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.modifieddate != null">
+        ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.createby != null">
+        CreateBy = #{row.createby,jdbcType=CHAR},
+      </if>
+      <if test="row.lastmodifiedby != null">
+        LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.modifiedby != null">
+        ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.processinstanceid != null">
+        ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="row.approvestatus != null">
+        ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.approvedate != null">
+        ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.approveby != null">
+        ApproveBy = #{row.approveby,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerOrgRtk != null">
+        Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.ownerOrgRoid != null">
+        Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.itemDesc2 != null">
+        ITEM_DESC2 = #{row.itemDesc2,jdbcType=LONGNVARCHAR},
+      </if>
+      <if test="row.attachments != null">
+        Attachments = #{row.attachments,jdbcType=LONGNVARCHAR},
+      </if>
+      <if test="row.version != null">
+        Version = #{row.version,jdbcType=BINARY},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update ITEM
+    set ITEM_BUSINESS_ID = #{row.itemBusinessId,jdbcType=CHAR},
+      Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      INVENTORY_MANAGEMENT = #{row.inventoryManagement,jdbcType=BIT},
+      ITEM_CODE = #{row.itemCode,jdbcType=NVARCHAR},
+      ITEM_NAME = #{row.itemName,jdbcType=NVARCHAR},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      CHANGE_ITEM_SPEC = #{row.changeItemSpec,jdbcType=BIT},
+      SHORTCUT = #{row.shortcut,jdbcType=NVARCHAR},
+      ITEM_SPECIFICATION = #{row.itemSpecification,jdbcType=NVARCHAR},
+      LOT_CONTROL = #{row.lotControl,jdbcType=NVARCHAR},
+      LOT_EXPIRE_DAY = #{row.lotExpireDay,jdbcType=INTEGER},
+      LOT_WAITING_DAY = #{row.lotWaitingDay,jdbcType=INTEGER},
+      LOT_REINSPECTION_DAY = #{row.lotReinspectionDay,jdbcType=INTEGER},
+      LOT_FAILURE_CONTROL = #{row.lotFailureControl,jdbcType=NVARCHAR},
+      UNIT_MODE = #{row.unitMode,jdbcType=NVARCHAR},
+      INVENTORY_CHECK_BY = #{row.inventoryCheckBy,jdbcType=NVARCHAR},
+      ITEM_SN_MANAGEMENT = #{row.itemSnManagement,jdbcType=BIT},
+      SN_ENTRY_MODE = #{row.snEntryMode,jdbcType=NVARCHAR},
+      ITEM_FEATURE_CONTROL = #{row.itemFeatureControl,jdbcType=BIT},
+      PACKING_UNIT = #{row.packingUnit,jdbcType=BIT},
+      STATUS = #{row.status,jdbcType=NVARCHAR},
+      E_ITEM = #{row.eItem,jdbcType=NVARCHAR},
+      E_CODE = #{row.eCode,jdbcType=NVARCHAR},
+      FEATURE_GENERATE_MODE = #{row.featureGenerateMode,jdbcType=NVARCHAR},
+      CKD = #{row.ckd,jdbcType=BIT},
+      ITEM_PICTURE = #{row.itemPicture,jdbcType=NVARCHAR},
+      JOINT_PRODUCT_CONTROL = #{row.jointProductControl,jdbcType=BIT},
+      NEED_CERTIFICATION = #{row.needCertification,jdbcType=BIT},
+      LOT_NO_RULE_ID = #{row.lotNoRuleId,jdbcType=CHAR},
+      SN_NO_RULE_ID = #{row.snNoRuleId,jdbcType=CHAR},
+      FEATURE_GROUP_ID = #{row.featureGroupId,jdbcType=CHAR},
+      SECOND_UNIT_ID = #{row.secondUnitId,jdbcType=CHAR},
+      STOCK_UNIT_ID = #{row.stockUnitId,jdbcType=CHAR},
+      LIFECYCLE_ID = #{row.lifecycleId,jdbcType=CHAR},
+      LOGISTIC_UNIT_ID = #{row.logisticUnitId,jdbcType=CHAR},
+      ISWEIGHT = #{row.isweight,jdbcType=BIT},
+      WEIGHT_PRICE = #{row.weightPrice,jdbcType=BIT},
+      WEIGHT_PLU = #{row.weightPlu,jdbcType=NVARCHAR},
+      WEIGHT_UNIT_ID = #{row.weightUnitId,jdbcType=CHAR},
+      SOURCE = #{row.source,jdbcType=NVARCHAR},
+      PLM_DATAKEY = #{row.plmDatakey,jdbcType=NVARCHAR},
+      ITEM_PIC = #{row.itemPic,jdbcType=NVARCHAR},
+      ITEM_DESC = #{row.itemDesc,jdbcType=NVARCHAR},
+      DRAWING_NO = #{row.drawingNo,jdbcType=NVARCHAR},
+      DRAWING_NO_FROM = #{row.drawingNoFrom,jdbcType=NVARCHAR},
+      ITEM_NET_WEIGHT = #{row.itemNetWeight,jdbcType=DECIMAL},
+      NET_WEIGHT_UNIT_ID = #{row.netWeightUnitId,jdbcType=CHAR},
+      SERVICE_ITEM = #{row.serviceItem,jdbcType=BIT},
+      ASSET = #{row.asset,jdbcType=BIT},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR},
+      ITEM_DESC2 = #{row.itemDesc2,jdbcType=LONGNVARCHAR},
+      Attachments = #{row.attachments,jdbcType=LONGNVARCHAR},
+      Version = #{row.version,jdbcType=BINARY}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ITEM
+    set ITEM_BUSINESS_ID = #{row.itemBusinessId,jdbcType=CHAR},
+      Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      INVENTORY_MANAGEMENT = #{row.inventoryManagement,jdbcType=BIT},
+      ITEM_CODE = #{row.itemCode,jdbcType=NVARCHAR},
+      ITEM_NAME = #{row.itemName,jdbcType=NVARCHAR},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      CHANGE_ITEM_SPEC = #{row.changeItemSpec,jdbcType=BIT},
+      SHORTCUT = #{row.shortcut,jdbcType=NVARCHAR},
+      ITEM_SPECIFICATION = #{row.itemSpecification,jdbcType=NVARCHAR},
+      LOT_CONTROL = #{row.lotControl,jdbcType=NVARCHAR},
+      LOT_EXPIRE_DAY = #{row.lotExpireDay,jdbcType=INTEGER},
+      LOT_WAITING_DAY = #{row.lotWaitingDay,jdbcType=INTEGER},
+      LOT_REINSPECTION_DAY = #{row.lotReinspectionDay,jdbcType=INTEGER},
+      LOT_FAILURE_CONTROL = #{row.lotFailureControl,jdbcType=NVARCHAR},
+      UNIT_MODE = #{row.unitMode,jdbcType=NVARCHAR},
+      INVENTORY_CHECK_BY = #{row.inventoryCheckBy,jdbcType=NVARCHAR},
+      ITEM_SN_MANAGEMENT = #{row.itemSnManagement,jdbcType=BIT},
+      SN_ENTRY_MODE = #{row.snEntryMode,jdbcType=NVARCHAR},
+      ITEM_FEATURE_CONTROL = #{row.itemFeatureControl,jdbcType=BIT},
+      PACKING_UNIT = #{row.packingUnit,jdbcType=BIT},
+      STATUS = #{row.status,jdbcType=NVARCHAR},
+      E_ITEM = #{row.eItem,jdbcType=NVARCHAR},
+      E_CODE = #{row.eCode,jdbcType=NVARCHAR},
+      FEATURE_GENERATE_MODE = #{row.featureGenerateMode,jdbcType=NVARCHAR},
+      CKD = #{row.ckd,jdbcType=BIT},
+      ITEM_PICTURE = #{row.itemPicture,jdbcType=NVARCHAR},
+      JOINT_PRODUCT_CONTROL = #{row.jointProductControl,jdbcType=BIT},
+      NEED_CERTIFICATION = #{row.needCertification,jdbcType=BIT},
+      LOT_NO_RULE_ID = #{row.lotNoRuleId,jdbcType=CHAR},
+      SN_NO_RULE_ID = #{row.snNoRuleId,jdbcType=CHAR},
+      FEATURE_GROUP_ID = #{row.featureGroupId,jdbcType=CHAR},
+      SECOND_UNIT_ID = #{row.secondUnitId,jdbcType=CHAR},
+      STOCK_UNIT_ID = #{row.stockUnitId,jdbcType=CHAR},
+      LIFECYCLE_ID = #{row.lifecycleId,jdbcType=CHAR},
+      LOGISTIC_UNIT_ID = #{row.logisticUnitId,jdbcType=CHAR},
+      ISWEIGHT = #{row.isweight,jdbcType=BIT},
+      WEIGHT_PRICE = #{row.weightPrice,jdbcType=BIT},
+      WEIGHT_PLU = #{row.weightPlu,jdbcType=NVARCHAR},
+      WEIGHT_UNIT_ID = #{row.weightUnitId,jdbcType=CHAR},
+      SOURCE = #{row.source,jdbcType=NVARCHAR},
+      PLM_DATAKEY = #{row.plmDatakey,jdbcType=NVARCHAR},
+      ITEM_PIC = #{row.itemPic,jdbcType=NVARCHAR},
+      ITEM_DESC = #{row.itemDesc,jdbcType=NVARCHAR},
+      DRAWING_NO = #{row.drawingNo,jdbcType=NVARCHAR},
+      DRAWING_NO_FROM = #{row.drawingNoFrom,jdbcType=NVARCHAR},
+      ITEM_NET_WEIGHT = #{row.itemNetWeight,jdbcType=DECIMAL},
+      NET_WEIGHT_UNIT_ID = #{row.netWeightUnitId,jdbcType=CHAR},
+      SERVICE_ITEM = #{row.serviceItem,jdbcType=BIT},
+      ASSET = #{row.asset,jdbcType=BIT},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tb.mbg.model.Item">
+    update ITEM
+    <set>
+      <if test="ownerDept != null">
+        Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="ownerEmp != null">
+        Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="inventoryManagement != null">
+        INVENTORY_MANAGEMENT = #{inventoryManagement,jdbcType=BIT},
+      </if>
+      <if test="itemCode != null">
+        ITEM_CODE = #{itemCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemName != null">
+        ITEM_NAME = #{itemName,jdbcType=NVARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="changeItemSpec != null">
+        CHANGE_ITEM_SPEC = #{changeItemSpec,jdbcType=BIT},
+      </if>
+      <if test="shortcut != null">
+        SHORTCUT = #{shortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemSpecification != null">
+        ITEM_SPECIFICATION = #{itemSpecification,jdbcType=NVARCHAR},
+      </if>
+      <if test="lotControl != null">
+        LOT_CONTROL = #{lotControl,jdbcType=NVARCHAR},
+      </if>
+      <if test="lotExpireDay != null">
+        LOT_EXPIRE_DAY = #{lotExpireDay,jdbcType=INTEGER},
+      </if>
+      <if test="lotWaitingDay != null">
+        LOT_WAITING_DAY = #{lotWaitingDay,jdbcType=INTEGER},
+      </if>
+      <if test="lotReinspectionDay != null">
+        LOT_REINSPECTION_DAY = #{lotReinspectionDay,jdbcType=INTEGER},
+      </if>
+      <if test="lotFailureControl != null">
+        LOT_FAILURE_CONTROL = #{lotFailureControl,jdbcType=NVARCHAR},
+      </if>
+      <if test="unitMode != null">
+        UNIT_MODE = #{unitMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="inventoryCheckBy != null">
+        INVENTORY_CHECK_BY = #{inventoryCheckBy,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemSnManagement != null">
+        ITEM_SN_MANAGEMENT = #{itemSnManagement,jdbcType=BIT},
+      </if>
+      <if test="snEntryMode != null">
+        SN_ENTRY_MODE = #{snEntryMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemFeatureControl != null">
+        ITEM_FEATURE_CONTROL = #{itemFeatureControl,jdbcType=BIT},
+      </if>
+      <if test="packingUnit != null">
+        PACKING_UNIT = #{packingUnit,jdbcType=BIT},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=NVARCHAR},
+      </if>
+      <if test="eItem != null">
+        E_ITEM = #{eItem,jdbcType=NVARCHAR},
+      </if>
+      <if test="eCode != null">
+        E_CODE = #{eCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="featureGenerateMode != null">
+        FEATURE_GENERATE_MODE = #{featureGenerateMode,jdbcType=NVARCHAR},
+      </if>
+      <if test="ckd != null">
+        CKD = #{ckd,jdbcType=BIT},
+      </if>
+      <if test="itemPicture != null">
+        ITEM_PICTURE = #{itemPicture,jdbcType=NVARCHAR},
+      </if>
+      <if test="jointProductControl != null">
+        JOINT_PRODUCT_CONTROL = #{jointProductControl,jdbcType=BIT},
+      </if>
+      <if test="needCertification != null">
+        NEED_CERTIFICATION = #{needCertification,jdbcType=BIT},
+      </if>
+      <if test="lotNoRuleId != null">
+        LOT_NO_RULE_ID = #{lotNoRuleId,jdbcType=CHAR},
+      </if>
+      <if test="snNoRuleId != null">
+        SN_NO_RULE_ID = #{snNoRuleId,jdbcType=CHAR},
+      </if>
+      <if test="featureGroupId != null">
+        FEATURE_GROUP_ID = #{featureGroupId,jdbcType=CHAR},
+      </if>
+      <if test="secondUnitId != null">
+        SECOND_UNIT_ID = #{secondUnitId,jdbcType=CHAR},
+      </if>
+      <if test="stockUnitId != null">
+        STOCK_UNIT_ID = #{stockUnitId,jdbcType=CHAR},
+      </if>
+      <if test="lifecycleId != null">
+        LIFECYCLE_ID = #{lifecycleId,jdbcType=CHAR},
+      </if>
+      <if test="logisticUnitId != null">
+        LOGISTIC_UNIT_ID = #{logisticUnitId,jdbcType=CHAR},
+      </if>
+      <if test="isweight != null">
+        ISWEIGHT = #{isweight,jdbcType=BIT},
+      </if>
+      <if test="weightPrice != null">
+        WEIGHT_PRICE = #{weightPrice,jdbcType=BIT},
+      </if>
+      <if test="weightPlu != null">
+        WEIGHT_PLU = #{weightPlu,jdbcType=NVARCHAR},
+      </if>
+      <if test="weightUnitId != null">
+        WEIGHT_UNIT_ID = #{weightUnitId,jdbcType=CHAR},
+      </if>
+      <if test="source != null">
+        SOURCE = #{source,jdbcType=NVARCHAR},
+      </if>
+      <if test="plmDatakey != null">
+        PLM_DATAKEY = #{plmDatakey,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemPic != null">
+        ITEM_PIC = #{itemPic,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemDesc != null">
+        ITEM_DESC = #{itemDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="drawingNo != null">
+        DRAWING_NO = #{drawingNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="drawingNoFrom != null">
+        DRAWING_NO_FROM = #{drawingNoFrom,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemNetWeight != null">
+        ITEM_NET_WEIGHT = #{itemNetWeight,jdbcType=DECIMAL},
+      </if>
+      <if test="netWeightUnitId != null">
+        NET_WEIGHT_UNIT_ID = #{netWeightUnitId,jdbcType=CHAR},
+      </if>
+      <if test="serviceItem != null">
+        SERVICE_ITEM = #{serviceItem,jdbcType=BIT},
+      </if>
+      <if test="asset != null">
+        ASSET = #{asset,jdbcType=BIT},
+      </if>
+      <if test="udf001 != null">
+        UDF001 = #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        UDF002 = #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        UDF003 = #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        UDF011 = #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        UDF012 = #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        UDF013 = #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        UDF021 = #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        UDF022 = #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        UDF023 = #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        UDF024 = #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        UDF025 = #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        UDF026 = #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        UDF051 = #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        UDF052 = #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        UDF053 = #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        UDF054 = #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        CreateBy = #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="processinstanceid != null">
+        ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        ApproveBy = #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="ownerOrgRtk != null">
+        Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="ownerOrgRoid != null">
+        Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="itemDesc2 != null">
+        ITEM_DESC2 = #{itemDesc2,jdbcType=LONGNVARCHAR},
+      </if>
+      <if test="attachments != null">
+        Attachments = #{attachments,jdbcType=LONGNVARCHAR},
+      </if>
+      <if test="version != null">
+        Version = #{version,jdbcType=BINARY},
+      </if>
+    </set>
+    where ITEM_BUSINESS_ID = #{itemBusinessId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tb.mbg.model.Item">
+    update ITEM
+    set Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      INVENTORY_MANAGEMENT = #{inventoryManagement,jdbcType=BIT},
+      ITEM_CODE = #{itemCode,jdbcType=NVARCHAR},
+      ITEM_NAME = #{itemName,jdbcType=NVARCHAR},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      CHANGE_ITEM_SPEC = #{changeItemSpec,jdbcType=BIT},
+      SHORTCUT = #{shortcut,jdbcType=NVARCHAR},
+      ITEM_SPECIFICATION = #{itemSpecification,jdbcType=NVARCHAR},
+      LOT_CONTROL = #{lotControl,jdbcType=NVARCHAR},
+      LOT_EXPIRE_DAY = #{lotExpireDay,jdbcType=INTEGER},
+      LOT_WAITING_DAY = #{lotWaitingDay,jdbcType=INTEGER},
+      LOT_REINSPECTION_DAY = #{lotReinspectionDay,jdbcType=INTEGER},
+      LOT_FAILURE_CONTROL = #{lotFailureControl,jdbcType=NVARCHAR},
+      UNIT_MODE = #{unitMode,jdbcType=NVARCHAR},
+      INVENTORY_CHECK_BY = #{inventoryCheckBy,jdbcType=NVARCHAR},
+      ITEM_SN_MANAGEMENT = #{itemSnManagement,jdbcType=BIT},
+      SN_ENTRY_MODE = #{snEntryMode,jdbcType=NVARCHAR},
+      ITEM_FEATURE_CONTROL = #{itemFeatureControl,jdbcType=BIT},
+      PACKING_UNIT = #{packingUnit,jdbcType=BIT},
+      STATUS = #{status,jdbcType=NVARCHAR},
+      E_ITEM = #{eItem,jdbcType=NVARCHAR},
+      E_CODE = #{eCode,jdbcType=NVARCHAR},
+      FEATURE_GENERATE_MODE = #{featureGenerateMode,jdbcType=NVARCHAR},
+      CKD = #{ckd,jdbcType=BIT},
+      ITEM_PICTURE = #{itemPicture,jdbcType=NVARCHAR},
+      JOINT_PRODUCT_CONTROL = #{jointProductControl,jdbcType=BIT},
+      NEED_CERTIFICATION = #{needCertification,jdbcType=BIT},
+      LOT_NO_RULE_ID = #{lotNoRuleId,jdbcType=CHAR},
+      SN_NO_RULE_ID = #{snNoRuleId,jdbcType=CHAR},
+      FEATURE_GROUP_ID = #{featureGroupId,jdbcType=CHAR},
+      SECOND_UNIT_ID = #{secondUnitId,jdbcType=CHAR},
+      STOCK_UNIT_ID = #{stockUnitId,jdbcType=CHAR},
+      LIFECYCLE_ID = #{lifecycleId,jdbcType=CHAR},
+      LOGISTIC_UNIT_ID = #{logisticUnitId,jdbcType=CHAR},
+      ISWEIGHT = #{isweight,jdbcType=BIT},
+      WEIGHT_PRICE = #{weightPrice,jdbcType=BIT},
+      WEIGHT_PLU = #{weightPlu,jdbcType=NVARCHAR},
+      WEIGHT_UNIT_ID = #{weightUnitId,jdbcType=CHAR},
+      SOURCE = #{source,jdbcType=NVARCHAR},
+      PLM_DATAKEY = #{plmDatakey,jdbcType=NVARCHAR},
+      ITEM_PIC = #{itemPic,jdbcType=NVARCHAR},
+      ITEM_DESC = #{itemDesc,jdbcType=NVARCHAR},
+      DRAWING_NO = #{drawingNo,jdbcType=NVARCHAR},
+      DRAWING_NO_FROM = #{drawingNoFrom,jdbcType=NVARCHAR},
+      ITEM_NET_WEIGHT = #{itemNetWeight,jdbcType=DECIMAL},
+      NET_WEIGHT_UNIT_ID = #{netWeightUnitId,jdbcType=CHAR},
+      SERVICE_ITEM = #{serviceItem,jdbcType=BIT},
+      ASSET = #{asset,jdbcType=BIT},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR},
+      ITEM_DESC2 = #{itemDesc2,jdbcType=LONGNVARCHAR},
+      Attachments = #{attachments,jdbcType=LONGNVARCHAR},
+      Version = #{version,jdbcType=BINARY}
+    where ITEM_BUSINESS_ID = #{itemBusinessId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tb.mbg.model.Item">
+    update ITEM
+    set Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      INVENTORY_MANAGEMENT = #{inventoryManagement,jdbcType=BIT},
+      ITEM_CODE = #{itemCode,jdbcType=NVARCHAR},
+      ITEM_NAME = #{itemName,jdbcType=NVARCHAR},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      CHANGE_ITEM_SPEC = #{changeItemSpec,jdbcType=BIT},
+      SHORTCUT = #{shortcut,jdbcType=NVARCHAR},
+      ITEM_SPECIFICATION = #{itemSpecification,jdbcType=NVARCHAR},
+      LOT_CONTROL = #{lotControl,jdbcType=NVARCHAR},
+      LOT_EXPIRE_DAY = #{lotExpireDay,jdbcType=INTEGER},
+      LOT_WAITING_DAY = #{lotWaitingDay,jdbcType=INTEGER},
+      LOT_REINSPECTION_DAY = #{lotReinspectionDay,jdbcType=INTEGER},
+      LOT_FAILURE_CONTROL = #{lotFailureControl,jdbcType=NVARCHAR},
+      UNIT_MODE = #{unitMode,jdbcType=NVARCHAR},
+      INVENTORY_CHECK_BY = #{inventoryCheckBy,jdbcType=NVARCHAR},
+      ITEM_SN_MANAGEMENT = #{itemSnManagement,jdbcType=BIT},
+      SN_ENTRY_MODE = #{snEntryMode,jdbcType=NVARCHAR},
+      ITEM_FEATURE_CONTROL = #{itemFeatureControl,jdbcType=BIT},
+      PACKING_UNIT = #{packingUnit,jdbcType=BIT},
+      STATUS = #{status,jdbcType=NVARCHAR},
+      E_ITEM = #{eItem,jdbcType=NVARCHAR},
+      E_CODE = #{eCode,jdbcType=NVARCHAR},
+      FEATURE_GENERATE_MODE = #{featureGenerateMode,jdbcType=NVARCHAR},
+      CKD = #{ckd,jdbcType=BIT},
+      ITEM_PICTURE = #{itemPicture,jdbcType=NVARCHAR},
+      JOINT_PRODUCT_CONTROL = #{jointProductControl,jdbcType=BIT},
+      NEED_CERTIFICATION = #{needCertification,jdbcType=BIT},
+      LOT_NO_RULE_ID = #{lotNoRuleId,jdbcType=CHAR},
+      SN_NO_RULE_ID = #{snNoRuleId,jdbcType=CHAR},
+      FEATURE_GROUP_ID = #{featureGroupId,jdbcType=CHAR},
+      SECOND_UNIT_ID = #{secondUnitId,jdbcType=CHAR},
+      STOCK_UNIT_ID = #{stockUnitId,jdbcType=CHAR},
+      LIFECYCLE_ID = #{lifecycleId,jdbcType=CHAR},
+      LOGISTIC_UNIT_ID = #{logisticUnitId,jdbcType=CHAR},
+      ISWEIGHT = #{isweight,jdbcType=BIT},
+      WEIGHT_PRICE = #{weightPrice,jdbcType=BIT},
+      WEIGHT_PLU = #{weightPlu,jdbcType=NVARCHAR},
+      WEIGHT_UNIT_ID = #{weightUnitId,jdbcType=CHAR},
+      SOURCE = #{source,jdbcType=NVARCHAR},
+      PLM_DATAKEY = #{plmDatakey,jdbcType=NVARCHAR},
+      ITEM_PIC = #{itemPic,jdbcType=NVARCHAR},
+      ITEM_DESC = #{itemDesc,jdbcType=NVARCHAR},
+      DRAWING_NO = #{drawingNo,jdbcType=NVARCHAR},
+      DRAWING_NO_FROM = #{drawingNoFrom,jdbcType=NVARCHAR},
+      ITEM_NET_WEIGHT = #{itemNetWeight,jdbcType=DECIMAL},
+      NET_WEIGHT_UNIT_ID = #{netWeightUnitId,jdbcType=CHAR},
+      SERVICE_ITEM = #{serviceItem,jdbcType=BIT},
+      ASSET = #{asset,jdbcType=BIT},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR}
+    where ITEM_BUSINESS_ID = #{itemBusinessId,jdbcType=CHAR}
+  </update>
+</mapper>

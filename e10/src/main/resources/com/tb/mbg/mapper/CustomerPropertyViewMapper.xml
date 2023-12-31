@@ -1,0 +1,2148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tb.mbg.mapper.CustomerPropertyViewMapper">
+  <resultMap id="BaseResultMap" type="com.tb.mbg.model.CustomerPropertyView">
+    <id column="CUSTOMER_PROPERTY_VIEW_ID" jdbcType="CHAR" property="customerPropertyViewId" />
+    <result column="CUSTOMER_ID" jdbcType="CHAR" property="customerId" />
+    <result column="P1" jdbcType="NVARCHAR" property="p1" />
+    <result column="P2" jdbcType="NVARCHAR" property="p2" />
+    <result column="P3" jdbcType="NVARCHAR" property="p3" />
+    <result column="P4" jdbcType="NVARCHAR" property="p4" />
+    <result column="P5" jdbcType="NVARCHAR" property="p5" />
+    <result column="P6" jdbcType="NVARCHAR" property="p6" />
+    <result column="P7" jdbcType="NVARCHAR" property="p7" />
+    <result column="P8" jdbcType="NVARCHAR" property="p8" />
+    <result column="P9" jdbcType="NVARCHAR" property="p9" />
+    <result column="P10" jdbcType="NVARCHAR" property="p10" />
+    <result column="P11" jdbcType="NVARCHAR" property="p11" />
+    <result column="P12" jdbcType="NVARCHAR" property="p12" />
+    <result column="P13" jdbcType="NVARCHAR" property="p13" />
+    <result column="P14" jdbcType="NVARCHAR" property="p14" />
+    <result column="P15" jdbcType="NVARCHAR" property="p15" />
+    <result column="P16" jdbcType="NVARCHAR" property="p16" />
+    <result column="P17" jdbcType="NVARCHAR" property="p17" />
+    <result column="P18" jdbcType="NVARCHAR" property="p18" />
+    <result column="P19" jdbcType="NVARCHAR" property="p19" />
+    <result column="P20" jdbcType="NVARCHAR" property="p20" />
+    <result column="P21" jdbcType="NVARCHAR" property="p21" />
+    <result column="P22" jdbcType="NVARCHAR" property="p22" />
+    <result column="P23" jdbcType="NVARCHAR" property="p23" />
+    <result column="P24" jdbcType="NVARCHAR" property="p24" />
+    <result column="P25" jdbcType="NVARCHAR" property="p25" />
+    <result column="P26" jdbcType="NVARCHAR" property="p26" />
+    <result column="P27" jdbcType="NVARCHAR" property="p27" />
+    <result column="P28" jdbcType="NVARCHAR" property="p28" />
+    <result column="P29" jdbcType="NVARCHAR" property="p29" />
+    <result column="P30" jdbcType="NVARCHAR" property="p30" />
+    <result column="P31" jdbcType="NVARCHAR" property="p31" />
+    <result column="P32" jdbcType="NVARCHAR" property="p32" />
+    <result column="P33" jdbcType="NVARCHAR" property="p33" />
+    <result column="P34" jdbcType="NVARCHAR" property="p34" />
+    <result column="P35" jdbcType="NVARCHAR" property="p35" />
+    <result column="P36" jdbcType="NVARCHAR" property="p36" />
+    <result column="P37" jdbcType="NVARCHAR" property="p37" />
+    <result column="P38" jdbcType="NVARCHAR" property="p38" />
+    <result column="P39" jdbcType="NVARCHAR" property="p39" />
+    <result column="P40" jdbcType="NVARCHAR" property="p40" />
+    <result column="P41" jdbcType="NVARCHAR" property="p41" />
+    <result column="P42" jdbcType="NVARCHAR" property="p42" />
+    <result column="P43" jdbcType="NVARCHAR" property="p43" />
+    <result column="P44" jdbcType="NVARCHAR" property="p44" />
+    <result column="P45" jdbcType="NVARCHAR" property="p45" />
+    <result column="P46" jdbcType="NVARCHAR" property="p46" />
+    <result column="P47" jdbcType="NVARCHAR" property="p47" />
+    <result column="P48" jdbcType="NVARCHAR" property="p48" />
+    <result column="P49" jdbcType="NVARCHAR" property="p49" />
+    <result column="P50" jdbcType="NVARCHAR" property="p50" />
+    <result column="P51" jdbcType="NVARCHAR" property="p51" />
+    <result column="P52" jdbcType="NVARCHAR" property="p52" />
+    <result column="P53" jdbcType="NVARCHAR" property="p53" />
+    <result column="P54" jdbcType="NVARCHAR" property="p54" />
+    <result column="P55" jdbcType="NVARCHAR" property="p55" />
+    <result column="P56" jdbcType="NVARCHAR" property="p56" />
+    <result column="P57" jdbcType="NVARCHAR" property="p57" />
+    <result column="P58" jdbcType="NVARCHAR" property="p58" />
+    <result column="P59" jdbcType="NVARCHAR" property="p59" />
+    <result column="P60" jdbcType="NVARCHAR" property="p60" />
+    <result column="P61" jdbcType="DECIMAL" property="p61" />
+    <result column="P62" jdbcType="DECIMAL" property="p62" />
+    <result column="P63" jdbcType="DECIMAL" property="p63" />
+    <result column="P64" jdbcType="DECIMAL" property="p64" />
+    <result column="P65" jdbcType="DECIMAL" property="p65" />
+    <result column="P66" jdbcType="DECIMAL" property="p66" />
+    <result column="P67" jdbcType="DECIMAL" property="p67" />
+    <result column="P68" jdbcType="DECIMAL" property="p68" />
+    <result column="P69" jdbcType="DECIMAL" property="p69" />
+    <result column="P70" jdbcType="DECIMAL" property="p70" />
+    <result column="P71" jdbcType="DECIMAL" property="p71" />
+    <result column="P72" jdbcType="DECIMAL" property="p72" />
+    <result column="P73" jdbcType="DECIMAL" property="p73" />
+    <result column="P74" jdbcType="DECIMAL" property="p74" />
+    <result column="P75" jdbcType="DECIMAL" property="p75" />
+    <result column="P76" jdbcType="DECIMAL" property="p76" />
+    <result column="P77" jdbcType="DECIMAL" property="p77" />
+    <result column="P78" jdbcType="DECIMAL" property="p78" />
+    <result column="P79" jdbcType="DECIMAL" property="p79" />
+    <result column="P80" jdbcType="DECIMAL" property="p80" />
+    <result column="P81" jdbcType="DECIMAL" property="p81" />
+    <result column="P82" jdbcType="DECIMAL" property="p82" />
+    <result column="P83" jdbcType="DECIMAL" property="p83" />
+    <result column="P84" jdbcType="DECIMAL" property="p84" />
+    <result column="P85" jdbcType="DECIMAL" property="p85" />
+    <result column="P86" jdbcType="DECIMAL" property="p86" />
+    <result column="P87" jdbcType="DECIMAL" property="p87" />
+    <result column="P88" jdbcType="DECIMAL" property="p88" />
+    <result column="P89" jdbcType="DECIMAL" property="p89" />
+    <result column="P90" jdbcType="DECIMAL" property="p90" />
+    <result column="P91" jdbcType="DECIMAL" property="p91" />
+    <result column="P92" jdbcType="DECIMAL" property="p92" />
+    <result column="P93" jdbcType="DECIMAL" property="p93" />
+    <result column="P94" jdbcType="DECIMAL" property="p94" />
+    <result column="P95" jdbcType="DECIMAL" property="p95" />
+    <result column="P96" jdbcType="DECIMAL" property="p96" />
+    <result column="P97" jdbcType="DECIMAL" property="p97" />
+    <result column="P98" jdbcType="DECIMAL" property="p98" />
+    <result column="P99" jdbcType="DECIMAL" property="p99" />
+    <result column="P100" jdbcType="DECIMAL" property="p100" />
+    <result column="ProcessInstanceId" jdbcType="CHAR" property="processinstanceid" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="LastModifiedDate" jdbcType="TIMESTAMP" property="lastmodifieddate" />
+    <result column="ModifiedDate" jdbcType="TIMESTAMP" property="modifieddate" />
+    <result column="CreateBy" jdbcType="CHAR" property="createby" />
+    <result column="LastModifiedBy" jdbcType="CHAR" property="lastmodifiedby" />
+    <result column="ModifiedBy" jdbcType="CHAR" property="modifiedby" />
+    <result column="ORG_ID_RTK" jdbcType="NVARCHAR" property="orgIdRtk" />
+    <result column="ORG_ID_ROid" jdbcType="CHAR" property="orgIdRoid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tb.mbg.model.CustomerPropertyView">
+    <result column="Version" jdbcType="BINARY" property="version" />
+    <result column="Attachments" jdbcType="LONGNVARCHAR" property="attachments" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    CUSTOMER_PROPERTY_VIEW_ID, CUSTOMER_ID, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, 
+    P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, 
+    P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, P41, P42, P43, P44, 
+    P45, P46, P47, P48, P49, P50, P51, P52, P53, P54, P55, P56, P57, P58, P59, P60, P61, 
+    P62, P63, P64, P65, P66, P67, P68, P69, P70, P71, P72, P73, P74, P75, P76, P77, P78, 
+    P79, P80, P81, P82, P83, P84, P85, P86, P87, P88, P89, P90, P91, P92, P93, P94, P95, 
+    P96, P97, P98, P99, P100, ProcessInstanceId, CreateDate, LastModifiedDate, ModifiedDate, 
+    CreateBy, LastModifiedBy, ModifiedBy, ORG_ID_RTK, ORG_ID_ROid
+  </sql>
+  <sql id="Blob_Column_List">
+    Version, Attachments
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.tb.mbg.model.CustomerPropertyViewExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from CUSTOMER_PROPERTY_VIEW
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.tb.mbg.model.CustomerPropertyViewExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from CUSTOMER_PROPERTY_VIEW
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from CUSTOMER_PROPERTY_VIEW
+    where CUSTOMER_PROPERTY_VIEW_ID = #{customerPropertyViewId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CUSTOMER_PROPERTY_VIEW
+    where CUSTOMER_PROPERTY_VIEW_ID = #{customerPropertyViewId,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tb.mbg.model.CustomerPropertyViewExample">
+    delete from CUSTOMER_PROPERTY_VIEW
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tb.mbg.model.CustomerPropertyView">
+    insert into CUSTOMER_PROPERTY_VIEW (CUSTOMER_PROPERTY_VIEW_ID, CUSTOMER_ID, P1, 
+      P2, P3, P4, P5, 
+      P6, P7, P8, P9, 
+      P10, P11, P12, P13, 
+      P14, P15, P16, P17, 
+      P18, P19, P20, P21, 
+      P22, P23, P24, P25, 
+      P26, P27, P28, P29, 
+      P30, P31, P32, P33, 
+      P34, P35, P36, P37, 
+      P38, P39, P40, P41, 
+      P42, P43, P44, P45, 
+      P46, P47, P48, P49, 
+      P50, P51, P52, P53, 
+      P54, P55, P56, P57, 
+      P58, P59, P60, P61, 
+      P62, P63, P64, P65, 
+      P66, P67, P68, P69, 
+      P70, P71, P72, P73, 
+      P74, P75, P76, P77, 
+      P78, P79, P80, P81, 
+      P82, P83, P84, P85, 
+      P86, P87, P88, P89, 
+      P90, P91, P92, P93, 
+      P94, P95, P96, P97, 
+      P98, P99, P100, ProcessInstanceId, 
+      CreateDate, LastModifiedDate, ModifiedDate, 
+      CreateBy, LastModifiedBy, ModifiedBy, 
+      ORG_ID_RTK, ORG_ID_ROid, Version, 
+      Attachments)
+    values (#{customerPropertyViewId,jdbcType=CHAR}, #{customerId,jdbcType=CHAR}, #{p1,jdbcType=NVARCHAR}, 
+      #{p2,jdbcType=NVARCHAR}, #{p3,jdbcType=NVARCHAR}, #{p4,jdbcType=NVARCHAR}, #{p5,jdbcType=NVARCHAR}, 
+      #{p6,jdbcType=NVARCHAR}, #{p7,jdbcType=NVARCHAR}, #{p8,jdbcType=NVARCHAR}, #{p9,jdbcType=NVARCHAR}, 
+      #{p10,jdbcType=NVARCHAR}, #{p11,jdbcType=NVARCHAR}, #{p12,jdbcType=NVARCHAR}, #{p13,jdbcType=NVARCHAR}, 
+      #{p14,jdbcType=NVARCHAR}, #{p15,jdbcType=NVARCHAR}, #{p16,jdbcType=NVARCHAR}, #{p17,jdbcType=NVARCHAR}, 
+      #{p18,jdbcType=NVARCHAR}, #{p19,jdbcType=NVARCHAR}, #{p20,jdbcType=NVARCHAR}, #{p21,jdbcType=NVARCHAR}, 
+      #{p22,jdbcType=NVARCHAR}, #{p23,jdbcType=NVARCHAR}, #{p24,jdbcType=NVARCHAR}, #{p25,jdbcType=NVARCHAR}, 
+      #{p26,jdbcType=NVARCHAR}, #{p27,jdbcType=NVARCHAR}, #{p28,jdbcType=NVARCHAR}, #{p29,jdbcType=NVARCHAR}, 
+      #{p30,jdbcType=NVARCHAR}, #{p31,jdbcType=NVARCHAR}, #{p32,jdbcType=NVARCHAR}, #{p33,jdbcType=NVARCHAR}, 
+      #{p34,jdbcType=NVARCHAR}, #{p35,jdbcType=NVARCHAR}, #{p36,jdbcType=NVARCHAR}, #{p37,jdbcType=NVARCHAR}, 
+      #{p38,jdbcType=NVARCHAR}, #{p39,jdbcType=NVARCHAR}, #{p40,jdbcType=NVARCHAR}, #{p41,jdbcType=NVARCHAR}, 
+      #{p42,jdbcType=NVARCHAR}, #{p43,jdbcType=NVARCHAR}, #{p44,jdbcType=NVARCHAR}, #{p45,jdbcType=NVARCHAR}, 
+      #{p46,jdbcType=NVARCHAR}, #{p47,jdbcType=NVARCHAR}, #{p48,jdbcType=NVARCHAR}, #{p49,jdbcType=NVARCHAR}, 
+      #{p50,jdbcType=NVARCHAR}, #{p51,jdbcType=NVARCHAR}, #{p52,jdbcType=NVARCHAR}, #{p53,jdbcType=NVARCHAR}, 
+      #{p54,jdbcType=NVARCHAR}, #{p55,jdbcType=NVARCHAR}, #{p56,jdbcType=NVARCHAR}, #{p57,jdbcType=NVARCHAR}, 
+      #{p58,jdbcType=NVARCHAR}, #{p59,jdbcType=NVARCHAR}, #{p60,jdbcType=NVARCHAR}, #{p61,jdbcType=DECIMAL}, 
+      #{p62,jdbcType=DECIMAL}, #{p63,jdbcType=DECIMAL}, #{p64,jdbcType=DECIMAL}, #{p65,jdbcType=DECIMAL}, 
+      #{p66,jdbcType=DECIMAL}, #{p67,jdbcType=DECIMAL}, #{p68,jdbcType=DECIMAL}, #{p69,jdbcType=DECIMAL}, 
+      #{p70,jdbcType=DECIMAL}, #{p71,jdbcType=DECIMAL}, #{p72,jdbcType=DECIMAL}, #{p73,jdbcType=DECIMAL}, 
+      #{p74,jdbcType=DECIMAL}, #{p75,jdbcType=DECIMAL}, #{p76,jdbcType=DECIMAL}, #{p77,jdbcType=DECIMAL}, 
+      #{p78,jdbcType=DECIMAL}, #{p79,jdbcType=DECIMAL}, #{p80,jdbcType=DECIMAL}, #{p81,jdbcType=DECIMAL}, 
+      #{p82,jdbcType=DECIMAL}, #{p83,jdbcType=DECIMAL}, #{p84,jdbcType=DECIMAL}, #{p85,jdbcType=DECIMAL}, 
+      #{p86,jdbcType=DECIMAL}, #{p87,jdbcType=DECIMAL}, #{p88,jdbcType=DECIMAL}, #{p89,jdbcType=DECIMAL}, 
+      #{p90,jdbcType=DECIMAL}, #{p91,jdbcType=DECIMAL}, #{p92,jdbcType=DECIMAL}, #{p93,jdbcType=DECIMAL}, 
+      #{p94,jdbcType=DECIMAL}, #{p95,jdbcType=DECIMAL}, #{p96,jdbcType=DECIMAL}, #{p97,jdbcType=DECIMAL}, 
+      #{p98,jdbcType=DECIMAL}, #{p99,jdbcType=DECIMAL}, #{p100,jdbcType=DECIMAL}, #{processinstanceid,jdbcType=CHAR}, 
+      #{createdate,jdbcType=TIMESTAMP}, #{lastmodifieddate,jdbcType=TIMESTAMP}, #{modifieddate,jdbcType=TIMESTAMP}, 
+      #{createby,jdbcType=CHAR}, #{lastmodifiedby,jdbcType=CHAR}, #{modifiedby,jdbcType=CHAR}, 
+      #{orgIdRtk,jdbcType=NVARCHAR}, #{orgIdRoid,jdbcType=CHAR}, #{version,jdbcType=BINARY}, 
+      #{attachments,jdbcType=LONGNVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tb.mbg.model.CustomerPropertyView">
+    insert into CUSTOMER_PROPERTY_VIEW
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="customerPropertyViewId != null">
+        CUSTOMER_PROPERTY_VIEW_ID,
+      </if>
+      <if test="customerId != null">
+        CUSTOMER_ID,
+      </if>
+      <if test="p1 != null">
+        P1,
+      </if>
+      <if test="p2 != null">
+        P2,
+      </if>
+      <if test="p3 != null">
+        P3,
+      </if>
+      <if test="p4 != null">
+        P4,
+      </if>
+      <if test="p5 != null">
+        P5,
+      </if>
+      <if test="p6 != null">
+        P6,
+      </if>
+      <if test="p7 != null">
+        P7,
+      </if>
+      <if test="p8 != null">
+        P8,
+      </if>
+      <if test="p9 != null">
+        P9,
+      </if>
+      <if test="p10 != null">
+        P10,
+      </if>
+      <if test="p11 != null">
+        P11,
+      </if>
+      <if test="p12 != null">
+        P12,
+      </if>
+      <if test="p13 != null">
+        P13,
+      </if>
+      <if test="p14 != null">
+        P14,
+      </if>
+      <if test="p15 != null">
+        P15,
+      </if>
+      <if test="p16 != null">
+        P16,
+      </if>
+      <if test="p17 != null">
+        P17,
+      </if>
+      <if test="p18 != null">
+        P18,
+      </if>
+      <if test="p19 != null">
+        P19,
+      </if>
+      <if test="p20 != null">
+        P20,
+      </if>
+      <if test="p21 != null">
+        P21,
+      </if>
+      <if test="p22 != null">
+        P22,
+      </if>
+      <if test="p23 != null">
+        P23,
+      </if>
+      <if test="p24 != null">
+        P24,
+      </if>
+      <if test="p25 != null">
+        P25,
+      </if>
+      <if test="p26 != null">
+        P26,
+      </if>
+      <if test="p27 != null">
+        P27,
+      </if>
+      <if test="p28 != null">
+        P28,
+      </if>
+      <if test="p29 != null">
+        P29,
+      </if>
+      <if test="p30 != null">
+        P30,
+      </if>
+      <if test="p31 != null">
+        P31,
+      </if>
+      <if test="p32 != null">
+        P32,
+      </if>
+      <if test="p33 != null">
+        P33,
+      </if>
+      <if test="p34 != null">
+        P34,
+      </if>
+      <if test="p35 != null">
+        P35,
+      </if>
+      <if test="p36 != null">
+        P36,
+      </if>
+      <if test="p37 != null">
+        P37,
+      </if>
+      <if test="p38 != null">
+        P38,
+      </if>
+      <if test="p39 != null">
+        P39,
+      </if>
+      <if test="p40 != null">
+        P40,
+      </if>
+      <if test="p41 != null">
+        P41,
+      </if>
+      <if test="p42 != null">
+        P42,
+      </if>
+      <if test="p43 != null">
+        P43,
+      </if>
+      <if test="p44 != null">
+        P44,
+      </if>
+      <if test="p45 != null">
+        P45,
+      </if>
+      <if test="p46 != null">
+        P46,
+      </if>
+      <if test="p47 != null">
+        P47,
+      </if>
+      <if test="p48 != null">
+        P48,
+      </if>
+      <if test="p49 != null">
+        P49,
+      </if>
+      <if test="p50 != null">
+        P50,
+      </if>
+      <if test="p51 != null">
+        P51,
+      </if>
+      <if test="p52 != null">
+        P52,
+      </if>
+      <if test="p53 != null">
+        P53,
+      </if>
+      <if test="p54 != null">
+        P54,
+      </if>
+      <if test="p55 != null">
+        P55,
+      </if>
+      <if test="p56 != null">
+        P56,
+      </if>
+      <if test="p57 != null">
+        P57,
+      </if>
+      <if test="p58 != null">
+        P58,
+      </if>
+      <if test="p59 != null">
+        P59,
+      </if>
+      <if test="p60 != null">
+        P60,
+      </if>
+      <if test="p61 != null">
+        P61,
+      </if>
+      <if test="p62 != null">
+        P62,
+      </if>
+      <if test="p63 != null">
+        P63,
+      </if>
+      <if test="p64 != null">
+        P64,
+      </if>
+      <if test="p65 != null">
+        P65,
+      </if>
+      <if test="p66 != null">
+        P66,
+      </if>
+      <if test="p67 != null">
+        P67,
+      </if>
+      <if test="p68 != null">
+        P68,
+      </if>
+      <if test="p69 != null">
+        P69,
+      </if>
+      <if test="p70 != null">
+        P70,
+      </if>
+      <if test="p71 != null">
+        P71,
+      </if>
+      <if test="p72 != null">
+        P72,
+      </if>
+      <if test="p73 != null">
+        P73,
+      </if>
+      <if test="p74 != null">
+        P74,
+      </if>
+      <if test="p75 != null">
+        P75,
+      </if>
+      <if test="p76 != null">
+        P76,
+      </if>
+      <if test="p77 != null">
+        P77,
+      </if>
+      <if test="p78 != null">
+        P78,
+      </if>
+      <if test="p79 != null">
+        P79,
+      </if>
+      <if test="p80 != null">
+        P80,
+      </if>
+      <if test="p81 != null">
+        P81,
+      </if>
+      <if test="p82 != null">
+        P82,
+      </if>
+      <if test="p83 != null">
+        P83,
+      </if>
+      <if test="p84 != null">
+        P84,
+      </if>
+      <if test="p85 != null">
+        P85,
+      </if>
+      <if test="p86 != null">
+        P86,
+      </if>
+      <if test="p87 != null">
+        P87,
+      </if>
+      <if test="p88 != null">
+        P88,
+      </if>
+      <if test="p89 != null">
+        P89,
+      </if>
+      <if test="p90 != null">
+        P90,
+      </if>
+      <if test="p91 != null">
+        P91,
+      </if>
+      <if test="p92 != null">
+        P92,
+      </if>
+      <if test="p93 != null">
+        P93,
+      </if>
+      <if test="p94 != null">
+        P94,
+      </if>
+      <if test="p95 != null">
+        P95,
+      </if>
+      <if test="p96 != null">
+        P96,
+      </if>
+      <if test="p97 != null">
+        P97,
+      </if>
+      <if test="p98 != null">
+        P98,
+      </if>
+      <if test="p99 != null">
+        P99,
+      </if>
+      <if test="p100 != null">
+        P100,
+      </if>
+      <if test="processinstanceid != null">
+        ProcessInstanceId,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate,
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate,
+      </if>
+      <if test="createby != null">
+        CreateBy,
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy,
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy,
+      </if>
+      <if test="orgIdRtk != null">
+        ORG_ID_RTK,
+      </if>
+      <if test="orgIdRoid != null">
+        ORG_ID_ROid,
+      </if>
+      <if test="version != null">
+        Version,
+      </if>
+      <if test="attachments != null">
+        Attachments,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="customerPropertyViewId != null">
+        #{customerPropertyViewId,jdbcType=CHAR},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=CHAR},
+      </if>
+      <if test="p1 != null">
+        #{p1,jdbcType=NVARCHAR},
+      </if>
+      <if test="p2 != null">
+        #{p2,jdbcType=NVARCHAR},
+      </if>
+      <if test="p3 != null">
+        #{p3,jdbcType=NVARCHAR},
+      </if>
+      <if test="p4 != null">
+        #{p4,jdbcType=NVARCHAR},
+      </if>
+      <if test="p5 != null">
+        #{p5,jdbcType=NVARCHAR},
+      </if>
+      <if test="p6 != null">
+        #{p6,jdbcType=NVARCHAR},
+      </if>
+      <if test="p7 != null">
+        #{p7,jdbcType=NVARCHAR},
+      </if>
+      <if test="p8 != null">
+        #{p8,jdbcType=NVARCHAR},
+      </if>
+      <if test="p9 != null">
+        #{p9,jdbcType=NVARCHAR},
+      </if>
+      <if test="p10 != null">
+        #{p10,jdbcType=NVARCHAR},
+      </if>
+      <if test="p11 != null">
+        #{p11,jdbcType=NVARCHAR},
+      </if>
+      <if test="p12 != null">
+        #{p12,jdbcType=NVARCHAR},
+      </if>
+      <if test="p13 != null">
+        #{p13,jdbcType=NVARCHAR},
+      </if>
+      <if test="p14 != null">
+        #{p14,jdbcType=NVARCHAR},
+      </if>
+      <if test="p15 != null">
+        #{p15,jdbcType=NVARCHAR},
+      </if>
+      <if test="p16 != null">
+        #{p16,jdbcType=NVARCHAR},
+      </if>
+      <if test="p17 != null">
+        #{p17,jdbcType=NVARCHAR},
+      </if>
+      <if test="p18 != null">
+        #{p18,jdbcType=NVARCHAR},
+      </if>
+      <if test="p19 != null">
+        #{p19,jdbcType=NVARCHAR},
+      </if>
+      <if test="p20 != null">
+        #{p20,jdbcType=NVARCHAR},
+      </if>
+      <if test="p21 != null">
+        #{p21,jdbcType=NVARCHAR},
+      </if>
+      <if test="p22 != null">
+        #{p22,jdbcType=NVARCHAR},
+      </if>
+      <if test="p23 != null">
+        #{p23,jdbcType=NVARCHAR},
+      </if>
+      <if test="p24 != null">
+        #{p24,jdbcType=NVARCHAR},
+      </if>
+      <if test="p25 != null">
+        #{p25,jdbcType=NVARCHAR},
+      </if>
+      <if test="p26 != null">
+        #{p26,jdbcType=NVARCHAR},
+      </if>
+      <if test="p27 != null">
+        #{p27,jdbcType=NVARCHAR},
+      </if>
+      <if test="p28 != null">
+        #{p28,jdbcType=NVARCHAR},
+      </if>
+      <if test="p29 != null">
+        #{p29,jdbcType=NVARCHAR},
+      </if>
+      <if test="p30 != null">
+        #{p30,jdbcType=NVARCHAR},
+      </if>
+      <if test="p31 != null">
+        #{p31,jdbcType=NVARCHAR},
+      </if>
+      <if test="p32 != null">
+        #{p32,jdbcType=NVARCHAR},
+      </if>
+      <if test="p33 != null">
+        #{p33,jdbcType=NVARCHAR},
+      </if>
+      <if test="p34 != null">
+        #{p34,jdbcType=NVARCHAR},
+      </if>
+      <if test="p35 != null">
+        #{p35,jdbcType=NVARCHAR},
+      </if>
+      <if test="p36 != null">
+        #{p36,jdbcType=NVARCHAR},
+      </if>
+      <if test="p37 != null">
+        #{p37,jdbcType=NVARCHAR},
+      </if>
+      <if test="p38 != null">
+        #{p38,jdbcType=NVARCHAR},
+      </if>
+      <if test="p39 != null">
+        #{p39,jdbcType=NVARCHAR},
+      </if>
+      <if test="p40 != null">
+        #{p40,jdbcType=NVARCHAR},
+      </if>
+      <if test="p41 != null">
+        #{p41,jdbcType=NVARCHAR},
+      </if>
+      <if test="p42 != null">
+        #{p42,jdbcType=NVARCHAR},
+      </if>
+      <if test="p43 != null">
+        #{p43,jdbcType=NVARCHAR},
+      </if>
+      <if test="p44 != null">
+        #{p44,jdbcType=NVARCHAR},
+      </if>
+      <if test="p45 != null">
+        #{p45,jdbcType=NVARCHAR},
+      </if>
+      <if test="p46 != null">
+        #{p46,jdbcType=NVARCHAR},
+      </if>
+      <if test="p47 != null">
+        #{p47,jdbcType=NVARCHAR},
+      </if>
+      <if test="p48 != null">
+        #{p48,jdbcType=NVARCHAR},
+      </if>
+      <if test="p49 != null">
+        #{p49,jdbcType=NVARCHAR},
+      </if>
+      <if test="p50 != null">
+        #{p50,jdbcType=NVARCHAR},
+      </if>
+      <if test="p51 != null">
+        #{p51,jdbcType=NVARCHAR},
+      </if>
+      <if test="p52 != null">
+        #{p52,jdbcType=NVARCHAR},
+      </if>
+      <if test="p53 != null">
+        #{p53,jdbcType=NVARCHAR},
+      </if>
+      <if test="p54 != null">
+        #{p54,jdbcType=NVARCHAR},
+      </if>
+      <if test="p55 != null">
+        #{p55,jdbcType=NVARCHAR},
+      </if>
+      <if test="p56 != null">
+        #{p56,jdbcType=NVARCHAR},
+      </if>
+      <if test="p57 != null">
+        #{p57,jdbcType=NVARCHAR},
+      </if>
+      <if test="p58 != null">
+        #{p58,jdbcType=NVARCHAR},
+      </if>
+      <if test="p59 != null">
+        #{p59,jdbcType=NVARCHAR},
+      </if>
+      <if test="p60 != null">
+        #{p60,jdbcType=NVARCHAR},
+      </if>
+      <if test="p61 != null">
+        #{p61,jdbcType=DECIMAL},
+      </if>
+      <if test="p62 != null">
+        #{p62,jdbcType=DECIMAL},
+      </if>
+      <if test="p63 != null">
+        #{p63,jdbcType=DECIMAL},
+      </if>
+      <if test="p64 != null">
+        #{p64,jdbcType=DECIMAL},
+      </if>
+      <if test="p65 != null">
+        #{p65,jdbcType=DECIMAL},
+      </if>
+      <if test="p66 != null">
+        #{p66,jdbcType=DECIMAL},
+      </if>
+      <if test="p67 != null">
+        #{p67,jdbcType=DECIMAL},
+      </if>
+      <if test="p68 != null">
+        #{p68,jdbcType=DECIMAL},
+      </if>
+      <if test="p69 != null">
+        #{p69,jdbcType=DECIMAL},
+      </if>
+      <if test="p70 != null">
+        #{p70,jdbcType=DECIMAL},
+      </if>
+      <if test="p71 != null">
+        #{p71,jdbcType=DECIMAL},
+      </if>
+      <if test="p72 != null">
+        #{p72,jdbcType=DECIMAL},
+      </if>
+      <if test="p73 != null">
+        #{p73,jdbcType=DECIMAL},
+      </if>
+      <if test="p74 != null">
+        #{p74,jdbcType=DECIMAL},
+      </if>
+      <if test="p75 != null">
+        #{p75,jdbcType=DECIMAL},
+      </if>
+      <if test="p76 != null">
+        #{p76,jdbcType=DECIMAL},
+      </if>
+      <if test="p77 != null">
+        #{p77,jdbcType=DECIMAL},
+      </if>
+      <if test="p78 != null">
+        #{p78,jdbcType=DECIMAL},
+      </if>
+      <if test="p79 != null">
+        #{p79,jdbcType=DECIMAL},
+      </if>
+      <if test="p80 != null">
+        #{p80,jdbcType=DECIMAL},
+      </if>
+      <if test="p81 != null">
+        #{p81,jdbcType=DECIMAL},
+      </if>
+      <if test="p82 != null">
+        #{p82,jdbcType=DECIMAL},
+      </if>
+      <if test="p83 != null">
+        #{p83,jdbcType=DECIMAL},
+      </if>
+      <if test="p84 != null">
+        #{p84,jdbcType=DECIMAL},
+      </if>
+      <if test="p85 != null">
+        #{p85,jdbcType=DECIMAL},
+      </if>
+      <if test="p86 != null">
+        #{p86,jdbcType=DECIMAL},
+      </if>
+      <if test="p87 != null">
+        #{p87,jdbcType=DECIMAL},
+      </if>
+      <if test="p88 != null">
+        #{p88,jdbcType=DECIMAL},
+      </if>
+      <if test="p89 != null">
+        #{p89,jdbcType=DECIMAL},
+      </if>
+      <if test="p90 != null">
+        #{p90,jdbcType=DECIMAL},
+      </if>
+      <if test="p91 != null">
+        #{p91,jdbcType=DECIMAL},
+      </if>
+      <if test="p92 != null">
+        #{p92,jdbcType=DECIMAL},
+      </if>
+      <if test="p93 != null">
+        #{p93,jdbcType=DECIMAL},
+      </if>
+      <if test="p94 != null">
+        #{p94,jdbcType=DECIMAL},
+      </if>
+      <if test="p95 != null">
+        #{p95,jdbcType=DECIMAL},
+      </if>
+      <if test="p96 != null">
+        #{p96,jdbcType=DECIMAL},
+      </if>
+      <if test="p97 != null">
+        #{p97,jdbcType=DECIMAL},
+      </if>
+      <if test="p98 != null">
+        #{p98,jdbcType=DECIMAL},
+      </if>
+      <if test="p99 != null">
+        #{p99,jdbcType=DECIMAL},
+      </if>
+      <if test="p100 != null">
+        #{p100,jdbcType=DECIMAL},
+      </if>
+      <if test="processinstanceid != null">
+        #{processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="orgIdRtk != null">
+        #{orgIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="orgIdRoid != null">
+        #{orgIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BINARY},
+      </if>
+      <if test="attachments != null">
+        #{attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tb.mbg.model.CustomerPropertyViewExample" resultType="java.lang.Long">
+    select count(*) from CUSTOMER_PROPERTY_VIEW
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update CUSTOMER_PROPERTY_VIEW
+    <set>
+      <if test="row.customerPropertyViewId != null">
+        CUSTOMER_PROPERTY_VIEW_ID = #{row.customerPropertyViewId,jdbcType=CHAR},
+      </if>
+      <if test="row.customerId != null">
+        CUSTOMER_ID = #{row.customerId,jdbcType=CHAR},
+      </if>
+      <if test="row.p1 != null">
+        P1 = #{row.p1,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p2 != null">
+        P2 = #{row.p2,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p3 != null">
+        P3 = #{row.p3,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p4 != null">
+        P4 = #{row.p4,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p5 != null">
+        P5 = #{row.p5,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p6 != null">
+        P6 = #{row.p6,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p7 != null">
+        P7 = #{row.p7,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p8 != null">
+        P8 = #{row.p8,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p9 != null">
+        P9 = #{row.p9,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p10 != null">
+        P10 = #{row.p10,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p11 != null">
+        P11 = #{row.p11,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p12 != null">
+        P12 = #{row.p12,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p13 != null">
+        P13 = #{row.p13,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p14 != null">
+        P14 = #{row.p14,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p15 != null">
+        P15 = #{row.p15,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p16 != null">
+        P16 = #{row.p16,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p17 != null">
+        P17 = #{row.p17,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p18 != null">
+        P18 = #{row.p18,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p19 != null">
+        P19 = #{row.p19,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p20 != null">
+        P20 = #{row.p20,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p21 != null">
+        P21 = #{row.p21,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p22 != null">
+        P22 = #{row.p22,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p23 != null">
+        P23 = #{row.p23,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p24 != null">
+        P24 = #{row.p24,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p25 != null">
+        P25 = #{row.p25,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p26 != null">
+        P26 = #{row.p26,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p27 != null">
+        P27 = #{row.p27,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p28 != null">
+        P28 = #{row.p28,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p29 != null">
+        P29 = #{row.p29,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p30 != null">
+        P30 = #{row.p30,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p31 != null">
+        P31 = #{row.p31,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p32 != null">
+        P32 = #{row.p32,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p33 != null">
+        P33 = #{row.p33,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p34 != null">
+        P34 = #{row.p34,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p35 != null">
+        P35 = #{row.p35,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p36 != null">
+        P36 = #{row.p36,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p37 != null">
+        P37 = #{row.p37,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p38 != null">
+        P38 = #{row.p38,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p39 != null">
+        P39 = #{row.p39,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p40 != null">
+        P40 = #{row.p40,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p41 != null">
+        P41 = #{row.p41,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p42 != null">
+        P42 = #{row.p42,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p43 != null">
+        P43 = #{row.p43,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p44 != null">
+        P44 = #{row.p44,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p45 != null">
+        P45 = #{row.p45,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p46 != null">
+        P46 = #{row.p46,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p47 != null">
+        P47 = #{row.p47,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p48 != null">
+        P48 = #{row.p48,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p49 != null">
+        P49 = #{row.p49,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p50 != null">
+        P50 = #{row.p50,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p51 != null">
+        P51 = #{row.p51,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p52 != null">
+        P52 = #{row.p52,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p53 != null">
+        P53 = #{row.p53,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p54 != null">
+        P54 = #{row.p54,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p55 != null">
+        P55 = #{row.p55,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p56 != null">
+        P56 = #{row.p56,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p57 != null">
+        P57 = #{row.p57,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p58 != null">
+        P58 = #{row.p58,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p59 != null">
+        P59 = #{row.p59,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p60 != null">
+        P60 = #{row.p60,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.p61 != null">
+        P61 = #{row.p61,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p62 != null">
+        P62 = #{row.p62,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p63 != null">
+        P63 = #{row.p63,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p64 != null">
+        P64 = #{row.p64,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p65 != null">
+        P65 = #{row.p65,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p66 != null">
+        P66 = #{row.p66,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p67 != null">
+        P67 = #{row.p67,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p68 != null">
+        P68 = #{row.p68,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p69 != null">
+        P69 = #{row.p69,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p70 != null">
+        P70 = #{row.p70,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p71 != null">
+        P71 = #{row.p71,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p72 != null">
+        P72 = #{row.p72,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p73 != null">
+        P73 = #{row.p73,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p74 != null">
+        P74 = #{row.p74,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p75 != null">
+        P75 = #{row.p75,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p76 != null">
+        P76 = #{row.p76,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p77 != null">
+        P77 = #{row.p77,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p78 != null">
+        P78 = #{row.p78,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p79 != null">
+        P79 = #{row.p79,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p80 != null">
+        P80 = #{row.p80,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p81 != null">
+        P81 = #{row.p81,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p82 != null">
+        P82 = #{row.p82,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p83 != null">
+        P83 = #{row.p83,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p84 != null">
+        P84 = #{row.p84,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p85 != null">
+        P85 = #{row.p85,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p86 != null">
+        P86 = #{row.p86,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p87 != null">
+        P87 = #{row.p87,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p88 != null">
+        P88 = #{row.p88,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p89 != null">
+        P89 = #{row.p89,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p90 != null">
+        P90 = #{row.p90,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p91 != null">
+        P91 = #{row.p91,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p92 != null">
+        P92 = #{row.p92,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p93 != null">
+        P93 = #{row.p93,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p94 != null">
+        P94 = #{row.p94,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p95 != null">
+        P95 = #{row.p95,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p96 != null">
+        P96 = #{row.p96,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p97 != null">
+        P97 = #{row.p97,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p98 != null">
+        P98 = #{row.p98,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p99 != null">
+        P99 = #{row.p99,jdbcType=DECIMAL},
+      </if>
+      <if test="row.p100 != null">
+        P100 = #{row.p100,jdbcType=DECIMAL},
+      </if>
+      <if test="row.processinstanceid != null">
+        ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="row.createdate != null">
+        CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.lastmodifieddate != null">
+        LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.modifieddate != null">
+        ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.createby != null">
+        CreateBy = #{row.createby,jdbcType=CHAR},
+      </if>
+      <if test="row.lastmodifiedby != null">
+        LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.modifiedby != null">
+        ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.orgIdRtk != null">
+        ORG_ID_RTK = #{row.orgIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.orgIdRoid != null">
+        ORG_ID_ROid = #{row.orgIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.version != null">
+        Version = #{row.version,jdbcType=BINARY},
+      </if>
+      <if test="row.attachments != null">
+        Attachments = #{row.attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update CUSTOMER_PROPERTY_VIEW
+    set CUSTOMER_PROPERTY_VIEW_ID = #{row.customerPropertyViewId,jdbcType=CHAR},
+      CUSTOMER_ID = #{row.customerId,jdbcType=CHAR},
+      P1 = #{row.p1,jdbcType=NVARCHAR},
+      P2 = #{row.p2,jdbcType=NVARCHAR},
+      P3 = #{row.p3,jdbcType=NVARCHAR},
+      P4 = #{row.p4,jdbcType=NVARCHAR},
+      P5 = #{row.p5,jdbcType=NVARCHAR},
+      P6 = #{row.p6,jdbcType=NVARCHAR},
+      P7 = #{row.p7,jdbcType=NVARCHAR},
+      P8 = #{row.p8,jdbcType=NVARCHAR},
+      P9 = #{row.p9,jdbcType=NVARCHAR},
+      P10 = #{row.p10,jdbcType=NVARCHAR},
+      P11 = #{row.p11,jdbcType=NVARCHAR},
+      P12 = #{row.p12,jdbcType=NVARCHAR},
+      P13 = #{row.p13,jdbcType=NVARCHAR},
+      P14 = #{row.p14,jdbcType=NVARCHAR},
+      P15 = #{row.p15,jdbcType=NVARCHAR},
+      P16 = #{row.p16,jdbcType=NVARCHAR},
+      P17 = #{row.p17,jdbcType=NVARCHAR},
+      P18 = #{row.p18,jdbcType=NVARCHAR},
+      P19 = #{row.p19,jdbcType=NVARCHAR},
+      P20 = #{row.p20,jdbcType=NVARCHAR},
+      P21 = #{row.p21,jdbcType=NVARCHAR},
+      P22 = #{row.p22,jdbcType=NVARCHAR},
+      P23 = #{row.p23,jdbcType=NVARCHAR},
+      P24 = #{row.p24,jdbcType=NVARCHAR},
+      P25 = #{row.p25,jdbcType=NVARCHAR},
+      P26 = #{row.p26,jdbcType=NVARCHAR},
+      P27 = #{row.p27,jdbcType=NVARCHAR},
+      P28 = #{row.p28,jdbcType=NVARCHAR},
+      P29 = #{row.p29,jdbcType=NVARCHAR},
+      P30 = #{row.p30,jdbcType=NVARCHAR},
+      P31 = #{row.p31,jdbcType=NVARCHAR},
+      P32 = #{row.p32,jdbcType=NVARCHAR},
+      P33 = #{row.p33,jdbcType=NVARCHAR},
+      P34 = #{row.p34,jdbcType=NVARCHAR},
+      P35 = #{row.p35,jdbcType=NVARCHAR},
+      P36 = #{row.p36,jdbcType=NVARCHAR},
+      P37 = #{row.p37,jdbcType=NVARCHAR},
+      P38 = #{row.p38,jdbcType=NVARCHAR},
+      P39 = #{row.p39,jdbcType=NVARCHAR},
+      P40 = #{row.p40,jdbcType=NVARCHAR},
+      P41 = #{row.p41,jdbcType=NVARCHAR},
+      P42 = #{row.p42,jdbcType=NVARCHAR},
+      P43 = #{row.p43,jdbcType=NVARCHAR},
+      P44 = #{row.p44,jdbcType=NVARCHAR},
+      P45 = #{row.p45,jdbcType=NVARCHAR},
+      P46 = #{row.p46,jdbcType=NVARCHAR},
+      P47 = #{row.p47,jdbcType=NVARCHAR},
+      P48 = #{row.p48,jdbcType=NVARCHAR},
+      P49 = #{row.p49,jdbcType=NVARCHAR},
+      P50 = #{row.p50,jdbcType=NVARCHAR},
+      P51 = #{row.p51,jdbcType=NVARCHAR},
+      P52 = #{row.p52,jdbcType=NVARCHAR},
+      P53 = #{row.p53,jdbcType=NVARCHAR},
+      P54 = #{row.p54,jdbcType=NVARCHAR},
+      P55 = #{row.p55,jdbcType=NVARCHAR},
+      P56 = #{row.p56,jdbcType=NVARCHAR},
+      P57 = #{row.p57,jdbcType=NVARCHAR},
+      P58 = #{row.p58,jdbcType=NVARCHAR},
+      P59 = #{row.p59,jdbcType=NVARCHAR},
+      P60 = #{row.p60,jdbcType=NVARCHAR},
+      P61 = #{row.p61,jdbcType=DECIMAL},
+      P62 = #{row.p62,jdbcType=DECIMAL},
+      P63 = #{row.p63,jdbcType=DECIMAL},
+      P64 = #{row.p64,jdbcType=DECIMAL},
+      P65 = #{row.p65,jdbcType=DECIMAL},
+      P66 = #{row.p66,jdbcType=DECIMAL},
+      P67 = #{row.p67,jdbcType=DECIMAL},
+      P68 = #{row.p68,jdbcType=DECIMAL},
+      P69 = #{row.p69,jdbcType=DECIMAL},
+      P70 = #{row.p70,jdbcType=DECIMAL},
+      P71 = #{row.p71,jdbcType=DECIMAL},
+      P72 = #{row.p72,jdbcType=DECIMAL},
+      P73 = #{row.p73,jdbcType=DECIMAL},
+      P74 = #{row.p74,jdbcType=DECIMAL},
+      P75 = #{row.p75,jdbcType=DECIMAL},
+      P76 = #{row.p76,jdbcType=DECIMAL},
+      P77 = #{row.p77,jdbcType=DECIMAL},
+      P78 = #{row.p78,jdbcType=DECIMAL},
+      P79 = #{row.p79,jdbcType=DECIMAL},
+      P80 = #{row.p80,jdbcType=DECIMAL},
+      P81 = #{row.p81,jdbcType=DECIMAL},
+      P82 = #{row.p82,jdbcType=DECIMAL},
+      P83 = #{row.p83,jdbcType=DECIMAL},
+      P84 = #{row.p84,jdbcType=DECIMAL},
+      P85 = #{row.p85,jdbcType=DECIMAL},
+      P86 = #{row.p86,jdbcType=DECIMAL},
+      P87 = #{row.p87,jdbcType=DECIMAL},
+      P88 = #{row.p88,jdbcType=DECIMAL},
+      P89 = #{row.p89,jdbcType=DECIMAL},
+      P90 = #{row.p90,jdbcType=DECIMAL},
+      P91 = #{row.p91,jdbcType=DECIMAL},
+      P92 = #{row.p92,jdbcType=DECIMAL},
+      P93 = #{row.p93,jdbcType=DECIMAL},
+      P94 = #{row.p94,jdbcType=DECIMAL},
+      P95 = #{row.p95,jdbcType=DECIMAL},
+      P96 = #{row.p96,jdbcType=DECIMAL},
+      P97 = #{row.p97,jdbcType=DECIMAL},
+      P98 = #{row.p98,jdbcType=DECIMAL},
+      P99 = #{row.p99,jdbcType=DECIMAL},
+      P100 = #{row.p100,jdbcType=DECIMAL},
+      ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      ORG_ID_RTK = #{row.orgIdRtk,jdbcType=NVARCHAR},
+      ORG_ID_ROid = #{row.orgIdRoid,jdbcType=CHAR},
+      Version = #{row.version,jdbcType=BINARY},
+      Attachments = #{row.attachments,jdbcType=LONGNVARCHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update CUSTOMER_PROPERTY_VIEW
+    set CUSTOMER_PROPERTY_VIEW_ID = #{row.customerPropertyViewId,jdbcType=CHAR},
+      CUSTOMER_ID = #{row.customerId,jdbcType=CHAR},
+      P1 = #{row.p1,jdbcType=NVARCHAR},
+      P2 = #{row.p2,jdbcType=NVARCHAR},
+      P3 = #{row.p3,jdbcType=NVARCHAR},
+      P4 = #{row.p4,jdbcType=NVARCHAR},
+      P5 = #{row.p5,jdbcType=NVARCHAR},
+      P6 = #{row.p6,jdbcType=NVARCHAR},
+      P7 = #{row.p7,jdbcType=NVARCHAR},
+      P8 = #{row.p8,jdbcType=NVARCHAR},
+      P9 = #{row.p9,jdbcType=NVARCHAR},
+      P10 = #{row.p10,jdbcType=NVARCHAR},
+      P11 = #{row.p11,jdbcType=NVARCHAR},
+      P12 = #{row.p12,jdbcType=NVARCHAR},
+      P13 = #{row.p13,jdbcType=NVARCHAR},
+      P14 = #{row.p14,jdbcType=NVARCHAR},
+      P15 = #{row.p15,jdbcType=NVARCHAR},
+      P16 = #{row.p16,jdbcType=NVARCHAR},
+      P17 = #{row.p17,jdbcType=NVARCHAR},
+      P18 = #{row.p18,jdbcType=NVARCHAR},
+      P19 = #{row.p19,jdbcType=NVARCHAR},
+      P20 = #{row.p20,jdbcType=NVARCHAR},
+      P21 = #{row.p21,jdbcType=NVARCHAR},
+      P22 = #{row.p22,jdbcType=NVARCHAR},
+      P23 = #{row.p23,jdbcType=NVARCHAR},
+      P24 = #{row.p24,jdbcType=NVARCHAR},
+      P25 = #{row.p25,jdbcType=NVARCHAR},
+      P26 = #{row.p26,jdbcType=NVARCHAR},
+      P27 = #{row.p27,jdbcType=NVARCHAR},
+      P28 = #{row.p28,jdbcType=NVARCHAR},
+      P29 = #{row.p29,jdbcType=NVARCHAR},
+      P30 = #{row.p30,jdbcType=NVARCHAR},
+      P31 = #{row.p31,jdbcType=NVARCHAR},
+      P32 = #{row.p32,jdbcType=NVARCHAR},
+      P33 = #{row.p33,jdbcType=NVARCHAR},
+      P34 = #{row.p34,jdbcType=NVARCHAR},
+      P35 = #{row.p35,jdbcType=NVARCHAR},
+      P36 = #{row.p36,jdbcType=NVARCHAR},
+      P37 = #{row.p37,jdbcType=NVARCHAR},
+      P38 = #{row.p38,jdbcType=NVARCHAR},
+      P39 = #{row.p39,jdbcType=NVARCHAR},
+      P40 = #{row.p40,jdbcType=NVARCHAR},
+      P41 = #{row.p41,jdbcType=NVARCHAR},
+      P42 = #{row.p42,jdbcType=NVARCHAR},
+      P43 = #{row.p43,jdbcType=NVARCHAR},
+      P44 = #{row.p44,jdbcType=NVARCHAR},
+      P45 = #{row.p45,jdbcType=NVARCHAR},
+      P46 = #{row.p46,jdbcType=NVARCHAR},
+      P47 = #{row.p47,jdbcType=NVARCHAR},
+      P48 = #{row.p48,jdbcType=NVARCHAR},
+      P49 = #{row.p49,jdbcType=NVARCHAR},
+      P50 = #{row.p50,jdbcType=NVARCHAR},
+      P51 = #{row.p51,jdbcType=NVARCHAR},
+      P52 = #{row.p52,jdbcType=NVARCHAR},
+      P53 = #{row.p53,jdbcType=NVARCHAR},
+      P54 = #{row.p54,jdbcType=NVARCHAR},
+      P55 = #{row.p55,jdbcType=NVARCHAR},
+      P56 = #{row.p56,jdbcType=NVARCHAR},
+      P57 = #{row.p57,jdbcType=NVARCHAR},
+      P58 = #{row.p58,jdbcType=NVARCHAR},
+      P59 = #{row.p59,jdbcType=NVARCHAR},
+      P60 = #{row.p60,jdbcType=NVARCHAR},
+      P61 = #{row.p61,jdbcType=DECIMAL},
+      P62 = #{row.p62,jdbcType=DECIMAL},
+      P63 = #{row.p63,jdbcType=DECIMAL},
+      P64 = #{row.p64,jdbcType=DECIMAL},
+      P65 = #{row.p65,jdbcType=DECIMAL},
+      P66 = #{row.p66,jdbcType=DECIMAL},
+      P67 = #{row.p67,jdbcType=DECIMAL},
+      P68 = #{row.p68,jdbcType=DECIMAL},
+      P69 = #{row.p69,jdbcType=DECIMAL},
+      P70 = #{row.p70,jdbcType=DECIMAL},
+      P71 = #{row.p71,jdbcType=DECIMAL},
+      P72 = #{row.p72,jdbcType=DECIMAL},
+      P73 = #{row.p73,jdbcType=DECIMAL},
+      P74 = #{row.p74,jdbcType=DECIMAL},
+      P75 = #{row.p75,jdbcType=DECIMAL},
+      P76 = #{row.p76,jdbcType=DECIMAL},
+      P77 = #{row.p77,jdbcType=DECIMAL},
+      P78 = #{row.p78,jdbcType=DECIMAL},
+      P79 = #{row.p79,jdbcType=DECIMAL},
+      P80 = #{row.p80,jdbcType=DECIMAL},
+      P81 = #{row.p81,jdbcType=DECIMAL},
+      P82 = #{row.p82,jdbcType=DECIMAL},
+      P83 = #{row.p83,jdbcType=DECIMAL},
+      P84 = #{row.p84,jdbcType=DECIMAL},
+      P85 = #{row.p85,jdbcType=DECIMAL},
+      P86 = #{row.p86,jdbcType=DECIMAL},
+      P87 = #{row.p87,jdbcType=DECIMAL},
+      P88 = #{row.p88,jdbcType=DECIMAL},
+      P89 = #{row.p89,jdbcType=DECIMAL},
+      P90 = #{row.p90,jdbcType=DECIMAL},
+      P91 = #{row.p91,jdbcType=DECIMAL},
+      P92 = #{row.p92,jdbcType=DECIMAL},
+      P93 = #{row.p93,jdbcType=DECIMAL},
+      P94 = #{row.p94,jdbcType=DECIMAL},
+      P95 = #{row.p95,jdbcType=DECIMAL},
+      P96 = #{row.p96,jdbcType=DECIMAL},
+      P97 = #{row.p97,jdbcType=DECIMAL},
+      P98 = #{row.p98,jdbcType=DECIMAL},
+      P99 = #{row.p99,jdbcType=DECIMAL},
+      P100 = #{row.p100,jdbcType=DECIMAL},
+      ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      ORG_ID_RTK = #{row.orgIdRtk,jdbcType=NVARCHAR},
+      ORG_ID_ROid = #{row.orgIdRoid,jdbcType=CHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tb.mbg.model.CustomerPropertyView">
+    update CUSTOMER_PROPERTY_VIEW
+    <set>
+      <if test="customerId != null">
+        CUSTOMER_ID = #{customerId,jdbcType=CHAR},
+      </if>
+      <if test="p1 != null">
+        P1 = #{p1,jdbcType=NVARCHAR},
+      </if>
+      <if test="p2 != null">
+        P2 = #{p2,jdbcType=NVARCHAR},
+      </if>
+      <if test="p3 != null">
+        P3 = #{p3,jdbcType=NVARCHAR},
+      </if>
+      <if test="p4 != null">
+        P4 = #{p4,jdbcType=NVARCHAR},
+      </if>
+      <if test="p5 != null">
+        P5 = #{p5,jdbcType=NVARCHAR},
+      </if>
+      <if test="p6 != null">
+        P6 = #{p6,jdbcType=NVARCHAR},
+      </if>
+      <if test="p7 != null">
+        P7 = #{p7,jdbcType=NVARCHAR},
+      </if>
+      <if test="p8 != null">
+        P8 = #{p8,jdbcType=NVARCHAR},
+      </if>
+      <if test="p9 != null">
+        P9 = #{p9,jdbcType=NVARCHAR},
+      </if>
+      <if test="p10 != null">
+        P10 = #{p10,jdbcType=NVARCHAR},
+      </if>
+      <if test="p11 != null">
+        P11 = #{p11,jdbcType=NVARCHAR},
+      </if>
+      <if test="p12 != null">
+        P12 = #{p12,jdbcType=NVARCHAR},
+      </if>
+      <if test="p13 != null">
+        P13 = #{p13,jdbcType=NVARCHAR},
+      </if>
+      <if test="p14 != null">
+        P14 = #{p14,jdbcType=NVARCHAR},
+      </if>
+      <if test="p15 != null">
+        P15 = #{p15,jdbcType=NVARCHAR},
+      </if>
+      <if test="p16 != null">
+        P16 = #{p16,jdbcType=NVARCHAR},
+      </if>
+      <if test="p17 != null">
+        P17 = #{p17,jdbcType=NVARCHAR},
+      </if>
+      <if test="p18 != null">
+        P18 = #{p18,jdbcType=NVARCHAR},
+      </if>
+      <if test="p19 != null">
+        P19 = #{p19,jdbcType=NVARCHAR},
+      </if>
+      <if test="p20 != null">
+        P20 = #{p20,jdbcType=NVARCHAR},
+      </if>
+      <if test="p21 != null">
+        P21 = #{p21,jdbcType=NVARCHAR},
+      </if>
+      <if test="p22 != null">
+        P22 = #{p22,jdbcType=NVARCHAR},
+      </if>
+      <if test="p23 != null">
+        P23 = #{p23,jdbcType=NVARCHAR},
+      </if>
+      <if test="p24 != null">
+        P24 = #{p24,jdbcType=NVARCHAR},
+      </if>
+      <if test="p25 != null">
+        P25 = #{p25,jdbcType=NVARCHAR},
+      </if>
+      <if test="p26 != null">
+        P26 = #{p26,jdbcType=NVARCHAR},
+      </if>
+      <if test="p27 != null">
+        P27 = #{p27,jdbcType=NVARCHAR},
+      </if>
+      <if test="p28 != null">
+        P28 = #{p28,jdbcType=NVARCHAR},
+      </if>
+      <if test="p29 != null">
+        P29 = #{p29,jdbcType=NVARCHAR},
+      </if>
+      <if test="p30 != null">
+        P30 = #{p30,jdbcType=NVARCHAR},
+      </if>
+      <if test="p31 != null">
+        P31 = #{p31,jdbcType=NVARCHAR},
+      </if>
+      <if test="p32 != null">
+        P32 = #{p32,jdbcType=NVARCHAR},
+      </if>
+      <if test="p33 != null">
+        P33 = #{p33,jdbcType=NVARCHAR},
+      </if>
+      <if test="p34 != null">
+        P34 = #{p34,jdbcType=NVARCHAR},
+      </if>
+      <if test="p35 != null">
+        P35 = #{p35,jdbcType=NVARCHAR},
+      </if>
+      <if test="p36 != null">
+        P36 = #{p36,jdbcType=NVARCHAR},
+      </if>
+      <if test="p37 != null">
+        P37 = #{p37,jdbcType=NVARCHAR},
+      </if>
+      <if test="p38 != null">
+        P38 = #{p38,jdbcType=NVARCHAR},
+      </if>
+      <if test="p39 != null">
+        P39 = #{p39,jdbcType=NVARCHAR},
+      </if>
+      <if test="p40 != null">
+        P40 = #{p40,jdbcType=NVARCHAR},
+      </if>
+      <if test="p41 != null">
+        P41 = #{p41,jdbcType=NVARCHAR},
+      </if>
+      <if test="p42 != null">
+        P42 = #{p42,jdbcType=NVARCHAR},
+      </if>
+      <if test="p43 != null">
+        P43 = #{p43,jdbcType=NVARCHAR},
+      </if>
+      <if test="p44 != null">
+        P44 = #{p44,jdbcType=NVARCHAR},
+      </if>
+      <if test="p45 != null">
+        P45 = #{p45,jdbcType=NVARCHAR},
+      </if>
+      <if test="p46 != null">
+        P46 = #{p46,jdbcType=NVARCHAR},
+      </if>
+      <if test="p47 != null">
+        P47 = #{p47,jdbcType=NVARCHAR},
+      </if>
+      <if test="p48 != null">
+        P48 = #{p48,jdbcType=NVARCHAR},
+      </if>
+      <if test="p49 != null">
+        P49 = #{p49,jdbcType=NVARCHAR},
+      </if>
+      <if test="p50 != null">
+        P50 = #{p50,jdbcType=NVARCHAR},
+      </if>
+      <if test="p51 != null">
+        P51 = #{p51,jdbcType=NVARCHAR},
+      </if>
+      <if test="p52 != null">
+        P52 = #{p52,jdbcType=NVARCHAR},
+      </if>
+      <if test="p53 != null">
+        P53 = #{p53,jdbcType=NVARCHAR},
+      </if>
+      <if test="p54 != null">
+        P54 = #{p54,jdbcType=NVARCHAR},
+      </if>
+      <if test="p55 != null">
+        P55 = #{p55,jdbcType=NVARCHAR},
+      </if>
+      <if test="p56 != null">
+        P56 = #{p56,jdbcType=NVARCHAR},
+      </if>
+      <if test="p57 != null">
+        P57 = #{p57,jdbcType=NVARCHAR},
+      </if>
+      <if test="p58 != null">
+        P58 = #{p58,jdbcType=NVARCHAR},
+      </if>
+      <if test="p59 != null">
+        P59 = #{p59,jdbcType=NVARCHAR},
+      </if>
+      <if test="p60 != null">
+        P60 = #{p60,jdbcType=NVARCHAR},
+      </if>
+      <if test="p61 != null">
+        P61 = #{p61,jdbcType=DECIMAL},
+      </if>
+      <if test="p62 != null">
+        P62 = #{p62,jdbcType=DECIMAL},
+      </if>
+      <if test="p63 != null">
+        P63 = #{p63,jdbcType=DECIMAL},
+      </if>
+      <if test="p64 != null">
+        P64 = #{p64,jdbcType=DECIMAL},
+      </if>
+      <if test="p65 != null">
+        P65 = #{p65,jdbcType=DECIMAL},
+      </if>
+      <if test="p66 != null">
+        P66 = #{p66,jdbcType=DECIMAL},
+      </if>
+      <if test="p67 != null">
+        P67 = #{p67,jdbcType=DECIMAL},
+      </if>
+      <if test="p68 != null">
+        P68 = #{p68,jdbcType=DECIMAL},
+      </if>
+      <if test="p69 != null">
+        P69 = #{p69,jdbcType=DECIMAL},
+      </if>
+      <if test="p70 != null">
+        P70 = #{p70,jdbcType=DECIMAL},
+      </if>
+      <if test="p71 != null">
+        P71 = #{p71,jdbcType=DECIMAL},
+      </if>
+      <if test="p72 != null">
+        P72 = #{p72,jdbcType=DECIMAL},
+      </if>
+      <if test="p73 != null">
+        P73 = #{p73,jdbcType=DECIMAL},
+      </if>
+      <if test="p74 != null">
+        P74 = #{p74,jdbcType=DECIMAL},
+      </if>
+      <if test="p75 != null">
+        P75 = #{p75,jdbcType=DECIMAL},
+      </if>
+      <if test="p76 != null">
+        P76 = #{p76,jdbcType=DECIMAL},
+      </if>
+      <if test="p77 != null">
+        P77 = #{p77,jdbcType=DECIMAL},
+      </if>
+      <if test="p78 != null">
+        P78 = #{p78,jdbcType=DECIMAL},
+      </if>
+      <if test="p79 != null">
+        P79 = #{p79,jdbcType=DECIMAL},
+      </if>
+      <if test="p80 != null">
+        P80 = #{p80,jdbcType=DECIMAL},
+      </if>
+      <if test="p81 != null">
+        P81 = #{p81,jdbcType=DECIMAL},
+      </if>
+      <if test="p82 != null">
+        P82 = #{p82,jdbcType=DECIMAL},
+      </if>
+      <if test="p83 != null">
+        P83 = #{p83,jdbcType=DECIMAL},
+      </if>
+      <if test="p84 != null">
+        P84 = #{p84,jdbcType=DECIMAL},
+      </if>
+      <if test="p85 != null">
+        P85 = #{p85,jdbcType=DECIMAL},
+      </if>
+      <if test="p86 != null">
+        P86 = #{p86,jdbcType=DECIMAL},
+      </if>
+      <if test="p87 != null">
+        P87 = #{p87,jdbcType=DECIMAL},
+      </if>
+      <if test="p88 != null">
+        P88 = #{p88,jdbcType=DECIMAL},
+      </if>
+      <if test="p89 != null">
+        P89 = #{p89,jdbcType=DECIMAL},
+      </if>
+      <if test="p90 != null">
+        P90 = #{p90,jdbcType=DECIMAL},
+      </if>
+      <if test="p91 != null">
+        P91 = #{p91,jdbcType=DECIMAL},
+      </if>
+      <if test="p92 != null">
+        P92 = #{p92,jdbcType=DECIMAL},
+      </if>
+      <if test="p93 != null">
+        P93 = #{p93,jdbcType=DECIMAL},
+      </if>
+      <if test="p94 != null">
+        P94 = #{p94,jdbcType=DECIMAL},
+      </if>
+      <if test="p95 != null">
+        P95 = #{p95,jdbcType=DECIMAL},
+      </if>
+      <if test="p96 != null">
+        P96 = #{p96,jdbcType=DECIMAL},
+      </if>
+      <if test="p97 != null">
+        P97 = #{p97,jdbcType=DECIMAL},
+      </if>
+      <if test="p98 != null">
+        P98 = #{p98,jdbcType=DECIMAL},
+      </if>
+      <if test="p99 != null">
+        P99 = #{p99,jdbcType=DECIMAL},
+      </if>
+      <if test="p100 != null">
+        P100 = #{p100,jdbcType=DECIMAL},
+      </if>
+      <if test="processinstanceid != null">
+        ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        CreateBy = #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="orgIdRtk != null">
+        ORG_ID_RTK = #{orgIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="orgIdRoid != null">
+        ORG_ID_ROid = #{orgIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        Version = #{version,jdbcType=BINARY},
+      </if>
+      <if test="attachments != null">
+        Attachments = #{attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </set>
+    where CUSTOMER_PROPERTY_VIEW_ID = #{customerPropertyViewId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tb.mbg.model.CustomerPropertyView">
+    update CUSTOMER_PROPERTY_VIEW
+    set CUSTOMER_ID = #{customerId,jdbcType=CHAR},
+      P1 = #{p1,jdbcType=NVARCHAR},
+      P2 = #{p2,jdbcType=NVARCHAR},
+      P3 = #{p3,jdbcType=NVARCHAR},
+      P4 = #{p4,jdbcType=NVARCHAR},
+      P5 = #{p5,jdbcType=NVARCHAR},
+      P6 = #{p6,jdbcType=NVARCHAR},
+      P7 = #{p7,jdbcType=NVARCHAR},
+      P8 = #{p8,jdbcType=NVARCHAR},
+      P9 = #{p9,jdbcType=NVARCHAR},
+      P10 = #{p10,jdbcType=NVARCHAR},
+      P11 = #{p11,jdbcType=NVARCHAR},
+      P12 = #{p12,jdbcType=NVARCHAR},
+      P13 = #{p13,jdbcType=NVARCHAR},
+      P14 = #{p14,jdbcType=NVARCHAR},
+      P15 = #{p15,jdbcType=NVARCHAR},
+      P16 = #{p16,jdbcType=NVARCHAR},
+      P17 = #{p17,jdbcType=NVARCHAR},
+      P18 = #{p18,jdbcType=NVARCHAR},
+      P19 = #{p19,jdbcType=NVARCHAR},
+      P20 = #{p20,jdbcType=NVARCHAR},
+      P21 = #{p21,jdbcType=NVARCHAR},
+      P22 = #{p22,jdbcType=NVARCHAR},
+      P23 = #{p23,jdbcType=NVARCHAR},
+      P24 = #{p24,jdbcType=NVARCHAR},
+      P25 = #{p25,jdbcType=NVARCHAR},
+      P26 = #{p26,jdbcType=NVARCHAR},
+      P27 = #{p27,jdbcType=NVARCHAR},
+      P28 = #{p28,jdbcType=NVARCHAR},
+      P29 = #{p29,jdbcType=NVARCHAR},
+      P30 = #{p30,jdbcType=NVARCHAR},
+      P31 = #{p31,jdbcType=NVARCHAR},
+      P32 = #{p32,jdbcType=NVARCHAR},
+      P33 = #{p33,jdbcType=NVARCHAR},
+      P34 = #{p34,jdbcType=NVARCHAR},
+      P35 = #{p35,jdbcType=NVARCHAR},
+      P36 = #{p36,jdbcType=NVARCHAR},
+      P37 = #{p37,jdbcType=NVARCHAR},
+      P38 = #{p38,jdbcType=NVARCHAR},
+      P39 = #{p39,jdbcType=NVARCHAR},
+      P40 = #{p40,jdbcType=NVARCHAR},
+      P41 = #{p41,jdbcType=NVARCHAR},
+      P42 = #{p42,jdbcType=NVARCHAR},
+      P43 = #{p43,jdbcType=NVARCHAR},
+      P44 = #{p44,jdbcType=NVARCHAR},
+      P45 = #{p45,jdbcType=NVARCHAR},
+      P46 = #{p46,jdbcType=NVARCHAR},
+      P47 = #{p47,jdbcType=NVARCHAR},
+      P48 = #{p48,jdbcType=NVARCHAR},
+      P49 = #{p49,jdbcType=NVARCHAR},
+      P50 = #{p50,jdbcType=NVARCHAR},
+      P51 = #{p51,jdbcType=NVARCHAR},
+      P52 = #{p52,jdbcType=NVARCHAR},
+      P53 = #{p53,jdbcType=NVARCHAR},
+      P54 = #{p54,jdbcType=NVARCHAR},
+      P55 = #{p55,jdbcType=NVARCHAR},
+      P56 = #{p56,jdbcType=NVARCHAR},
+      P57 = #{p57,jdbcType=NVARCHAR},
+      P58 = #{p58,jdbcType=NVARCHAR},
+      P59 = #{p59,jdbcType=NVARCHAR},
+      P60 = #{p60,jdbcType=NVARCHAR},
+      P61 = #{p61,jdbcType=DECIMAL},
+      P62 = #{p62,jdbcType=DECIMAL},
+      P63 = #{p63,jdbcType=DECIMAL},
+      P64 = #{p64,jdbcType=DECIMAL},
+      P65 = #{p65,jdbcType=DECIMAL},
+      P66 = #{p66,jdbcType=DECIMAL},
+      P67 = #{p67,jdbcType=DECIMAL},
+      P68 = #{p68,jdbcType=DECIMAL},
+      P69 = #{p69,jdbcType=DECIMAL},
+      P70 = #{p70,jdbcType=DECIMAL},
+      P71 = #{p71,jdbcType=DECIMAL},
+      P72 = #{p72,jdbcType=DECIMAL},
+      P73 = #{p73,jdbcType=DECIMAL},
+      P74 = #{p74,jdbcType=DECIMAL},
+      P75 = #{p75,jdbcType=DECIMAL},
+      P76 = #{p76,jdbcType=DECIMAL},
+      P77 = #{p77,jdbcType=DECIMAL},
+      P78 = #{p78,jdbcType=DECIMAL},
+      P79 = #{p79,jdbcType=DECIMAL},
+      P80 = #{p80,jdbcType=DECIMAL},
+      P81 = #{p81,jdbcType=DECIMAL},
+      P82 = #{p82,jdbcType=DECIMAL},
+      P83 = #{p83,jdbcType=DECIMAL},
+      P84 = #{p84,jdbcType=DECIMAL},
+      P85 = #{p85,jdbcType=DECIMAL},
+      P86 = #{p86,jdbcType=DECIMAL},
+      P87 = #{p87,jdbcType=DECIMAL},
+      P88 = #{p88,jdbcType=DECIMAL},
+      P89 = #{p89,jdbcType=DECIMAL},
+      P90 = #{p90,jdbcType=DECIMAL},
+      P91 = #{p91,jdbcType=DECIMAL},
+      P92 = #{p92,jdbcType=DECIMAL},
+      P93 = #{p93,jdbcType=DECIMAL},
+      P94 = #{p94,jdbcType=DECIMAL},
+      P95 = #{p95,jdbcType=DECIMAL},
+      P96 = #{p96,jdbcType=DECIMAL},
+      P97 = #{p97,jdbcType=DECIMAL},
+      P98 = #{p98,jdbcType=DECIMAL},
+      P99 = #{p99,jdbcType=DECIMAL},
+      P100 = #{p100,jdbcType=DECIMAL},
+      ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      ORG_ID_RTK = #{orgIdRtk,jdbcType=NVARCHAR},
+      ORG_ID_ROid = #{orgIdRoid,jdbcType=CHAR},
+      Version = #{version,jdbcType=BINARY},
+      Attachments = #{attachments,jdbcType=LONGNVARCHAR}
+    where CUSTOMER_PROPERTY_VIEW_ID = #{customerPropertyViewId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tb.mbg.model.CustomerPropertyView">
+    update CUSTOMER_PROPERTY_VIEW
+    set CUSTOMER_ID = #{customerId,jdbcType=CHAR},
+      P1 = #{p1,jdbcType=NVARCHAR},
+      P2 = #{p2,jdbcType=NVARCHAR},
+      P3 = #{p3,jdbcType=NVARCHAR},
+      P4 = #{p4,jdbcType=NVARCHAR},
+      P5 = #{p5,jdbcType=NVARCHAR},
+      P6 = #{p6,jdbcType=NVARCHAR},
+      P7 = #{p7,jdbcType=NVARCHAR},
+      P8 = #{p8,jdbcType=NVARCHAR},
+      P9 = #{p9,jdbcType=NVARCHAR},
+      P10 = #{p10,jdbcType=NVARCHAR},
+      P11 = #{p11,jdbcType=NVARCHAR},
+      P12 = #{p12,jdbcType=NVARCHAR},
+      P13 = #{p13,jdbcType=NVARCHAR},
+      P14 = #{p14,jdbcType=NVARCHAR},
+      P15 = #{p15,jdbcType=NVARCHAR},
+      P16 = #{p16,jdbcType=NVARCHAR},
+      P17 = #{p17,jdbcType=NVARCHAR},
+      P18 = #{p18,jdbcType=NVARCHAR},
+      P19 = #{p19,jdbcType=NVARCHAR},
+      P20 = #{p20,jdbcType=NVARCHAR},
+      P21 = #{p21,jdbcType=NVARCHAR},
+      P22 = #{p22,jdbcType=NVARCHAR},
+      P23 = #{p23,jdbcType=NVARCHAR},
+      P24 = #{p24,jdbcType=NVARCHAR},
+      P25 = #{p25,jdbcType=NVARCHAR},
+      P26 = #{p26,jdbcType=NVARCHAR},
+      P27 = #{p27,jdbcType=NVARCHAR},
+      P28 = #{p28,jdbcType=NVARCHAR},
+      P29 = #{p29,jdbcType=NVARCHAR},
+      P30 = #{p30,jdbcType=NVARCHAR},
+      P31 = #{p31,jdbcType=NVARCHAR},
+      P32 = #{p32,jdbcType=NVARCHAR},
+      P33 = #{p33,jdbcType=NVARCHAR},
+      P34 = #{p34,jdbcType=NVARCHAR},
+      P35 = #{p35,jdbcType=NVARCHAR},
+      P36 = #{p36,jdbcType=NVARCHAR},
+      P37 = #{p37,jdbcType=NVARCHAR},
+      P38 = #{p38,jdbcType=NVARCHAR},
+      P39 = #{p39,jdbcType=NVARCHAR},
+      P40 = #{p40,jdbcType=NVARCHAR},
+      P41 = #{p41,jdbcType=NVARCHAR},
+      P42 = #{p42,jdbcType=NVARCHAR},
+      P43 = #{p43,jdbcType=NVARCHAR},
+      P44 = #{p44,jdbcType=NVARCHAR},
+      P45 = #{p45,jdbcType=NVARCHAR},
+      P46 = #{p46,jdbcType=NVARCHAR},
+      P47 = #{p47,jdbcType=NVARCHAR},
+      P48 = #{p48,jdbcType=NVARCHAR},
+      P49 = #{p49,jdbcType=NVARCHAR},
+      P50 = #{p50,jdbcType=NVARCHAR},
+      P51 = #{p51,jdbcType=NVARCHAR},
+      P52 = #{p52,jdbcType=NVARCHAR},
+      P53 = #{p53,jdbcType=NVARCHAR},
+      P54 = #{p54,jdbcType=NVARCHAR},
+      P55 = #{p55,jdbcType=NVARCHAR},
+      P56 = #{p56,jdbcType=NVARCHAR},
+      P57 = #{p57,jdbcType=NVARCHAR},
+      P58 = #{p58,jdbcType=NVARCHAR},
+      P59 = #{p59,jdbcType=NVARCHAR},
+      P60 = #{p60,jdbcType=NVARCHAR},
+      P61 = #{p61,jdbcType=DECIMAL},
+      P62 = #{p62,jdbcType=DECIMAL},
+      P63 = #{p63,jdbcType=DECIMAL},
+      P64 = #{p64,jdbcType=DECIMAL},
+      P65 = #{p65,jdbcType=DECIMAL},
+      P66 = #{p66,jdbcType=DECIMAL},
+      P67 = #{p67,jdbcType=DECIMAL},
+      P68 = #{p68,jdbcType=DECIMAL},
+      P69 = #{p69,jdbcType=DECIMAL},
+      P70 = #{p70,jdbcType=DECIMAL},
+      P71 = #{p71,jdbcType=DECIMAL},
+      P72 = #{p72,jdbcType=DECIMAL},
+      P73 = #{p73,jdbcType=DECIMAL},
+      P74 = #{p74,jdbcType=DECIMAL},
+      P75 = #{p75,jdbcType=DECIMAL},
+      P76 = #{p76,jdbcType=DECIMAL},
+      P77 = #{p77,jdbcType=DECIMAL},
+      P78 = #{p78,jdbcType=DECIMAL},
+      P79 = #{p79,jdbcType=DECIMAL},
+      P80 = #{p80,jdbcType=DECIMAL},
+      P81 = #{p81,jdbcType=DECIMAL},
+      P82 = #{p82,jdbcType=DECIMAL},
+      P83 = #{p83,jdbcType=DECIMAL},
+      P84 = #{p84,jdbcType=DECIMAL},
+      P85 = #{p85,jdbcType=DECIMAL},
+      P86 = #{p86,jdbcType=DECIMAL},
+      P87 = #{p87,jdbcType=DECIMAL},
+      P88 = #{p88,jdbcType=DECIMAL},
+      P89 = #{p89,jdbcType=DECIMAL},
+      P90 = #{p90,jdbcType=DECIMAL},
+      P91 = #{p91,jdbcType=DECIMAL},
+      P92 = #{p92,jdbcType=DECIMAL},
+      P93 = #{p93,jdbcType=DECIMAL},
+      P94 = #{p94,jdbcType=DECIMAL},
+      P95 = #{p95,jdbcType=DECIMAL},
+      P96 = #{p96,jdbcType=DECIMAL},
+      P97 = #{p97,jdbcType=DECIMAL},
+      P98 = #{p98,jdbcType=DECIMAL},
+      P99 = #{p99,jdbcType=DECIMAL},
+      P100 = #{p100,jdbcType=DECIMAL},
+      ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      ORG_ID_RTK = #{orgIdRtk,jdbcType=NVARCHAR},
+      ORG_ID_ROid = #{orgIdRoid,jdbcType=CHAR}
+    where CUSTOMER_PROPERTY_VIEW_ID = #{customerPropertyViewId,jdbcType=CHAR}
+  </update>
+</mapper>

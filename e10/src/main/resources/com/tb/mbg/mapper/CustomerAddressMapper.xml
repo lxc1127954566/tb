@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tb.mbg.mapper.CustomerAddressMapper">
+  <resultMap id="BaseResultMap" type="com.tb.mbg.model.CustomerAddress">
+    <id column="CUSTOMER_ADDRESS_ID" jdbcType="CHAR" property="customerAddressId" />
+    <result column="ADDRESS" jdbcType="NVARCHAR" property="address" />
+    <result column="MAIN_ORDER_ADDR" jdbcType="BIT" property="mainOrderAddr" />
+    <result column="MAIN_SHIP_TO_ADDR" jdbcType="BIT" property="mainShipToAddr" />
+    <result column="MAIN_INVOICE_ADDR" jdbcType="BIT" property="mainInvoiceAddr" />
+    <result column="MAIN_PAY_ADDR" jdbcType="BIT" property="mainPayAddr" />
+    <result column="POSTCODE" jdbcType="NVARCHAR" property="postcode" />
+    <result column="TELEPHONE" jdbcType="NVARCHAR" property="telephone" />
+    <result column="FAX" jdbcType="NVARCHAR" property="fax" />
+    <result column="REMARK" jdbcType="NVARCHAR" property="remark" />
+    <result column="UDF001" jdbcType="DECIMAL" property="udf001" />
+    <result column="UDF002" jdbcType="DECIMAL" property="udf002" />
+    <result column="UDF003" jdbcType="DECIMAL" property="udf003" />
+    <result column="UDF011" jdbcType="DECIMAL" property="udf011" />
+    <result column="UDF012" jdbcType="DECIMAL" property="udf012" />
+    <result column="UDF013" jdbcType="DECIMAL" property="udf013" />
+    <result column="UDF021" jdbcType="NVARCHAR" property="udf021" />
+    <result column="UDF022" jdbcType="NVARCHAR" property="udf022" />
+    <result column="UDF023" jdbcType="NVARCHAR" property="udf023" />
+    <result column="UDF024" jdbcType="NVARCHAR" property="udf024" />
+    <result column="UDF025" jdbcType="NVARCHAR" property="udf025" />
+    <result column="UDF026" jdbcType="NVARCHAR" property="udf026" />
+    <result column="UDF041" jdbcType="TIMESTAMP" property="udf041" />
+    <result column="UDF042" jdbcType="TIMESTAMP" property="udf042" />
+    <result column="UDF051" jdbcType="CHAR" property="udf051" />
+    <result column="UDF052" jdbcType="CHAR" property="udf052" />
+    <result column="UDF053" jdbcType="CHAR" property="udf053" />
+    <result column="UDF054" jdbcType="CHAR" property="udf054" />
+    <result column="ApproveStatus" jdbcType="NVARCHAR" property="approvestatus" />
+    <result column="ApproveDate" jdbcType="TIMESTAMP" property="approvedate" />
+    <result column="ApproveBy" jdbcType="CHAR" property="approveby" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="LastModifiedDate" jdbcType="TIMESTAMP" property="lastmodifieddate" />
+    <result column="ModifiedDate" jdbcType="TIMESTAMP" property="modifieddate" />
+    <result column="CreateBy" jdbcType="CHAR" property="createby" />
+    <result column="LastModifiedBy" jdbcType="CHAR" property="lastmodifiedby" />
+    <result column="ModifiedBy" jdbcType="CHAR" property="modifiedby" />
+    <result column="CUSTOMER_BUSINESS_ID" jdbcType="CHAR" property="customerBusinessId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tb.mbg.model.CustomerAddress">
+    <result column="Version" jdbcType="BINARY" property="version" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    CUSTOMER_ADDRESS_ID, ADDRESS, MAIN_ORDER_ADDR, MAIN_SHIP_TO_ADDR, MAIN_INVOICE_ADDR, 
+    MAIN_PAY_ADDR, POSTCODE, TELEPHONE, FAX, REMARK, UDF001, UDF002, UDF003, UDF011, 
+    UDF012, UDF013, UDF021, UDF022, UDF023, UDF024, UDF025, UDF026, UDF041, UDF042, UDF051, 
+    UDF052, UDF053, UDF054, ApproveStatus, ApproveDate, ApproveBy, CreateDate, LastModifiedDate, 
+    ModifiedDate, CreateBy, LastModifiedBy, ModifiedBy, CUSTOMER_BUSINESS_ID
+  </sql>
+  <sql id="Blob_Column_List">
+    Version
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.tb.mbg.model.CustomerAddressExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from CUSTOMER_ADDRESS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.tb.mbg.model.CustomerAddressExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from CUSTOMER_ADDRESS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from CUSTOMER_ADDRESS
+    where CUSTOMER_ADDRESS_ID = #{customerAddressId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CUSTOMER_ADDRESS
+    where CUSTOMER_ADDRESS_ID = #{customerAddressId,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tb.mbg.model.CustomerAddressExample">
+    delete from CUSTOMER_ADDRESS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tb.mbg.model.CustomerAddress">
+    insert into CUSTOMER_ADDRESS (CUSTOMER_ADDRESS_ID, ADDRESS, MAIN_ORDER_ADDR, 
+      MAIN_SHIP_TO_ADDR, MAIN_INVOICE_ADDR, MAIN_PAY_ADDR, 
+      POSTCODE, TELEPHONE, FAX, 
+      REMARK, UDF001, UDF002, 
+      UDF003, UDF011, UDF012, 
+      UDF013, UDF021, UDF022, 
+      UDF023, UDF024, UDF025, 
+      UDF026, UDF041, UDF042, 
+      UDF051, UDF052, UDF053, UDF054, 
+      ApproveStatus, ApproveDate, ApproveBy, 
+      CreateDate, LastModifiedDate, ModifiedDate, 
+      CreateBy, LastModifiedBy, ModifiedBy, 
+      CUSTOMER_BUSINESS_ID, Version)
+    values (#{customerAddressId,jdbcType=CHAR}, #{address,jdbcType=NVARCHAR}, #{mainOrderAddr,jdbcType=BIT}, 
+      #{mainShipToAddr,jdbcType=BIT}, #{mainInvoiceAddr,jdbcType=BIT}, #{mainPayAddr,jdbcType=BIT}, 
+      #{postcode,jdbcType=NVARCHAR}, #{telephone,jdbcType=NVARCHAR}, #{fax,jdbcType=NVARCHAR}, 
+      #{remark,jdbcType=NVARCHAR}, #{udf001,jdbcType=DECIMAL}, #{udf002,jdbcType=DECIMAL}, 
+      #{udf003,jdbcType=DECIMAL}, #{udf011,jdbcType=DECIMAL}, #{udf012,jdbcType=DECIMAL}, 
+      #{udf013,jdbcType=DECIMAL}, #{udf021,jdbcType=NVARCHAR}, #{udf022,jdbcType=NVARCHAR}, 
+      #{udf023,jdbcType=NVARCHAR}, #{udf024,jdbcType=NVARCHAR}, #{udf025,jdbcType=NVARCHAR}, 
+      #{udf026,jdbcType=NVARCHAR}, #{udf041,jdbcType=TIMESTAMP}, #{udf042,jdbcType=TIMESTAMP}, 
+      #{udf051,jdbcType=CHAR}, #{udf052,jdbcType=CHAR}, #{udf053,jdbcType=CHAR}, #{udf054,jdbcType=CHAR}, 
+      #{approvestatus,jdbcType=NVARCHAR}, #{approvedate,jdbcType=TIMESTAMP}, #{approveby,jdbcType=CHAR}, 
+      #{createdate,jdbcType=TIMESTAMP}, #{lastmodifieddate,jdbcType=TIMESTAMP}, #{modifieddate,jdbcType=TIMESTAMP}, 
+      #{createby,jdbcType=CHAR}, #{lastmodifiedby,jdbcType=CHAR}, #{modifiedby,jdbcType=CHAR}, 
+      #{customerBusinessId,jdbcType=CHAR}, #{version,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tb.mbg.model.CustomerAddress">
+    insert into CUSTOMER_ADDRESS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="customerAddressId != null">
+        CUSTOMER_ADDRESS_ID,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="mainOrderAddr != null">
+        MAIN_ORDER_ADDR,
+      </if>
+      <if test="mainShipToAddr != null">
+        MAIN_SHIP_TO_ADDR,
+      </if>
+      <if test="mainInvoiceAddr != null">
+        MAIN_INVOICE_ADDR,
+      </if>
+      <if test="mainPayAddr != null">
+        MAIN_PAY_ADDR,
+      </if>
+      <if test="postcode != null">
+        POSTCODE,
+      </if>
+      <if test="telephone != null">
+        TELEPHONE,
+      </if>
+      <if test="fax != null">
+        FAX,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="udf001 != null">
+        UDF001,
+      </if>
+      <if test="udf002 != null">
+        UDF002,
+      </if>
+      <if test="udf003 != null">
+        UDF003,
+      </if>
+      <if test="udf011 != null">
+        UDF011,
+      </if>
+      <if test="udf012 != null">
+        UDF012,
+      </if>
+      <if test="udf013 != null">
+        UDF013,
+      </if>
+      <if test="udf021 != null">
+        UDF021,
+      </if>
+      <if test="udf022 != null">
+        UDF022,
+      </if>
+      <if test="udf023 != null">
+        UDF023,
+      </if>
+      <if test="udf024 != null">
+        UDF024,
+      </if>
+      <if test="udf025 != null">
+        UDF025,
+      </if>
+      <if test="udf026 != null">
+        UDF026,
+      </if>
+      <if test="udf041 != null">
+        UDF041,
+      </if>
+      <if test="udf042 != null">
+        UDF042,
+      </if>
+      <if test="udf051 != null">
+        UDF051,
+      </if>
+      <if test="udf052 != null">
+        UDF052,
+      </if>
+      <if test="udf053 != null">
+        UDF053,
+      </if>
+      <if test="udf054 != null">
+        UDF054,
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus,
+      </if>
+      <if test="approvedate != null">
+        ApproveDate,
+      </if>
+      <if test="approveby != null">
+        ApproveBy,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate,
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate,
+      </if>
+      <if test="createby != null">
+        CreateBy,
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy,
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy,
+      </if>
+      <if test="customerBusinessId != null">
+        CUSTOMER_BUSINESS_ID,
+      </if>
+      <if test="version != null">
+        Version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="customerAddressId != null">
+        #{customerAddressId,jdbcType=CHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=NVARCHAR},
+      </if>
+      <if test="mainOrderAddr != null">
+        #{mainOrderAddr,jdbcType=BIT},
+      </if>
+      <if test="mainShipToAddr != null">
+        #{mainShipToAddr,jdbcType=BIT},
+      </if>
+      <if test="mainInvoiceAddr != null">
+        #{mainInvoiceAddr,jdbcType=BIT},
+      </if>
+      <if test="mainPayAddr != null">
+        #{mainPayAddr,jdbcType=BIT},
+      </if>
+      <if test="postcode != null">
+        #{postcode,jdbcType=NVARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=NVARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=NVARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf001 != null">
+        #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="customerBusinessId != null">
+        #{customerBusinessId,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tb.mbg.model.CustomerAddressExample" resultType="java.lang.Long">
+    select count(*) from CUSTOMER_ADDRESS
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update CUSTOMER_ADDRESS
+    <set>
+      <if test="row.customerAddressId != null">
+        CUSTOMER_ADDRESS_ID = #{row.customerAddressId,jdbcType=CHAR},
+      </if>
+      <if test="row.address != null">
+        ADDRESS = #{row.address,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.mainOrderAddr != null">
+        MAIN_ORDER_ADDR = #{row.mainOrderAddr,jdbcType=BIT},
+      </if>
+      <if test="row.mainShipToAddr != null">
+        MAIN_SHIP_TO_ADDR = #{row.mainShipToAddr,jdbcType=BIT},
+      </if>
+      <if test="row.mainInvoiceAddr != null">
+        MAIN_INVOICE_ADDR = #{row.mainInvoiceAddr,jdbcType=BIT},
+      </if>
+      <if test="row.mainPayAddr != null">
+        MAIN_PAY_ADDR = #{row.mainPayAddr,jdbcType=BIT},
+      </if>
+      <if test="row.postcode != null">
+        POSTCODE = #{row.postcode,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.telephone != null">
+        TELEPHONE = #{row.telephone,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.fax != null">
+        FAX = #{row.fax,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.remark != null">
+        REMARK = #{row.remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf001 != null">
+        UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf002 != null">
+        UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf003 != null">
+        UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf011 != null">
+        UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf012 != null">
+        UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf013 != null">
+        UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf021 != null">
+        UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf022 != null">
+        UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf023 != null">
+        UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf024 != null">
+        UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf025 != null">
+        UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf026 != null">
+        UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf041 != null">
+        UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf042 != null">
+        UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf051 != null">
+        UDF051 = #{row.udf051,jdbcType=CHAR},
+      </if>
+      <if test="row.udf052 != null">
+        UDF052 = #{row.udf052,jdbcType=CHAR},
+      </if>
+      <if test="row.udf053 != null">
+        UDF053 = #{row.udf053,jdbcType=CHAR},
+      </if>
+      <if test="row.udf054 != null">
+        UDF054 = #{row.udf054,jdbcType=CHAR},
+      </if>
+      <if test="row.approvestatus != null">
+        ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.approvedate != null">
+        ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.approveby != null">
+        ApproveBy = #{row.approveby,jdbcType=CHAR},
+      </if>
+      <if test="row.createdate != null">
+        CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.lastmodifieddate != null">
+        LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.modifieddate != null">
+        ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.createby != null">
+        CreateBy = #{row.createby,jdbcType=CHAR},
+      </if>
+      <if test="row.lastmodifiedby != null">
+        LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.modifiedby != null">
+        ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.customerBusinessId != null">
+        CUSTOMER_BUSINESS_ID = #{row.customerBusinessId,jdbcType=CHAR},
+      </if>
+      <if test="row.version != null">
+        Version = #{row.version,jdbcType=BINARY},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update CUSTOMER_ADDRESS
+    set CUSTOMER_ADDRESS_ID = #{row.customerAddressId,jdbcType=CHAR},
+      ADDRESS = #{row.address,jdbcType=NVARCHAR},
+      MAIN_ORDER_ADDR = #{row.mainOrderAddr,jdbcType=BIT},
+      MAIN_SHIP_TO_ADDR = #{row.mainShipToAddr,jdbcType=BIT},
+      MAIN_INVOICE_ADDR = #{row.mainInvoiceAddr,jdbcType=BIT},
+      MAIN_PAY_ADDR = #{row.mainPayAddr,jdbcType=BIT},
+      POSTCODE = #{row.postcode,jdbcType=NVARCHAR},
+      TELEPHONE = #{row.telephone,jdbcType=NVARCHAR},
+      FAX = #{row.fax,jdbcType=NVARCHAR},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      CUSTOMER_BUSINESS_ID = #{row.customerBusinessId,jdbcType=CHAR},
+      Version = #{row.version,jdbcType=BINARY}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update CUSTOMER_ADDRESS
+    set CUSTOMER_ADDRESS_ID = #{row.customerAddressId,jdbcType=CHAR},
+      ADDRESS = #{row.address,jdbcType=NVARCHAR},
+      MAIN_ORDER_ADDR = #{row.mainOrderAddr,jdbcType=BIT},
+      MAIN_SHIP_TO_ADDR = #{row.mainShipToAddr,jdbcType=BIT},
+      MAIN_INVOICE_ADDR = #{row.mainInvoiceAddr,jdbcType=BIT},
+      MAIN_PAY_ADDR = #{row.mainPayAddr,jdbcType=BIT},
+      POSTCODE = #{row.postcode,jdbcType=NVARCHAR},
+      TELEPHONE = #{row.telephone,jdbcType=NVARCHAR},
+      FAX = #{row.fax,jdbcType=NVARCHAR},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      CUSTOMER_BUSINESS_ID = #{row.customerBusinessId,jdbcType=CHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tb.mbg.model.CustomerAddress">
+    update CUSTOMER_ADDRESS
+    <set>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=NVARCHAR},
+      </if>
+      <if test="mainOrderAddr != null">
+        MAIN_ORDER_ADDR = #{mainOrderAddr,jdbcType=BIT},
+      </if>
+      <if test="mainShipToAddr != null">
+        MAIN_SHIP_TO_ADDR = #{mainShipToAddr,jdbcType=BIT},
+      </if>
+      <if test="mainInvoiceAddr != null">
+        MAIN_INVOICE_ADDR = #{mainInvoiceAddr,jdbcType=BIT},
+      </if>
+      <if test="mainPayAddr != null">
+        MAIN_PAY_ADDR = #{mainPayAddr,jdbcType=BIT},
+      </if>
+      <if test="postcode != null">
+        POSTCODE = #{postcode,jdbcType=NVARCHAR},
+      </if>
+      <if test="telephone != null">
+        TELEPHONE = #{telephone,jdbcType=NVARCHAR},
+      </if>
+      <if test="fax != null">
+        FAX = #{fax,jdbcType=NVARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf001 != null">
+        UDF001 = #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        UDF002 = #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        UDF003 = #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        UDF011 = #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        UDF012 = #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        UDF013 = #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        UDF021 = #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        UDF022 = #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        UDF023 = #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        UDF024 = #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        UDF025 = #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        UDF026 = #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        UDF051 = #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        UDF052 = #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        UDF053 = #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        UDF054 = #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        ApproveBy = #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        CreateBy = #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="customerBusinessId != null">
+        CUSTOMER_BUSINESS_ID = #{customerBusinessId,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        Version = #{version,jdbcType=BINARY},
+      </if>
+    </set>
+    where CUSTOMER_ADDRESS_ID = #{customerAddressId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tb.mbg.model.CustomerAddress">
+    update CUSTOMER_ADDRESS
+    set ADDRESS = #{address,jdbcType=NVARCHAR},
+      MAIN_ORDER_ADDR = #{mainOrderAddr,jdbcType=BIT},
+      MAIN_SHIP_TO_ADDR = #{mainShipToAddr,jdbcType=BIT},
+      MAIN_INVOICE_ADDR = #{mainInvoiceAddr,jdbcType=BIT},
+      MAIN_PAY_ADDR = #{mainPayAddr,jdbcType=BIT},
+      POSTCODE = #{postcode,jdbcType=NVARCHAR},
+      TELEPHONE = #{telephone,jdbcType=NVARCHAR},
+      FAX = #{fax,jdbcType=NVARCHAR},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      CUSTOMER_BUSINESS_ID = #{customerBusinessId,jdbcType=CHAR},
+      Version = #{version,jdbcType=BINARY}
+    where CUSTOMER_ADDRESS_ID = #{customerAddressId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tb.mbg.model.CustomerAddress">
+    update CUSTOMER_ADDRESS
+    set ADDRESS = #{address,jdbcType=NVARCHAR},
+      MAIN_ORDER_ADDR = #{mainOrderAddr,jdbcType=BIT},
+      MAIN_SHIP_TO_ADDR = #{mainShipToAddr,jdbcType=BIT},
+      MAIN_INVOICE_ADDR = #{mainInvoiceAddr,jdbcType=BIT},
+      MAIN_PAY_ADDR = #{mainPayAddr,jdbcType=BIT},
+      POSTCODE = #{postcode,jdbcType=NVARCHAR},
+      TELEPHONE = #{telephone,jdbcType=NVARCHAR},
+      FAX = #{fax,jdbcType=NVARCHAR},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      CUSTOMER_BUSINESS_ID = #{customerBusinessId,jdbcType=CHAR}
+    where CUSTOMER_ADDRESS_ID = #{customerAddressId,jdbcType=CHAR}
+  </update>
+</mapper>

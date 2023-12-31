@@ -1,0 +1,1946 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tb.mbg.mapper.PurchaseArrivalMapper">
+  <resultMap id="BaseResultMap" type="com.tb.mbg.model.PurchaseArrival">
+    <id column="PURCHASE_ARRIVAL_ID" jdbcType="CHAR" property="purchaseArrivalId" />
+    <result column="DOC_NO" jdbcType="NVARCHAR" property="docNo" />
+    <result column="DOC_DATE" jdbcType="TIMESTAMP" property="docDate" />
+    <result column="DOC_ID" jdbcType="CHAR" property="docId" />
+    <result column="Owner_Dept" jdbcType="CHAR" property="ownerDept" />
+    <result column="Owner_Emp" jdbcType="CHAR" property="ownerEmp" />
+    <result column="CATEGORY" jdbcType="NVARCHAR" property="category" />
+    <result column="ARRIVAL_DATE" jdbcType="TIMESTAMP" property="arrivalDate" />
+    <result column="SUPPLIER_FULL_NAME" jdbcType="NVARCHAR" property="supplierFullName" />
+    <result column="SUPPLIER_ORDER_NO" jdbcType="NVARCHAR" property="supplierOrderNo" />
+    <result column="EXCHANGE_RATE" jdbcType="DECIMAL" property="exchangeRate" />
+    <result column="TAX_INCLUDED" jdbcType="BIT" property="taxIncluded" />
+    <result column="PIECES" jdbcType="INTEGER" property="pieces" />
+    <result column="REMARK" jdbcType="NVARCHAR" property="remark" />
+    <result column="SUPPLIER_CONTACT_NAME" jdbcType="NVARCHAR" property="supplierContactName" />
+    <result column="SUPPLIER_ADDR_NAME" jdbcType="NVARCHAR" property="supplierAddrName" />
+    <result column="INVOICE_CONTACT_NAME" jdbcType="NVARCHAR" property="invoiceContactName" />
+    <result column="INVOICE_ADDR_NAME" jdbcType="NVARCHAR" property="invoiceAddrName" />
+    <result column="AMOUNT_UNINCLUDE_TAX_OC" jdbcType="DECIMAL" property="amountUnincludeTaxOc" />
+    <result column="TAX_OC" jdbcType="DECIMAL" property="taxOc" />
+    <result column="AMOUNT_UNINCLUDE_TAX_BC" jdbcType="DECIMAL" property="amountUnincludeTaxBc" />
+    <result column="TAX_BC" jdbcType="DECIMAL" property="taxBc" />
+    <result column="SOURCE_TYPE" jdbcType="NVARCHAR" property="sourceType" />
+    <result column="TAX_INVOICE_NO" jdbcType="NVARCHAR" property="taxInvoiceNo" />
+    <result column="DEDUCTIBLE_INDICATOR" jdbcType="BIT" property="deductibleIndicator" />
+    <result column="TAX_INVOICE_CATEGORY_ID" jdbcType="CHAR" property="taxInvoiceCategoryId" />
+    <result column="SUPPLIER_ADDR_ID" jdbcType="CHAR" property="supplierAddrId" />
+    <result column="INVOICE_CONTACT_ID" jdbcType="CHAR" property="invoiceContactId" />
+    <result column="INVOICE_ADDR_ID" jdbcType="CHAR" property="invoiceAddrId" />
+    <result column="RECEIPT_EMPLOYEE_ID" jdbcType="CHAR" property="receiptEmployeeId" />
+    <result column="PLANT_ID" jdbcType="CHAR" property="plantId" />
+    <result column="CURRENCY_ID" jdbcType="CHAR" property="currencyId" />
+    <result column="PAYMENT_TERM_ID" jdbcType="CHAR" property="paymentTermId" />
+    <result column="DELIVERY_TERM_ID" jdbcType="CHAR" property="deliveryTermId" />
+    <result column="SUPPLIER_ID" jdbcType="CHAR" property="supplierId" />
+    <result column="SUPPLIER_CONTACT_ID" jdbcType="CHAR" property="supplierContactId" />
+    <result column="INVOICE_SUPPLIER_ID" jdbcType="CHAR" property="invoiceSupplierId" />
+    <result column="INVOICE_COMPANY_ID" jdbcType="CHAR" property="invoiceCompanyId" />
+    <result column="SYNERGY_ID" jdbcType="CHAR" property="synergyId" />
+    <result column="SYNERGY_D_ID" jdbcType="CHAR" property="synergyDId" />
+    <result column="DIRECT_SETTLEMENT_INDICATOR" jdbcType="BIT" property="directSettlementIndicator" />
+    <result column="DIRECT_INVOICING_INDICATOR" jdbcType="BIT" property="directInvoicingIndicator" />
+    <result column="OFFSET_DEPOSIT_INDICATOR" jdbcType="BIT" property="offsetDepositIndicator" />
+    <result column="RECEIPTED_STATUS" jdbcType="NVARCHAR" property="receiptedStatus" />
+    <result column="SETTLEMENT_INDICATOR" jdbcType="BIT" property="settlementIndicator" />
+    <result column="SIGN_DATE" jdbcType="TIMESTAMP" property="signDate" />
+    <result column="TAX_ID" jdbcType="CHAR" property="taxId" />
+    <result column="WIP_NO" jdbcType="NVARCHAR" property="wipNo" />
+    <result column="WIP_E10_INSPECTION" jdbcType="BIT" property="wipE10Inspection" />
+    <result column="ALL_SYNERGY" jdbcType="BIT" property="allSynergy" />
+    <result column="GROUP_SYNERGY_D_ID" jdbcType="CHAR" property="groupSynergyDId" />
+    <result column="GENERATE_NO" jdbcType="NVARCHAR" property="generateNo" />
+    <result column="GENERATE_STATUS" jdbcType="BIT" property="generateStatus" />
+    <result column="DOC_Sequence" jdbcType="INTEGER" property="docSequence" />
+    <result column="SOURCE_SUPPLIER_ID" jdbcType="CHAR" property="sourceSupplierId" />
+    <result column="GENERATE_SOURCE" jdbcType="NVARCHAR" property="generateSource" />
+    <result column="DELIVERY_DOC_NO" jdbcType="NVARCHAR" property="deliveryDocNo" />
+    <result column="ProcessInstanceId" jdbcType="CHAR" property="processinstanceid" />
+    <result column="EFNETStatus" jdbcType="NVARCHAR" property="efnetstatus" />
+    <result column="EFNETAction" jdbcType="NVARCHAR" property="efnetaction" />
+    <result column="EFNETDOCCategory" jdbcType="NVARCHAR" property="efnetdoccategory" />
+    <result column="EFNETDOCNumber" jdbcType="NVARCHAR" property="efnetdocnumber" />
+    <result column="PrintCount" jdbcType="INTEGER" property="printcount" />
+    <result column="UDF001" jdbcType="DECIMAL" property="udf001" />
+    <result column="UDF002" jdbcType="DECIMAL" property="udf002" />
+    <result column="UDF003" jdbcType="DECIMAL" property="udf003" />
+    <result column="UDF011" jdbcType="DECIMAL" property="udf011" />
+    <result column="UDF012" jdbcType="DECIMAL" property="udf012" />
+    <result column="UDF013" jdbcType="DECIMAL" property="udf013" />
+    <result column="UDF021" jdbcType="NVARCHAR" property="udf021" />
+    <result column="UDF022" jdbcType="NVARCHAR" property="udf022" />
+    <result column="UDF023" jdbcType="NVARCHAR" property="udf023" />
+    <result column="UDF024" jdbcType="NVARCHAR" property="udf024" />
+    <result column="UDF025" jdbcType="NVARCHAR" property="udf025" />
+    <result column="UDF026" jdbcType="NVARCHAR" property="udf026" />
+    <result column="UDF041" jdbcType="TIMESTAMP" property="udf041" />
+    <result column="UDF042" jdbcType="TIMESTAMP" property="udf042" />
+    <result column="UDF051" jdbcType="CHAR" property="udf051" />
+    <result column="UDF052" jdbcType="CHAR" property="udf052" />
+    <result column="UDF053" jdbcType="CHAR" property="udf053" />
+    <result column="UDF054" jdbcType="CHAR" property="udf054" />
+    <result column="ApproveStatus" jdbcType="NVARCHAR" property="approvestatus" />
+    <result column="ApproveDate" jdbcType="TIMESTAMP" property="approvedate" />
+    <result column="ApproveBy" jdbcType="CHAR" property="approveby" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="LastModifiedDate" jdbcType="TIMESTAMP" property="lastmodifieddate" />
+    <result column="ModifiedDate" jdbcType="TIMESTAMP" property="modifieddate" />
+    <result column="CreateBy" jdbcType="CHAR" property="createby" />
+    <result column="LastModifiedBy" jdbcType="CHAR" property="lastmodifiedby" />
+    <result column="ModifiedBy" jdbcType="CHAR" property="modifiedby" />
+    <result column="Owner_Org_RTK" jdbcType="NVARCHAR" property="ownerOrgRtk" />
+    <result column="Owner_Org_ROid" jdbcType="CHAR" property="ownerOrgRoid" />
+    <result column="SOURCE_ID_RTK" jdbcType="NVARCHAR" property="sourceIdRtk" />
+    <result column="SOURCE_ID_ROid" jdbcType="CHAR" property="sourceIdRoid" />
+    <result column="RECEIVE_Owner_Org_RTK" jdbcType="NVARCHAR" property="receiveOwnerOrgRtk" />
+    <result column="RECEIVE_Owner_Org_ROid" jdbcType="CHAR" property="receiveOwnerOrgRoid" />
+    <result column="GROUP_SYNERGY_ID_RTK" jdbcType="NVARCHAR" property="groupSynergyIdRtk" />
+    <result column="GROUP_SYNERGY_ID_ROid" jdbcType="CHAR" property="groupSynergyIdRoid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tb.mbg.model.PurchaseArrival">
+    <result column="Version" jdbcType="BINARY" property="version" />
+    <result column="Attachments" jdbcType="LONGNVARCHAR" property="attachments" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    PURCHASE_ARRIVAL_ID, DOC_NO, DOC_DATE, DOC_ID, Owner_Dept, Owner_Emp, CATEGORY, ARRIVAL_DATE, 
+    SUPPLIER_FULL_NAME, SUPPLIER_ORDER_NO, EXCHANGE_RATE, TAX_INCLUDED, PIECES, REMARK, 
+    SUPPLIER_CONTACT_NAME, SUPPLIER_ADDR_NAME, INVOICE_CONTACT_NAME, INVOICE_ADDR_NAME, 
+    AMOUNT_UNINCLUDE_TAX_OC, TAX_OC, AMOUNT_UNINCLUDE_TAX_BC, TAX_BC, SOURCE_TYPE, TAX_INVOICE_NO, 
+    DEDUCTIBLE_INDICATOR, TAX_INVOICE_CATEGORY_ID, SUPPLIER_ADDR_ID, INVOICE_CONTACT_ID, 
+    INVOICE_ADDR_ID, RECEIPT_EMPLOYEE_ID, PLANT_ID, CURRENCY_ID, PAYMENT_TERM_ID, DELIVERY_TERM_ID, 
+    SUPPLIER_ID, SUPPLIER_CONTACT_ID, INVOICE_SUPPLIER_ID, INVOICE_COMPANY_ID, SYNERGY_ID, 
+    SYNERGY_D_ID, DIRECT_SETTLEMENT_INDICATOR, DIRECT_INVOICING_INDICATOR, OFFSET_DEPOSIT_INDICATOR, 
+    RECEIPTED_STATUS, SETTLEMENT_INDICATOR, SIGN_DATE, TAX_ID, WIP_NO, WIP_E10_INSPECTION, 
+    ALL_SYNERGY, GROUP_SYNERGY_D_ID, GENERATE_NO, GENERATE_STATUS, DOC_Sequence, SOURCE_SUPPLIER_ID, 
+    GENERATE_SOURCE, DELIVERY_DOC_NO, ProcessInstanceId, EFNETStatus, EFNETAction, EFNETDOCCategory, 
+    EFNETDOCNumber, PrintCount, UDF001, UDF002, UDF003, UDF011, UDF012, UDF013, UDF021, 
+    UDF022, UDF023, UDF024, UDF025, UDF026, UDF041, UDF042, UDF051, UDF052, UDF053, UDF054, 
+    ApproveStatus, ApproveDate, ApproveBy, CreateDate, LastModifiedDate, ModifiedDate, 
+    CreateBy, LastModifiedBy, ModifiedBy, Owner_Org_RTK, Owner_Org_ROid, SOURCE_ID_RTK, 
+    SOURCE_ID_ROid, RECEIVE_Owner_Org_RTK, RECEIVE_Owner_Org_ROid, GROUP_SYNERGY_ID_RTK, 
+    GROUP_SYNERGY_ID_ROid
+  </sql>
+  <sql id="Blob_Column_List">
+    Version, Attachments
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.tb.mbg.model.PurchaseArrivalExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from PURCHASE_ARRIVAL
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.tb.mbg.model.PurchaseArrivalExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from PURCHASE_ARRIVAL
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from PURCHASE_ARRIVAL
+    where PURCHASE_ARRIVAL_ID = #{purchaseArrivalId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PURCHASE_ARRIVAL
+    where PURCHASE_ARRIVAL_ID = #{purchaseArrivalId,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tb.mbg.model.PurchaseArrivalExample">
+    delete from PURCHASE_ARRIVAL
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tb.mbg.model.PurchaseArrival">
+    insert into PURCHASE_ARRIVAL (PURCHASE_ARRIVAL_ID, DOC_NO, DOC_DATE, 
+      DOC_ID, Owner_Dept, Owner_Emp, 
+      CATEGORY, ARRIVAL_DATE, SUPPLIER_FULL_NAME, 
+      SUPPLIER_ORDER_NO, EXCHANGE_RATE, TAX_INCLUDED, 
+      PIECES, REMARK, SUPPLIER_CONTACT_NAME, 
+      SUPPLIER_ADDR_NAME, INVOICE_CONTACT_NAME, 
+      INVOICE_ADDR_NAME, AMOUNT_UNINCLUDE_TAX_OC, 
+      TAX_OC, AMOUNT_UNINCLUDE_TAX_BC, TAX_BC, 
+      SOURCE_TYPE, TAX_INVOICE_NO, DEDUCTIBLE_INDICATOR, 
+      TAX_INVOICE_CATEGORY_ID, SUPPLIER_ADDR_ID, INVOICE_CONTACT_ID, 
+      INVOICE_ADDR_ID, RECEIPT_EMPLOYEE_ID, PLANT_ID, 
+      CURRENCY_ID, PAYMENT_TERM_ID, DELIVERY_TERM_ID, 
+      SUPPLIER_ID, SUPPLIER_CONTACT_ID, INVOICE_SUPPLIER_ID, 
+      INVOICE_COMPANY_ID, SYNERGY_ID, SYNERGY_D_ID, 
+      DIRECT_SETTLEMENT_INDICATOR, DIRECT_INVOICING_INDICATOR, 
+      OFFSET_DEPOSIT_INDICATOR, RECEIPTED_STATUS, SETTLEMENT_INDICATOR, 
+      SIGN_DATE, TAX_ID, WIP_NO, 
+      WIP_E10_INSPECTION, ALL_SYNERGY, GROUP_SYNERGY_D_ID, 
+      GENERATE_NO, GENERATE_STATUS, DOC_Sequence, 
+      SOURCE_SUPPLIER_ID, GENERATE_SOURCE, DELIVERY_DOC_NO, 
+      ProcessInstanceId, EFNETStatus, EFNETAction, 
+      EFNETDOCCategory, EFNETDOCNumber, PrintCount, 
+      UDF001, UDF002, UDF003, 
+      UDF011, UDF012, UDF013, 
+      UDF021, UDF022, UDF023, 
+      UDF024, UDF025, UDF026, 
+      UDF041, UDF042, UDF051, 
+      UDF052, UDF053, UDF054, ApproveStatus, 
+      ApproveDate, ApproveBy, CreateDate, 
+      LastModifiedDate, ModifiedDate, CreateBy, 
+      LastModifiedBy, ModifiedBy, Owner_Org_RTK, 
+      Owner_Org_ROid, SOURCE_ID_RTK, SOURCE_ID_ROid, 
+      RECEIVE_Owner_Org_RTK, RECEIVE_Owner_Org_ROid, 
+      GROUP_SYNERGY_ID_RTK, GROUP_SYNERGY_ID_ROid, Version, 
+      Attachments)
+    values (#{purchaseArrivalId,jdbcType=CHAR}, #{docNo,jdbcType=NVARCHAR}, #{docDate,jdbcType=TIMESTAMP}, 
+      #{docId,jdbcType=CHAR}, #{ownerDept,jdbcType=CHAR}, #{ownerEmp,jdbcType=CHAR}, 
+      #{category,jdbcType=NVARCHAR}, #{arrivalDate,jdbcType=TIMESTAMP}, #{supplierFullName,jdbcType=NVARCHAR}, 
+      #{supplierOrderNo,jdbcType=NVARCHAR}, #{exchangeRate,jdbcType=DECIMAL}, #{taxIncluded,jdbcType=BIT}, 
+      #{pieces,jdbcType=INTEGER}, #{remark,jdbcType=NVARCHAR}, #{supplierContactName,jdbcType=NVARCHAR}, 
+      #{supplierAddrName,jdbcType=NVARCHAR}, #{invoiceContactName,jdbcType=NVARCHAR}, 
+      #{invoiceAddrName,jdbcType=NVARCHAR}, #{amountUnincludeTaxOc,jdbcType=DECIMAL}, 
+      #{taxOc,jdbcType=DECIMAL}, #{amountUnincludeTaxBc,jdbcType=DECIMAL}, #{taxBc,jdbcType=DECIMAL}, 
+      #{sourceType,jdbcType=NVARCHAR}, #{taxInvoiceNo,jdbcType=NVARCHAR}, #{deductibleIndicator,jdbcType=BIT}, 
+      #{taxInvoiceCategoryId,jdbcType=CHAR}, #{supplierAddrId,jdbcType=CHAR}, #{invoiceContactId,jdbcType=CHAR}, 
+      #{invoiceAddrId,jdbcType=CHAR}, #{receiptEmployeeId,jdbcType=CHAR}, #{plantId,jdbcType=CHAR}, 
+      #{currencyId,jdbcType=CHAR}, #{paymentTermId,jdbcType=CHAR}, #{deliveryTermId,jdbcType=CHAR}, 
+      #{supplierId,jdbcType=CHAR}, #{supplierContactId,jdbcType=CHAR}, #{invoiceSupplierId,jdbcType=CHAR}, 
+      #{invoiceCompanyId,jdbcType=CHAR}, #{synergyId,jdbcType=CHAR}, #{synergyDId,jdbcType=CHAR}, 
+      #{directSettlementIndicator,jdbcType=BIT}, #{directInvoicingIndicator,jdbcType=BIT}, 
+      #{offsetDepositIndicator,jdbcType=BIT}, #{receiptedStatus,jdbcType=NVARCHAR}, #{settlementIndicator,jdbcType=BIT}, 
+      #{signDate,jdbcType=TIMESTAMP}, #{taxId,jdbcType=CHAR}, #{wipNo,jdbcType=NVARCHAR}, 
+      #{wipE10Inspection,jdbcType=BIT}, #{allSynergy,jdbcType=BIT}, #{groupSynergyDId,jdbcType=CHAR}, 
+      #{generateNo,jdbcType=NVARCHAR}, #{generateStatus,jdbcType=BIT}, #{docSequence,jdbcType=INTEGER}, 
+      #{sourceSupplierId,jdbcType=CHAR}, #{generateSource,jdbcType=NVARCHAR}, #{deliveryDocNo,jdbcType=NVARCHAR}, 
+      #{processinstanceid,jdbcType=CHAR}, #{efnetstatus,jdbcType=NVARCHAR}, #{efnetaction,jdbcType=NVARCHAR}, 
+      #{efnetdoccategory,jdbcType=NVARCHAR}, #{efnetdocnumber,jdbcType=NVARCHAR}, #{printcount,jdbcType=INTEGER}, 
+      #{udf001,jdbcType=DECIMAL}, #{udf002,jdbcType=DECIMAL}, #{udf003,jdbcType=DECIMAL}, 
+      #{udf011,jdbcType=DECIMAL}, #{udf012,jdbcType=DECIMAL}, #{udf013,jdbcType=DECIMAL}, 
+      #{udf021,jdbcType=NVARCHAR}, #{udf022,jdbcType=NVARCHAR}, #{udf023,jdbcType=NVARCHAR}, 
+      #{udf024,jdbcType=NVARCHAR}, #{udf025,jdbcType=NVARCHAR}, #{udf026,jdbcType=NVARCHAR}, 
+      #{udf041,jdbcType=TIMESTAMP}, #{udf042,jdbcType=TIMESTAMP}, #{udf051,jdbcType=CHAR}, 
+      #{udf052,jdbcType=CHAR}, #{udf053,jdbcType=CHAR}, #{udf054,jdbcType=CHAR}, #{approvestatus,jdbcType=NVARCHAR}, 
+      #{approvedate,jdbcType=TIMESTAMP}, #{approveby,jdbcType=CHAR}, #{createdate,jdbcType=TIMESTAMP}, 
+      #{lastmodifieddate,jdbcType=TIMESTAMP}, #{modifieddate,jdbcType=TIMESTAMP}, #{createby,jdbcType=CHAR}, 
+      #{lastmodifiedby,jdbcType=CHAR}, #{modifiedby,jdbcType=CHAR}, #{ownerOrgRtk,jdbcType=NVARCHAR}, 
+      #{ownerOrgRoid,jdbcType=CHAR}, #{sourceIdRtk,jdbcType=NVARCHAR}, #{sourceIdRoid,jdbcType=CHAR}, 
+      #{receiveOwnerOrgRtk,jdbcType=NVARCHAR}, #{receiveOwnerOrgRoid,jdbcType=CHAR}, 
+      #{groupSynergyIdRtk,jdbcType=NVARCHAR}, #{groupSynergyIdRoid,jdbcType=CHAR}, #{version,jdbcType=BINARY}, 
+      #{attachments,jdbcType=LONGNVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tb.mbg.model.PurchaseArrival">
+    insert into PURCHASE_ARRIVAL
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="purchaseArrivalId != null">
+        PURCHASE_ARRIVAL_ID,
+      </if>
+      <if test="docNo != null">
+        DOC_NO,
+      </if>
+      <if test="docDate != null">
+        DOC_DATE,
+      </if>
+      <if test="docId != null">
+        DOC_ID,
+      </if>
+      <if test="ownerDept != null">
+        Owner_Dept,
+      </if>
+      <if test="ownerEmp != null">
+        Owner_Emp,
+      </if>
+      <if test="category != null">
+        CATEGORY,
+      </if>
+      <if test="arrivalDate != null">
+        ARRIVAL_DATE,
+      </if>
+      <if test="supplierFullName != null">
+        SUPPLIER_FULL_NAME,
+      </if>
+      <if test="supplierOrderNo != null">
+        SUPPLIER_ORDER_NO,
+      </if>
+      <if test="exchangeRate != null">
+        EXCHANGE_RATE,
+      </if>
+      <if test="taxIncluded != null">
+        TAX_INCLUDED,
+      </if>
+      <if test="pieces != null">
+        PIECES,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="supplierContactName != null">
+        SUPPLIER_CONTACT_NAME,
+      </if>
+      <if test="supplierAddrName != null">
+        SUPPLIER_ADDR_NAME,
+      </if>
+      <if test="invoiceContactName != null">
+        INVOICE_CONTACT_NAME,
+      </if>
+      <if test="invoiceAddrName != null">
+        INVOICE_ADDR_NAME,
+      </if>
+      <if test="amountUnincludeTaxOc != null">
+        AMOUNT_UNINCLUDE_TAX_OC,
+      </if>
+      <if test="taxOc != null">
+        TAX_OC,
+      </if>
+      <if test="amountUnincludeTaxBc != null">
+        AMOUNT_UNINCLUDE_TAX_BC,
+      </if>
+      <if test="taxBc != null">
+        TAX_BC,
+      </if>
+      <if test="sourceType != null">
+        SOURCE_TYPE,
+      </if>
+      <if test="taxInvoiceNo != null">
+        TAX_INVOICE_NO,
+      </if>
+      <if test="deductibleIndicator != null">
+        DEDUCTIBLE_INDICATOR,
+      </if>
+      <if test="taxInvoiceCategoryId != null">
+        TAX_INVOICE_CATEGORY_ID,
+      </if>
+      <if test="supplierAddrId != null">
+        SUPPLIER_ADDR_ID,
+      </if>
+      <if test="invoiceContactId != null">
+        INVOICE_CONTACT_ID,
+      </if>
+      <if test="invoiceAddrId != null">
+        INVOICE_ADDR_ID,
+      </if>
+      <if test="receiptEmployeeId != null">
+        RECEIPT_EMPLOYEE_ID,
+      </if>
+      <if test="plantId != null">
+        PLANT_ID,
+      </if>
+      <if test="currencyId != null">
+        CURRENCY_ID,
+      </if>
+      <if test="paymentTermId != null">
+        PAYMENT_TERM_ID,
+      </if>
+      <if test="deliveryTermId != null">
+        DELIVERY_TERM_ID,
+      </if>
+      <if test="supplierId != null">
+        SUPPLIER_ID,
+      </if>
+      <if test="supplierContactId != null">
+        SUPPLIER_CONTACT_ID,
+      </if>
+      <if test="invoiceSupplierId != null">
+        INVOICE_SUPPLIER_ID,
+      </if>
+      <if test="invoiceCompanyId != null">
+        INVOICE_COMPANY_ID,
+      </if>
+      <if test="synergyId != null">
+        SYNERGY_ID,
+      </if>
+      <if test="synergyDId != null">
+        SYNERGY_D_ID,
+      </if>
+      <if test="directSettlementIndicator != null">
+        DIRECT_SETTLEMENT_INDICATOR,
+      </if>
+      <if test="directInvoicingIndicator != null">
+        DIRECT_INVOICING_INDICATOR,
+      </if>
+      <if test="offsetDepositIndicator != null">
+        OFFSET_DEPOSIT_INDICATOR,
+      </if>
+      <if test="receiptedStatus != null">
+        RECEIPTED_STATUS,
+      </if>
+      <if test="settlementIndicator != null">
+        SETTLEMENT_INDICATOR,
+      </if>
+      <if test="signDate != null">
+        SIGN_DATE,
+      </if>
+      <if test="taxId != null">
+        TAX_ID,
+      </if>
+      <if test="wipNo != null">
+        WIP_NO,
+      </if>
+      <if test="wipE10Inspection != null">
+        WIP_E10_INSPECTION,
+      </if>
+      <if test="allSynergy != null">
+        ALL_SYNERGY,
+      </if>
+      <if test="groupSynergyDId != null">
+        GROUP_SYNERGY_D_ID,
+      </if>
+      <if test="generateNo != null">
+        GENERATE_NO,
+      </if>
+      <if test="generateStatus != null">
+        GENERATE_STATUS,
+      </if>
+      <if test="docSequence != null">
+        DOC_Sequence,
+      </if>
+      <if test="sourceSupplierId != null">
+        SOURCE_SUPPLIER_ID,
+      </if>
+      <if test="generateSource != null">
+        GENERATE_SOURCE,
+      </if>
+      <if test="deliveryDocNo != null">
+        DELIVERY_DOC_NO,
+      </if>
+      <if test="processinstanceid != null">
+        ProcessInstanceId,
+      </if>
+      <if test="efnetstatus != null">
+        EFNETStatus,
+      </if>
+      <if test="efnetaction != null">
+        EFNETAction,
+      </if>
+      <if test="efnetdoccategory != null">
+        EFNETDOCCategory,
+      </if>
+      <if test="efnetdocnumber != null">
+        EFNETDOCNumber,
+      </if>
+      <if test="printcount != null">
+        PrintCount,
+      </if>
+      <if test="udf001 != null">
+        UDF001,
+      </if>
+      <if test="udf002 != null">
+        UDF002,
+      </if>
+      <if test="udf003 != null">
+        UDF003,
+      </if>
+      <if test="udf011 != null">
+        UDF011,
+      </if>
+      <if test="udf012 != null">
+        UDF012,
+      </if>
+      <if test="udf013 != null">
+        UDF013,
+      </if>
+      <if test="udf021 != null">
+        UDF021,
+      </if>
+      <if test="udf022 != null">
+        UDF022,
+      </if>
+      <if test="udf023 != null">
+        UDF023,
+      </if>
+      <if test="udf024 != null">
+        UDF024,
+      </if>
+      <if test="udf025 != null">
+        UDF025,
+      </if>
+      <if test="udf026 != null">
+        UDF026,
+      </if>
+      <if test="udf041 != null">
+        UDF041,
+      </if>
+      <if test="udf042 != null">
+        UDF042,
+      </if>
+      <if test="udf051 != null">
+        UDF051,
+      </if>
+      <if test="udf052 != null">
+        UDF052,
+      </if>
+      <if test="udf053 != null">
+        UDF053,
+      </if>
+      <if test="udf054 != null">
+        UDF054,
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus,
+      </if>
+      <if test="approvedate != null">
+        ApproveDate,
+      </if>
+      <if test="approveby != null">
+        ApproveBy,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate,
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate,
+      </if>
+      <if test="createby != null">
+        CreateBy,
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy,
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy,
+      </if>
+      <if test="ownerOrgRtk != null">
+        Owner_Org_RTK,
+      </if>
+      <if test="ownerOrgRoid != null">
+        Owner_Org_ROid,
+      </if>
+      <if test="sourceIdRtk != null">
+        SOURCE_ID_RTK,
+      </if>
+      <if test="sourceIdRoid != null">
+        SOURCE_ID_ROid,
+      </if>
+      <if test="receiveOwnerOrgRtk != null">
+        RECEIVE_Owner_Org_RTK,
+      </if>
+      <if test="receiveOwnerOrgRoid != null">
+        RECEIVE_Owner_Org_ROid,
+      </if>
+      <if test="groupSynergyIdRtk != null">
+        GROUP_SYNERGY_ID_RTK,
+      </if>
+      <if test="groupSynergyIdRoid != null">
+        GROUP_SYNERGY_ID_ROid,
+      </if>
+      <if test="version != null">
+        Version,
+      </if>
+      <if test="attachments != null">
+        Attachments,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="purchaseArrivalId != null">
+        #{purchaseArrivalId,jdbcType=CHAR},
+      </if>
+      <if test="docNo != null">
+        #{docNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="docDate != null">
+        #{docDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="docId != null">
+        #{docId,jdbcType=CHAR},
+      </if>
+      <if test="ownerDept != null">
+        #{ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="ownerEmp != null">
+        #{ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=NVARCHAR},
+      </if>
+      <if test="arrivalDate != null">
+        #{arrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplierFullName != null">
+        #{supplierFullName,jdbcType=NVARCHAR},
+      </if>
+      <if test="supplierOrderNo != null">
+        #{supplierOrderNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="exchangeRate != null">
+        #{exchangeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="taxIncluded != null">
+        #{taxIncluded,jdbcType=BIT},
+      </if>
+      <if test="pieces != null">
+        #{pieces,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="supplierContactName != null">
+        #{supplierContactName,jdbcType=NVARCHAR},
+      </if>
+      <if test="supplierAddrName != null">
+        #{supplierAddrName,jdbcType=NVARCHAR},
+      </if>
+      <if test="invoiceContactName != null">
+        #{invoiceContactName,jdbcType=NVARCHAR},
+      </if>
+      <if test="invoiceAddrName != null">
+        #{invoiceAddrName,jdbcType=NVARCHAR},
+      </if>
+      <if test="amountUnincludeTaxOc != null">
+        #{amountUnincludeTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="taxOc != null">
+        #{taxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="amountUnincludeTaxBc != null">
+        #{amountUnincludeTaxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="taxBc != null">
+        #{taxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="sourceType != null">
+        #{sourceType,jdbcType=NVARCHAR},
+      </if>
+      <if test="taxInvoiceNo != null">
+        #{taxInvoiceNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="deductibleIndicator != null">
+        #{deductibleIndicator,jdbcType=BIT},
+      </if>
+      <if test="taxInvoiceCategoryId != null">
+        #{taxInvoiceCategoryId,jdbcType=CHAR},
+      </if>
+      <if test="supplierAddrId != null">
+        #{supplierAddrId,jdbcType=CHAR},
+      </if>
+      <if test="invoiceContactId != null">
+        #{invoiceContactId,jdbcType=CHAR},
+      </if>
+      <if test="invoiceAddrId != null">
+        #{invoiceAddrId,jdbcType=CHAR},
+      </if>
+      <if test="receiptEmployeeId != null">
+        #{receiptEmployeeId,jdbcType=CHAR},
+      </if>
+      <if test="plantId != null">
+        #{plantId,jdbcType=CHAR},
+      </if>
+      <if test="currencyId != null">
+        #{currencyId,jdbcType=CHAR},
+      </if>
+      <if test="paymentTermId != null">
+        #{paymentTermId,jdbcType=CHAR},
+      </if>
+      <if test="deliveryTermId != null">
+        #{deliveryTermId,jdbcType=CHAR},
+      </if>
+      <if test="supplierId != null">
+        #{supplierId,jdbcType=CHAR},
+      </if>
+      <if test="supplierContactId != null">
+        #{supplierContactId,jdbcType=CHAR},
+      </if>
+      <if test="invoiceSupplierId != null">
+        #{invoiceSupplierId,jdbcType=CHAR},
+      </if>
+      <if test="invoiceCompanyId != null">
+        #{invoiceCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="synergyId != null">
+        #{synergyId,jdbcType=CHAR},
+      </if>
+      <if test="synergyDId != null">
+        #{synergyDId,jdbcType=CHAR},
+      </if>
+      <if test="directSettlementIndicator != null">
+        #{directSettlementIndicator,jdbcType=BIT},
+      </if>
+      <if test="directInvoicingIndicator != null">
+        #{directInvoicingIndicator,jdbcType=BIT},
+      </if>
+      <if test="offsetDepositIndicator != null">
+        #{offsetDepositIndicator,jdbcType=BIT},
+      </if>
+      <if test="receiptedStatus != null">
+        #{receiptedStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="settlementIndicator != null">
+        #{settlementIndicator,jdbcType=BIT},
+      </if>
+      <if test="signDate != null">
+        #{signDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taxId != null">
+        #{taxId,jdbcType=CHAR},
+      </if>
+      <if test="wipNo != null">
+        #{wipNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="wipE10Inspection != null">
+        #{wipE10Inspection,jdbcType=BIT},
+      </if>
+      <if test="allSynergy != null">
+        #{allSynergy,jdbcType=BIT},
+      </if>
+      <if test="groupSynergyDId != null">
+        #{groupSynergyDId,jdbcType=CHAR},
+      </if>
+      <if test="generateNo != null">
+        #{generateNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="generateStatus != null">
+        #{generateStatus,jdbcType=BIT},
+      </if>
+      <if test="docSequence != null">
+        #{docSequence,jdbcType=INTEGER},
+      </if>
+      <if test="sourceSupplierId != null">
+        #{sourceSupplierId,jdbcType=CHAR},
+      </if>
+      <if test="generateSource != null">
+        #{generateSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="deliveryDocNo != null">
+        #{deliveryDocNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="processinstanceid != null">
+        #{processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="efnetstatus != null">
+        #{efnetstatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetaction != null">
+        #{efnetaction,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetdoccategory != null">
+        #{efnetdoccategory,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetdocnumber != null">
+        #{efnetdocnumber,jdbcType=NVARCHAR},
+      </if>
+      <if test="printcount != null">
+        #{printcount,jdbcType=INTEGER},
+      </if>
+      <if test="udf001 != null">
+        #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="ownerOrgRtk != null">
+        #{ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="ownerOrgRoid != null">
+        #{ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="sourceIdRtk != null">
+        #{sourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="sourceIdRoid != null">
+        #{sourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="receiveOwnerOrgRtk != null">
+        #{receiveOwnerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="receiveOwnerOrgRoid != null">
+        #{receiveOwnerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="groupSynergyIdRtk != null">
+        #{groupSynergyIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="groupSynergyIdRoid != null">
+        #{groupSynergyIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BINARY},
+      </if>
+      <if test="attachments != null">
+        #{attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tb.mbg.model.PurchaseArrivalExample" resultType="java.lang.Long">
+    select count(*) from PURCHASE_ARRIVAL
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update PURCHASE_ARRIVAL
+    <set>
+      <if test="row.purchaseArrivalId != null">
+        PURCHASE_ARRIVAL_ID = #{row.purchaseArrivalId,jdbcType=CHAR},
+      </if>
+      <if test="row.docNo != null">
+        DOC_NO = #{row.docNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.docDate != null">
+        DOC_DATE = #{row.docDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.docId != null">
+        DOC_ID = #{row.docId,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerDept != null">
+        Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerEmp != null">
+        Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="row.category != null">
+        CATEGORY = #{row.category,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.arrivalDate != null">
+        ARRIVAL_DATE = #{row.arrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.supplierFullName != null">
+        SUPPLIER_FULL_NAME = #{row.supplierFullName,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.supplierOrderNo != null">
+        SUPPLIER_ORDER_NO = #{row.supplierOrderNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.exchangeRate != null">
+        EXCHANGE_RATE = #{row.exchangeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="row.taxIncluded != null">
+        TAX_INCLUDED = #{row.taxIncluded,jdbcType=BIT},
+      </if>
+      <if test="row.pieces != null">
+        PIECES = #{row.pieces,jdbcType=INTEGER},
+      </if>
+      <if test="row.remark != null">
+        REMARK = #{row.remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.supplierContactName != null">
+        SUPPLIER_CONTACT_NAME = #{row.supplierContactName,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.supplierAddrName != null">
+        SUPPLIER_ADDR_NAME = #{row.supplierAddrName,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.invoiceContactName != null">
+        INVOICE_CONTACT_NAME = #{row.invoiceContactName,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.invoiceAddrName != null">
+        INVOICE_ADDR_NAME = #{row.invoiceAddrName,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.amountUnincludeTaxOc != null">
+        AMOUNT_UNINCLUDE_TAX_OC = #{row.amountUnincludeTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.taxOc != null">
+        TAX_OC = #{row.taxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.amountUnincludeTaxBc != null">
+        AMOUNT_UNINCLUDE_TAX_BC = #{row.amountUnincludeTaxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.taxBc != null">
+        TAX_BC = #{row.taxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="row.sourceType != null">
+        SOURCE_TYPE = #{row.sourceType,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.taxInvoiceNo != null">
+        TAX_INVOICE_NO = #{row.taxInvoiceNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.deductibleIndicator != null">
+        DEDUCTIBLE_INDICATOR = #{row.deductibleIndicator,jdbcType=BIT},
+      </if>
+      <if test="row.taxInvoiceCategoryId != null">
+        TAX_INVOICE_CATEGORY_ID = #{row.taxInvoiceCategoryId,jdbcType=CHAR},
+      </if>
+      <if test="row.supplierAddrId != null">
+        SUPPLIER_ADDR_ID = #{row.supplierAddrId,jdbcType=CHAR},
+      </if>
+      <if test="row.invoiceContactId != null">
+        INVOICE_CONTACT_ID = #{row.invoiceContactId,jdbcType=CHAR},
+      </if>
+      <if test="row.invoiceAddrId != null">
+        INVOICE_ADDR_ID = #{row.invoiceAddrId,jdbcType=CHAR},
+      </if>
+      <if test="row.receiptEmployeeId != null">
+        RECEIPT_EMPLOYEE_ID = #{row.receiptEmployeeId,jdbcType=CHAR},
+      </if>
+      <if test="row.plantId != null">
+        PLANT_ID = #{row.plantId,jdbcType=CHAR},
+      </if>
+      <if test="row.currencyId != null">
+        CURRENCY_ID = #{row.currencyId,jdbcType=CHAR},
+      </if>
+      <if test="row.paymentTermId != null">
+        PAYMENT_TERM_ID = #{row.paymentTermId,jdbcType=CHAR},
+      </if>
+      <if test="row.deliveryTermId != null">
+        DELIVERY_TERM_ID = #{row.deliveryTermId,jdbcType=CHAR},
+      </if>
+      <if test="row.supplierId != null">
+        SUPPLIER_ID = #{row.supplierId,jdbcType=CHAR},
+      </if>
+      <if test="row.supplierContactId != null">
+        SUPPLIER_CONTACT_ID = #{row.supplierContactId,jdbcType=CHAR},
+      </if>
+      <if test="row.invoiceSupplierId != null">
+        INVOICE_SUPPLIER_ID = #{row.invoiceSupplierId,jdbcType=CHAR},
+      </if>
+      <if test="row.invoiceCompanyId != null">
+        INVOICE_COMPANY_ID = #{row.invoiceCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="row.synergyId != null">
+        SYNERGY_ID = #{row.synergyId,jdbcType=CHAR},
+      </if>
+      <if test="row.synergyDId != null">
+        SYNERGY_D_ID = #{row.synergyDId,jdbcType=CHAR},
+      </if>
+      <if test="row.directSettlementIndicator != null">
+        DIRECT_SETTLEMENT_INDICATOR = #{row.directSettlementIndicator,jdbcType=BIT},
+      </if>
+      <if test="row.directInvoicingIndicator != null">
+        DIRECT_INVOICING_INDICATOR = #{row.directInvoicingIndicator,jdbcType=BIT},
+      </if>
+      <if test="row.offsetDepositIndicator != null">
+        OFFSET_DEPOSIT_INDICATOR = #{row.offsetDepositIndicator,jdbcType=BIT},
+      </if>
+      <if test="row.receiptedStatus != null">
+        RECEIPTED_STATUS = #{row.receiptedStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.settlementIndicator != null">
+        SETTLEMENT_INDICATOR = #{row.settlementIndicator,jdbcType=BIT},
+      </if>
+      <if test="row.signDate != null">
+        SIGN_DATE = #{row.signDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.taxId != null">
+        TAX_ID = #{row.taxId,jdbcType=CHAR},
+      </if>
+      <if test="row.wipNo != null">
+        WIP_NO = #{row.wipNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.wipE10Inspection != null">
+        WIP_E10_INSPECTION = #{row.wipE10Inspection,jdbcType=BIT},
+      </if>
+      <if test="row.allSynergy != null">
+        ALL_SYNERGY = #{row.allSynergy,jdbcType=BIT},
+      </if>
+      <if test="row.groupSynergyDId != null">
+        GROUP_SYNERGY_D_ID = #{row.groupSynergyDId,jdbcType=CHAR},
+      </if>
+      <if test="row.generateNo != null">
+        GENERATE_NO = #{row.generateNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.generateStatus != null">
+        GENERATE_STATUS = #{row.generateStatus,jdbcType=BIT},
+      </if>
+      <if test="row.docSequence != null">
+        DOC_Sequence = #{row.docSequence,jdbcType=INTEGER},
+      </if>
+      <if test="row.sourceSupplierId != null">
+        SOURCE_SUPPLIER_ID = #{row.sourceSupplierId,jdbcType=CHAR},
+      </if>
+      <if test="row.generateSource != null">
+        GENERATE_SOURCE = #{row.generateSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.deliveryDocNo != null">
+        DELIVERY_DOC_NO = #{row.deliveryDocNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.processinstanceid != null">
+        ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="row.efnetstatus != null">
+        EFNETStatus = #{row.efnetstatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.efnetaction != null">
+        EFNETAction = #{row.efnetaction,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.efnetdoccategory != null">
+        EFNETDOCCategory = #{row.efnetdoccategory,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.efnetdocnumber != null">
+        EFNETDOCNumber = #{row.efnetdocnumber,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.printcount != null">
+        PrintCount = #{row.printcount,jdbcType=INTEGER},
+      </if>
+      <if test="row.udf001 != null">
+        UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf002 != null">
+        UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf003 != null">
+        UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf011 != null">
+        UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf012 != null">
+        UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf013 != null">
+        UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf021 != null">
+        UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf022 != null">
+        UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf023 != null">
+        UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf024 != null">
+        UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf025 != null">
+        UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf026 != null">
+        UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf041 != null">
+        UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf042 != null">
+        UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf051 != null">
+        UDF051 = #{row.udf051,jdbcType=CHAR},
+      </if>
+      <if test="row.udf052 != null">
+        UDF052 = #{row.udf052,jdbcType=CHAR},
+      </if>
+      <if test="row.udf053 != null">
+        UDF053 = #{row.udf053,jdbcType=CHAR},
+      </if>
+      <if test="row.udf054 != null">
+        UDF054 = #{row.udf054,jdbcType=CHAR},
+      </if>
+      <if test="row.approvestatus != null">
+        ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.approvedate != null">
+        ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.approveby != null">
+        ApproveBy = #{row.approveby,jdbcType=CHAR},
+      </if>
+      <if test="row.createdate != null">
+        CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.lastmodifieddate != null">
+        LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.modifieddate != null">
+        ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.createby != null">
+        CreateBy = #{row.createby,jdbcType=CHAR},
+      </if>
+      <if test="row.lastmodifiedby != null">
+        LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.modifiedby != null">
+        ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerOrgRtk != null">
+        Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.ownerOrgRoid != null">
+        Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.sourceIdRtk != null">
+        SOURCE_ID_RTK = #{row.sourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.sourceIdRoid != null">
+        SOURCE_ID_ROid = #{row.sourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.receiveOwnerOrgRtk != null">
+        RECEIVE_Owner_Org_RTK = #{row.receiveOwnerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.receiveOwnerOrgRoid != null">
+        RECEIVE_Owner_Org_ROid = #{row.receiveOwnerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.groupSynergyIdRtk != null">
+        GROUP_SYNERGY_ID_RTK = #{row.groupSynergyIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.groupSynergyIdRoid != null">
+        GROUP_SYNERGY_ID_ROid = #{row.groupSynergyIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.version != null">
+        Version = #{row.version,jdbcType=BINARY},
+      </if>
+      <if test="row.attachments != null">
+        Attachments = #{row.attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update PURCHASE_ARRIVAL
+    set PURCHASE_ARRIVAL_ID = #{row.purchaseArrivalId,jdbcType=CHAR},
+      DOC_NO = #{row.docNo,jdbcType=NVARCHAR},
+      DOC_DATE = #{row.docDate,jdbcType=TIMESTAMP},
+      DOC_ID = #{row.docId,jdbcType=CHAR},
+      Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      CATEGORY = #{row.category,jdbcType=NVARCHAR},
+      ARRIVAL_DATE = #{row.arrivalDate,jdbcType=TIMESTAMP},
+      SUPPLIER_FULL_NAME = #{row.supplierFullName,jdbcType=NVARCHAR},
+      SUPPLIER_ORDER_NO = #{row.supplierOrderNo,jdbcType=NVARCHAR},
+      EXCHANGE_RATE = #{row.exchangeRate,jdbcType=DECIMAL},
+      TAX_INCLUDED = #{row.taxIncluded,jdbcType=BIT},
+      PIECES = #{row.pieces,jdbcType=INTEGER},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      SUPPLIER_CONTACT_NAME = #{row.supplierContactName,jdbcType=NVARCHAR},
+      SUPPLIER_ADDR_NAME = #{row.supplierAddrName,jdbcType=NVARCHAR},
+      INVOICE_CONTACT_NAME = #{row.invoiceContactName,jdbcType=NVARCHAR},
+      INVOICE_ADDR_NAME = #{row.invoiceAddrName,jdbcType=NVARCHAR},
+      AMOUNT_UNINCLUDE_TAX_OC = #{row.amountUnincludeTaxOc,jdbcType=DECIMAL},
+      TAX_OC = #{row.taxOc,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_BC = #{row.amountUnincludeTaxBc,jdbcType=DECIMAL},
+      TAX_BC = #{row.taxBc,jdbcType=DECIMAL},
+      SOURCE_TYPE = #{row.sourceType,jdbcType=NVARCHAR},
+      TAX_INVOICE_NO = #{row.taxInvoiceNo,jdbcType=NVARCHAR},
+      DEDUCTIBLE_INDICATOR = #{row.deductibleIndicator,jdbcType=BIT},
+      TAX_INVOICE_CATEGORY_ID = #{row.taxInvoiceCategoryId,jdbcType=CHAR},
+      SUPPLIER_ADDR_ID = #{row.supplierAddrId,jdbcType=CHAR},
+      INVOICE_CONTACT_ID = #{row.invoiceContactId,jdbcType=CHAR},
+      INVOICE_ADDR_ID = #{row.invoiceAddrId,jdbcType=CHAR},
+      RECEIPT_EMPLOYEE_ID = #{row.receiptEmployeeId,jdbcType=CHAR},
+      PLANT_ID = #{row.plantId,jdbcType=CHAR},
+      CURRENCY_ID = #{row.currencyId,jdbcType=CHAR},
+      PAYMENT_TERM_ID = #{row.paymentTermId,jdbcType=CHAR},
+      DELIVERY_TERM_ID = #{row.deliveryTermId,jdbcType=CHAR},
+      SUPPLIER_ID = #{row.supplierId,jdbcType=CHAR},
+      SUPPLIER_CONTACT_ID = #{row.supplierContactId,jdbcType=CHAR},
+      INVOICE_SUPPLIER_ID = #{row.invoiceSupplierId,jdbcType=CHAR},
+      INVOICE_COMPANY_ID = #{row.invoiceCompanyId,jdbcType=CHAR},
+      SYNERGY_ID = #{row.synergyId,jdbcType=CHAR},
+      SYNERGY_D_ID = #{row.synergyDId,jdbcType=CHAR},
+      DIRECT_SETTLEMENT_INDICATOR = #{row.directSettlementIndicator,jdbcType=BIT},
+      DIRECT_INVOICING_INDICATOR = #{row.directInvoicingIndicator,jdbcType=BIT},
+      OFFSET_DEPOSIT_INDICATOR = #{row.offsetDepositIndicator,jdbcType=BIT},
+      RECEIPTED_STATUS = #{row.receiptedStatus,jdbcType=NVARCHAR},
+      SETTLEMENT_INDICATOR = #{row.settlementIndicator,jdbcType=BIT},
+      SIGN_DATE = #{row.signDate,jdbcType=TIMESTAMP},
+      TAX_ID = #{row.taxId,jdbcType=CHAR},
+      WIP_NO = #{row.wipNo,jdbcType=NVARCHAR},
+      WIP_E10_INSPECTION = #{row.wipE10Inspection,jdbcType=BIT},
+      ALL_SYNERGY = #{row.allSynergy,jdbcType=BIT},
+      GROUP_SYNERGY_D_ID = #{row.groupSynergyDId,jdbcType=CHAR},
+      GENERATE_NO = #{row.generateNo,jdbcType=NVARCHAR},
+      GENERATE_STATUS = #{row.generateStatus,jdbcType=BIT},
+      DOC_Sequence = #{row.docSequence,jdbcType=INTEGER},
+      SOURCE_SUPPLIER_ID = #{row.sourceSupplierId,jdbcType=CHAR},
+      GENERATE_SOURCE = #{row.generateSource,jdbcType=NVARCHAR},
+      DELIVERY_DOC_NO = #{row.deliveryDocNo,jdbcType=NVARCHAR},
+      ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      EFNETStatus = #{row.efnetstatus,jdbcType=NVARCHAR},
+      EFNETAction = #{row.efnetaction,jdbcType=NVARCHAR},
+      EFNETDOCCategory = #{row.efnetdoccategory,jdbcType=NVARCHAR},
+      EFNETDOCNumber = #{row.efnetdocnumber,jdbcType=NVARCHAR},
+      PrintCount = #{row.printcount,jdbcType=INTEGER},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR},
+      SOURCE_ID_RTK = #{row.sourceIdRtk,jdbcType=NVARCHAR},
+      SOURCE_ID_ROid = #{row.sourceIdRoid,jdbcType=CHAR},
+      RECEIVE_Owner_Org_RTK = #{row.receiveOwnerOrgRtk,jdbcType=NVARCHAR},
+      RECEIVE_Owner_Org_ROid = #{row.receiveOwnerOrgRoid,jdbcType=CHAR},
+      GROUP_SYNERGY_ID_RTK = #{row.groupSynergyIdRtk,jdbcType=NVARCHAR},
+      GROUP_SYNERGY_ID_ROid = #{row.groupSynergyIdRoid,jdbcType=CHAR},
+      Version = #{row.version,jdbcType=BINARY},
+      Attachments = #{row.attachments,jdbcType=LONGNVARCHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update PURCHASE_ARRIVAL
+    set PURCHASE_ARRIVAL_ID = #{row.purchaseArrivalId,jdbcType=CHAR},
+      DOC_NO = #{row.docNo,jdbcType=NVARCHAR},
+      DOC_DATE = #{row.docDate,jdbcType=TIMESTAMP},
+      DOC_ID = #{row.docId,jdbcType=CHAR},
+      Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      CATEGORY = #{row.category,jdbcType=NVARCHAR},
+      ARRIVAL_DATE = #{row.arrivalDate,jdbcType=TIMESTAMP},
+      SUPPLIER_FULL_NAME = #{row.supplierFullName,jdbcType=NVARCHAR},
+      SUPPLIER_ORDER_NO = #{row.supplierOrderNo,jdbcType=NVARCHAR},
+      EXCHANGE_RATE = #{row.exchangeRate,jdbcType=DECIMAL},
+      TAX_INCLUDED = #{row.taxIncluded,jdbcType=BIT},
+      PIECES = #{row.pieces,jdbcType=INTEGER},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      SUPPLIER_CONTACT_NAME = #{row.supplierContactName,jdbcType=NVARCHAR},
+      SUPPLIER_ADDR_NAME = #{row.supplierAddrName,jdbcType=NVARCHAR},
+      INVOICE_CONTACT_NAME = #{row.invoiceContactName,jdbcType=NVARCHAR},
+      INVOICE_ADDR_NAME = #{row.invoiceAddrName,jdbcType=NVARCHAR},
+      AMOUNT_UNINCLUDE_TAX_OC = #{row.amountUnincludeTaxOc,jdbcType=DECIMAL},
+      TAX_OC = #{row.taxOc,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_BC = #{row.amountUnincludeTaxBc,jdbcType=DECIMAL},
+      TAX_BC = #{row.taxBc,jdbcType=DECIMAL},
+      SOURCE_TYPE = #{row.sourceType,jdbcType=NVARCHAR},
+      TAX_INVOICE_NO = #{row.taxInvoiceNo,jdbcType=NVARCHAR},
+      DEDUCTIBLE_INDICATOR = #{row.deductibleIndicator,jdbcType=BIT},
+      TAX_INVOICE_CATEGORY_ID = #{row.taxInvoiceCategoryId,jdbcType=CHAR},
+      SUPPLIER_ADDR_ID = #{row.supplierAddrId,jdbcType=CHAR},
+      INVOICE_CONTACT_ID = #{row.invoiceContactId,jdbcType=CHAR},
+      INVOICE_ADDR_ID = #{row.invoiceAddrId,jdbcType=CHAR},
+      RECEIPT_EMPLOYEE_ID = #{row.receiptEmployeeId,jdbcType=CHAR},
+      PLANT_ID = #{row.plantId,jdbcType=CHAR},
+      CURRENCY_ID = #{row.currencyId,jdbcType=CHAR},
+      PAYMENT_TERM_ID = #{row.paymentTermId,jdbcType=CHAR},
+      DELIVERY_TERM_ID = #{row.deliveryTermId,jdbcType=CHAR},
+      SUPPLIER_ID = #{row.supplierId,jdbcType=CHAR},
+      SUPPLIER_CONTACT_ID = #{row.supplierContactId,jdbcType=CHAR},
+      INVOICE_SUPPLIER_ID = #{row.invoiceSupplierId,jdbcType=CHAR},
+      INVOICE_COMPANY_ID = #{row.invoiceCompanyId,jdbcType=CHAR},
+      SYNERGY_ID = #{row.synergyId,jdbcType=CHAR},
+      SYNERGY_D_ID = #{row.synergyDId,jdbcType=CHAR},
+      DIRECT_SETTLEMENT_INDICATOR = #{row.directSettlementIndicator,jdbcType=BIT},
+      DIRECT_INVOICING_INDICATOR = #{row.directInvoicingIndicator,jdbcType=BIT},
+      OFFSET_DEPOSIT_INDICATOR = #{row.offsetDepositIndicator,jdbcType=BIT},
+      RECEIPTED_STATUS = #{row.receiptedStatus,jdbcType=NVARCHAR},
+      SETTLEMENT_INDICATOR = #{row.settlementIndicator,jdbcType=BIT},
+      SIGN_DATE = #{row.signDate,jdbcType=TIMESTAMP},
+      TAX_ID = #{row.taxId,jdbcType=CHAR},
+      WIP_NO = #{row.wipNo,jdbcType=NVARCHAR},
+      WIP_E10_INSPECTION = #{row.wipE10Inspection,jdbcType=BIT},
+      ALL_SYNERGY = #{row.allSynergy,jdbcType=BIT},
+      GROUP_SYNERGY_D_ID = #{row.groupSynergyDId,jdbcType=CHAR},
+      GENERATE_NO = #{row.generateNo,jdbcType=NVARCHAR},
+      GENERATE_STATUS = #{row.generateStatus,jdbcType=BIT},
+      DOC_Sequence = #{row.docSequence,jdbcType=INTEGER},
+      SOURCE_SUPPLIER_ID = #{row.sourceSupplierId,jdbcType=CHAR},
+      GENERATE_SOURCE = #{row.generateSource,jdbcType=NVARCHAR},
+      DELIVERY_DOC_NO = #{row.deliveryDocNo,jdbcType=NVARCHAR},
+      ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      EFNETStatus = #{row.efnetstatus,jdbcType=NVARCHAR},
+      EFNETAction = #{row.efnetaction,jdbcType=NVARCHAR},
+      EFNETDOCCategory = #{row.efnetdoccategory,jdbcType=NVARCHAR},
+      EFNETDOCNumber = #{row.efnetdocnumber,jdbcType=NVARCHAR},
+      PrintCount = #{row.printcount,jdbcType=INTEGER},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR},
+      SOURCE_ID_RTK = #{row.sourceIdRtk,jdbcType=NVARCHAR},
+      SOURCE_ID_ROid = #{row.sourceIdRoid,jdbcType=CHAR},
+      RECEIVE_Owner_Org_RTK = #{row.receiveOwnerOrgRtk,jdbcType=NVARCHAR},
+      RECEIVE_Owner_Org_ROid = #{row.receiveOwnerOrgRoid,jdbcType=CHAR},
+      GROUP_SYNERGY_ID_RTK = #{row.groupSynergyIdRtk,jdbcType=NVARCHAR},
+      GROUP_SYNERGY_ID_ROid = #{row.groupSynergyIdRoid,jdbcType=CHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tb.mbg.model.PurchaseArrival">
+    update PURCHASE_ARRIVAL
+    <set>
+      <if test="docNo != null">
+        DOC_NO = #{docNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="docDate != null">
+        DOC_DATE = #{docDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="docId != null">
+        DOC_ID = #{docId,jdbcType=CHAR},
+      </if>
+      <if test="ownerDept != null">
+        Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="ownerEmp != null">
+        Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="category != null">
+        CATEGORY = #{category,jdbcType=NVARCHAR},
+      </if>
+      <if test="arrivalDate != null">
+        ARRIVAL_DATE = #{arrivalDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplierFullName != null">
+        SUPPLIER_FULL_NAME = #{supplierFullName,jdbcType=NVARCHAR},
+      </if>
+      <if test="supplierOrderNo != null">
+        SUPPLIER_ORDER_NO = #{supplierOrderNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="exchangeRate != null">
+        EXCHANGE_RATE = #{exchangeRate,jdbcType=DECIMAL},
+      </if>
+      <if test="taxIncluded != null">
+        TAX_INCLUDED = #{taxIncluded,jdbcType=BIT},
+      </if>
+      <if test="pieces != null">
+        PIECES = #{pieces,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="supplierContactName != null">
+        SUPPLIER_CONTACT_NAME = #{supplierContactName,jdbcType=NVARCHAR},
+      </if>
+      <if test="supplierAddrName != null">
+        SUPPLIER_ADDR_NAME = #{supplierAddrName,jdbcType=NVARCHAR},
+      </if>
+      <if test="invoiceContactName != null">
+        INVOICE_CONTACT_NAME = #{invoiceContactName,jdbcType=NVARCHAR},
+      </if>
+      <if test="invoiceAddrName != null">
+        INVOICE_ADDR_NAME = #{invoiceAddrName,jdbcType=NVARCHAR},
+      </if>
+      <if test="amountUnincludeTaxOc != null">
+        AMOUNT_UNINCLUDE_TAX_OC = #{amountUnincludeTaxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="taxOc != null">
+        TAX_OC = #{taxOc,jdbcType=DECIMAL},
+      </if>
+      <if test="amountUnincludeTaxBc != null">
+        AMOUNT_UNINCLUDE_TAX_BC = #{amountUnincludeTaxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="taxBc != null">
+        TAX_BC = #{taxBc,jdbcType=DECIMAL},
+      </if>
+      <if test="sourceType != null">
+        SOURCE_TYPE = #{sourceType,jdbcType=NVARCHAR},
+      </if>
+      <if test="taxInvoiceNo != null">
+        TAX_INVOICE_NO = #{taxInvoiceNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="deductibleIndicator != null">
+        DEDUCTIBLE_INDICATOR = #{deductibleIndicator,jdbcType=BIT},
+      </if>
+      <if test="taxInvoiceCategoryId != null">
+        TAX_INVOICE_CATEGORY_ID = #{taxInvoiceCategoryId,jdbcType=CHAR},
+      </if>
+      <if test="supplierAddrId != null">
+        SUPPLIER_ADDR_ID = #{supplierAddrId,jdbcType=CHAR},
+      </if>
+      <if test="invoiceContactId != null">
+        INVOICE_CONTACT_ID = #{invoiceContactId,jdbcType=CHAR},
+      </if>
+      <if test="invoiceAddrId != null">
+        INVOICE_ADDR_ID = #{invoiceAddrId,jdbcType=CHAR},
+      </if>
+      <if test="receiptEmployeeId != null">
+        RECEIPT_EMPLOYEE_ID = #{receiptEmployeeId,jdbcType=CHAR},
+      </if>
+      <if test="plantId != null">
+        PLANT_ID = #{plantId,jdbcType=CHAR},
+      </if>
+      <if test="currencyId != null">
+        CURRENCY_ID = #{currencyId,jdbcType=CHAR},
+      </if>
+      <if test="paymentTermId != null">
+        PAYMENT_TERM_ID = #{paymentTermId,jdbcType=CHAR},
+      </if>
+      <if test="deliveryTermId != null">
+        DELIVERY_TERM_ID = #{deliveryTermId,jdbcType=CHAR},
+      </if>
+      <if test="supplierId != null">
+        SUPPLIER_ID = #{supplierId,jdbcType=CHAR},
+      </if>
+      <if test="supplierContactId != null">
+        SUPPLIER_CONTACT_ID = #{supplierContactId,jdbcType=CHAR},
+      </if>
+      <if test="invoiceSupplierId != null">
+        INVOICE_SUPPLIER_ID = #{invoiceSupplierId,jdbcType=CHAR},
+      </if>
+      <if test="invoiceCompanyId != null">
+        INVOICE_COMPANY_ID = #{invoiceCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="synergyId != null">
+        SYNERGY_ID = #{synergyId,jdbcType=CHAR},
+      </if>
+      <if test="synergyDId != null">
+        SYNERGY_D_ID = #{synergyDId,jdbcType=CHAR},
+      </if>
+      <if test="directSettlementIndicator != null">
+        DIRECT_SETTLEMENT_INDICATOR = #{directSettlementIndicator,jdbcType=BIT},
+      </if>
+      <if test="directInvoicingIndicator != null">
+        DIRECT_INVOICING_INDICATOR = #{directInvoicingIndicator,jdbcType=BIT},
+      </if>
+      <if test="offsetDepositIndicator != null">
+        OFFSET_DEPOSIT_INDICATOR = #{offsetDepositIndicator,jdbcType=BIT},
+      </if>
+      <if test="receiptedStatus != null">
+        RECEIPTED_STATUS = #{receiptedStatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="settlementIndicator != null">
+        SETTLEMENT_INDICATOR = #{settlementIndicator,jdbcType=BIT},
+      </if>
+      <if test="signDate != null">
+        SIGN_DATE = #{signDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taxId != null">
+        TAX_ID = #{taxId,jdbcType=CHAR},
+      </if>
+      <if test="wipNo != null">
+        WIP_NO = #{wipNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="wipE10Inspection != null">
+        WIP_E10_INSPECTION = #{wipE10Inspection,jdbcType=BIT},
+      </if>
+      <if test="allSynergy != null">
+        ALL_SYNERGY = #{allSynergy,jdbcType=BIT},
+      </if>
+      <if test="groupSynergyDId != null">
+        GROUP_SYNERGY_D_ID = #{groupSynergyDId,jdbcType=CHAR},
+      </if>
+      <if test="generateNo != null">
+        GENERATE_NO = #{generateNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="generateStatus != null">
+        GENERATE_STATUS = #{generateStatus,jdbcType=BIT},
+      </if>
+      <if test="docSequence != null">
+        DOC_Sequence = #{docSequence,jdbcType=INTEGER},
+      </if>
+      <if test="sourceSupplierId != null">
+        SOURCE_SUPPLIER_ID = #{sourceSupplierId,jdbcType=CHAR},
+      </if>
+      <if test="generateSource != null">
+        GENERATE_SOURCE = #{generateSource,jdbcType=NVARCHAR},
+      </if>
+      <if test="deliveryDocNo != null">
+        DELIVERY_DOC_NO = #{deliveryDocNo,jdbcType=NVARCHAR},
+      </if>
+      <if test="processinstanceid != null">
+        ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="efnetstatus != null">
+        EFNETStatus = #{efnetstatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetaction != null">
+        EFNETAction = #{efnetaction,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetdoccategory != null">
+        EFNETDOCCategory = #{efnetdoccategory,jdbcType=NVARCHAR},
+      </if>
+      <if test="efnetdocnumber != null">
+        EFNETDOCNumber = #{efnetdocnumber,jdbcType=NVARCHAR},
+      </if>
+      <if test="printcount != null">
+        PrintCount = #{printcount,jdbcType=INTEGER},
+      </if>
+      <if test="udf001 != null">
+        UDF001 = #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        UDF002 = #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        UDF003 = #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        UDF011 = #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        UDF012 = #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        UDF013 = #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        UDF021 = #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        UDF022 = #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        UDF023 = #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        UDF024 = #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        UDF025 = #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        UDF026 = #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        UDF051 = #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        UDF052 = #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        UDF053 = #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        UDF054 = #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        ApproveBy = #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        CreateBy = #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="ownerOrgRtk != null">
+        Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="ownerOrgRoid != null">
+        Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="sourceIdRtk != null">
+        SOURCE_ID_RTK = #{sourceIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="sourceIdRoid != null">
+        SOURCE_ID_ROid = #{sourceIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="receiveOwnerOrgRtk != null">
+        RECEIVE_Owner_Org_RTK = #{receiveOwnerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="receiveOwnerOrgRoid != null">
+        RECEIVE_Owner_Org_ROid = #{receiveOwnerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="groupSynergyIdRtk != null">
+        GROUP_SYNERGY_ID_RTK = #{groupSynergyIdRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="groupSynergyIdRoid != null">
+        GROUP_SYNERGY_ID_ROid = #{groupSynergyIdRoid,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        Version = #{version,jdbcType=BINARY},
+      </if>
+      <if test="attachments != null">
+        Attachments = #{attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </set>
+    where PURCHASE_ARRIVAL_ID = #{purchaseArrivalId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tb.mbg.model.PurchaseArrival">
+    update PURCHASE_ARRIVAL
+    set DOC_NO = #{docNo,jdbcType=NVARCHAR},
+      DOC_DATE = #{docDate,jdbcType=TIMESTAMP},
+      DOC_ID = #{docId,jdbcType=CHAR},
+      Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      CATEGORY = #{category,jdbcType=NVARCHAR},
+      ARRIVAL_DATE = #{arrivalDate,jdbcType=TIMESTAMP},
+      SUPPLIER_FULL_NAME = #{supplierFullName,jdbcType=NVARCHAR},
+      SUPPLIER_ORDER_NO = #{supplierOrderNo,jdbcType=NVARCHAR},
+      EXCHANGE_RATE = #{exchangeRate,jdbcType=DECIMAL},
+      TAX_INCLUDED = #{taxIncluded,jdbcType=BIT},
+      PIECES = #{pieces,jdbcType=INTEGER},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      SUPPLIER_CONTACT_NAME = #{supplierContactName,jdbcType=NVARCHAR},
+      SUPPLIER_ADDR_NAME = #{supplierAddrName,jdbcType=NVARCHAR},
+      INVOICE_CONTACT_NAME = #{invoiceContactName,jdbcType=NVARCHAR},
+      INVOICE_ADDR_NAME = #{invoiceAddrName,jdbcType=NVARCHAR},
+      AMOUNT_UNINCLUDE_TAX_OC = #{amountUnincludeTaxOc,jdbcType=DECIMAL},
+      TAX_OC = #{taxOc,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_BC = #{amountUnincludeTaxBc,jdbcType=DECIMAL},
+      TAX_BC = #{taxBc,jdbcType=DECIMAL},
+      SOURCE_TYPE = #{sourceType,jdbcType=NVARCHAR},
+      TAX_INVOICE_NO = #{taxInvoiceNo,jdbcType=NVARCHAR},
+      DEDUCTIBLE_INDICATOR = #{deductibleIndicator,jdbcType=BIT},
+      TAX_INVOICE_CATEGORY_ID = #{taxInvoiceCategoryId,jdbcType=CHAR},
+      SUPPLIER_ADDR_ID = #{supplierAddrId,jdbcType=CHAR},
+      INVOICE_CONTACT_ID = #{invoiceContactId,jdbcType=CHAR},
+      INVOICE_ADDR_ID = #{invoiceAddrId,jdbcType=CHAR},
+      RECEIPT_EMPLOYEE_ID = #{receiptEmployeeId,jdbcType=CHAR},
+      PLANT_ID = #{plantId,jdbcType=CHAR},
+      CURRENCY_ID = #{currencyId,jdbcType=CHAR},
+      PAYMENT_TERM_ID = #{paymentTermId,jdbcType=CHAR},
+      DELIVERY_TERM_ID = #{deliveryTermId,jdbcType=CHAR},
+      SUPPLIER_ID = #{supplierId,jdbcType=CHAR},
+      SUPPLIER_CONTACT_ID = #{supplierContactId,jdbcType=CHAR},
+      INVOICE_SUPPLIER_ID = #{invoiceSupplierId,jdbcType=CHAR},
+      INVOICE_COMPANY_ID = #{invoiceCompanyId,jdbcType=CHAR},
+      SYNERGY_ID = #{synergyId,jdbcType=CHAR},
+      SYNERGY_D_ID = #{synergyDId,jdbcType=CHAR},
+      DIRECT_SETTLEMENT_INDICATOR = #{directSettlementIndicator,jdbcType=BIT},
+      DIRECT_INVOICING_INDICATOR = #{directInvoicingIndicator,jdbcType=BIT},
+      OFFSET_DEPOSIT_INDICATOR = #{offsetDepositIndicator,jdbcType=BIT},
+      RECEIPTED_STATUS = #{receiptedStatus,jdbcType=NVARCHAR},
+      SETTLEMENT_INDICATOR = #{settlementIndicator,jdbcType=BIT},
+      SIGN_DATE = #{signDate,jdbcType=TIMESTAMP},
+      TAX_ID = #{taxId,jdbcType=CHAR},
+      WIP_NO = #{wipNo,jdbcType=NVARCHAR},
+      WIP_E10_INSPECTION = #{wipE10Inspection,jdbcType=BIT},
+      ALL_SYNERGY = #{allSynergy,jdbcType=BIT},
+      GROUP_SYNERGY_D_ID = #{groupSynergyDId,jdbcType=CHAR},
+      GENERATE_NO = #{generateNo,jdbcType=NVARCHAR},
+      GENERATE_STATUS = #{generateStatus,jdbcType=BIT},
+      DOC_Sequence = #{docSequence,jdbcType=INTEGER},
+      SOURCE_SUPPLIER_ID = #{sourceSupplierId,jdbcType=CHAR},
+      GENERATE_SOURCE = #{generateSource,jdbcType=NVARCHAR},
+      DELIVERY_DOC_NO = #{deliveryDocNo,jdbcType=NVARCHAR},
+      ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      EFNETStatus = #{efnetstatus,jdbcType=NVARCHAR},
+      EFNETAction = #{efnetaction,jdbcType=NVARCHAR},
+      EFNETDOCCategory = #{efnetdoccategory,jdbcType=NVARCHAR},
+      EFNETDOCNumber = #{efnetdocnumber,jdbcType=NVARCHAR},
+      PrintCount = #{printcount,jdbcType=INTEGER},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR},
+      SOURCE_ID_RTK = #{sourceIdRtk,jdbcType=NVARCHAR},
+      SOURCE_ID_ROid = #{sourceIdRoid,jdbcType=CHAR},
+      RECEIVE_Owner_Org_RTK = #{receiveOwnerOrgRtk,jdbcType=NVARCHAR},
+      RECEIVE_Owner_Org_ROid = #{receiveOwnerOrgRoid,jdbcType=CHAR},
+      GROUP_SYNERGY_ID_RTK = #{groupSynergyIdRtk,jdbcType=NVARCHAR},
+      GROUP_SYNERGY_ID_ROid = #{groupSynergyIdRoid,jdbcType=CHAR},
+      Version = #{version,jdbcType=BINARY},
+      Attachments = #{attachments,jdbcType=LONGNVARCHAR}
+    where PURCHASE_ARRIVAL_ID = #{purchaseArrivalId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tb.mbg.model.PurchaseArrival">
+    update PURCHASE_ARRIVAL
+    set DOC_NO = #{docNo,jdbcType=NVARCHAR},
+      DOC_DATE = #{docDate,jdbcType=TIMESTAMP},
+      DOC_ID = #{docId,jdbcType=CHAR},
+      Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      CATEGORY = #{category,jdbcType=NVARCHAR},
+      ARRIVAL_DATE = #{arrivalDate,jdbcType=TIMESTAMP},
+      SUPPLIER_FULL_NAME = #{supplierFullName,jdbcType=NVARCHAR},
+      SUPPLIER_ORDER_NO = #{supplierOrderNo,jdbcType=NVARCHAR},
+      EXCHANGE_RATE = #{exchangeRate,jdbcType=DECIMAL},
+      TAX_INCLUDED = #{taxIncluded,jdbcType=BIT},
+      PIECES = #{pieces,jdbcType=INTEGER},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      SUPPLIER_CONTACT_NAME = #{supplierContactName,jdbcType=NVARCHAR},
+      SUPPLIER_ADDR_NAME = #{supplierAddrName,jdbcType=NVARCHAR},
+      INVOICE_CONTACT_NAME = #{invoiceContactName,jdbcType=NVARCHAR},
+      INVOICE_ADDR_NAME = #{invoiceAddrName,jdbcType=NVARCHAR},
+      AMOUNT_UNINCLUDE_TAX_OC = #{amountUnincludeTaxOc,jdbcType=DECIMAL},
+      TAX_OC = #{taxOc,jdbcType=DECIMAL},
+      AMOUNT_UNINCLUDE_TAX_BC = #{amountUnincludeTaxBc,jdbcType=DECIMAL},
+      TAX_BC = #{taxBc,jdbcType=DECIMAL},
+      SOURCE_TYPE = #{sourceType,jdbcType=NVARCHAR},
+      TAX_INVOICE_NO = #{taxInvoiceNo,jdbcType=NVARCHAR},
+      DEDUCTIBLE_INDICATOR = #{deductibleIndicator,jdbcType=BIT},
+      TAX_INVOICE_CATEGORY_ID = #{taxInvoiceCategoryId,jdbcType=CHAR},
+      SUPPLIER_ADDR_ID = #{supplierAddrId,jdbcType=CHAR},
+      INVOICE_CONTACT_ID = #{invoiceContactId,jdbcType=CHAR},
+      INVOICE_ADDR_ID = #{invoiceAddrId,jdbcType=CHAR},
+      RECEIPT_EMPLOYEE_ID = #{receiptEmployeeId,jdbcType=CHAR},
+      PLANT_ID = #{plantId,jdbcType=CHAR},
+      CURRENCY_ID = #{currencyId,jdbcType=CHAR},
+      PAYMENT_TERM_ID = #{paymentTermId,jdbcType=CHAR},
+      DELIVERY_TERM_ID = #{deliveryTermId,jdbcType=CHAR},
+      SUPPLIER_ID = #{supplierId,jdbcType=CHAR},
+      SUPPLIER_CONTACT_ID = #{supplierContactId,jdbcType=CHAR},
+      INVOICE_SUPPLIER_ID = #{invoiceSupplierId,jdbcType=CHAR},
+      INVOICE_COMPANY_ID = #{invoiceCompanyId,jdbcType=CHAR},
+      SYNERGY_ID = #{synergyId,jdbcType=CHAR},
+      SYNERGY_D_ID = #{synergyDId,jdbcType=CHAR},
+      DIRECT_SETTLEMENT_INDICATOR = #{directSettlementIndicator,jdbcType=BIT},
+      DIRECT_INVOICING_INDICATOR = #{directInvoicingIndicator,jdbcType=BIT},
+      OFFSET_DEPOSIT_INDICATOR = #{offsetDepositIndicator,jdbcType=BIT},
+      RECEIPTED_STATUS = #{receiptedStatus,jdbcType=NVARCHAR},
+      SETTLEMENT_INDICATOR = #{settlementIndicator,jdbcType=BIT},
+      SIGN_DATE = #{signDate,jdbcType=TIMESTAMP},
+      TAX_ID = #{taxId,jdbcType=CHAR},
+      WIP_NO = #{wipNo,jdbcType=NVARCHAR},
+      WIP_E10_INSPECTION = #{wipE10Inspection,jdbcType=BIT},
+      ALL_SYNERGY = #{allSynergy,jdbcType=BIT},
+      GROUP_SYNERGY_D_ID = #{groupSynergyDId,jdbcType=CHAR},
+      GENERATE_NO = #{generateNo,jdbcType=NVARCHAR},
+      GENERATE_STATUS = #{generateStatus,jdbcType=BIT},
+      DOC_Sequence = #{docSequence,jdbcType=INTEGER},
+      SOURCE_SUPPLIER_ID = #{sourceSupplierId,jdbcType=CHAR},
+      GENERATE_SOURCE = #{generateSource,jdbcType=NVARCHAR},
+      DELIVERY_DOC_NO = #{deliveryDocNo,jdbcType=NVARCHAR},
+      ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      EFNETStatus = #{efnetstatus,jdbcType=NVARCHAR},
+      EFNETAction = #{efnetaction,jdbcType=NVARCHAR},
+      EFNETDOCCategory = #{efnetdoccategory,jdbcType=NVARCHAR},
+      EFNETDOCNumber = #{efnetdocnumber,jdbcType=NVARCHAR},
+      PrintCount = #{printcount,jdbcType=INTEGER},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR},
+      SOURCE_ID_RTK = #{sourceIdRtk,jdbcType=NVARCHAR},
+      SOURCE_ID_ROid = #{sourceIdRoid,jdbcType=CHAR},
+      RECEIVE_Owner_Org_RTK = #{receiveOwnerOrgRtk,jdbcType=NVARCHAR},
+      RECEIVE_Owner_Org_ROid = #{receiveOwnerOrgRoid,jdbcType=CHAR},
+      GROUP_SYNERGY_ID_RTK = #{groupSynergyIdRtk,jdbcType=NVARCHAR},
+      GROUP_SYNERGY_ID_ROid = #{groupSynergyIdRoid,jdbcType=CHAR}
+    where PURCHASE_ARRIVAL_ID = #{purchaseArrivalId,jdbcType=CHAR}
+  </update>
+</mapper>

@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tb.mbg.mapper.EcnDMapper">
+  <resultMap id="BaseResultMap" type="com.tb.mbg.model.EcnD">
+    <id column="ECN_D_ID" jdbcType="CHAR" property="ecnDId" />
+    <result column="SequenceNumber" jdbcType="INTEGER" property="sequencenumber" />
+    <result column="VERSION_TIMES" jdbcType="NVARCHAR" property="versionTimes" />
+    <result column="STANDARD_BATCH_QTY" jdbcType="DECIMAL" property="standardBatchQty" />
+    <result column="YIELD_RATE" jdbcType="DECIMAL" property="yieldRate" />
+    <result column="SECRET_ITEM" jdbcType="BIT" property="secretItem" />
+    <result column="SECRET_LEVEL" jdbcType="NVARCHAR" property="secretLevel" />
+    <result column="REASON_ID" jdbcType="CHAR" property="reasonId" />
+    <result column="ORIGINAL_VERSION_TIMES" jdbcType="NVARCHAR" property="originalVersionTimes" />
+    <result column="ORIGINAL_STANDARD_BATCH_QTY" jdbcType="DECIMAL" property="originalStandardBatchQty" />
+    <result column="ORIGINAL_YIELD_RATE" jdbcType="DECIMAL" property="originalYieldRate" />
+    <result column="ORIGINAL_SECRET_ITEM" jdbcType="BIT" property="originalSecretItem" />
+    <result column="ORIGINAL_SECRET_LEVEL" jdbcType="NVARCHAR" property="originalSecretLevel" />
+    <result column="REMARK" jdbcType="NVARCHAR" property="remark" />
+    <result column="ORIGINAL_REMARK" jdbcType="NVARCHAR" property="originalRemark" />
+    <result column="CHANGE_TYPE" jdbcType="NVARCHAR" property="changeType" />
+    <result column="PARENT_ITEM_ID" jdbcType="CHAR" property="parentItemId" />
+    <result column="PARENT_ITEM_FEATURE_ID" jdbcType="CHAR" property="parentItemFeatureId" />
+    <result column="ORIGINAL_PARENT_ITEM_ID" jdbcType="CHAR" property="originalParentItemId" />
+    <result column="ORIGINAL_ORDER_ECN_ID" jdbcType="CHAR" property="originalOrderEcnId" />
+    <result column="PLANT_ID" jdbcType="CHAR" property="plantId" />
+    <result column="REFERENCE_PLANT_ID" jdbcType="CHAR" property="referencePlantId" />
+    <result column="ORIGINAL_REFERENCE_PLANT_ID" jdbcType="CHAR" property="originalReferencePlantId" />
+    <result column="OLD_PLM_DATAKEY" jdbcType="NVARCHAR" property="oldPlmDatakey" />
+    <result column="NEW_PLM_DATAKEY" jdbcType="NVARCHAR" property="newPlmDatakey" />
+    <result column="UDF001" jdbcType="DECIMAL" property="udf001" />
+    <result column="UDF002" jdbcType="DECIMAL" property="udf002" />
+    <result column="UDF003" jdbcType="DECIMAL" property="udf003" />
+    <result column="UDF011" jdbcType="DECIMAL" property="udf011" />
+    <result column="UDF012" jdbcType="DECIMAL" property="udf012" />
+    <result column="UDF013" jdbcType="DECIMAL" property="udf013" />
+    <result column="UDF021" jdbcType="NVARCHAR" property="udf021" />
+    <result column="UDF022" jdbcType="NVARCHAR" property="udf022" />
+    <result column="UDF023" jdbcType="NVARCHAR" property="udf023" />
+    <result column="UDF024" jdbcType="NVARCHAR" property="udf024" />
+    <result column="UDF025" jdbcType="NVARCHAR" property="udf025" />
+    <result column="UDF026" jdbcType="NVARCHAR" property="udf026" />
+    <result column="UDF041" jdbcType="TIMESTAMP" property="udf041" />
+    <result column="UDF042" jdbcType="TIMESTAMP" property="udf042" />
+    <result column="UDF051" jdbcType="CHAR" property="udf051" />
+    <result column="UDF052" jdbcType="CHAR" property="udf052" />
+    <result column="UDF053" jdbcType="CHAR" property="udf053" />
+    <result column="UDF054" jdbcType="CHAR" property="udf054" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="LastModifiedDate" jdbcType="TIMESTAMP" property="lastmodifieddate" />
+    <result column="ModifiedDate" jdbcType="TIMESTAMP" property="modifieddate" />
+    <result column="CreateBy" jdbcType="CHAR" property="createby" />
+    <result column="LastModifiedBy" jdbcType="CHAR" property="lastmodifiedby" />
+    <result column="ModifiedBy" jdbcType="CHAR" property="modifiedby" />
+    <result column="ApproveStatus" jdbcType="NVARCHAR" property="approvestatus" />
+    <result column="ApproveDate" jdbcType="TIMESTAMP" property="approvedate" />
+    <result column="ApproveBy" jdbcType="CHAR" property="approveby" />
+    <result column="ECN_ID" jdbcType="CHAR" property="ecnId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tb.mbg.model.EcnD">
+    <result column="Version" jdbcType="BINARY" property="version" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ECN_D_ID, SequenceNumber, VERSION_TIMES, STANDARD_BATCH_QTY, YIELD_RATE, SECRET_ITEM, 
+    SECRET_LEVEL, REASON_ID, ORIGINAL_VERSION_TIMES, ORIGINAL_STANDARD_BATCH_QTY, ORIGINAL_YIELD_RATE, 
+    ORIGINAL_SECRET_ITEM, ORIGINAL_SECRET_LEVEL, REMARK, ORIGINAL_REMARK, CHANGE_TYPE, 
+    PARENT_ITEM_ID, PARENT_ITEM_FEATURE_ID, ORIGINAL_PARENT_ITEM_ID, ORIGINAL_ORDER_ECN_ID, 
+    PLANT_ID, REFERENCE_PLANT_ID, ORIGINAL_REFERENCE_PLANT_ID, OLD_PLM_DATAKEY, NEW_PLM_DATAKEY, 
+    UDF001, UDF002, UDF003, UDF011, UDF012, UDF013, UDF021, UDF022, UDF023, UDF024, UDF025, 
+    UDF026, UDF041, UDF042, UDF051, UDF052, UDF053, UDF054, CreateDate, LastModifiedDate, 
+    ModifiedDate, CreateBy, LastModifiedBy, ModifiedBy, ApproveStatus, ApproveDate, ApproveBy, 
+    ECN_ID
+  </sql>
+  <sql id="Blob_Column_List">
+    Version
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.tb.mbg.model.EcnDExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ECN_D
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.tb.mbg.model.EcnDExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ECN_D
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ECN_D
+    where ECN_D_ID = #{ecnDId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ECN_D
+    where ECN_D_ID = #{ecnDId,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tb.mbg.model.EcnDExample">
+    delete from ECN_D
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tb.mbg.model.EcnD">
+    insert into ECN_D (ECN_D_ID, SequenceNumber, VERSION_TIMES, 
+      STANDARD_BATCH_QTY, YIELD_RATE, SECRET_ITEM, 
+      SECRET_LEVEL, REASON_ID, ORIGINAL_VERSION_TIMES, 
+      ORIGINAL_STANDARD_BATCH_QTY, ORIGINAL_YIELD_RATE, 
+      ORIGINAL_SECRET_ITEM, ORIGINAL_SECRET_LEVEL, REMARK, 
+      ORIGINAL_REMARK, CHANGE_TYPE, PARENT_ITEM_ID, 
+      PARENT_ITEM_FEATURE_ID, ORIGINAL_PARENT_ITEM_ID, ORIGINAL_ORDER_ECN_ID, 
+      PLANT_ID, REFERENCE_PLANT_ID, ORIGINAL_REFERENCE_PLANT_ID, 
+      OLD_PLM_DATAKEY, NEW_PLM_DATAKEY, UDF001, 
+      UDF002, UDF003, UDF011, 
+      UDF012, UDF013, UDF021, 
+      UDF022, UDF023, UDF024, 
+      UDF025, UDF026, UDF041, 
+      UDF042, UDF051, UDF052, 
+      UDF053, UDF054, CreateDate, 
+      LastModifiedDate, ModifiedDate, CreateBy, 
+      LastModifiedBy, ModifiedBy, ApproveStatus, 
+      ApproveDate, ApproveBy, ECN_ID, 
+      Version)
+    values (#{ecnDId,jdbcType=CHAR}, #{sequencenumber,jdbcType=INTEGER}, #{versionTimes,jdbcType=NVARCHAR}, 
+      #{standardBatchQty,jdbcType=DECIMAL}, #{yieldRate,jdbcType=DECIMAL}, #{secretItem,jdbcType=BIT}, 
+      #{secretLevel,jdbcType=NVARCHAR}, #{reasonId,jdbcType=CHAR}, #{originalVersionTimes,jdbcType=NVARCHAR}, 
+      #{originalStandardBatchQty,jdbcType=DECIMAL}, #{originalYieldRate,jdbcType=DECIMAL}, 
+      #{originalSecretItem,jdbcType=BIT}, #{originalSecretLevel,jdbcType=NVARCHAR}, #{remark,jdbcType=NVARCHAR}, 
+      #{originalRemark,jdbcType=NVARCHAR}, #{changeType,jdbcType=NVARCHAR}, #{parentItemId,jdbcType=CHAR}, 
+      #{parentItemFeatureId,jdbcType=CHAR}, #{originalParentItemId,jdbcType=CHAR}, #{originalOrderEcnId,jdbcType=CHAR}, 
+      #{plantId,jdbcType=CHAR}, #{referencePlantId,jdbcType=CHAR}, #{originalReferencePlantId,jdbcType=CHAR}, 
+      #{oldPlmDatakey,jdbcType=NVARCHAR}, #{newPlmDatakey,jdbcType=NVARCHAR}, #{udf001,jdbcType=DECIMAL}, 
+      #{udf002,jdbcType=DECIMAL}, #{udf003,jdbcType=DECIMAL}, #{udf011,jdbcType=DECIMAL}, 
+      #{udf012,jdbcType=DECIMAL}, #{udf013,jdbcType=DECIMAL}, #{udf021,jdbcType=NVARCHAR}, 
+      #{udf022,jdbcType=NVARCHAR}, #{udf023,jdbcType=NVARCHAR}, #{udf024,jdbcType=NVARCHAR}, 
+      #{udf025,jdbcType=NVARCHAR}, #{udf026,jdbcType=NVARCHAR}, #{udf041,jdbcType=TIMESTAMP}, 
+      #{udf042,jdbcType=TIMESTAMP}, #{udf051,jdbcType=CHAR}, #{udf052,jdbcType=CHAR}, 
+      #{udf053,jdbcType=CHAR}, #{udf054,jdbcType=CHAR}, #{createdate,jdbcType=TIMESTAMP}, 
+      #{lastmodifieddate,jdbcType=TIMESTAMP}, #{modifieddate,jdbcType=TIMESTAMP}, #{createby,jdbcType=CHAR}, 
+      #{lastmodifiedby,jdbcType=CHAR}, #{modifiedby,jdbcType=CHAR}, #{approvestatus,jdbcType=NVARCHAR}, 
+      #{approvedate,jdbcType=TIMESTAMP}, #{approveby,jdbcType=CHAR}, #{ecnId,jdbcType=CHAR}, 
+      #{version,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tb.mbg.model.EcnD">
+    insert into ECN_D
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ecnDId != null">
+        ECN_D_ID,
+      </if>
+      <if test="sequencenumber != null">
+        SequenceNumber,
+      </if>
+      <if test="versionTimes != null">
+        VERSION_TIMES,
+      </if>
+      <if test="standardBatchQty != null">
+        STANDARD_BATCH_QTY,
+      </if>
+      <if test="yieldRate != null">
+        YIELD_RATE,
+      </if>
+      <if test="secretItem != null">
+        SECRET_ITEM,
+      </if>
+      <if test="secretLevel != null">
+        SECRET_LEVEL,
+      </if>
+      <if test="reasonId != null">
+        REASON_ID,
+      </if>
+      <if test="originalVersionTimes != null">
+        ORIGINAL_VERSION_TIMES,
+      </if>
+      <if test="originalStandardBatchQty != null">
+        ORIGINAL_STANDARD_BATCH_QTY,
+      </if>
+      <if test="originalYieldRate != null">
+        ORIGINAL_YIELD_RATE,
+      </if>
+      <if test="originalSecretItem != null">
+        ORIGINAL_SECRET_ITEM,
+      </if>
+      <if test="originalSecretLevel != null">
+        ORIGINAL_SECRET_LEVEL,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="originalRemark != null">
+        ORIGINAL_REMARK,
+      </if>
+      <if test="changeType != null">
+        CHANGE_TYPE,
+      </if>
+      <if test="parentItemId != null">
+        PARENT_ITEM_ID,
+      </if>
+      <if test="parentItemFeatureId != null">
+        PARENT_ITEM_FEATURE_ID,
+      </if>
+      <if test="originalParentItemId != null">
+        ORIGINAL_PARENT_ITEM_ID,
+      </if>
+      <if test="originalOrderEcnId != null">
+        ORIGINAL_ORDER_ECN_ID,
+      </if>
+      <if test="plantId != null">
+        PLANT_ID,
+      </if>
+      <if test="referencePlantId != null">
+        REFERENCE_PLANT_ID,
+      </if>
+      <if test="originalReferencePlantId != null">
+        ORIGINAL_REFERENCE_PLANT_ID,
+      </if>
+      <if test="oldPlmDatakey != null">
+        OLD_PLM_DATAKEY,
+      </if>
+      <if test="newPlmDatakey != null">
+        NEW_PLM_DATAKEY,
+      </if>
+      <if test="udf001 != null">
+        UDF001,
+      </if>
+      <if test="udf002 != null">
+        UDF002,
+      </if>
+      <if test="udf003 != null">
+        UDF003,
+      </if>
+      <if test="udf011 != null">
+        UDF011,
+      </if>
+      <if test="udf012 != null">
+        UDF012,
+      </if>
+      <if test="udf013 != null">
+        UDF013,
+      </if>
+      <if test="udf021 != null">
+        UDF021,
+      </if>
+      <if test="udf022 != null">
+        UDF022,
+      </if>
+      <if test="udf023 != null">
+        UDF023,
+      </if>
+      <if test="udf024 != null">
+        UDF024,
+      </if>
+      <if test="udf025 != null">
+        UDF025,
+      </if>
+      <if test="udf026 != null">
+        UDF026,
+      </if>
+      <if test="udf041 != null">
+        UDF041,
+      </if>
+      <if test="udf042 != null">
+        UDF042,
+      </if>
+      <if test="udf051 != null">
+        UDF051,
+      </if>
+      <if test="udf052 != null">
+        UDF052,
+      </if>
+      <if test="udf053 != null">
+        UDF053,
+      </if>
+      <if test="udf054 != null">
+        UDF054,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate,
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate,
+      </if>
+      <if test="createby != null">
+        CreateBy,
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy,
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy,
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus,
+      </if>
+      <if test="approvedate != null">
+        ApproveDate,
+      </if>
+      <if test="approveby != null">
+        ApproveBy,
+      </if>
+      <if test="ecnId != null">
+        ECN_ID,
+      </if>
+      <if test="version != null">
+        Version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ecnDId != null">
+        #{ecnDId,jdbcType=CHAR},
+      </if>
+      <if test="sequencenumber != null">
+        #{sequencenumber,jdbcType=INTEGER},
+      </if>
+      <if test="versionTimes != null">
+        #{versionTimes,jdbcType=NVARCHAR},
+      </if>
+      <if test="standardBatchQty != null">
+        #{standardBatchQty,jdbcType=DECIMAL},
+      </if>
+      <if test="yieldRate != null">
+        #{yieldRate,jdbcType=DECIMAL},
+      </if>
+      <if test="secretItem != null">
+        #{secretItem,jdbcType=BIT},
+      </if>
+      <if test="secretLevel != null">
+        #{secretLevel,jdbcType=NVARCHAR},
+      </if>
+      <if test="reasonId != null">
+        #{reasonId,jdbcType=CHAR},
+      </if>
+      <if test="originalVersionTimes != null">
+        #{originalVersionTimes,jdbcType=NVARCHAR},
+      </if>
+      <if test="originalStandardBatchQty != null">
+        #{originalStandardBatchQty,jdbcType=DECIMAL},
+      </if>
+      <if test="originalYieldRate != null">
+        #{originalYieldRate,jdbcType=DECIMAL},
+      </if>
+      <if test="originalSecretItem != null">
+        #{originalSecretItem,jdbcType=BIT},
+      </if>
+      <if test="originalSecretLevel != null">
+        #{originalSecretLevel,jdbcType=NVARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="originalRemark != null">
+        #{originalRemark,jdbcType=NVARCHAR},
+      </if>
+      <if test="changeType != null">
+        #{changeType,jdbcType=NVARCHAR},
+      </if>
+      <if test="parentItemId != null">
+        #{parentItemId,jdbcType=CHAR},
+      </if>
+      <if test="parentItemFeatureId != null">
+        #{parentItemFeatureId,jdbcType=CHAR},
+      </if>
+      <if test="originalParentItemId != null">
+        #{originalParentItemId,jdbcType=CHAR},
+      </if>
+      <if test="originalOrderEcnId != null">
+        #{originalOrderEcnId,jdbcType=CHAR},
+      </if>
+      <if test="plantId != null">
+        #{plantId,jdbcType=CHAR},
+      </if>
+      <if test="referencePlantId != null">
+        #{referencePlantId,jdbcType=CHAR},
+      </if>
+      <if test="originalReferencePlantId != null">
+        #{originalReferencePlantId,jdbcType=CHAR},
+      </if>
+      <if test="oldPlmDatakey != null">
+        #{oldPlmDatakey,jdbcType=NVARCHAR},
+      </if>
+      <if test="newPlmDatakey != null">
+        #{newPlmDatakey,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf001 != null">
+        #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="ecnId != null">
+        #{ecnId,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tb.mbg.model.EcnDExample" resultType="java.lang.Long">
+    select count(*) from ECN_D
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ECN_D
+    <set>
+      <if test="row.ecnDId != null">
+        ECN_D_ID = #{row.ecnDId,jdbcType=CHAR},
+      </if>
+      <if test="row.sequencenumber != null">
+        SequenceNumber = #{row.sequencenumber,jdbcType=INTEGER},
+      </if>
+      <if test="row.versionTimes != null">
+        VERSION_TIMES = #{row.versionTimes,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.standardBatchQty != null">
+        STANDARD_BATCH_QTY = #{row.standardBatchQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.yieldRate != null">
+        YIELD_RATE = #{row.yieldRate,jdbcType=DECIMAL},
+      </if>
+      <if test="row.secretItem != null">
+        SECRET_ITEM = #{row.secretItem,jdbcType=BIT},
+      </if>
+      <if test="row.secretLevel != null">
+        SECRET_LEVEL = #{row.secretLevel,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.reasonId != null">
+        REASON_ID = #{row.reasonId,jdbcType=CHAR},
+      </if>
+      <if test="row.originalVersionTimes != null">
+        ORIGINAL_VERSION_TIMES = #{row.originalVersionTimes,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.originalStandardBatchQty != null">
+        ORIGINAL_STANDARD_BATCH_QTY = #{row.originalStandardBatchQty,jdbcType=DECIMAL},
+      </if>
+      <if test="row.originalYieldRate != null">
+        ORIGINAL_YIELD_RATE = #{row.originalYieldRate,jdbcType=DECIMAL},
+      </if>
+      <if test="row.originalSecretItem != null">
+        ORIGINAL_SECRET_ITEM = #{row.originalSecretItem,jdbcType=BIT},
+      </if>
+      <if test="row.originalSecretLevel != null">
+        ORIGINAL_SECRET_LEVEL = #{row.originalSecretLevel,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.remark != null">
+        REMARK = #{row.remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.originalRemark != null">
+        ORIGINAL_REMARK = #{row.originalRemark,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.changeType != null">
+        CHANGE_TYPE = #{row.changeType,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.parentItemId != null">
+        PARENT_ITEM_ID = #{row.parentItemId,jdbcType=CHAR},
+      </if>
+      <if test="row.parentItemFeatureId != null">
+        PARENT_ITEM_FEATURE_ID = #{row.parentItemFeatureId,jdbcType=CHAR},
+      </if>
+      <if test="row.originalParentItemId != null">
+        ORIGINAL_PARENT_ITEM_ID = #{row.originalParentItemId,jdbcType=CHAR},
+      </if>
+      <if test="row.originalOrderEcnId != null">
+        ORIGINAL_ORDER_ECN_ID = #{row.originalOrderEcnId,jdbcType=CHAR},
+      </if>
+      <if test="row.plantId != null">
+        PLANT_ID = #{row.plantId,jdbcType=CHAR},
+      </if>
+      <if test="row.referencePlantId != null">
+        REFERENCE_PLANT_ID = #{row.referencePlantId,jdbcType=CHAR},
+      </if>
+      <if test="row.originalReferencePlantId != null">
+        ORIGINAL_REFERENCE_PLANT_ID = #{row.originalReferencePlantId,jdbcType=CHAR},
+      </if>
+      <if test="row.oldPlmDatakey != null">
+        OLD_PLM_DATAKEY = #{row.oldPlmDatakey,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.newPlmDatakey != null">
+        NEW_PLM_DATAKEY = #{row.newPlmDatakey,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf001 != null">
+        UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf002 != null">
+        UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf003 != null">
+        UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf011 != null">
+        UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf012 != null">
+        UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf013 != null">
+        UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf021 != null">
+        UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf022 != null">
+        UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf023 != null">
+        UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf024 != null">
+        UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf025 != null">
+        UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf026 != null">
+        UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf041 != null">
+        UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf042 != null">
+        UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf051 != null">
+        UDF051 = #{row.udf051,jdbcType=CHAR},
+      </if>
+      <if test="row.udf052 != null">
+        UDF052 = #{row.udf052,jdbcType=CHAR},
+      </if>
+      <if test="row.udf053 != null">
+        UDF053 = #{row.udf053,jdbcType=CHAR},
+      </if>
+      <if test="row.udf054 != null">
+        UDF054 = #{row.udf054,jdbcType=CHAR},
+      </if>
+      <if test="row.createdate != null">
+        CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.lastmodifieddate != null">
+        LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.modifieddate != null">
+        ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.createby != null">
+        CreateBy = #{row.createby,jdbcType=CHAR},
+      </if>
+      <if test="row.lastmodifiedby != null">
+        LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.modifiedby != null">
+        ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.approvestatus != null">
+        ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.approvedate != null">
+        ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.approveby != null">
+        ApproveBy = #{row.approveby,jdbcType=CHAR},
+      </if>
+      <if test="row.ecnId != null">
+        ECN_ID = #{row.ecnId,jdbcType=CHAR},
+      </if>
+      <if test="row.version != null">
+        Version = #{row.version,jdbcType=BINARY},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update ECN_D
+    set ECN_D_ID = #{row.ecnDId,jdbcType=CHAR},
+      SequenceNumber = #{row.sequencenumber,jdbcType=INTEGER},
+      VERSION_TIMES = #{row.versionTimes,jdbcType=NVARCHAR},
+      STANDARD_BATCH_QTY = #{row.standardBatchQty,jdbcType=DECIMAL},
+      YIELD_RATE = #{row.yieldRate,jdbcType=DECIMAL},
+      SECRET_ITEM = #{row.secretItem,jdbcType=BIT},
+      SECRET_LEVEL = #{row.secretLevel,jdbcType=NVARCHAR},
+      REASON_ID = #{row.reasonId,jdbcType=CHAR},
+      ORIGINAL_VERSION_TIMES = #{row.originalVersionTimes,jdbcType=NVARCHAR},
+      ORIGINAL_STANDARD_BATCH_QTY = #{row.originalStandardBatchQty,jdbcType=DECIMAL},
+      ORIGINAL_YIELD_RATE = #{row.originalYieldRate,jdbcType=DECIMAL},
+      ORIGINAL_SECRET_ITEM = #{row.originalSecretItem,jdbcType=BIT},
+      ORIGINAL_SECRET_LEVEL = #{row.originalSecretLevel,jdbcType=NVARCHAR},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      ORIGINAL_REMARK = #{row.originalRemark,jdbcType=NVARCHAR},
+      CHANGE_TYPE = #{row.changeType,jdbcType=NVARCHAR},
+      PARENT_ITEM_ID = #{row.parentItemId,jdbcType=CHAR},
+      PARENT_ITEM_FEATURE_ID = #{row.parentItemFeatureId,jdbcType=CHAR},
+      ORIGINAL_PARENT_ITEM_ID = #{row.originalParentItemId,jdbcType=CHAR},
+      ORIGINAL_ORDER_ECN_ID = #{row.originalOrderEcnId,jdbcType=CHAR},
+      PLANT_ID = #{row.plantId,jdbcType=CHAR},
+      REFERENCE_PLANT_ID = #{row.referencePlantId,jdbcType=CHAR},
+      ORIGINAL_REFERENCE_PLANT_ID = #{row.originalReferencePlantId,jdbcType=CHAR},
+      OLD_PLM_DATAKEY = #{row.oldPlmDatakey,jdbcType=NVARCHAR},
+      NEW_PLM_DATAKEY = #{row.newPlmDatakey,jdbcType=NVARCHAR},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      ECN_ID = #{row.ecnId,jdbcType=CHAR},
+      Version = #{row.version,jdbcType=BINARY}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ECN_D
+    set ECN_D_ID = #{row.ecnDId,jdbcType=CHAR},
+      SequenceNumber = #{row.sequencenumber,jdbcType=INTEGER},
+      VERSION_TIMES = #{row.versionTimes,jdbcType=NVARCHAR},
+      STANDARD_BATCH_QTY = #{row.standardBatchQty,jdbcType=DECIMAL},
+      YIELD_RATE = #{row.yieldRate,jdbcType=DECIMAL},
+      SECRET_ITEM = #{row.secretItem,jdbcType=BIT},
+      SECRET_LEVEL = #{row.secretLevel,jdbcType=NVARCHAR},
+      REASON_ID = #{row.reasonId,jdbcType=CHAR},
+      ORIGINAL_VERSION_TIMES = #{row.originalVersionTimes,jdbcType=NVARCHAR},
+      ORIGINAL_STANDARD_BATCH_QTY = #{row.originalStandardBatchQty,jdbcType=DECIMAL},
+      ORIGINAL_YIELD_RATE = #{row.originalYieldRate,jdbcType=DECIMAL},
+      ORIGINAL_SECRET_ITEM = #{row.originalSecretItem,jdbcType=BIT},
+      ORIGINAL_SECRET_LEVEL = #{row.originalSecretLevel,jdbcType=NVARCHAR},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      ORIGINAL_REMARK = #{row.originalRemark,jdbcType=NVARCHAR},
+      CHANGE_TYPE = #{row.changeType,jdbcType=NVARCHAR},
+      PARENT_ITEM_ID = #{row.parentItemId,jdbcType=CHAR},
+      PARENT_ITEM_FEATURE_ID = #{row.parentItemFeatureId,jdbcType=CHAR},
+      ORIGINAL_PARENT_ITEM_ID = #{row.originalParentItemId,jdbcType=CHAR},
+      ORIGINAL_ORDER_ECN_ID = #{row.originalOrderEcnId,jdbcType=CHAR},
+      PLANT_ID = #{row.plantId,jdbcType=CHAR},
+      REFERENCE_PLANT_ID = #{row.referencePlantId,jdbcType=CHAR},
+      ORIGINAL_REFERENCE_PLANT_ID = #{row.originalReferencePlantId,jdbcType=CHAR},
+      OLD_PLM_DATAKEY = #{row.oldPlmDatakey,jdbcType=NVARCHAR},
+      NEW_PLM_DATAKEY = #{row.newPlmDatakey,jdbcType=NVARCHAR},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      ECN_ID = #{row.ecnId,jdbcType=CHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tb.mbg.model.EcnD">
+    update ECN_D
+    <set>
+      <if test="sequencenumber != null">
+        SequenceNumber = #{sequencenumber,jdbcType=INTEGER},
+      </if>
+      <if test="versionTimes != null">
+        VERSION_TIMES = #{versionTimes,jdbcType=NVARCHAR},
+      </if>
+      <if test="standardBatchQty != null">
+        STANDARD_BATCH_QTY = #{standardBatchQty,jdbcType=DECIMAL},
+      </if>
+      <if test="yieldRate != null">
+        YIELD_RATE = #{yieldRate,jdbcType=DECIMAL},
+      </if>
+      <if test="secretItem != null">
+        SECRET_ITEM = #{secretItem,jdbcType=BIT},
+      </if>
+      <if test="secretLevel != null">
+        SECRET_LEVEL = #{secretLevel,jdbcType=NVARCHAR},
+      </if>
+      <if test="reasonId != null">
+        REASON_ID = #{reasonId,jdbcType=CHAR},
+      </if>
+      <if test="originalVersionTimes != null">
+        ORIGINAL_VERSION_TIMES = #{originalVersionTimes,jdbcType=NVARCHAR},
+      </if>
+      <if test="originalStandardBatchQty != null">
+        ORIGINAL_STANDARD_BATCH_QTY = #{originalStandardBatchQty,jdbcType=DECIMAL},
+      </if>
+      <if test="originalYieldRate != null">
+        ORIGINAL_YIELD_RATE = #{originalYieldRate,jdbcType=DECIMAL},
+      </if>
+      <if test="originalSecretItem != null">
+        ORIGINAL_SECRET_ITEM = #{originalSecretItem,jdbcType=BIT},
+      </if>
+      <if test="originalSecretLevel != null">
+        ORIGINAL_SECRET_LEVEL = #{originalSecretLevel,jdbcType=NVARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="originalRemark != null">
+        ORIGINAL_REMARK = #{originalRemark,jdbcType=NVARCHAR},
+      </if>
+      <if test="changeType != null">
+        CHANGE_TYPE = #{changeType,jdbcType=NVARCHAR},
+      </if>
+      <if test="parentItemId != null">
+        PARENT_ITEM_ID = #{parentItemId,jdbcType=CHAR},
+      </if>
+      <if test="parentItemFeatureId != null">
+        PARENT_ITEM_FEATURE_ID = #{parentItemFeatureId,jdbcType=CHAR},
+      </if>
+      <if test="originalParentItemId != null">
+        ORIGINAL_PARENT_ITEM_ID = #{originalParentItemId,jdbcType=CHAR},
+      </if>
+      <if test="originalOrderEcnId != null">
+        ORIGINAL_ORDER_ECN_ID = #{originalOrderEcnId,jdbcType=CHAR},
+      </if>
+      <if test="plantId != null">
+        PLANT_ID = #{plantId,jdbcType=CHAR},
+      </if>
+      <if test="referencePlantId != null">
+        REFERENCE_PLANT_ID = #{referencePlantId,jdbcType=CHAR},
+      </if>
+      <if test="originalReferencePlantId != null">
+        ORIGINAL_REFERENCE_PLANT_ID = #{originalReferencePlantId,jdbcType=CHAR},
+      </if>
+      <if test="oldPlmDatakey != null">
+        OLD_PLM_DATAKEY = #{oldPlmDatakey,jdbcType=NVARCHAR},
+      </if>
+      <if test="newPlmDatakey != null">
+        NEW_PLM_DATAKEY = #{newPlmDatakey,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf001 != null">
+        UDF001 = #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        UDF002 = #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        UDF003 = #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        UDF011 = #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        UDF012 = #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        UDF013 = #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        UDF021 = #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        UDF022 = #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        UDF023 = #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        UDF024 = #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        UDF025 = #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        UDF026 = #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        UDF051 = #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        UDF052 = #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        UDF053 = #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        UDF054 = #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        CreateBy = #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        ApproveBy = #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="ecnId != null">
+        ECN_ID = #{ecnId,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        Version = #{version,jdbcType=BINARY},
+      </if>
+    </set>
+    where ECN_D_ID = #{ecnDId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tb.mbg.model.EcnD">
+    update ECN_D
+    set SequenceNumber = #{sequencenumber,jdbcType=INTEGER},
+      VERSION_TIMES = #{versionTimes,jdbcType=NVARCHAR},
+      STANDARD_BATCH_QTY = #{standardBatchQty,jdbcType=DECIMAL},
+      YIELD_RATE = #{yieldRate,jdbcType=DECIMAL},
+      SECRET_ITEM = #{secretItem,jdbcType=BIT},
+      SECRET_LEVEL = #{secretLevel,jdbcType=NVARCHAR},
+      REASON_ID = #{reasonId,jdbcType=CHAR},
+      ORIGINAL_VERSION_TIMES = #{originalVersionTimes,jdbcType=NVARCHAR},
+      ORIGINAL_STANDARD_BATCH_QTY = #{originalStandardBatchQty,jdbcType=DECIMAL},
+      ORIGINAL_YIELD_RATE = #{originalYieldRate,jdbcType=DECIMAL},
+      ORIGINAL_SECRET_ITEM = #{originalSecretItem,jdbcType=BIT},
+      ORIGINAL_SECRET_LEVEL = #{originalSecretLevel,jdbcType=NVARCHAR},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      ORIGINAL_REMARK = #{originalRemark,jdbcType=NVARCHAR},
+      CHANGE_TYPE = #{changeType,jdbcType=NVARCHAR},
+      PARENT_ITEM_ID = #{parentItemId,jdbcType=CHAR},
+      PARENT_ITEM_FEATURE_ID = #{parentItemFeatureId,jdbcType=CHAR},
+      ORIGINAL_PARENT_ITEM_ID = #{originalParentItemId,jdbcType=CHAR},
+      ORIGINAL_ORDER_ECN_ID = #{originalOrderEcnId,jdbcType=CHAR},
+      PLANT_ID = #{plantId,jdbcType=CHAR},
+      REFERENCE_PLANT_ID = #{referencePlantId,jdbcType=CHAR},
+      ORIGINAL_REFERENCE_PLANT_ID = #{originalReferencePlantId,jdbcType=CHAR},
+      OLD_PLM_DATAKEY = #{oldPlmDatakey,jdbcType=NVARCHAR},
+      NEW_PLM_DATAKEY = #{newPlmDatakey,jdbcType=NVARCHAR},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      ECN_ID = #{ecnId,jdbcType=CHAR},
+      Version = #{version,jdbcType=BINARY}
+    where ECN_D_ID = #{ecnDId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tb.mbg.model.EcnD">
+    update ECN_D
+    set SequenceNumber = #{sequencenumber,jdbcType=INTEGER},
+      VERSION_TIMES = #{versionTimes,jdbcType=NVARCHAR},
+      STANDARD_BATCH_QTY = #{standardBatchQty,jdbcType=DECIMAL},
+      YIELD_RATE = #{yieldRate,jdbcType=DECIMAL},
+      SECRET_ITEM = #{secretItem,jdbcType=BIT},
+      SECRET_LEVEL = #{secretLevel,jdbcType=NVARCHAR},
+      REASON_ID = #{reasonId,jdbcType=CHAR},
+      ORIGINAL_VERSION_TIMES = #{originalVersionTimes,jdbcType=NVARCHAR},
+      ORIGINAL_STANDARD_BATCH_QTY = #{originalStandardBatchQty,jdbcType=DECIMAL},
+      ORIGINAL_YIELD_RATE = #{originalYieldRate,jdbcType=DECIMAL},
+      ORIGINAL_SECRET_ITEM = #{originalSecretItem,jdbcType=BIT},
+      ORIGINAL_SECRET_LEVEL = #{originalSecretLevel,jdbcType=NVARCHAR},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      ORIGINAL_REMARK = #{originalRemark,jdbcType=NVARCHAR},
+      CHANGE_TYPE = #{changeType,jdbcType=NVARCHAR},
+      PARENT_ITEM_ID = #{parentItemId,jdbcType=CHAR},
+      PARENT_ITEM_FEATURE_ID = #{parentItemFeatureId,jdbcType=CHAR},
+      ORIGINAL_PARENT_ITEM_ID = #{originalParentItemId,jdbcType=CHAR},
+      ORIGINAL_ORDER_ECN_ID = #{originalOrderEcnId,jdbcType=CHAR},
+      PLANT_ID = #{plantId,jdbcType=CHAR},
+      REFERENCE_PLANT_ID = #{referencePlantId,jdbcType=CHAR},
+      ORIGINAL_REFERENCE_PLANT_ID = #{originalReferencePlantId,jdbcType=CHAR},
+      OLD_PLM_DATAKEY = #{oldPlmDatakey,jdbcType=NVARCHAR},
+      NEW_PLM_DATAKEY = #{newPlmDatakey,jdbcType=NVARCHAR},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      ECN_ID = #{ecnId,jdbcType=CHAR}
+    where ECN_D_ID = #{ecnDId,jdbcType=CHAR}
+  </update>
+</mapper>

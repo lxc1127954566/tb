@@ -1,0 +1,1320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tb.mbg.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.tb.mbg.model.User">
+    <id column="USER_ID" jdbcType="CHAR" property="userId" />
+    <result column="Owner_Dept" jdbcType="CHAR" property="ownerDept" />
+    <result column="Owner_Emp" jdbcType="CHAR" property="ownerEmp" />
+    <result column="LOGONNAME" jdbcType="NVARCHAR" property="logonname" />
+    <result column="USER_NAME" jdbcType="NVARCHAR" property="userName" />
+    <result column="USER_TYPE" jdbcType="NVARCHAR" property="userType" />
+    <result column="SECURITYIDENTITY" jdbcType="NVARCHAR" property="securityidentity" />
+    <result column="DOMAINUSERNAME" jdbcType="NVARCHAR" property="domainusername" />
+    <result column="SECURITYDOMAINUSERNAME" jdbcType="NVARCHAR" property="securitydomainusername" />
+    <result column="LOGONTIME" jdbcType="TIMESTAMP" property="logontime" />
+    <result column="AVAILABLE_DATE" jdbcType="TIMESTAMP" property="availableDate" />
+    <result column="UNAVAILABLE_DATE" jdbcType="TIMESTAMP" property="unavailableDate" />
+    <result column="REMARK" jdbcType="NVARCHAR" property="remark" />
+    <result column="DEF_LANGUAGE" jdbcType="NVARCHAR" property="defLanguage" />
+    <result column="ITEM_SHORTCUT" jdbcType="NVARCHAR" property="itemShortcut" />
+    <result column="CUSTOMER_SHORTCUT" jdbcType="NVARCHAR" property="customerShortcut" />
+    <result column="SUPPLIER_SHORTCUT" jdbcType="NVARCHAR" property="supplierShortcut" />
+    <result column="DATE_FORMAT" jdbcType="NVARCHAR" property="dateFormat" />
+    <result column="DATE_AREA" jdbcType="NVARCHAR" property="dateArea" />
+    <result column="FIRST_DAY_OF_WEEK" jdbcType="NVARCHAR" property="firstDayOfWeek" />
+    <result column="DEF_COMPANY_ID" jdbcType="CHAR" property="defCompanyId" />
+    <result column="DEF_PLANT_ID" jdbcType="CHAR" property="defPlantId" />
+    <result column="DEF_SALES_CENTER_ID" jdbcType="CHAR" property="defSalesCenterId" />
+    <result column="DEF_SERVICE_CENTER_ID" jdbcType="CHAR" property="defServiceCenterId" />
+    <result column="DEF_SUPPLY_CENTER_ID" jdbcType="CHAR" property="defSupplyCenterId" />
+    <result column="DEF_OPERATION_CENTER_ID" jdbcType="CHAR" property="defOperationCenterId" />
+    <result column="DEF_USER_MENU_ID" jdbcType="NVARCHAR" property="defUserMenuId" />
+    <result column="DEF_SHOTCUT_MENU_ID" jdbcType="NVARCHAR" property="defShotcutMenuId" />
+    <result column="DEF_SHOTCUT_PROGRAMID" jdbcType="NVARCHAR" property="defShotcutProgramid" />
+    <result column="DEF_SHOTCUT_DISPLAYNAME" jdbcType="NVARCHAR" property="defShotcutDisplayname" />
+    <result column="DEF_SHOTCUT_HELPID" jdbcType="NVARCHAR" property="defShotcutHelpid" />
+    <result column="User_Preferences" jdbcType="NVARCHAR" property="userPreferences" />
+    <result column="EMPLOYEE_ID" jdbcType="CHAR" property="employeeId" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="LastModifiedDate" jdbcType="TIMESTAMP" property="lastmodifieddate" />
+    <result column="ModifiedDate" jdbcType="TIMESTAMP" property="modifieddate" />
+    <result column="CreateBy" jdbcType="CHAR" property="createby" />
+    <result column="LastModifiedBy" jdbcType="CHAR" property="lastmodifiedby" />
+    <result column="ModifiedBy" jdbcType="CHAR" property="modifiedby" />
+    <result column="ProcessInstanceId" jdbcType="CHAR" property="processinstanceid" />
+    <result column="UDF001" jdbcType="DECIMAL" property="udf001" />
+    <result column="UDF002" jdbcType="DECIMAL" property="udf002" />
+    <result column="UDF003" jdbcType="DECIMAL" property="udf003" />
+    <result column="UDF011" jdbcType="DECIMAL" property="udf011" />
+    <result column="UDF012" jdbcType="DECIMAL" property="udf012" />
+    <result column="UDF013" jdbcType="DECIMAL" property="udf013" />
+    <result column="UDF021" jdbcType="NVARCHAR" property="udf021" />
+    <result column="UDF022" jdbcType="NVARCHAR" property="udf022" />
+    <result column="UDF023" jdbcType="NVARCHAR" property="udf023" />
+    <result column="UDF024" jdbcType="NVARCHAR" property="udf024" />
+    <result column="UDF025" jdbcType="NVARCHAR" property="udf025" />
+    <result column="UDF026" jdbcType="NVARCHAR" property="udf026" />
+    <result column="UDF041" jdbcType="TIMESTAMP" property="udf041" />
+    <result column="UDF042" jdbcType="TIMESTAMP" property="udf042" />
+    <result column="UDF051" jdbcType="CHAR" property="udf051" />
+    <result column="UDF052" jdbcType="CHAR" property="udf052" />
+    <result column="UDF053" jdbcType="CHAR" property="udf053" />
+    <result column="UDF054" jdbcType="CHAR" property="udf054" />
+    <result column="ApproveStatus" jdbcType="NVARCHAR" property="approvestatus" />
+    <result column="ApproveDate" jdbcType="TIMESTAMP" property="approvedate" />
+    <result column="ApproveBy" jdbcType="CHAR" property="approveby" />
+    <result column="Owner_Org_RTK" jdbcType="NVARCHAR" property="ownerOrgRtk" />
+    <result column="Owner_Org_ROid" jdbcType="CHAR" property="ownerOrgRoid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.tb.mbg.model.User">
+    <result column="Version" jdbcType="BINARY" property="version" />
+    <result column="Attachments" jdbcType="LONGNVARCHAR" property="attachments" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    USER_ID, Owner_Dept, Owner_Emp, LOGONNAME, USER_NAME, USER_TYPE, SECURITYIDENTITY, 
+    DOMAINUSERNAME, SECURITYDOMAINUSERNAME, LOGONTIME, AVAILABLE_DATE, UNAVAILABLE_DATE, 
+    REMARK, DEF_LANGUAGE, ITEM_SHORTCUT, CUSTOMER_SHORTCUT, SUPPLIER_SHORTCUT, DATE_FORMAT, 
+    DATE_AREA, FIRST_DAY_OF_WEEK, DEF_COMPANY_ID, DEF_PLANT_ID, DEF_SALES_CENTER_ID, 
+    DEF_SERVICE_CENTER_ID, DEF_SUPPLY_CENTER_ID, DEF_OPERATION_CENTER_ID, DEF_USER_MENU_ID, 
+    DEF_SHOTCUT_MENU_ID, DEF_SHOTCUT_PROGRAMID, DEF_SHOTCUT_DISPLAYNAME, DEF_SHOTCUT_HELPID, 
+    User_Preferences, EMPLOYEE_ID, CreateDate, LastModifiedDate, ModifiedDate, CreateBy, 
+    LastModifiedBy, ModifiedBy, ProcessInstanceId, UDF001, UDF002, UDF003, UDF011, UDF012, 
+    UDF013, UDF021, UDF022, UDF023, UDF024, UDF025, UDF026, UDF041, UDF042, UDF051, UDF052, 
+    UDF053, UDF054, ApproveStatus, ApproveDate, ApproveBy, Owner_Org_RTK, Owner_Org_ROid
+  </sql>
+  <sql id="Blob_Column_List">
+    Version, Attachments
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.tb.mbg.model.UserExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from USER
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.tb.mbg.model.UserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from USER
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from USER
+    where USER_ID = #{userId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from USER
+    where USER_ID = #{userId,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tb.mbg.model.UserExample">
+    delete from USER
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tb.mbg.model.User">
+    insert into USER (USER_ID, Owner_Dept, Owner_Emp, 
+      LOGONNAME, USER_NAME, USER_TYPE, 
+      SECURITYIDENTITY, DOMAINUSERNAME, SECURITYDOMAINUSERNAME, 
+      LOGONTIME, AVAILABLE_DATE, UNAVAILABLE_DATE, 
+      REMARK, DEF_LANGUAGE, ITEM_SHORTCUT, 
+      CUSTOMER_SHORTCUT, SUPPLIER_SHORTCUT, DATE_FORMAT, 
+      DATE_AREA, FIRST_DAY_OF_WEEK, DEF_COMPANY_ID, 
+      DEF_PLANT_ID, DEF_SALES_CENTER_ID, DEF_SERVICE_CENTER_ID, 
+      DEF_SUPPLY_CENTER_ID, DEF_OPERATION_CENTER_ID, DEF_USER_MENU_ID, 
+      DEF_SHOTCUT_MENU_ID, DEF_SHOTCUT_PROGRAMID, 
+      DEF_SHOTCUT_DISPLAYNAME, DEF_SHOTCUT_HELPID, 
+      User_Preferences, EMPLOYEE_ID, CreateDate, 
+      LastModifiedDate, ModifiedDate, CreateBy, 
+      LastModifiedBy, ModifiedBy, ProcessInstanceId, 
+      UDF001, UDF002, UDF003, 
+      UDF011, UDF012, UDF013, 
+      UDF021, UDF022, UDF023, 
+      UDF024, UDF025, UDF026, 
+      UDF041, UDF042, UDF051, 
+      UDF052, UDF053, UDF054, ApproveStatus, 
+      ApproveDate, ApproveBy, Owner_Org_RTK, 
+      Owner_Org_ROid, Version, Attachments
+      )
+    values (#{userId,jdbcType=CHAR}, #{ownerDept,jdbcType=CHAR}, #{ownerEmp,jdbcType=CHAR}, 
+      #{logonname,jdbcType=NVARCHAR}, #{userName,jdbcType=NVARCHAR}, #{userType,jdbcType=NVARCHAR}, 
+      #{securityidentity,jdbcType=NVARCHAR}, #{domainusername,jdbcType=NVARCHAR}, #{securitydomainusername,jdbcType=NVARCHAR}, 
+      #{logontime,jdbcType=TIMESTAMP}, #{availableDate,jdbcType=TIMESTAMP}, #{unavailableDate,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=NVARCHAR}, #{defLanguage,jdbcType=NVARCHAR}, #{itemShortcut,jdbcType=NVARCHAR}, 
+      #{customerShortcut,jdbcType=NVARCHAR}, #{supplierShortcut,jdbcType=NVARCHAR}, #{dateFormat,jdbcType=NVARCHAR}, 
+      #{dateArea,jdbcType=NVARCHAR}, #{firstDayOfWeek,jdbcType=NVARCHAR}, #{defCompanyId,jdbcType=CHAR}, 
+      #{defPlantId,jdbcType=CHAR}, #{defSalesCenterId,jdbcType=CHAR}, #{defServiceCenterId,jdbcType=CHAR}, 
+      #{defSupplyCenterId,jdbcType=CHAR}, #{defOperationCenterId,jdbcType=CHAR}, #{defUserMenuId,jdbcType=NVARCHAR}, 
+      #{defShotcutMenuId,jdbcType=NVARCHAR}, #{defShotcutProgramid,jdbcType=NVARCHAR}, 
+      #{defShotcutDisplayname,jdbcType=NVARCHAR}, #{defShotcutHelpid,jdbcType=NVARCHAR}, 
+      #{userPreferences,jdbcType=NVARCHAR}, #{employeeId,jdbcType=CHAR}, #{createdate,jdbcType=TIMESTAMP}, 
+      #{lastmodifieddate,jdbcType=TIMESTAMP}, #{modifieddate,jdbcType=TIMESTAMP}, #{createby,jdbcType=CHAR}, 
+      #{lastmodifiedby,jdbcType=CHAR}, #{modifiedby,jdbcType=CHAR}, #{processinstanceid,jdbcType=CHAR}, 
+      #{udf001,jdbcType=DECIMAL}, #{udf002,jdbcType=DECIMAL}, #{udf003,jdbcType=DECIMAL}, 
+      #{udf011,jdbcType=DECIMAL}, #{udf012,jdbcType=DECIMAL}, #{udf013,jdbcType=DECIMAL}, 
+      #{udf021,jdbcType=NVARCHAR}, #{udf022,jdbcType=NVARCHAR}, #{udf023,jdbcType=NVARCHAR}, 
+      #{udf024,jdbcType=NVARCHAR}, #{udf025,jdbcType=NVARCHAR}, #{udf026,jdbcType=NVARCHAR}, 
+      #{udf041,jdbcType=TIMESTAMP}, #{udf042,jdbcType=TIMESTAMP}, #{udf051,jdbcType=CHAR}, 
+      #{udf052,jdbcType=CHAR}, #{udf053,jdbcType=CHAR}, #{udf054,jdbcType=CHAR}, #{approvestatus,jdbcType=NVARCHAR}, 
+      #{approvedate,jdbcType=TIMESTAMP}, #{approveby,jdbcType=CHAR}, #{ownerOrgRtk,jdbcType=NVARCHAR}, 
+      #{ownerOrgRoid,jdbcType=CHAR}, #{version,jdbcType=BINARY}, #{attachments,jdbcType=LONGNVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tb.mbg.model.User">
+    insert into USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="ownerDept != null">
+        Owner_Dept,
+      </if>
+      <if test="ownerEmp != null">
+        Owner_Emp,
+      </if>
+      <if test="logonname != null">
+        LOGONNAME,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="userType != null">
+        USER_TYPE,
+      </if>
+      <if test="securityidentity != null">
+        SECURITYIDENTITY,
+      </if>
+      <if test="domainusername != null">
+        DOMAINUSERNAME,
+      </if>
+      <if test="securitydomainusername != null">
+        SECURITYDOMAINUSERNAME,
+      </if>
+      <if test="logontime != null">
+        LOGONTIME,
+      </if>
+      <if test="availableDate != null">
+        AVAILABLE_DATE,
+      </if>
+      <if test="unavailableDate != null">
+        UNAVAILABLE_DATE,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="defLanguage != null">
+        DEF_LANGUAGE,
+      </if>
+      <if test="itemShortcut != null">
+        ITEM_SHORTCUT,
+      </if>
+      <if test="customerShortcut != null">
+        CUSTOMER_SHORTCUT,
+      </if>
+      <if test="supplierShortcut != null">
+        SUPPLIER_SHORTCUT,
+      </if>
+      <if test="dateFormat != null">
+        DATE_FORMAT,
+      </if>
+      <if test="dateArea != null">
+        DATE_AREA,
+      </if>
+      <if test="firstDayOfWeek != null">
+        FIRST_DAY_OF_WEEK,
+      </if>
+      <if test="defCompanyId != null">
+        DEF_COMPANY_ID,
+      </if>
+      <if test="defPlantId != null">
+        DEF_PLANT_ID,
+      </if>
+      <if test="defSalesCenterId != null">
+        DEF_SALES_CENTER_ID,
+      </if>
+      <if test="defServiceCenterId != null">
+        DEF_SERVICE_CENTER_ID,
+      </if>
+      <if test="defSupplyCenterId != null">
+        DEF_SUPPLY_CENTER_ID,
+      </if>
+      <if test="defOperationCenterId != null">
+        DEF_OPERATION_CENTER_ID,
+      </if>
+      <if test="defUserMenuId != null">
+        DEF_USER_MENU_ID,
+      </if>
+      <if test="defShotcutMenuId != null">
+        DEF_SHOTCUT_MENU_ID,
+      </if>
+      <if test="defShotcutProgramid != null">
+        DEF_SHOTCUT_PROGRAMID,
+      </if>
+      <if test="defShotcutDisplayname != null">
+        DEF_SHOTCUT_DISPLAYNAME,
+      </if>
+      <if test="defShotcutHelpid != null">
+        DEF_SHOTCUT_HELPID,
+      </if>
+      <if test="userPreferences != null">
+        User_Preferences,
+      </if>
+      <if test="employeeId != null">
+        EMPLOYEE_ID,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate,
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate,
+      </if>
+      <if test="createby != null">
+        CreateBy,
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy,
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy,
+      </if>
+      <if test="processinstanceid != null">
+        ProcessInstanceId,
+      </if>
+      <if test="udf001 != null">
+        UDF001,
+      </if>
+      <if test="udf002 != null">
+        UDF002,
+      </if>
+      <if test="udf003 != null">
+        UDF003,
+      </if>
+      <if test="udf011 != null">
+        UDF011,
+      </if>
+      <if test="udf012 != null">
+        UDF012,
+      </if>
+      <if test="udf013 != null">
+        UDF013,
+      </if>
+      <if test="udf021 != null">
+        UDF021,
+      </if>
+      <if test="udf022 != null">
+        UDF022,
+      </if>
+      <if test="udf023 != null">
+        UDF023,
+      </if>
+      <if test="udf024 != null">
+        UDF024,
+      </if>
+      <if test="udf025 != null">
+        UDF025,
+      </if>
+      <if test="udf026 != null">
+        UDF026,
+      </if>
+      <if test="udf041 != null">
+        UDF041,
+      </if>
+      <if test="udf042 != null">
+        UDF042,
+      </if>
+      <if test="udf051 != null">
+        UDF051,
+      </if>
+      <if test="udf052 != null">
+        UDF052,
+      </if>
+      <if test="udf053 != null">
+        UDF053,
+      </if>
+      <if test="udf054 != null">
+        UDF054,
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus,
+      </if>
+      <if test="approvedate != null">
+        ApproveDate,
+      </if>
+      <if test="approveby != null">
+        ApproveBy,
+      </if>
+      <if test="ownerOrgRtk != null">
+        Owner_Org_RTK,
+      </if>
+      <if test="ownerOrgRoid != null">
+        Owner_Org_ROid,
+      </if>
+      <if test="version != null">
+        Version,
+      </if>
+      <if test="attachments != null">
+        Attachments,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="ownerDept != null">
+        #{ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="ownerEmp != null">
+        #{ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="logonname != null">
+        #{logonname,jdbcType=NVARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=NVARCHAR},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=NVARCHAR},
+      </if>
+      <if test="securityidentity != null">
+        #{securityidentity,jdbcType=NVARCHAR},
+      </if>
+      <if test="domainusername != null">
+        #{domainusername,jdbcType=NVARCHAR},
+      </if>
+      <if test="securitydomainusername != null">
+        #{securitydomainusername,jdbcType=NVARCHAR},
+      </if>
+      <if test="logontime != null">
+        #{logontime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="availableDate != null">
+        #{availableDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="unavailableDate != null">
+        #{unavailableDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="defLanguage != null">
+        #{defLanguage,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemShortcut != null">
+        #{itemShortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="customerShortcut != null">
+        #{customerShortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="supplierShortcut != null">
+        #{supplierShortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="dateFormat != null">
+        #{dateFormat,jdbcType=NVARCHAR},
+      </if>
+      <if test="dateArea != null">
+        #{dateArea,jdbcType=NVARCHAR},
+      </if>
+      <if test="firstDayOfWeek != null">
+        #{firstDayOfWeek,jdbcType=NVARCHAR},
+      </if>
+      <if test="defCompanyId != null">
+        #{defCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="defPlantId != null">
+        #{defPlantId,jdbcType=CHAR},
+      </if>
+      <if test="defSalesCenterId != null">
+        #{defSalesCenterId,jdbcType=CHAR},
+      </if>
+      <if test="defServiceCenterId != null">
+        #{defServiceCenterId,jdbcType=CHAR},
+      </if>
+      <if test="defSupplyCenterId != null">
+        #{defSupplyCenterId,jdbcType=CHAR},
+      </if>
+      <if test="defOperationCenterId != null">
+        #{defOperationCenterId,jdbcType=CHAR},
+      </if>
+      <if test="defUserMenuId != null">
+        #{defUserMenuId,jdbcType=NVARCHAR},
+      </if>
+      <if test="defShotcutMenuId != null">
+        #{defShotcutMenuId,jdbcType=NVARCHAR},
+      </if>
+      <if test="defShotcutProgramid != null">
+        #{defShotcutProgramid,jdbcType=NVARCHAR},
+      </if>
+      <if test="defShotcutDisplayname != null">
+        #{defShotcutDisplayname,jdbcType=NVARCHAR},
+      </if>
+      <if test="defShotcutHelpid != null">
+        #{defShotcutHelpid,jdbcType=NVARCHAR},
+      </if>
+      <if test="userPreferences != null">
+        #{userPreferences,jdbcType=NVARCHAR},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="processinstanceid != null">
+        #{processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="udf001 != null">
+        #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="ownerOrgRtk != null">
+        #{ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="ownerOrgRoid != null">
+        #{ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=BINARY},
+      </if>
+      <if test="attachments != null">
+        #{attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tb.mbg.model.UserExample" resultType="java.lang.Long">
+    select count(*) from USER
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update USER
+    <set>
+      <if test="row.userId != null">
+        USER_ID = #{row.userId,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerDept != null">
+        Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerEmp != null">
+        Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="row.logonname != null">
+        LOGONNAME = #{row.logonname,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.userName != null">
+        USER_NAME = #{row.userName,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.userType != null">
+        USER_TYPE = #{row.userType,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.securityidentity != null">
+        SECURITYIDENTITY = #{row.securityidentity,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.domainusername != null">
+        DOMAINUSERNAME = #{row.domainusername,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.securitydomainusername != null">
+        SECURITYDOMAINUSERNAME = #{row.securitydomainusername,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.logontime != null">
+        LOGONTIME = #{row.logontime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.availableDate != null">
+        AVAILABLE_DATE = #{row.availableDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.unavailableDate != null">
+        UNAVAILABLE_DATE = #{row.unavailableDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.remark != null">
+        REMARK = #{row.remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.defLanguage != null">
+        DEF_LANGUAGE = #{row.defLanguage,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.itemShortcut != null">
+        ITEM_SHORTCUT = #{row.itemShortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.customerShortcut != null">
+        CUSTOMER_SHORTCUT = #{row.customerShortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.supplierShortcut != null">
+        SUPPLIER_SHORTCUT = #{row.supplierShortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.dateFormat != null">
+        DATE_FORMAT = #{row.dateFormat,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.dateArea != null">
+        DATE_AREA = #{row.dateArea,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.firstDayOfWeek != null">
+        FIRST_DAY_OF_WEEK = #{row.firstDayOfWeek,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.defCompanyId != null">
+        DEF_COMPANY_ID = #{row.defCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="row.defPlantId != null">
+        DEF_PLANT_ID = #{row.defPlantId,jdbcType=CHAR},
+      </if>
+      <if test="row.defSalesCenterId != null">
+        DEF_SALES_CENTER_ID = #{row.defSalesCenterId,jdbcType=CHAR},
+      </if>
+      <if test="row.defServiceCenterId != null">
+        DEF_SERVICE_CENTER_ID = #{row.defServiceCenterId,jdbcType=CHAR},
+      </if>
+      <if test="row.defSupplyCenterId != null">
+        DEF_SUPPLY_CENTER_ID = #{row.defSupplyCenterId,jdbcType=CHAR},
+      </if>
+      <if test="row.defOperationCenterId != null">
+        DEF_OPERATION_CENTER_ID = #{row.defOperationCenterId,jdbcType=CHAR},
+      </if>
+      <if test="row.defUserMenuId != null">
+        DEF_USER_MENU_ID = #{row.defUserMenuId,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.defShotcutMenuId != null">
+        DEF_SHOTCUT_MENU_ID = #{row.defShotcutMenuId,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.defShotcutProgramid != null">
+        DEF_SHOTCUT_PROGRAMID = #{row.defShotcutProgramid,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.defShotcutDisplayname != null">
+        DEF_SHOTCUT_DISPLAYNAME = #{row.defShotcutDisplayname,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.defShotcutHelpid != null">
+        DEF_SHOTCUT_HELPID = #{row.defShotcutHelpid,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.userPreferences != null">
+        User_Preferences = #{row.userPreferences,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.employeeId != null">
+        EMPLOYEE_ID = #{row.employeeId,jdbcType=CHAR},
+      </if>
+      <if test="row.createdate != null">
+        CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.lastmodifieddate != null">
+        LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.modifieddate != null">
+        ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.createby != null">
+        CreateBy = #{row.createby,jdbcType=CHAR},
+      </if>
+      <if test="row.lastmodifiedby != null">
+        LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.modifiedby != null">
+        ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="row.processinstanceid != null">
+        ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="row.udf001 != null">
+        UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf002 != null">
+        UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf003 != null">
+        UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf011 != null">
+        UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf012 != null">
+        UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf013 != null">
+        UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="row.udf021 != null">
+        UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf022 != null">
+        UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf023 != null">
+        UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf024 != null">
+        UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf025 != null">
+        UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf026 != null">
+        UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.udf041 != null">
+        UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf042 != null">
+        UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.udf051 != null">
+        UDF051 = #{row.udf051,jdbcType=CHAR},
+      </if>
+      <if test="row.udf052 != null">
+        UDF052 = #{row.udf052,jdbcType=CHAR},
+      </if>
+      <if test="row.udf053 != null">
+        UDF053 = #{row.udf053,jdbcType=CHAR},
+      </if>
+      <if test="row.udf054 != null">
+        UDF054 = #{row.udf054,jdbcType=CHAR},
+      </if>
+      <if test="row.approvestatus != null">
+        ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.approvedate != null">
+        ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="row.approveby != null">
+        ApproveBy = #{row.approveby,jdbcType=CHAR},
+      </if>
+      <if test="row.ownerOrgRtk != null">
+        Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="row.ownerOrgRoid != null">
+        Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="row.version != null">
+        Version = #{row.version,jdbcType=BINARY},
+      </if>
+      <if test="row.attachments != null">
+        Attachments = #{row.attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </set>
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update USER
+    set USER_ID = #{row.userId,jdbcType=CHAR},
+      Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      LOGONNAME = #{row.logonname,jdbcType=NVARCHAR},
+      USER_NAME = #{row.userName,jdbcType=NVARCHAR},
+      USER_TYPE = #{row.userType,jdbcType=NVARCHAR},
+      SECURITYIDENTITY = #{row.securityidentity,jdbcType=NVARCHAR},
+      DOMAINUSERNAME = #{row.domainusername,jdbcType=NVARCHAR},
+      SECURITYDOMAINUSERNAME = #{row.securitydomainusername,jdbcType=NVARCHAR},
+      LOGONTIME = #{row.logontime,jdbcType=TIMESTAMP},
+      AVAILABLE_DATE = #{row.availableDate,jdbcType=TIMESTAMP},
+      UNAVAILABLE_DATE = #{row.unavailableDate,jdbcType=TIMESTAMP},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      DEF_LANGUAGE = #{row.defLanguage,jdbcType=NVARCHAR},
+      ITEM_SHORTCUT = #{row.itemShortcut,jdbcType=NVARCHAR},
+      CUSTOMER_SHORTCUT = #{row.customerShortcut,jdbcType=NVARCHAR},
+      SUPPLIER_SHORTCUT = #{row.supplierShortcut,jdbcType=NVARCHAR},
+      DATE_FORMAT = #{row.dateFormat,jdbcType=NVARCHAR},
+      DATE_AREA = #{row.dateArea,jdbcType=NVARCHAR},
+      FIRST_DAY_OF_WEEK = #{row.firstDayOfWeek,jdbcType=NVARCHAR},
+      DEF_COMPANY_ID = #{row.defCompanyId,jdbcType=CHAR},
+      DEF_PLANT_ID = #{row.defPlantId,jdbcType=CHAR},
+      DEF_SALES_CENTER_ID = #{row.defSalesCenterId,jdbcType=CHAR},
+      DEF_SERVICE_CENTER_ID = #{row.defServiceCenterId,jdbcType=CHAR},
+      DEF_SUPPLY_CENTER_ID = #{row.defSupplyCenterId,jdbcType=CHAR},
+      DEF_OPERATION_CENTER_ID = #{row.defOperationCenterId,jdbcType=CHAR},
+      DEF_USER_MENU_ID = #{row.defUserMenuId,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_MENU_ID = #{row.defShotcutMenuId,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_PROGRAMID = #{row.defShotcutProgramid,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_DISPLAYNAME = #{row.defShotcutDisplayname,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_HELPID = #{row.defShotcutHelpid,jdbcType=NVARCHAR},
+      User_Preferences = #{row.userPreferences,jdbcType=NVARCHAR},
+      EMPLOYEE_ID = #{row.employeeId,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR},
+      Version = #{row.version,jdbcType=BINARY},
+      Attachments = #{row.attachments,jdbcType=LONGNVARCHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update USER
+    set USER_ID = #{row.userId,jdbcType=CHAR},
+      Owner_Dept = #{row.ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{row.ownerEmp,jdbcType=CHAR},
+      LOGONNAME = #{row.logonname,jdbcType=NVARCHAR},
+      USER_NAME = #{row.userName,jdbcType=NVARCHAR},
+      USER_TYPE = #{row.userType,jdbcType=NVARCHAR},
+      SECURITYIDENTITY = #{row.securityidentity,jdbcType=NVARCHAR},
+      DOMAINUSERNAME = #{row.domainusername,jdbcType=NVARCHAR},
+      SECURITYDOMAINUSERNAME = #{row.securitydomainusername,jdbcType=NVARCHAR},
+      LOGONTIME = #{row.logontime,jdbcType=TIMESTAMP},
+      AVAILABLE_DATE = #{row.availableDate,jdbcType=TIMESTAMP},
+      UNAVAILABLE_DATE = #{row.unavailableDate,jdbcType=TIMESTAMP},
+      REMARK = #{row.remark,jdbcType=NVARCHAR},
+      DEF_LANGUAGE = #{row.defLanguage,jdbcType=NVARCHAR},
+      ITEM_SHORTCUT = #{row.itemShortcut,jdbcType=NVARCHAR},
+      CUSTOMER_SHORTCUT = #{row.customerShortcut,jdbcType=NVARCHAR},
+      SUPPLIER_SHORTCUT = #{row.supplierShortcut,jdbcType=NVARCHAR},
+      DATE_FORMAT = #{row.dateFormat,jdbcType=NVARCHAR},
+      DATE_AREA = #{row.dateArea,jdbcType=NVARCHAR},
+      FIRST_DAY_OF_WEEK = #{row.firstDayOfWeek,jdbcType=NVARCHAR},
+      DEF_COMPANY_ID = #{row.defCompanyId,jdbcType=CHAR},
+      DEF_PLANT_ID = #{row.defPlantId,jdbcType=CHAR},
+      DEF_SALES_CENTER_ID = #{row.defSalesCenterId,jdbcType=CHAR},
+      DEF_SERVICE_CENTER_ID = #{row.defServiceCenterId,jdbcType=CHAR},
+      DEF_SUPPLY_CENTER_ID = #{row.defSupplyCenterId,jdbcType=CHAR},
+      DEF_OPERATION_CENTER_ID = #{row.defOperationCenterId,jdbcType=CHAR},
+      DEF_USER_MENU_ID = #{row.defUserMenuId,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_MENU_ID = #{row.defShotcutMenuId,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_PROGRAMID = #{row.defShotcutProgramid,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_DISPLAYNAME = #{row.defShotcutDisplayname,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_HELPID = #{row.defShotcutHelpid,jdbcType=NVARCHAR},
+      User_Preferences = #{row.userPreferences,jdbcType=NVARCHAR},
+      EMPLOYEE_ID = #{row.employeeId,jdbcType=CHAR},
+      CreateDate = #{row.createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{row.lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{row.modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{row.createby,jdbcType=CHAR},
+      LastModifiedBy = #{row.lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{row.modifiedby,jdbcType=CHAR},
+      ProcessInstanceId = #{row.processinstanceid,jdbcType=CHAR},
+      UDF001 = #{row.udf001,jdbcType=DECIMAL},
+      UDF002 = #{row.udf002,jdbcType=DECIMAL},
+      UDF003 = #{row.udf003,jdbcType=DECIMAL},
+      UDF011 = #{row.udf011,jdbcType=DECIMAL},
+      UDF012 = #{row.udf012,jdbcType=DECIMAL},
+      UDF013 = #{row.udf013,jdbcType=DECIMAL},
+      UDF021 = #{row.udf021,jdbcType=NVARCHAR},
+      UDF022 = #{row.udf022,jdbcType=NVARCHAR},
+      UDF023 = #{row.udf023,jdbcType=NVARCHAR},
+      UDF024 = #{row.udf024,jdbcType=NVARCHAR},
+      UDF025 = #{row.udf025,jdbcType=NVARCHAR},
+      UDF026 = #{row.udf026,jdbcType=NVARCHAR},
+      UDF041 = #{row.udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{row.udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{row.udf051,jdbcType=CHAR},
+      UDF052 = #{row.udf052,jdbcType=CHAR},
+      UDF053 = #{row.udf053,jdbcType=CHAR},
+      UDF054 = #{row.udf054,jdbcType=CHAR},
+      ApproveStatus = #{row.approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{row.approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{row.approveby,jdbcType=CHAR},
+      Owner_Org_RTK = #{row.ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{row.ownerOrgRoid,jdbcType=CHAR}
+    <if test="example != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tb.mbg.model.User">
+    update USER
+    <set>
+      <if test="ownerDept != null">
+        Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      </if>
+      <if test="ownerEmp != null">
+        Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      </if>
+      <if test="logonname != null">
+        LOGONNAME = #{logonname,jdbcType=NVARCHAR},
+      </if>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=NVARCHAR},
+      </if>
+      <if test="userType != null">
+        USER_TYPE = #{userType,jdbcType=NVARCHAR},
+      </if>
+      <if test="securityidentity != null">
+        SECURITYIDENTITY = #{securityidentity,jdbcType=NVARCHAR},
+      </if>
+      <if test="domainusername != null">
+        DOMAINUSERNAME = #{domainusername,jdbcType=NVARCHAR},
+      </if>
+      <if test="securitydomainusername != null">
+        SECURITYDOMAINUSERNAME = #{securitydomainusername,jdbcType=NVARCHAR},
+      </if>
+      <if test="logontime != null">
+        LOGONTIME = #{logontime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="availableDate != null">
+        AVAILABLE_DATE = #{availableDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="unavailableDate != null">
+        UNAVAILABLE_DATE = #{unavailableDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=NVARCHAR},
+      </if>
+      <if test="defLanguage != null">
+        DEF_LANGUAGE = #{defLanguage,jdbcType=NVARCHAR},
+      </if>
+      <if test="itemShortcut != null">
+        ITEM_SHORTCUT = #{itemShortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="customerShortcut != null">
+        CUSTOMER_SHORTCUT = #{customerShortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="supplierShortcut != null">
+        SUPPLIER_SHORTCUT = #{supplierShortcut,jdbcType=NVARCHAR},
+      </if>
+      <if test="dateFormat != null">
+        DATE_FORMAT = #{dateFormat,jdbcType=NVARCHAR},
+      </if>
+      <if test="dateArea != null">
+        DATE_AREA = #{dateArea,jdbcType=NVARCHAR},
+      </if>
+      <if test="firstDayOfWeek != null">
+        FIRST_DAY_OF_WEEK = #{firstDayOfWeek,jdbcType=NVARCHAR},
+      </if>
+      <if test="defCompanyId != null">
+        DEF_COMPANY_ID = #{defCompanyId,jdbcType=CHAR},
+      </if>
+      <if test="defPlantId != null">
+        DEF_PLANT_ID = #{defPlantId,jdbcType=CHAR},
+      </if>
+      <if test="defSalesCenterId != null">
+        DEF_SALES_CENTER_ID = #{defSalesCenterId,jdbcType=CHAR},
+      </if>
+      <if test="defServiceCenterId != null">
+        DEF_SERVICE_CENTER_ID = #{defServiceCenterId,jdbcType=CHAR},
+      </if>
+      <if test="defSupplyCenterId != null">
+        DEF_SUPPLY_CENTER_ID = #{defSupplyCenterId,jdbcType=CHAR},
+      </if>
+      <if test="defOperationCenterId != null">
+        DEF_OPERATION_CENTER_ID = #{defOperationCenterId,jdbcType=CHAR},
+      </if>
+      <if test="defUserMenuId != null">
+        DEF_USER_MENU_ID = #{defUserMenuId,jdbcType=NVARCHAR},
+      </if>
+      <if test="defShotcutMenuId != null">
+        DEF_SHOTCUT_MENU_ID = #{defShotcutMenuId,jdbcType=NVARCHAR},
+      </if>
+      <if test="defShotcutProgramid != null">
+        DEF_SHOTCUT_PROGRAMID = #{defShotcutProgramid,jdbcType=NVARCHAR},
+      </if>
+      <if test="defShotcutDisplayname != null">
+        DEF_SHOTCUT_DISPLAYNAME = #{defShotcutDisplayname,jdbcType=NVARCHAR},
+      </if>
+      <if test="defShotcutHelpid != null">
+        DEF_SHOTCUT_HELPID = #{defShotcutHelpid,jdbcType=NVARCHAR},
+      </if>
+      <if test="userPreferences != null">
+        User_Preferences = #{userPreferences,jdbcType=NVARCHAR},
+      </if>
+      <if test="employeeId != null">
+        EMPLOYEE_ID = #{employeeId,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifieddate != null">
+        LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifieddate != null">
+        ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createby != null">
+        CreateBy = #{createby,jdbcType=CHAR},
+      </if>
+      <if test="lastmodifiedby != null">
+        LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      </if>
+      <if test="modifiedby != null">
+        ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      </if>
+      <if test="processinstanceid != null">
+        ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      </if>
+      <if test="udf001 != null">
+        UDF001 = #{udf001,jdbcType=DECIMAL},
+      </if>
+      <if test="udf002 != null">
+        UDF002 = #{udf002,jdbcType=DECIMAL},
+      </if>
+      <if test="udf003 != null">
+        UDF003 = #{udf003,jdbcType=DECIMAL},
+      </if>
+      <if test="udf011 != null">
+        UDF011 = #{udf011,jdbcType=DECIMAL},
+      </if>
+      <if test="udf012 != null">
+        UDF012 = #{udf012,jdbcType=DECIMAL},
+      </if>
+      <if test="udf013 != null">
+        UDF013 = #{udf013,jdbcType=DECIMAL},
+      </if>
+      <if test="udf021 != null">
+        UDF021 = #{udf021,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf022 != null">
+        UDF022 = #{udf022,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf023 != null">
+        UDF023 = #{udf023,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf024 != null">
+        UDF024 = #{udf024,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf025 != null">
+        UDF025 = #{udf025,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf026 != null">
+        UDF026 = #{udf026,jdbcType=NVARCHAR},
+      </if>
+      <if test="udf041 != null">
+        UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf042 != null">
+        UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      </if>
+      <if test="udf051 != null">
+        UDF051 = #{udf051,jdbcType=CHAR},
+      </if>
+      <if test="udf052 != null">
+        UDF052 = #{udf052,jdbcType=CHAR},
+      </if>
+      <if test="udf053 != null">
+        UDF053 = #{udf053,jdbcType=CHAR},
+      </if>
+      <if test="udf054 != null">
+        UDF054 = #{udf054,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null">
+        ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      </if>
+      <if test="approvedate != null">
+        ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveby != null">
+        ApproveBy = #{approveby,jdbcType=CHAR},
+      </if>
+      <if test="ownerOrgRtk != null">
+        Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      </if>
+      <if test="ownerOrgRoid != null">
+        Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR},
+      </if>
+      <if test="version != null">
+        Version = #{version,jdbcType=BINARY},
+      </if>
+      <if test="attachments != null">
+        Attachments = #{attachments,jdbcType=LONGNVARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.tb.mbg.model.User">
+    update USER
+    set Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      LOGONNAME = #{logonname,jdbcType=NVARCHAR},
+      USER_NAME = #{userName,jdbcType=NVARCHAR},
+      USER_TYPE = #{userType,jdbcType=NVARCHAR},
+      SECURITYIDENTITY = #{securityidentity,jdbcType=NVARCHAR},
+      DOMAINUSERNAME = #{domainusername,jdbcType=NVARCHAR},
+      SECURITYDOMAINUSERNAME = #{securitydomainusername,jdbcType=NVARCHAR},
+      LOGONTIME = #{logontime,jdbcType=TIMESTAMP},
+      AVAILABLE_DATE = #{availableDate,jdbcType=TIMESTAMP},
+      UNAVAILABLE_DATE = #{unavailableDate,jdbcType=TIMESTAMP},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      DEF_LANGUAGE = #{defLanguage,jdbcType=NVARCHAR},
+      ITEM_SHORTCUT = #{itemShortcut,jdbcType=NVARCHAR},
+      CUSTOMER_SHORTCUT = #{customerShortcut,jdbcType=NVARCHAR},
+      SUPPLIER_SHORTCUT = #{supplierShortcut,jdbcType=NVARCHAR},
+      DATE_FORMAT = #{dateFormat,jdbcType=NVARCHAR},
+      DATE_AREA = #{dateArea,jdbcType=NVARCHAR},
+      FIRST_DAY_OF_WEEK = #{firstDayOfWeek,jdbcType=NVARCHAR},
+      DEF_COMPANY_ID = #{defCompanyId,jdbcType=CHAR},
+      DEF_PLANT_ID = #{defPlantId,jdbcType=CHAR},
+      DEF_SALES_CENTER_ID = #{defSalesCenterId,jdbcType=CHAR},
+      DEF_SERVICE_CENTER_ID = #{defServiceCenterId,jdbcType=CHAR},
+      DEF_SUPPLY_CENTER_ID = #{defSupplyCenterId,jdbcType=CHAR},
+      DEF_OPERATION_CENTER_ID = #{defOperationCenterId,jdbcType=CHAR},
+      DEF_USER_MENU_ID = #{defUserMenuId,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_MENU_ID = #{defShotcutMenuId,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_PROGRAMID = #{defShotcutProgramid,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_DISPLAYNAME = #{defShotcutDisplayname,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_HELPID = #{defShotcutHelpid,jdbcType=NVARCHAR},
+      User_Preferences = #{userPreferences,jdbcType=NVARCHAR},
+      EMPLOYEE_ID = #{employeeId,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR},
+      Version = #{version,jdbcType=BINARY},
+      Attachments = #{attachments,jdbcType=LONGNVARCHAR}
+    where USER_ID = #{userId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tb.mbg.model.User">
+    update USER
+    set Owner_Dept = #{ownerDept,jdbcType=CHAR},
+      Owner_Emp = #{ownerEmp,jdbcType=CHAR},
+      LOGONNAME = #{logonname,jdbcType=NVARCHAR},
+      USER_NAME = #{userName,jdbcType=NVARCHAR},
+      USER_TYPE = #{userType,jdbcType=NVARCHAR},
+      SECURITYIDENTITY = #{securityidentity,jdbcType=NVARCHAR},
+      DOMAINUSERNAME = #{domainusername,jdbcType=NVARCHAR},
+      SECURITYDOMAINUSERNAME = #{securitydomainusername,jdbcType=NVARCHAR},
+      LOGONTIME = #{logontime,jdbcType=TIMESTAMP},
+      AVAILABLE_DATE = #{availableDate,jdbcType=TIMESTAMP},
+      UNAVAILABLE_DATE = #{unavailableDate,jdbcType=TIMESTAMP},
+      REMARK = #{remark,jdbcType=NVARCHAR},
+      DEF_LANGUAGE = #{defLanguage,jdbcType=NVARCHAR},
+      ITEM_SHORTCUT = #{itemShortcut,jdbcType=NVARCHAR},
+      CUSTOMER_SHORTCUT = #{customerShortcut,jdbcType=NVARCHAR},
+      SUPPLIER_SHORTCUT = #{supplierShortcut,jdbcType=NVARCHAR},
+      DATE_FORMAT = #{dateFormat,jdbcType=NVARCHAR},
+      DATE_AREA = #{dateArea,jdbcType=NVARCHAR},
+      FIRST_DAY_OF_WEEK = #{firstDayOfWeek,jdbcType=NVARCHAR},
+      DEF_COMPANY_ID = #{defCompanyId,jdbcType=CHAR},
+      DEF_PLANT_ID = #{defPlantId,jdbcType=CHAR},
+      DEF_SALES_CENTER_ID = #{defSalesCenterId,jdbcType=CHAR},
+      DEF_SERVICE_CENTER_ID = #{defServiceCenterId,jdbcType=CHAR},
+      DEF_SUPPLY_CENTER_ID = #{defSupplyCenterId,jdbcType=CHAR},
+      DEF_OPERATION_CENTER_ID = #{defOperationCenterId,jdbcType=CHAR},
+      DEF_USER_MENU_ID = #{defUserMenuId,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_MENU_ID = #{defShotcutMenuId,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_PROGRAMID = #{defShotcutProgramid,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_DISPLAYNAME = #{defShotcutDisplayname,jdbcType=NVARCHAR},
+      DEF_SHOTCUT_HELPID = #{defShotcutHelpid,jdbcType=NVARCHAR},
+      User_Preferences = #{userPreferences,jdbcType=NVARCHAR},
+      EMPLOYEE_ID = #{employeeId,jdbcType=CHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      LastModifiedDate = #{lastmodifieddate,jdbcType=TIMESTAMP},
+      ModifiedDate = #{modifieddate,jdbcType=TIMESTAMP},
+      CreateBy = #{createby,jdbcType=CHAR},
+      LastModifiedBy = #{lastmodifiedby,jdbcType=CHAR},
+      ModifiedBy = #{modifiedby,jdbcType=CHAR},
+      ProcessInstanceId = #{processinstanceid,jdbcType=CHAR},
+      UDF001 = #{udf001,jdbcType=DECIMAL},
+      UDF002 = #{udf002,jdbcType=DECIMAL},
+      UDF003 = #{udf003,jdbcType=DECIMAL},
+      UDF011 = #{udf011,jdbcType=DECIMAL},
+      UDF012 = #{udf012,jdbcType=DECIMAL},
+      UDF013 = #{udf013,jdbcType=DECIMAL},
+      UDF021 = #{udf021,jdbcType=NVARCHAR},
+      UDF022 = #{udf022,jdbcType=NVARCHAR},
+      UDF023 = #{udf023,jdbcType=NVARCHAR},
+      UDF024 = #{udf024,jdbcType=NVARCHAR},
+      UDF025 = #{udf025,jdbcType=NVARCHAR},
+      UDF026 = #{udf026,jdbcType=NVARCHAR},
+      UDF041 = #{udf041,jdbcType=TIMESTAMP},
+      UDF042 = #{udf042,jdbcType=TIMESTAMP},
+      UDF051 = #{udf051,jdbcType=CHAR},
+      UDF052 = #{udf052,jdbcType=CHAR},
+      UDF053 = #{udf053,jdbcType=CHAR},
+      UDF054 = #{udf054,jdbcType=CHAR},
+      ApproveStatus = #{approvestatus,jdbcType=NVARCHAR},
+      ApproveDate = #{approvedate,jdbcType=TIMESTAMP},
+      ApproveBy = #{approveby,jdbcType=CHAR},
+      Owner_Org_RTK = #{ownerOrgRtk,jdbcType=NVARCHAR},
+      Owner_Org_ROid = #{ownerOrgRoid,jdbcType=CHAR}
+    where USER_ID = #{userId,jdbcType=CHAR}
+  </update>
+</mapper>
